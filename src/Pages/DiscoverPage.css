@@ -1,0 +1,96 @@
+.DisCoverCards_cover {
+    display: flex;
+    max-width: 1440px;
+    margin: 36px 0px;
+}
+.AutoPlayButton {
+    display: flex;
+    margin: 36px 0px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 2px solid #F27E4C;
+    width: fit-content;
+    padding: 8px 32px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.DisPag_DiscList_squreCard_wrapper {
+    display: flex;
+}
+.disPag_listButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Profile_Icons {
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+.Profile_Icons::-webkit-scrollbar{
+    width: 0 !important
+    
+  }
+.SqureCa_wrapper {
+    margin-top: 16px;
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-basis: 546px;
+    width: 546px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+.ListCa_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.Squre_mediaDis {
+    display: none;
+}
+
+@media only screen and (max-width: 1380px) {
+    .List_Name_wrapper {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-device-width: 1085px)  {
+      .SqureCa_wrapper {
+          flex-wrap: nowrap;
+          width: 100%;
+          overflow-x: scroll;
+      }
+      .SqureCa_wrapper::-webkit-scrollbar {
+        width: 0px;
+    }
+      .paraHide {
+          display: none;
+      }
+    .DisPag_DiscList_squreCard_wrapper {
+        flex-direction: column-reverse;
+    }
+    .DisPag_Squrewrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    .Squre_mediaDis {
+        display: flex;
+    }
+    .DisPa_detailsWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+} 
+@media only screen and (max-width: 625px) {
+    .DiscoverCard_wrapperZ {
+        display: none;
+    }
+    .SUBheader_H {
+        display: none;
+    }
+}

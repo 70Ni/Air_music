@@ -1,0 +1,34 @@
+.Profile_icon_wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+}
+.Profile_icon_content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    cursor: pointer;
+}
+.Profile_artist_Name {
+    padding-top: 8px;
+    color: #ffffff;
+    font-size: 12px;
+    opacity: 0.6;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    line-height: 18px;
+}
+.Profile_artist_Name:hover {
+    opacity: 1;
+}
+.Artist_avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 24px;
+    padding: 8px;
+    object-fit: cover;
+    border: 2px solid #F27E4C50;
+}

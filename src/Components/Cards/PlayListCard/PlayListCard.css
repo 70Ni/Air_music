@@ -1,0 +1,138 @@
+.ItemCard_wrapper {
+    margin: 0px 16px;
+    display: flex;
+}
+.ItemCard_content:hover {
+    background-color: #ffffff20;
+    backdrop-filter: filter(20px);
+    border-radius: 12px;
+}
+.Item_details_wrapper {
+    display: flex;
+    flex-grow: 1;
+}
+.ItemCard_content {
+    display: flex;
+    align-items: center;
+    padding: 16px 0px;
+    flex-grow: 1;
+}
+.Item_Image {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 0px 16px;
+}
+.Item_footer_wrapper {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+}
+.Favorite {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.Item_Details_section {
+    padding-right: 16px;
+    flex-basis: 150px;
+    flex-grow: 1;
+    height: 80px;
+
+}
+/* .ItemCard_wrapper {
+    max-width: 328px;
+    display: flex;
+    flex-grow: 1;
+    height: 80px;
+    align-items: center;
+    margin: 16px;
+    
+}
+.ItemCard_wrapper:hover {
+    background-color: #ffffff20;
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+}
+.ItemCard_content {
+    padding: 16px;
+    height: 80px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.Item_details_wrapper {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    min-width: 186px;
+}
+.Item_Details_section {
+    margin-left: 16px;
+    height: 80px;
+    flex-grow: 1;
+}
+.Item_image_section {
+    height: 80px;    
+    padding: 16px;
+}
+.Item_Image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative  ;
+}
+.Item_nowPlaying {
+    position: absolute;
+    z-index: 2;
+    background: rgba(18, 20, 47, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    width: 204px;
+    height: 72px;
+    border-radius: 12px;
+    left: 8px;
+    bottom: -1px;
+    display: flex;
+    align-items: center;
+}
+.Item_nowListening {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: .8;
+    color: #ffffff;
+    margin: 0px 20px;
+
+}
+.Artist_avatar_B {
+    z-index: 2;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 4px;
+    top: 10px;    
+    left: 10px;
+}
+
+.Item_footer_wrapper {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+}
+
+.MusicName_B {
+    padding: 12px 0px;
+}
+
+.Duration_B {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+} */

@@ -1,0 +1,56 @@
+.ArtPag_listCard_ArtCard_wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.ArtPag_ArtisCardSub_wrappper {
+    margin: 16px 8px;
+    flex-wrap: wrap;
+}
+.ArtPag_ListCar_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.ArtPag_ArtCar_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 472px;
+}
+
+.ArtPag_ArtCar_wrapper_mob {
+    display: flex;
+    display: none;
+}
+.artpa_suHeder {
+    display: none;
+}
+
+@media only screen and (max-width: 1064px) {
+    .ArtPag_listCard_ArtCard_wrapper {
+        flex-wrap: wrap-reverse;
+    }
+    .ArtPag_ArtCar_wrapper {
+        flex-wrap: nowrap;
+        width: auto;
+    }
+}
+@media only screen and (max-width: 954px) {
+    
+ 
+    .ArtPage_ArtCarWrapper {
+        overflow-y: hidden;
+    }
+    .ArtPag_ArtCar_wrapper_mob {
+        display: flex;
+    }
+    .ArtPage_ArtCarWrapper::-webkit-scrollbar {
+        width: 0px;
+    }
+    .ArtPag_ArtCar_wrapper {
+        flex-wrap: nowrap;
+        width: auto;
+    }
+}

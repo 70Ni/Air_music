@@ -1,0 +1,104 @@
+.Navbar_wrapperHor {
+    width: 100%;
+    margin: 36px 0px;
+}
+.NavList_wrapperHor {
+   display: flex;
+   overflow: scroll;
+}
+.NavList_wrapperHor::-webkit-scrollbar {
+    width: 0px;
+}
+.NavItem_containerHor {
+    margin: 24px;
+    display: flex;
+    padding: 0px 12px;
+    align-items: center;
+    position: relative;
+    background-color: #F27E4C20;
+    border-radius: 20px;
+}
+.Navbar_wrapper {
+    width: 220px;
+    display: flex;
+    height: 98vh;
+    justify-content: center;
+}
+.Nav_header {
+    display: flex;
+    align-items: baseline;
+    padding: 36px 0px;
+}
+.Nav_header_name {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    padding-right: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+.Nav_header_BB,.NowListening_para {
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.6;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+.NavContainer {
+    padding: 0px 16px;
+}
+.NavItem_container {
+    margin: 24px 0px;
+    display: flex;
+    padding: 0px 12px;
+    align-items: center;
+    position: relative;
+}
+.active {
+    background-color: #F27E4C;
+    border-radius: 8px;
+    
+}
+.NavItem_container :hover{
+    color: #F27E4C;
+}
+.NavList_A {
+    flex-grow: 1;
+}
+.NavList_wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 88%;
+}
+.Nav_icon {
+    color: white;
+    padding: 8px 14px;
+}
+.PlayList_notifier {
+    width: 5px;
+    height: 5px;
+    background-color: #F27E4C;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 25px;
+}
+.Nav_item,.nav_subHeader {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding-right: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+.nav_subHeader {
+    font-size: 12px;
+    opacity: 0.5;
+    font-weight: 500;
+    margin: 16px 0px;
+    padding-bottom: 8px;
+}
+.border {
+    border-bottom: 1px solid #484B5B;
+}
+a {
+    text-decoration: none;
+}

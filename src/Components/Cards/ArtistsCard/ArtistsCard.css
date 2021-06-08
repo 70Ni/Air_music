@@ -1,0 +1,52 @@
+.ArtistCard_wrapper {
+    width: 220px;
+    height: 240px;
+    margin: 0px 8px;
+}
+.ArtistCard_content {
+    width: 220px;
+}
+.ArtistCard_Image_section {
+    position: relative;
+}
+.ArtistsCard_Image {
+    width: 220px;
+    height: 136px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.Artist_Duration {
+    right: 20px;
+    top: 16px;
+}
+.Item_nowListening {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: .8;
+    color: #ffffff;
+    margin: 0px 20px;
+
+}
+
+.Artists_Details_section {
+    width: 180px;
+    margin: 12px 20px;
+}
+.Item_footer_wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.MusicName_B {
+    padding: 12px 0px;
+}
+.Artists_Details_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Profile_Icons {
+    flex-wrap: wrap;
+}

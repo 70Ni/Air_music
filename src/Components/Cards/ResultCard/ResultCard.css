@@ -1,0 +1,59 @@
+.ResultCard_wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    height: 240px;
+    margin: 0px 8px;
+}
+.ResultCard_content {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.Result_Image {
+    width: 150px;
+    height: 86px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.Result_MusicName_B {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 12px 0px;
+    line-height: 22px;
+}
+.ResultCard_details {
+    width: 130px;
+}
+.Result_Duration_B {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #ffffff; 
+    background: rgba(53, 53, 53, 0.47);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    padding: 4px 16px;
+    border-radius: 4px;
+    z-index: 2;
+    width: fit-content;
+}
+.Result_Details_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 126px;
+    margin: 12px 10px;
+}
+.ArtistCard_Met_section {
+    width: 100%;
+    top: 20px;
+    margin: 0px 16px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,48 @@
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:0.2fr 1.5fr 1.2fr 0.8fr;
+    justify-content: center;
+    
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer"
+}
+
+nav {
+    background-color: #a7ffeb;
+    grid-area: nav;
+}
+main {
+    background-color: #84ffffff;
+    
+}
+#SideBar {
+    background-color: #84ffffff;
+}
+#container1 {
+    background-color: #6fffd2;
+
+}
+#container2 {
+    background-color: #64ffda;
+}
+#container3 {
+    background-color: #73ffba;
+}
+footer {
+    background-color: #1de9b6;
+}
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+.boyd {
+    display: flex;
+    justify-content: space-between;
+}

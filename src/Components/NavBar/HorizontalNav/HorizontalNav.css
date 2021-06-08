@@ -1,0 +1,57 @@
+.HorWrapperHer {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    bottom: 96px;
+    z-index: 25;
+}
+.Nav_handle {
+    width: 120px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: #ffffff60;
+    backdrop-filter:blur(50px);
+    position: absolute;
+    top: -12px;
+}
+
+.HorizontalNav_wrapper {
+    max-width: 1088px;
+    height: 70px;
+    padding: 0px 36px;
+    background-color: #ffffff30;
+    backdrop-filter:blur(50px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.HoriaontalNav_content {
+
+    display: grid;
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
+}
+.nav_icon {
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+.HorIcon_wrapper:hover {
+    background-color: #ffffff10;
+}
+.HorIcon_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;    
+}
+.HorIcn_txt {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.5;
+}

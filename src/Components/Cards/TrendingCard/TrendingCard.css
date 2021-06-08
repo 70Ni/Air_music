@@ -1,0 +1,147 @@
+.Trending_card_wrapper{
+    margin:24px 16px;
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 520px;
+}
+.trending_bg_image {
+    position: absolute;
+    height: 120px;
+    width: 100%;
+    flex-grow: 1;
+    object-fit:cover;
+    background-repeat:no-repeat;
+    border-radius: 12px;
+    z-index: -1;
+}
+.Trending_card_content {
+   display: flex;
+   align-items: center;
+   flex-grow: 1;
+  
+}
+.trending_Play_tag{
+    display: flex;
+    align-items: center;
+    width: fit-content  ;
+    padding: 12px 32px;
+    border-radius: 8px;
+}
+.Trending_number {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 32px;
+    opacity: 0.5;
+    margin-left: 8px;
+}
+.Trending_details_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #12142F20;
+    backdrop-filter:blur(20px);
+    width: 100%;
+    height: 120px;
+    border-radius: 0px 12px 12px 0px;
+    position: relative;
+}
+.trendding_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 16px;
+    padding: 36px 0px;
+    
+}
+.Trending_Music_Name,.Trending_Artist_name {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+.Trending_Artist_name {
+    padding: 8px 0px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+.trendingLIke {
+    margin-top: 16px;
+    align-self: flex-end;
+}
+.Treding_save {
+    position: absolute;
+    top: 16px;
+    right: 40px;
+}
+.trending_listening {
+    color: #ffffff;
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    padding: 4px 8px;
+    background: rgba(230, 230, 230, 0.27);
+    backdrop-filter:blur(20px);
+    border-radius: 8px;
+}
+.Trending_d {
+    top: auto;
+    bottom: 16px;
+    right: 40px;
+}
+.Trending_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.margin {
+    width: 80px;
+}
+
+@media only screen and (max-width: 614px) {
+    .trendding_details {
+      align-items: flex-start;
+      padding: 12px 32px;
+    }
+  }
+@media only screen and (max-width: 531px) {
+    .Trending_number {
+        display: none;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .trendding_details {
+        padding: 0px;
+    }
+    .Treding_save {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+    .Trending_d {
+        top: auto;
+        bottom: 16px;
+        right: 16px;
+        height: fit-content;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .trending_Play_tag {
+        padding: 16px;
+    }
+    .hide_Now {
+        display: none;
+    }
+    .trending_listening {
+        left: 12px;
+    }
+}
+.trending_header_B {
+    overflow: hidden;
+    height: 17px;
+}

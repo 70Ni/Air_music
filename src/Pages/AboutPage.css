@@ -1,0 +1,32 @@
+.AboutPage_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+}
+.AboutPage_content {
+    margin: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.AboutPage_Header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 22px;
+    margin-bottom: 36px;
+}
+.About_page_para {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 13px;
+    opacity: 0.7;
+    line-height: 22px;  
+    padding: 0px 32px;
+    text-align: center;
+    max-width: 800px;
+}

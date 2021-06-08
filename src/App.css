@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+.App {
+  background-color: #110702;
+  z-index: -10;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  -moz-user-select: none; 
+  -webkit-user-select: none; 
+  -ms-user-select:none; 
+  user-select:none;
+  -o-user-select:none;
+}
+.SUBheader,.SUBheader_H {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  white-space: nowrap;
+  margin: 0px 16px;
+}
+
+.SUBheader_H {
+  font-size: 24px;
+  margin: 24px 16px;
+}
+.MusicName_A {
+  padding-top: 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.Artist_Header {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 32px;
+  margin: 16px;
+}
+.Artists_Paragraph {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  max-width: 800px;
+  opacity: 0.5;
+  line-height: 18px;
+  margin: 16px;
+}
+.MusicName_B {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.ArtistName,.ArtistName_B {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.ArtistName_B {
+  font-size: 12px;
+  opacity: 0.5;
+}
+.view,.Like {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: .8;
+  color: #ffffff;
+}
+
+.Duration_A {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;  
+  background: rgba(53, 53, 53, 0.47);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 8px 24px;
+  border-radius: 8px;
+} 
+.Duration_B {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff; 
+  background: rgba(53, 53, 53, 0.47);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 4px 16px;
+  border-radius: 4px;
+  z-index: 2;
+}
+.Page_side::-webkit-scrollbar{
+  display: none
+}
+body::-webkit-scrollbar{
+  display: none
+}
+
+
+@media only screen and (max-width: 1300px) {
+  .Nav_side {
+      display: none;
+  }
+  .Page_side {
+    height: 100vh !important;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .DashIcon_wrapper {
+      display: none !important;
+  }
+}
+

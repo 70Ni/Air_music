@@ -1,0 +1,21 @@
+.HEADER_THUNDER {
+    width: 100%;
+    height: 215px;
+    backdrop-filter: blur(50px);
+    background-image: linear-gradient(#38AFE1, #12142F);
+    background-image: linear-gradient(#388fe1, #12142F);
+    background-image: linear-gradient(#f27e4cc7, #110702);
+    
+
+    z-index: -2;
+    position: fixed;
+}
+.HEADER_SHIELD {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* background-image: linear-gradient(#12142f18, #12142f00); */
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}

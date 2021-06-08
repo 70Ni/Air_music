@@ -1,0 +1,114 @@
+.List_card_wrapper {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    background: rgba(41, 41, 41, 0.47);
+    backdrop-filter:blur(8px);
+    padding: 6px 16px;
+    border-radius: 8px;
+    margin:  8px 16px;
+    z-index: 1;
+}
+.List_card_wrapper:hover {
+    background-color: #ffffff20;
+    backdrop-filter:blur(50px); 
+}
+.ListCard_B {
+    background: transparent;
+    font-size: 12px;
+}
+.List_card_content {
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+}
+.controller {
+    padding: 0px 16px;
+
+}
+.List_Images {
+    display: flex;
+    align-items: center;
+}
+.List_Image {
+    height: 40px;
+    width: 50px;
+    object-fit:cover;
+    margin: 0px 16px;
+    border-radius: 8px;
+}
+.List_Name_wrapper {
+    padding: 0px 16px;
+    flex-grow: 1;
+    flex-basis: 300px;
+    overflow: hidden;
+}
+.List_song_Name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+.List_artist_name {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.5;
+}
+.List_duration_view_wrapper {
+    flex-grow: 1;
+    display: flex;
+    width: 116px;
+}
+.List_duration,.List_view {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.5;
+    padding: 0px 12px;
+}
+.List_status {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0px 12px;
+    flex-grow: 1;
+    white-space: nowrap;
+}
+.List_save {
+    cursor: pointer;
+    margin: 0px 12px;
+}
+@media only screen and (max-width: 1375px) {
+    .List_Name_wrapper {
+        overflow: hidden;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .List_card_wrapper {
+        padding: 6px 16px;
+    }
+}
+@media only screen and (max-width: 568px) {
+    .List_Image {
+        margin: 0px;
+    }
+}
+@media only screen and (max-width: 432px) {
+  .List_view {
+      padding: 0px;
+  }
+
+}
+@media only screen and (max-width: 402px) {
+    .List_view {
+        display: none;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .List_duration_view_wrapper {
+        display: none;
+    }
+}
