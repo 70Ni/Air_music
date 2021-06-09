@@ -23,7 +23,7 @@ class DashBar extends Component {
         const searchedMusics = Music.filter(item=>{
             return item.name.toLowerCase().includes(this.state.search.toLowerCase())
         })
-        console.log(searchedMusics)
+        console.log(searchedMusicsk)
     }
     render() {
         return (
