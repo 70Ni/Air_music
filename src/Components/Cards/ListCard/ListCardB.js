@@ -182,13 +182,12 @@ class ListCardB extends Component {
             var curmins = Math.floor(audio.currentTime / 60);
             var cursecs = Math.floor(audio.currentTime - curmins * 60);
             var durmins = Math.floor(audio.duration / 60);
-            var dursecs = Math.floor(audio.duration - durmins * 60);
+            var dursecs = Math.floor(audio.duration - (durmins * 60));
             if (cursecs < 10) { cursecs = "0" + cursecs }
-            if (dursecs < 10) { dursecs = "0" + dursecs }
             if (curmins < 10) { curmins = "0" + curmins }
+            if (durmins < 10) { durmins = "0" + durmins }
             if (dursecs < 10) { dursecs = "0" + dursecs }
-            // curtimetext.innerHTML = "00" + ":" + "00";
-            // durtimetext.innerHTML = "00" + ":" + "00";   
+      
             this.setState({
                 AudioDuration: audio.duration,
                 currentTime: audio.currentTime,
@@ -276,7 +275,7 @@ class ListCardB extends Component {
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
-                        <img src={Favorite} alt="" className="List_save" />
+                        <img src={Favorite} alt="" className="List_save" onClick={()=>console.log(audio.duration)}/>
                     </div>
                 </div>
             </>
