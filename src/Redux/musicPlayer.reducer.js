@@ -1,5 +1,5 @@
 const InitialState = {
-
+    prevMusic: undefined,
 }
 
 const musicGroupReducer = (state = InitialState, action) => {

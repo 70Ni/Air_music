@@ -4,15 +4,14 @@ import discover from '../../../Images/asia.jpg';
 import Pause from '../../../Images/Icons/pause.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 import { Music } from '../../../Json/Music'
+import {IndexFinder} from '../../../Container/FUNCTIONS'
 import MusicPlayer from '../../MusicPlayer/MusicPlayer';
 import './ListCard.css'
 import setCurrentMusics from '../../../Redux/Actions/musicPlayer.action'
 import store from '../../../Redux/store';
 
-
 import '../../MusicPlayer/Slider.scss'
 import { connect } from 'react-redux';
-let prevMusic = 'NotSet'
 
 
 let audio = new Audio();
@@ -45,6 +44,7 @@ let Newarray = []
 
 // }
 
+
 class ListCardB extends Component {
     constructor(props) {
         super(props);
@@ -57,7 +57,6 @@ class ListCardB extends Component {
             prevMusic: "NotSet",
             value: 0,
             newsec: 1,
-
         }
 
         // const a = this.state.MusicGroup;
@@ -113,19 +112,8 @@ class ListCardB extends Component {
             audio.pause();
         }
     }
-    IndexFinder = (id) => {
-        if (prevMusic !== id) {
-            prevMusic = id
-            let r = Newarray.map((toPlay, index) => toPlay.id === id).indexOf(true);
+  
 
-            return this.props.setCurrentMusic({
-                ClickedMusic: id,
-                IndexOfMusic: r,
-                MusicGroup: Newarray,
-            },
-            )
-        } this.PlayPause()
-    }
 
 
 
@@ -143,34 +131,39 @@ class ListCardB extends Component {
 
 
     componentDidMount() {
-        console.log(this.props.store)
         Newarray.push(this.props);
+
         // setInterval(() => {
         //     this.setState({
         //         curmins:curmins,
         //         cursecs:cursecs
         //     })
         // }, 1000);
+        console.log(store.getState().player.prevMusic)
 
 
 
-
-        this.intervalID = setInterval(
-            () => this.seektimeupdate(),
-            1000
-        );
+        // this.intervalID = setInterval(
+        //     () => this.seektimeupdate(),
+        //     1000
+        // );
     }
+
     componentDidUpdate() {
-        let a = store.getState()
-        this.MusicGroupSet(a)
+        if (this.props.currentState) {
+
+            this.MusicGroupSet()
+        }
     }
 
 
-    MusicGroupSet = (a) => {
 
-        let index = a.player.IndexOfMusic
-        console.log(index)
-        audio.src = a.player.MusicGroup[index].URL.default;
+
+    MusicGroupSet = () => {
+
+        let index = this.props.currentState.IndexOfMusic
+        console.log(this.props.currentState.IndexOfMusic)
+        audio.src = this.props.currentState.MusicGroup[index].URL.default;
         audio.play();
 
         audio.onended = (event) => {
@@ -235,6 +228,8 @@ class ListCardB extends Component {
 
 
     render() {
+     
+
         // setInterval(() => {
 
         //     console.log(this.state)
@@ -249,7 +244,9 @@ class ListCardB extends Component {
         // console.log(this.inputEl.current)
 
         const { id, name, preview, artist_image, views, likes, duration } = this.props
+        
         return (
+            
             <>
                 {/* https://www.cssscript.com/demo/range-slider-webkit/
 
@@ -257,8 +254,7 @@ class ListCardB extends Component {
                 // onClick={() => console.log(this.props.id)}
                  */}
 
-                <input id="range1" type="range" min="0" max={audio.duration} value={this.state.currentTime} step="1" ref={this.inputEl}
-                    onChange={() => this.onChange()} />
+
 
 
 

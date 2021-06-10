@@ -1,7 +1,12 @@
 // import Musi from '../Music files/Marshmellow/Alone.mp3'
 
+import { connect } from 'react-redux';
+import store from '../Redux/store';
+import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
 
-function shuffle(arra1) {
+
+
+const shuffle=(arra1) =>{
     var ctr = arra1.length, temp, index;
 
     // While there are elements in the array
@@ -33,17 +38,49 @@ function numFormatter(num) {
 
 let audio = new Audio();
 
+let prevMusic = store.getState().player.prevMusic
+console.log(prevMusic)
+
+function IndexFinder(id) {
+    let c = "hello"+id
+    console.log(c)
+    // if (prevMusic !== id) {
+    //     prevMusic = id
+    //     let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
+    //     return store.dispatch({
+
+    //         type: 'SET_MUSIC_PLAYER',
+    //         payload: {
+    //             ClickedMusic: id,
+    //             IndexOfMusic: r,
+    //             MusicGroup: localArray,
+    //             prevMusic: id
+    //         }
+
+        // })
+
+
+    // } this.PlayPause()
+}
+
+
 let PlayPause = () => {
-    if(audio.paused){
+    if (audio.paused) {
         audio.play();
-    }else {
+    } else {
         audio.pause();
     }
 }
 
 
+const mapDispatchToProps = dispatch => ({
+    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
+})
+const mapStateToProps = state => ({
+    currentState: state.player
+})
 
-export { shuffle, numFormatter,PlayPause }
+export { shuffle, numFormatter, PlayPause, IndexFinder }
 
 
 
@@ -119,7 +156,7 @@ export { shuffle, numFormatter,PlayPause }
 //             curmins: ''
 //         }, () => {
 //             this.MusicGroupSet()
-            
+
 //         })
 
 //     } this.PlayPause()
