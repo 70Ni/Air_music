@@ -5,26 +5,23 @@ import search from '../../Images/Icons/search.svg';
 import bell from '../../Images/Icons/bell.svg';
 import { Music } from '../../Json/Music';
 
+import setCurrentMusics from '../../Redux/Actions/musicPlayer.action'
 
 import './DashBar.css'
-
+import { connect } from 'react-redux';
 class DashBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            search:''
-        }
-    }
+
 
     searchChange = (event) => {
-        this.setState({
+        this.props.setCurrentMusic  ({
             search:event.target.value
         })
         const searchedMusics = Music.filter(item=>{
-            return item.name.toLowerCase().includes(this.state.search.toLowerCase())
+            return item.name.toLowerCase().includes(this.props.currentState.search)
         })
-        console.log(searchedMusicsk)
+        console.log(this.props.mapStateToProps)
     }
+
     render() {
         return (
             <div className="DashBar_wrapper">
@@ -43,9 +40,16 @@ class DashBar extends Component {
                         </div>
                     </div>
                 </div>
+                <h1 className="SUBheader">{this.props.currentState.search}</h1>
             </div>
         );
     }
 }
+const mapDispatchToProps = dispatch => ({
+    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
+})
+const mapStateToProps = state => ({
+    currentState: state.player
+})
 
-export default DashBar;
+export default connect(mapStateToProps, mapDispatchToProps) (DashBar);

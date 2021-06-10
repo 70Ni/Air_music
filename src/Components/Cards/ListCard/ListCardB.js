@@ -6,18 +6,21 @@ import Favorite from '../../../Images/Icons/save.svg'
 import { Music } from '../../../Json/Music'
 import MusicPlayer from '../../MusicPlayer/MusicPlayer';
 import './ListCard.css'
+import setCurrentMusics from '../../../Redux/Actions/musicPlayer.action'
+import store from '../../../Redux/store';
+
 
 import '../../MusicPlayer/Slider.scss'
+import { connect } from 'react-redux';
 let prevMusic = 'NotSet'
 
 
 let audio = new Audio();
 let Newarray = []
 
-var curmins;
-var cursecs;
-var durmins;
-var dursecs;
+
+
+
 
 // let a = document.getElementById("imag")
 // a.addEventListener('click',()=>{
@@ -41,7 +44,6 @@ var dursecs;
 
 
 // }
-var R = document.getElementById('range1')
 
 class ListCardB extends Component {
     constructor(props) {
@@ -93,6 +95,7 @@ class ListCardB extends Component {
         document.documentElement.style.setProperty('--max', this.state.AudioDuration);
 
     };
+
     prevSong = () => {
         if (this.state.IndexOfMusic > 0) {
             let PrevPlayIndex = this.state.IndexOfMusic - 1;
@@ -114,35 +117,19 @@ class ListCardB extends Component {
         if (prevMusic !== id) {
             prevMusic = id
             let r = Newarray.map((toPlay, index) => toPlay.id === id).indexOf(true);
-            return this.setState({
-                MusicGroup: Newarray,
+
+            return this.props.setCurrentMusic({
                 ClickedMusic: id,
                 IndexOfMusic: r,
-                color: '#fff',
-            }, () => {
-                this.MusicGroupSet()
-
-            })
-
+                MusicGroup: Newarray,
+            },
+            )
         } this.PlayPause()
     }
 
 
 
 
-    MusicGroupSet = () => {
-
-        audio.src = this.state.MusicGroup[this.state.IndexOfMusic].URL.default;
-        audio.play();
-
-
-
-        audio.onended = (event) => {
-            console.log(event)
-        }
-
-
-    }
 
 
 
@@ -156,6 +143,7 @@ class ListCardB extends Component {
 
 
     componentDidMount() {
+        console.log(this.props.store)
         Newarray.push(this.props);
         // setInterval(() => {
         //     this.setState({
@@ -172,13 +160,29 @@ class ListCardB extends Component {
             1000
         );
     }
+    componentDidUpdate() {
+        let a = store.getState()
+        this.MusicGroupSet(a)
+    }
+
+
+    MusicGroupSet = (a) => {
+
+        let index = a.player.IndexOfMusic
+        console.log(index)
+        audio.src = a.player.MusicGroup[index].URL.default;
+        audio.play();
+
+        audio.onended = (event) => {
+            console.log(event)
+        }
+    }
 
 
 
     seektimeupdate() {
         if (audio.duration) {
-
-            let nt = audio.currentTime * (100 / audio.duration);
+            // let nt = audio.currentTime * (100 / audio.duration);
             var curmins = Math.floor(audio.currentTime / 60);
             var cursecs = Math.floor(audio.currentTime - curmins * 60);
             var durmins = Math.floor(audio.duration / 60);
@@ -187,7 +191,7 @@ class ListCardB extends Component {
             if (curmins < 10) { curmins = "0" + curmins }
             if (durmins < 10) { durmins = "0" + durmins }
             if (dursecs < 10) { dursecs = "0" + dursecs }
-      
+
             this.setState({
                 AudioDuration: audio.duration,
                 currentTime: audio.currentTime,
@@ -221,9 +225,9 @@ class ListCardB extends Component {
     //     }
     // }\
 
-  
 
- 
+
+
     // Button = () => {
     //     console.log(a)
     // }
@@ -244,8 +248,7 @@ class ListCardB extends Component {
 
         // console.log(this.inputEl.current)
 
-
-        const { id, name, preview, artist_image, views, likes, duration, } = this.props
+        const { id, name, preview, artist_image, views, likes, duration } = this.props
         return (
             <>
                 {/* https://www.cssscript.com/demo/range-slider-webkit/
@@ -270,12 +273,12 @@ class ListCardB extends Component {
                         </div>
                         <div className="List_duration_view_wrapper">
                             <div className="List_duration">{this.state.curmin}:{this.state.cursecs}</div>
-                            <div className="List_view">{this.state.durmins}:{this.state.dursecs}</div>
+                            <div className="List_view">{this.props.currentState.search}</div>
                         </div>
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
-                        <img src={Favorite} alt="" className="List_save" onClick={()=>console.log(audio.duration)}/>
+                        <img src={Favorite} alt="" className="List_save" onClick={() => this.MusicGroupSet()} />
                     </div>
                 </div>
             </>
@@ -283,4 +286,11 @@ class ListCardB extends Component {
     }
 }
 
-export default ListCardB;
+const mapDispatchToProps = dispatch => ({
+    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
+})
+const mapStateToProps = state => ({
+    currentState: state.player
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListCardB);
