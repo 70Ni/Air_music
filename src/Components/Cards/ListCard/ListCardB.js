@@ -4,7 +4,7 @@ import discover from '../../../Images/asia.jpg';
 import Pause from '../../../Images/Icons/pause.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 import { Music } from '../../../Json/Music'
-import {IndexFinder} from '../../../Container/FUNCTIONS'
+import { IndexFinder,MusicGroupSet,prevSong } from '../../../Container/FUNCTIONS'
 import MusicPlayer from '../../MusicPlayer/MusicPlayer';
 import './ListCard.css'
 import setCurrentMusics from '../../../Redux/Actions/musicPlayer.action'
@@ -94,25 +94,17 @@ class ListCardB extends Component {
         document.documentElement.style.setProperty('--max', this.state.AudioDuration);
 
     };
-
-    prevSong = () => {
-        if (this.state.IndexOfMusic > 0) {
-            let PrevPlayIndex = this.state.IndexOfMusic - 1;
-            let PrevPlayId = this.state.MusicGroup[PrevPlayIndex].id;
-            this.IndexFinder(PrevPlayId)
-        }
-    }
-
-
-
-    PlayPause = () => {
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    }
+ 
+       
+    
   
+    
+
+
+
+
+
+
 
 
 
@@ -152,24 +144,14 @@ class ListCardB extends Component {
     componentDidUpdate() {
         if (this.props.currentState) {
 
-            this.MusicGroupSet()
+            MusicGroupSet()
         }
     }
 
 
 
 
-    MusicGroupSet = () => {
 
-        let index = this.props.currentState.IndexOfMusic
-        console.log(this.props.currentState.IndexOfMusic)
-        audio.src = this.props.currentState.MusicGroup[index].URL.default;
-        audio.play();
-
-        audio.onended = (event) => {
-            console.log(event)
-        }
-    }
 
 
 
@@ -228,7 +210,8 @@ class ListCardB extends Component {
 
 
     render() {
-     
+        console.log(this.props.currentState.prevMusic)
+
 
         // setInterval(() => {
 
@@ -244,9 +227,9 @@ class ListCardB extends Component {
         // console.log(this.inputEl.current)
 
         const { id, name, preview, artist_image, views, likes, duration } = this.props
-        
+
         return (
-            
+
             <>
                 {/* https://www.cssscript.com/demo/range-slider-webkit/
 
@@ -261,7 +244,7 @@ class ListCardB extends Component {
                 <div className="List_card_wrapper ListCard_B" key={id}>
                     <div className="List_card_content" >
                         <div className="List_Images">
-                            <img src={preview} id="imag" alt="" className="List_Image" onClick={() => this.IndexFinder(this.props.id)} />
+                            <img src={preview} id="imag" alt="" className="List_Image" onClick={() => IndexFinder(this.props.id,Newarray)} />
                             <img src={Pause} alt="" className="controller" />
                         </div>
                         <div className="List_Name_wrapper">
@@ -274,7 +257,7 @@ class ListCardB extends Component {
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
-                        <img src={Favorite} alt="" className="List_save" onClick={() => this.MusicGroupSet()} />
+                        <img src={Favorite} alt="" className="List_save" onClick={() => prevSong()} />
                     </div>
                 </div>
             </>

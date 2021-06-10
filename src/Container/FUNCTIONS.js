@@ -6,7 +6,7 @@ import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
 
 
 
-const shuffle=(arra1) =>{
+const shuffle = (arra1) => {
     var ctr = arra1.length, temp, index;
 
     // While there are elements in the array
@@ -38,39 +38,61 @@ function numFormatter(num) {
 
 let audio = new Audio();
 
-let prevMusic = store.getState().player.prevMusic
-console.log(prevMusic)
-
-function IndexFinder(id) {
-    let c = "hello"+id
-    console.log(c)
-    // if (prevMusic !== id) {
-    //     prevMusic = id
-    //     let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
-    //     return store.dispatch({
-
-    //         type: 'SET_MUSIC_PLAYER',
-    //         payload: {
-    //             ClickedMusic: id,
-    //             IndexOfMusic: r,
-    //             MusicGroup: localArray,
-    //             prevMusic: id
-    //         }
-
-        // })
-
-
-    // } this.PlayPause()
-}
-
-
-let PlayPause = () => {
+const PlayPause = () => {
     if (audio.paused) {
         audio.play();
     } else {
         audio.pause();
     }
 }
+
+const MusicGroupSet = () => {
+
+    let index = store.getState().player.IndexOfMusic
+    audio.src = store.getState().player.MusicGroup[index].URL.default;
+    audio.play();
+
+    audio.onended = (event) => {
+        console.log(event)
+    }
+}
+function IndexFinder(id, localArray) {
+    let prevMusic = store.getState().player.prevMusic
+
+    if (prevMusic !== id) {
+        let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
+        return store.dispatch({
+            type: 'SET_MUSIC_PLAYER',
+            payload: {
+                ClickedMusic: id,
+                IndexOfMusic: r,
+                MusicGroup: localArray,
+                prevMusic: id
+            }
+        })
+    } PlayPause()
+
+}
+let MusicGroup = store.getState().player.MusicGroup;
+const prevSong = () => {
+    if (store.getState().player.IndexOfMusic > 0) {
+        let PrevPlayIndex = store.getState().player.IndexOfMusic - 1;
+        let PrevPlayId = store.getState().player.MusicGroup[PrevPlayIndex].id;
+        IndexFinder(PrevPlayId,store.getState().player.MusicGroup)
+    }
+}
+
+const NextSong = () => {
+    if (store.getState().player.MusicGroup.length) {
+        let PrevPlayIndex = store.getState().player.IndexOfMusic - 1;
+        let PrevPlayId = store.getState().player.MusicGroup[PrevPlayIndex].id;
+        IndexFinder(PrevPlayId,store.getState().player.MusicGroup)
+    }
+}
+
+
+
+
 
 
 const mapDispatchToProps = dispatch => ({
@@ -79,8 +101,8 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => ({
     currentState: state.player
 })
-
-export { shuffle, numFormatter, PlayPause, IndexFinder }
+export default connect(mapStateToProps, mapDispatchToProps)
+export { shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet,prevSong }
 
 
 
