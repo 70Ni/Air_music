@@ -43,7 +43,6 @@ let Newarray = []
 
 // }
 let intervalID = undefined;
-let inger = 1;
 
 
 class ListCardB extends Component {

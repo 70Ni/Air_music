@@ -80,6 +80,7 @@
 .List_save {
     cursor: pointer;
     margin: 0px 12px;
+    width: 18px;
 }
 @media only screen and (max-width: 1375px) {
     .List_Name_wrapper {
@@ -105,6 +106,9 @@
 @media only screen and (max-width: 402px) {
     .List_view {
         display: none;
+    }
+    .List_card_wrapper {
+        margin:  12px 16px;
     }
 }
 @media only screen and (max-width: 320px) {

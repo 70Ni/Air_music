@@ -1,6 +1,9 @@
 .MusicPlayer_Wrappper {
     position: relative;
 }
+.favorite_Musictrl {
+    width: 18px;
+}
 #range1 {
     position: absolute;
     bottom: 75px;

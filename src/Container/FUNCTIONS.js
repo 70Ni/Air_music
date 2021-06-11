@@ -43,7 +43,9 @@ const MusicGroupSet = () => {
 
     let index = store.getState().player.IndexOfMusic
     audio.src = store.getState().player.MusicGroup[index].URL.default;
+    audio.load();
     audio.play();
+    console.log(audio.load)
 
     audio.onended = (event) => {
         console.log(event)
@@ -120,11 +122,17 @@ const seektimeupdate = () => {
             }
         })
 
-        document.documentElement.style.setProperty('--base', this.state.currentTime);
-        document.documentElement.style.setProperty('--max', audio.duration);
+    }
+
+
+}
+const onChange = (slideValue) => {
+    if (audio.duration) {
+        let selectNumber = Number(slideValue)
+        audio.currentTime = selectNumber
+        audio.play();
     }
 }
-
 const Mute = () => {
     if (audio.muted) {
         audio.muted = false;
@@ -145,7 +153,7 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, 
+    seektimeupdate, Mute, onChange
 }
 
 
