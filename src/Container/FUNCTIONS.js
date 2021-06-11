@@ -38,13 +38,6 @@ function numFormatter(num) {
 
 let audio = new Audio();
 
-const PlayPause = () => {
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
 
 const MusicGroupSet = () => {
 
@@ -56,6 +49,16 @@ const MusicGroupSet = () => {
         console.log(event)
     }
 }
+
+
+const PlayPause = () => {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
 function IndexFinder(id, localArray) {
     let prevMusic = store.getState().player.prevMusic
 
@@ -73,36 +76,74 @@ function IndexFinder(id, localArray) {
     } PlayPause()
 
 }
-let MusicGroup = store.getState().player.MusicGroup;
 const prevSong = () => {
-    if (store.getState().player.IndexOfMusic > 0) {
-        let PrevPlayIndex = store.getState().player.IndexOfMusic - 1;
-        let PrevPlayId = store.getState().player.MusicGroup[PrevPlayIndex].id;
-        IndexFinder(PrevPlayId,store.getState().player.MusicGroup)
+    let MusicGroup = store.getState().player.MusicGroup;
+    let index = store.getState().player.IndexOfMusic;
+    if (index > 0) {
+        let PrevPlayIndex = index - 1;
+        let PrevPlayId = MusicGroup[PrevPlayIndex].id;
+        IndexFinder(PrevPlayId, MusicGroup)
     }
 }
 
 const NextSong = () => {
-    if (store.getState().player.MusicGroup.length) {
-        let PrevPlayIndex = store.getState().player.IndexOfMusic - 1;
-        let PrevPlayId = store.getState().player.MusicGroup[PrevPlayIndex].id;
-        IndexFinder(PrevPlayId,store.getState().player.MusicGroup)
+    let MusicGroup = store.getState().player.MusicGroup;
+    let index = store.getState().player.IndexOfMusic;
+    console.log(MusicGroup.length)
+    console.log(index)
+    if (index + 2 <= MusicGroup.length) {
+        let NextPlayIndex = index + 1;
+        let NextPlayId = MusicGroup[NextPlayIndex].id;
+        IndexFinder(NextPlayId, store.getState().player.MusicGroup)
     }
 }
+const seektimeupdate = () => {
+    if (audio.duration) {
+        // let nt = audio.currentTime * (100 / audio.duration);
+        var curmins = Math.floor(audio.currentTime / 60);
+        var cursecs = Math.floor(audio.currentTime - curmins * 60);
+        var durmins = Math.floor(audio.duration / 60);
+        var dursecs = Math.floor(audio.duration - (durmins * 60));
+        if (cursecs < 10) { cursecs = "0" + cursecs }
+        if (curmins < 10) { curmins = "0" + curmins }
+        if (durmins < 10) { durmins = "0" + durmins }
+        if (dursecs < 10) { dursecs = "0" + dursecs }
+        return store.dispatch({
+            type: 'SET_TIMER',
+            payload: {
+                AudioDuration: audio.duration,
+                currentTime: audio.currentTime,
+                cursecs: cursecs,
+                curmin: curmins,
+                durmins: durmins,
+                dursecs: dursecs,
+            }
+        })
+   
+        document.documentElement.style.setProperty('--base', this.state.currentTime);
+            document.documentElement.style.setProperty('--max', audio.duration);
+        }
+}
+
+    setInterval(() => {
+        let inger = seektimeupdate()
+        if (inger) {
+            console.log(inger.cursecs)
+        }
+
+    }, 1000);
 
 
 
 
-
-
-const mapDispatchToProps = dispatch => ({
-    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
-})
-const mapStateToProps = state => ({
-    currentState: state.player
-})
-export default connect(mapStateToProps, mapDispatchToProps)
-export { shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet,prevSong }
+    const mapDispatchToProps = dispatch => ({
+        setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
+    })
+    const mapStateToProps = state => ({
+        currentState: state.player
+    })
+    export default connect(mapStateToProps, mapDispatchToProps)
+    export { shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong, seektimeupdate }
 
 
 

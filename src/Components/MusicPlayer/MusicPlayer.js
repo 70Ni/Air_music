@@ -7,6 +7,7 @@ import Play from '../../Images/Icons/Play_fill.svg';
 import Forward from '../../Images/Icons/skip-backward.svg';
 import Backward from '../../Images/Icons/skip-forward.svg';
 import Volume from '../../Images/Icons/Volume.svg'
+import DurationTime from './DurationTime';
 import { Music } from '../../Json/Music'
 import './MusicPlayer.css'
 // import './Slider.scss'
@@ -49,7 +50,7 @@ class MusicPlayer extends Component {
                                 <img src={Backward} className="controllor MusicForward" alt="" />
                             </div>
                             <div className="Player_right_wrapper">
-                                <div className="MusicDuration_wrapper">00:24/03:24</div>
+                                <DurationTime />
                                 <div className="volume_controllor">
                                     <img src={Volume} alt="" className="Volume" />
                                     <span className="Volume_bar"></span>

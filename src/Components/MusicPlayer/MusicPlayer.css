@@ -12,6 +12,7 @@
     bottom: 0px;
     width: 100%;
     background: rgba(102, 63, 63, 0);
+    background: #ffffff16;
     backdrop-filter:blur(50px);
     z-index: 20;
 }

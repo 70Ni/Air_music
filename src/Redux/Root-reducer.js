@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux'
-import musicGroupReducer from './musicPlayer.reducer'
+import musicGroupReducer from './Reducer/musicPlayer.reducer';
+import timerSetReducer from './Reducer/musicPlayer.reducer';
 
 export default combineReducers({
-    player:musicGroupReducer
+    player:musicGroupReducer,
+    timer:timerSetReducer
 });

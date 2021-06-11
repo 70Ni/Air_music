@@ -4,7 +4,7 @@ import discover from '../../../Images/asia.jpg';
 import Pause from '../../../Images/Icons/pause.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 import { Music } from '../../../Json/Music'
-import { IndexFinder,MusicGroupSet,prevSong } from '../../../Container/FUNCTIONS'
+import { IndexFinder, MusicGroupSet, prevSong, NextSong, seektimeupdate } from '../../../Container/FUNCTIONS'
 import MusicPlayer from '../../MusicPlayer/MusicPlayer';
 import './ListCard.css'
 import setCurrentMusics from '../../../Redux/Actions/musicPlayer.action'
@@ -14,7 +14,6 @@ import '../../MusicPlayer/Slider.scss'
 import { connect } from 'react-redux';
 
 
-let audio = new Audio();
 let Newarray = []
 
 
@@ -43,6 +42,8 @@ let Newarray = []
 
 
 // }
+let intervalID = undefined;
+let inger = 1;
 
 
 class ListCardB extends Component {
@@ -81,47 +82,46 @@ class ListCardB extends Component {
 
 
 
+        // }
+        // onChange = () => {
+        //     if (audio.duration) {
+        //         let selectNumber = Number(this.inputEl.current.value)
+        //         audio.currentTime = selectNumber
+        //         audio.play();
+        //     }
+
+        //     console.log(this.state.currentTime)
+        //     document.documentElement.style.setProperty('--base', this.inputEl.current.value);
+        //     document.documentElement.style.setProperty('--max', this.state.AudioDuration);
+
+        // };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Mute = () => {
+        //     if (audio.muted) {
+        //         audio.muted = false;
+        //     } else {
+        //         audio.muted = true;
+        //     }
+        // }
     }
-    onChange = () => {
-        if (audio.duration) {
-            let selectNumber = Number(this.inputEl.current.value)
-            audio.currentTime = selectNumber
-            audio.play();
-        }
-
-        console.log(this.state.currentTime)
-        document.documentElement.style.setProperty('--base', this.inputEl.current.value);
-        document.documentElement.style.setProperty('--max', this.state.AudioDuration);
-
-    };
- 
-       
-    
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Mute = () => {
-        if (audio.muted) {
-            audio.muted = false;
-        } else {
-            audio.muted = true;
-        }
-    }
-
-
     componentDidMount() {
         Newarray.push(this.props);
 
@@ -131,14 +131,14 @@ class ListCardB extends Component {
         //         cursecs:cursecs
         //     })
         // }, 1000);
-        console.log(store.getState().player.prevMusic)
 
 
+        intervalID = setInterval(() => {
+             seektimeupdate()
+             console.log(this.props.currentTimer)
 
-        // this.intervalID = setInterval(
-        //     () => this.seektimeupdate(),
-        //     1000
-        // );
+        }, 1000);
+
     }
 
     componentDidUpdate() {
@@ -155,34 +155,10 @@ class ListCardB extends Component {
 
 
 
-    seektimeupdate() {
-        if (audio.duration) {
-            // let nt = audio.currentTime * (100 / audio.duration);
-            var curmins = Math.floor(audio.currentTime / 60);
-            var cursecs = Math.floor(audio.currentTime - curmins * 60);
-            var durmins = Math.floor(audio.duration / 60);
-            var dursecs = Math.floor(audio.duration - (durmins * 60));
-            if (cursecs < 10) { cursecs = "0" + cursecs }
-            if (curmins < 10) { curmins = "0" + curmins }
-            if (durmins < 10) { durmins = "0" + durmins }
-            if (dursecs < 10) { dursecs = "0" + dursecs }
 
-            this.setState({
-                AudioDuration: audio.duration,
-                currentTime: audio.currentTime,
-                cursecs: cursecs,
-                curmin: curmins,
-                durmins: durmins,
-                dursecs: dursecs,
-
-            });
-            document.documentElement.style.setProperty('--base', this.state.currentTime);
-            document.documentElement.style.setProperty('--max', audio.duration);
-        }
-    }
 
     componentWillUnmount() {
-        clearInterval(this.intervalID)
+        clearInterval(intervalID)
     }
 
 
@@ -209,8 +185,8 @@ class ListCardB extends Component {
 
 
 
+
     render() {
-        console.log(this.props.currentState.prevMusic)
 
 
         // setInterval(() => {
@@ -225,7 +201,6 @@ class ListCardB extends Component {
 
 
         // console.log(this.inputEl.current)
-
         const { id, name, preview, artist_image, views, likes, duration } = this.props
 
         return (
@@ -244,20 +219,20 @@ class ListCardB extends Component {
                 <div className="List_card_wrapper ListCard_B" key={id}>
                     <div className="List_card_content" >
                         <div className="List_Images">
-                            <img src={preview} id="imag" alt="" className="List_Image" onClick={() => IndexFinder(this.props.id,Newarray)} />
+                            <img src={preview} id="imag" alt="" className="List_Image" onClick={() => IndexFinder(this.props.id, Newarray)} />
                             <img src={Pause} alt="" className="controller" />
                         </div>
                         <div className="List_Name_wrapper">
                             <div className="MusicName_B ListCard_B" >{name}</div>
                         </div>
                         <div className="List_duration_view_wrapper">
-                            <div className="List_duration">{this.state.curmin}:{this.state.cursecs}</div>
-                            <div className="List_view">{this.props.currentState.search}</div>
+                            <div className="List_duration">{duration}</div>
+                            <div className="List_view">{this.props.currentTimer.cursecs}</div>
                         </div>
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
-                        <img src={Favorite} alt="" className="List_save" onClick={() => prevSong()} />
+                        <img src={Favorite} alt="" className="List_save" onClick={() => NextSong()} />
                     </div>
                 </div>
             </>
@@ -269,7 +244,8 @@ const mapDispatchToProps = dispatch => ({
     setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
 })
 const mapStateToProps = state => ({
-    currentState: state.player
+    currentState: state.player,
+    currentTimer: state.timer
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListCardB);
