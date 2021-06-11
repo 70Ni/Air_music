@@ -1,8 +1,8 @@
-const InitialState = {
-    hll:"jjjoj"
+const timerState = {
+    
 }
 
-const timerSetReducer = (state = InitialState, action) => {
+const timerSetReducer = (state = timerState, action) => {
     switch (action.type) {
         case 'SET_TIMER':
             return Object.assign({}, state, {...action.payload})

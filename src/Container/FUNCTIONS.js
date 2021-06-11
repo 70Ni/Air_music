@@ -114,7 +114,7 @@ const seektimeupdate = () => {
                 AudioDuration: audio.duration,
                 currentTime: audio.currentTime,
                 cursecs: cursecs,
-                curmin: curmins,
+                curmins: curmins,
                 durmins: durmins,
                 dursecs: dursecs,
             }
@@ -125,13 +125,7 @@ const seektimeupdate = () => {
         }
 }
 
-    setInterval(() => {
-        let inger = seektimeupdate()
-        if (inger) {
-            console.log(inger.cursecs)
-        }
 
-    }, 1000);
 
 
 

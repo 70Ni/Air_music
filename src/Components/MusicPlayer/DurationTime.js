@@ -15,30 +15,25 @@ class DurationTime extends Component {
         this.state = {}
     }
     componentDidMount() {
-        // if (this.props.currentState.ClickedMusic) {
-        //     intervalID = setInterval(
-        //         () => seektimeupdate(),
-        //         1000
-        //         );
-        //         if(intervalID){
-        //             console.log(intervalID)
-        //         }
-        //     }
+
+        intervalID = setInterval(() => {
+            seektimeupdate()
+
+       }, 1000);
+
         }
     componentWillUnmount() {
         clearInterval(intervalID)
     }
     render() {
         return (
-            <div className="MusicDuration_wrapper">"</div>
+            <div className="MusicDuration_wrapper">{this.props.currentTimer.curmins}:{this.props.currentTimer.cursecs}/{this.props.currentTimer.durmins}:{this.props.currentTimer.dursecs} </div>
         );
     }
 }
-const mapDispatchToProps = dispatch => ({
-    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
-})
+
 const mapStateToProps = state => ({
-    currentState: state.player
+    currentTimer: state.timer
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DurationTime);
+export default connect(mapStateToProps, null)(DurationTime);

@@ -133,11 +133,11 @@ class ListCardB extends Component {
         // }, 1000);
 
 
-        intervalID = setInterval(() => {
-             seektimeupdate()
-             console.log(this.props.currentTimer)
+        // intervalID = setInterval(() => {
+        //      seektimeupdate()
+        //      console.log(store.getState())
 
-        }, 1000);
+        // }, 1000);
 
     }
 
@@ -227,7 +227,7 @@ class ListCardB extends Component {
                         </div>
                         <div className="List_duration_view_wrapper">
                             <div className="List_duration">{duration}</div>
-                            <div className="List_view">{this.props.currentTimer.cursecs}</div>
+                            <div className="List_view">df</div>
                         </div>
 
                         {/* <div className="List_status">Now Listening...</div> */}
@@ -245,7 +245,6 @@ const mapDispatchToProps = dispatch => ({
 })
 const mapStateToProps = state => ({
     currentState: state.player,
-    currentTimer: state.timer
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListCardB);
