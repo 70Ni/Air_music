@@ -119,25 +119,34 @@ const seektimeupdate = () => {
                 dursecs: dursecs,
             }
         })
-   
+
         document.documentElement.style.setProperty('--base', this.state.currentTime);
-            document.documentElement.style.setProperty('--max', audio.duration);
-        }
+        document.documentElement.style.setProperty('--max', audio.duration);
+    }
+}
+
+const Mute = () => {
+    if (audio.muted) {
+        audio.muted = false;
+    } else {
+        audio.muted = true;
+    }
 }
 
 
 
 
-
-
-    const mapDispatchToProps = dispatch => ({
-        setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
-    })
-    const mapStateToProps = state => ({
-        currentState: state.player
-    })
-    export default connect(mapStateToProps, mapDispatchToProps)
-    export { shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong, seektimeupdate }
+const mapDispatchToProps = dispatch => ({
+    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
+})
+const mapStateToProps = state => ({
+    currentState: state.player
+})
+export default connect(mapStateToProps, mapDispatchToProps)
+export {
+    shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
+    seektimeupdate, Mute, 
+}
 
 
 

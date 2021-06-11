@@ -8,6 +8,7 @@ import Forward from '../../Images/Icons/skip-backward.svg';
 import Backward from '../../Images/Icons/skip-forward.svg';
 import Volume from '../../Images/Icons/Volume.svg'
 import DurationTime from './DurationTime';
+import { Mute,prevSong,NextSong } from '../../Container/FUNCTIONS'
 import { Music } from '../../Json/Music'
 import './MusicPlayer.css'
 // import './Slider.scss'
@@ -45,14 +46,14 @@ class MusicPlayer extends Component {
                         </div>
                         <div className="Player_reverser">
                             <div className="PlayerControllor_wrapper">
-                                <img src={Forward} className="controllor MusicBackward" alt="" />
+                                <img src={Forward} className="controllor MusicBackward" alt="" onClick={()=>prevSong()} />
                                 <img src={Play} className="controllor" alt="" />
-                                <img src={Backward} className="controllor MusicForward" alt="" />
+                                <img src={Backward} className="controllor MusicForward" alt="" onClick={()=>NextSong()}/>
                             </div>
                             <div className="Player_right_wrapper">
                                 <DurationTime />
                                 <div className="volume_controllor">
-                                    <img src={Volume} alt="" className="Volume" />
+                                    <img src={Volume} alt="" className="Volume" onClick={()=>Mute()} />
                                     <span className="Volume_bar"></span>
                                 </div>
                                 <img src={Favorite} className="favorite_Musictrl" />
