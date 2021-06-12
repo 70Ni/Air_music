@@ -11,7 +11,9 @@ $filll-c: #F27E4C;
 :root {
 	--base: 0;
 	--max:100;
+	--volume:20;
 }
+
 
 @mixin track($fill: 0) {
 	box-sizing: border-box;
@@ -38,8 +40,9 @@ $filll-c: #F27E4C;
 	border-radius: 50%;
 	background: #f90;
 }
+	
 
-[type='range'] {
+#MusicSlider [type='range'] {
 	&, &::-webkit-slider-thumb {
 		-webkit-appearance: none;
 	}
@@ -58,7 +61,7 @@ $filll-c: #F27E4C;
 	background: transparent;
 	font: 1em/1 arial, sans-serif;
 	
-	&::-webkit-slider-runnable-track {
+	&::-webkit-slider-runnable-track  {
 		@include track(1)
 	}
 	&::-moz-range-track { @include track }
@@ -80,6 +83,43 @@ $filll-c: #F27E4C;
 	&::-ms-tooltip { display: none }
 }
 
-#range1 {
-	cursor: pointer;
+#VolumeRange [type='range'] {
+	&, &::-webkit-slider-thumb {
+		-webkit-appearance: none;
+	}
+	
+	--range: calc(100 - 0);
+	--ratio: calc((var(--volume) - 0)/var(--range));
+	--sx: calc(var(--ratio)*(100%));
+	
+	// --range: calc(var(--max) - var(--min));
+	// --ratio: calc((var(--base)/100));
+	// --sx: calc(var(--ratio)*(100%));
+
+	margin: 0;
+	padding: 0;
+	width: $track-w; height: $thumb-d;
+	background: transparent;
+	font: 1em/1 arial, sans-serif;
+	
+	&::-webkit-slider-runnable-track  {
+		@include track(1)
+	}
+	&::-moz-range-track { @include track }
+	&::-ms-track { @include track }
+	
+	&::-moz-range-progress { @include fill }
+	&::-ms-fill-lower { @include fill }
+	
+	&::-webkit-slider-thumb {
+		margin-top: .5*($track-h - $thumb-d);
+		@include thumb
+	}
+	&::-moz-range-thumb { @include thumb }
+	&::-ms-thumb {
+		margin-top: 0;
+		@include thumb
+	}
+	
+	&::-ms-tooltip { display: none }
 }

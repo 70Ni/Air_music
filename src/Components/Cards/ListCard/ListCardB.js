@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react';
 import ArtistList from '../../../Container/ArtistMap';
 import discover from '../../../Images/asia.jpg';
 import Pause from '../../../Images/Icons/pause.svg';
+import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 import { Music } from '../../../Json/Music'
 import { IndexFinder, MusicGroupSet, prevSong, NextSong, seektimeupdate } from '../../../Container/FUNCTIONS'
@@ -215,22 +216,23 @@ class ListCardB extends Component {
 
 
 
-                <div className="List_card_wrapper ListCard_B" key={id}>
+                <div className="List_card_wrapper ListCard_B" key={id} onClick={() => IndexFinder(this.props.id, Newarray)}>
                     <div className="List_card_content" >
                         <div className="List_Images">
-                            <img src={preview} id="imag" alt="" className="List_Image" onClick={() => IndexFinder(this.props.id, Newarray)} />
-                            <img src={Pause} alt="" className="controller" />
+                            <img src={preview} id="imag" alt="" className="List_Image"/>
                         </div>
                         <div className="List_Name_wrapper">
                             <div className="MusicName_B ListCard_B" >{name}</div>
+
                         </div>
                         <div className="List_duration_view_wrapper">
                             <div className="List_duration">{duration}</div>
-                            <div className="List_view">df</div>
+                            <div className="List_view">{views}</div>
                         </div>
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
+                        <img src={Play} alt="" className="controller" />
                         <img src={Favorite} alt="" className="List_save" onClick={() => NextSong()} />
                     </div>
                 </div>

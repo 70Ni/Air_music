@@ -17,10 +17,8 @@ class DurationTime extends Component {
     }
 
     componentDidMount() {
-
         intervalID = setInterval(() => {
             seektimeupdate()
-
         }, 1000);
     }
 

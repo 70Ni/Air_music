@@ -8,8 +8,7 @@ import Forward from '../../Images/Icons/skip-backward.svg';
 import Backward from '../../Images/Icons/skip-forward.svg';
 import Volume from '../../Images/Icons/Volume.svg'
 import DurationTime from './DurationTime';
-import { Mute, prevSong, NextSong, PlayPause,onChange } from '../../Container/FUNCTIONS'
-import { Music } from '../../Json/Music'
+import { Mute, prevSong, NextSong, PlayPause, onChange, setVolume } from '../../Container/FUNCTIONS'
 import './MusicPlayer.css'
 import './Slider.scss'
 // import './Slider.scss'
@@ -20,6 +19,8 @@ class MusicPlayer extends Component {
     constructor(props) {
         super(props);
         this.inputEl = createRef();
+        this.volumeSlider = createRef();
+
         this.state = {}
     }
 
@@ -29,19 +30,24 @@ class MusicPlayer extends Component {
         let { currentState } = this.props;
         let musicPlaying = undefined;
         if (currentState.MusicGroup) {
-            console.log(currentState.MusicGroup)
             musicPlaying = currentState.MusicGroup.map(x => x);
-            console.log(musicPlaying)
         }
         document.documentElement.style.setProperty('--base', this.props.timerRange.currentTime);
         document.documentElement.style.setProperty('--max', this.props.timerRange.AudioDuration);
-console.log(this.props.timerRange.AudioDuration)
+        // let volume = Number(this.props.volumeSlider.current.value)
+        // document.documentElement.style.setProperty('--volume', volume);
+
+
+
+
         // {currentState.MusicGroup[currentState.IndexOfMusic].name}
         return (
-            
+
             <div className="MusicPlayer_Wrappper">
-                <input id="range1" type="range" min="0" max={this.props.timerRange.AudioDuration} value={this.props.timerRange.currentTime} step="1" ref={this.inputEl}
-                onChange={()=> onChange(this.inputEl.current.value)}/>
+                <div id="MusicSlider">
+                    <input id="range1" type="range" min="0" max={this.props.timerRange.AudioDuration} value={this.props.timerRange.currentTime} step="1" ref={this.inputEl}
+                        onChange={() => onChange(this.inputEl.current.value)} />
+                </div>
                 <div className="MusicPlayer_wrapper">
                     <div className="MusicPlayer_content">
                         <img src={currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].preview : null} className="MusicPlayer_thumb" />
@@ -61,7 +67,10 @@ console.log(this.props.timerRange.AudioDuration)
                                 <DurationTime />
                                 <div className="volume_controllor">
                                     <img src={Volume} alt="" className="Volume" onClick={() => Mute()} />
-                                    <span className="Volume_bar"></span>
+                                    <div id="VolumeRange">
+                                        <input id="VolumeRange" ref={this.volumeSlider} value ="100" type="range" min="0" max="100" onChange={() => setVolume(this.volumeSlider.current.value)} />
+
+                                    </div>
                                 </div>
                                 <img src={Favorite} className="favorite_Musictrl" />
                             </div>

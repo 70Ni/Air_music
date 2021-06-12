@@ -140,7 +140,11 @@ const Mute = () => {
         audio.muted = true;
     }
 }
+function setVolume(volumeValue) {
+    audio.volume = volumeValue / 100;
+    document.documentElement.style.setProperty('--volume', volumeValue);
 
+}
 
 
 
@@ -153,7 +157,7 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange
+    seektimeupdate, Mute, onChange, setVolume
 }
 
 
