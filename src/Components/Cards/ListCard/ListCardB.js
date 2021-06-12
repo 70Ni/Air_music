@@ -1,24 +1,16 @@
 import React, { Component, createRef } from 'react';
-import ArtistList from '../../../Container/ArtistMap';
-import discover from '../../../Images/asia.jpg';
-import Pause from '../../../Images/Icons/pause.svg';
+import { connect } from 'react-redux';
+import setCurrentMusics from '../../../Redux/Actions/musicPlayer.action'
+import { IndexFinder, MusicGroupSet } from '../../../Container/FUNCTIONS'
+
 import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
-import { Music } from '../../../Json/Music'
-import { IndexFinder, MusicGroupSet, prevSong, NextSong, seektimeupdate } from '../../../Container/FUNCTIONS'
-import MusicPlayer from '../../MusicPlayer/MusicPlayer';
-import './ListCard.css'
-import setCurrentMusics from '../../../Redux/Actions/musicPlayer.action'
-import store from '../../../Redux/store';
 
 import '../../MusicPlayer/Slider.scss'
-import { connect } from 'react-redux';
+import './ListCard.css'
 
 
 let Newarray = []
-
-
-
 
 
 // let a = document.getElementById("imag")
@@ -201,7 +193,7 @@ class ListCardB extends Component {
 
 
         // console.log(this.inputEl.current)
-        const { id, name, preview, artist_image, views, likes, duration } = this.props
+        const { id, name, preview, views, duration } = this.props
 
         return (
 
@@ -233,7 +225,7 @@ class ListCardB extends Component {
                         {/* <div className="List_status">Now Listening...</div> */}
 
                         <img src={Play} alt="" className="controller" />
-                        <img src={Favorite} alt="" className="List_save" onClick={() => NextSong()} />
+                        <img src={Favorite} alt="" className="List_save"/>
                     </div>
                 </div>
             </>

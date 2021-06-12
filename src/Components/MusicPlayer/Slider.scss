@@ -40,6 +40,13 @@ $filll-c: #F27E4C;
 	border-radius: 50%;
 	background: #f90;
 }
+@mixin thumb() {
+	box-sizing: border-box;
+	border: none;
+	width: $thumb-d; height: $thumb-d;
+	border-radius: 50%;
+	background: #f90;
+}
 	
 
 #MusicSlider [type='range'] {
@@ -122,4 +129,11 @@ $filll-c: #F27E4C;
 	}
 	
 	&::-ms-tooltip { display: none }
+}
+#MusicSlider,#VolumeRange {
+	display: flex;
+	align-items: center;
+	margin: 0px 16px;
+	cursor: pointer;
+	width: 80px;
 }

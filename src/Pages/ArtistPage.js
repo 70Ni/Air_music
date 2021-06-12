@@ -1,11 +1,9 @@
 import React from 'react';
 
-import ListCard from '../Components/Cards/ListCard/ListCard';
 import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard'
-import Profile_Icon from '../Components/Profile_Icon/ProfileIcon'
 
 import './ArtistPage.css';
-import ArtistList from '../Container/ArtistMap';
+import ProfileList from '../Container/ProfileList';
 import ArtisPagList from '../Container/ArtisPagList';
 
 function DiscoverPage() {
@@ -13,7 +11,7 @@ function DiscoverPage() {
         <div className="Artist_page_wrapper" style={{ 'maxWidth': '1440px', }}>
             <div className="SUBheader">Artists</div>
             <div className="Profile_Icons">
-                <ArtistList />
+                <ProfileList />
             </div>
             <div className="SUBheader">Artist</div>
             <div className="Artist_Header">Billie Ellish</div>

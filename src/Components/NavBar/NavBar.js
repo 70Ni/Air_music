@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link, BrowserRouter as Router } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
-import user from '../../Images/Icons/user.svg';
+import user from '../../Images/Icons/userIcon.svg';
 import headphones from '../../Images/Icons/headphones.svg';
 import info from '../../Images/Icons/info.svg';
 import list from '../../Images/Icons/list.svg';
 import trending from '../../Images/Icons/trending.svg';
 import search from '../../Images/Icons/search.svg';
-import search2 from '../../Images/Icons/search2.svg';
-import menu from '../../Images/Icons/menu.svg';
+
 
 import './NavBar.css'
 
@@ -27,33 +26,33 @@ function NavBar() {
                         <div className="nav_subHeader">New feeds</div>
                         <Link to="/discover">
                             <div className="NavItem_container active">
-                                <img className="Nav_icon" src={search} />
+                                <img alt="" className="Nav_icon" src={search} />
                                 <div className="Nav_item">Discover</div>
                             </div>
                         </Link>
                         <Link to="/trending">
                             <div className="NavItem_container">
-                                <img className="Nav_icon" src={trending} />
+                                <img alt="" className="Nav_icon" src={trending} />
                                 <div className="Nav_item">Trending</div>
                             </div>
                         </Link>
                         <Link to="/artists">
                             <div className="NavItem_container">
-                                <img className="Nav_icon" src={user} />
+                                <img alt="" className="Nav_icon" src={user} />
                                 <div className="Nav_item">Artists</div>
                             </div>
                         </Link>
                         <div className="nav_subHeader">Saved items</div>
                         <Link to="/playlist">
                             <div className="NavItem_container">
-                                <img className="Nav_icon" src={headphones} />
+                                <img alt="" className="Nav_icon" src={headphones} />
                                 <div className="Nav_item">Playlist</div>
                                 <span className="PlayList_notifier"></span>
                             </div>
                         </Link>
                         <Link to="/recent">
                             <div className="NavItem_container">
-                                <img className="Nav_icon" src={list} />
+                                <img alt="" className="Nav_icon" src={list} />
                                 <div className="Nav_item">Recent</div>
                             </div>
                         </Link>
@@ -61,7 +60,7 @@ function NavBar() {
                     <div className="NavList_B">
                         <Link to="/about">
                             <div className="NavItem_container">
-                                <img className="Nav_icon" src={info} />
+                                <img alt="" className="Nav_icon" src={info} />
                                 <div className="Nav_item">About</div>
                             </div>
                         </Link>

@@ -4,16 +4,11 @@ import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ';
 import DiscoverCardA from '../Components/Cards/DiscoverCard/DiscoverCardA';
 import DiscoverCardB from '../Components/Cards/DiscoverCard/DiscoverCardB';
 import DiscoverCardC from '../Components/Cards/DiscoverCard/DiscoverCardC';
-import Profile_Icon from '../Components/Profile_Icon/ProfileIcon'
 import SqureCard from '../Components/Cards/SqureCard/SqureCard';
-import ListCardB from '../Components/Cards/ListCard/ListCardB';
-import Play from '../Images/Icons/Play_fill.svg';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
 import './DiscoverPage.css'
-import HorNavBar from '../Components/NavBar/HorizontalNav/HorNavBar';
-import ArtistList from '../Container/ArtistMap';
+import ProfileList from '../Container/ProfileList';
 import DisRelSongsList from '../Container/DisPageRelList';
-import MusicPlayer from '../Components/MusicPlayer/MusicPlayer';
 
 function DiscoverPage() {
     return (
@@ -22,7 +17,7 @@ function DiscoverPage() {
             <DiscoverCardZ />
             <div className="SUBheader">Artists</div>
             <div className="Profile_Icons">
-                <ArtistList />
+                <ProfileList />
             </div>
             <div className="SUBheader">For you</div>
             <div className="DisCoverCards_cover">

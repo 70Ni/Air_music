@@ -12,23 +12,22 @@ let ShuffledArray = shuffle(Music);
 
 const ArtisPagList = () => {
     const array = useMemo(() => ShuffledArray.filter(art => art.Artist === 'Marshmello').slice(0,8), []);
-    console.log(array)
     return (
         <div>
             {
-                array.map((user, i) => {
+                array.map((song, i) => {
                     return (
                         <ListCardB
                             MusicsLoaded = {array}
                             key={i}
-                            id={user.id}
-                            preview={user.Preview.default}
-                            name={user.name}
-                            artist={user.Artist}
-                            artist_image={user.Artist_image}
-                            views={numFormatter(user.Views)}
-                            likes={numFormatter(user.Likes)}
-                            duration={user.duration}
+                            id={song.id}
+                            preview={song.Preview.default}
+                            name={song.name}
+                            artist={song.Artist}
+                            artist_image={song.Artist_image}
+                            views={numFormatter(song.Views)}
+                            likes={numFormatter(song.Likes)}
+                            duration={song.duration}
                         />
                     )
                 })

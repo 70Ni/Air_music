@@ -26,11 +26,11 @@ function SongDetails() {
                 <div className="Curr_SongDet_Para_wrapper">
 
                     <div className="Curr_songDet_Para">Billie Eilish Pirate Baird O'Connell (/ˈaɪlɪʃ/ EYE-lish;[1] born December 18, 2001) is an American singer and songwriter. She first gained attention in 2015 when she uploaded the song "Ocean Eyes" to SoundCloud, which was subsequently released by the Interscope Records subsidiary Darkroom. The song was written and produced by her brother Finneas O'Connell, with whom she collaborates on music and live shows. Her debut EP, Don't Smile at Me (2017), became a sleeper hit, reaching the top 15 in the US, UK, Canada, and Australia.            </div>
-                    <img src={Intro} className="Curr_songDet_Para_Bg" />
+                    <img src={Intro} className="Curr_songDet_Para_Bg" alt=""/>
                 </div>
                 <div className="Curr_songDet_Play_wrpper">
                     <span className="Cur_songDet_play">Playing</span>
-                    <img src={Play} className="Cur_songDet_Icon" />
+                    <img src={Play} className="Cur_songDet_Icon" alt=""/>
                 </div>
             </div>
         </div>

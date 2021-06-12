@@ -1,6 +1,4 @@
 import React from 'react';
-import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard';
-import ListCard from '../Components/Cards/ListCard/ListCard';
 import ListCardB from '../Components/Cards/ListCard/ListCardB';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
 

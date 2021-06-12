@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, BrowserRouter as Router } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
-import user from '../../../Images/Icons/user.svg';
+import user from '../../../Images/Icons/userIcon.svg';
 import headphones from '../../../Images/Icons/headphones.svg';
 import info from '../../../Images/Icons/info.svg';
 import list from '../../../Images/Icons/list.svg';
@@ -20,32 +20,32 @@ function HorNavBar() {
                 <div className="NavList_wrapperHor">
                     <Link to="/discover">
                         <div className="NavItem_containerHor active">
-                            <img className="Nav_icon" src={search} />
+                            <img alt ="" className="Nav_icon" src={search} />
                             <div className="Nav_item">Discover</div>
                         </div>
                     </Link>
                     <Link to="/trending">
                         <div className="NavItem_containerHor">
-                            <img className="Nav_icon" src={trending} />
+                            <img alt ="" className="Nav_icon" src={trending} />
                             <div className="Nav_item">Trending</div>
                         </div>
                     </Link>
                     <Link to="/artists">
                         <div className="NavItem_containerHor">
-                            <img className="Nav_icon" src={user} />
+                            <img alt ="" className="Nav_icon" src={user} />
                             <div className="Nav_item">Artists</div>
                         </div>
                     </Link>
                     <div className="NavItem_containerHor">
-                        <img className="Nav_icon" src={headphones} />
+                        <img alt ="" className="Nav_icon" src={headphones} />
                         <div className="Nav_item">Playlist</div>
                     </div>
                     <div className="NavItem_containerHor">
-                        <img className="Nav_icon" src={list} />
+                        <img alt ="" className="Nav_icon" src={list} />
                         <div className="Nav_item">Recent</div>
                     </div>
                     <div className="NavItem_containerHor">
-                        <img className="Nav_icon" src={info} />
+                        <img alt ="" className="Nav_icon" src={info} />
                         <div className="Nav_item">About</div>
                     </div>
                 </div>

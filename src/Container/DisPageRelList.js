@@ -15,19 +15,19 @@ const DisRelSongsList = () => {
     return (
         <div>
             {
-                array.map((user, i) => {
+                array.map((song, i) => {
                     return (
                         <ListCardB
                             key={i}
-                            id={user.id}
-                            preview={user.Preview.default}
-                            name={user.name}
-                            artist={user.Artist}
-                            artist_image={user.Artist_image}
-                            views={numFormatter(user.Views)}
-                            likes={numFormatter(user.Likes)}
-                            duration={user.duration}
-                            URL ={user.URL}
+                            id={song.id}
+                            preview={song.Preview.default}
+                            name={song.name}
+                            artist={song.Artist}
+                            artist_image={song.Artist_image}
+                            views={numFormatter(song.Views)}
+                            likes={numFormatter(song.Likes)}
+                            duration={song.duration}
+                            URL ={song.URL}
                         />
                     )
                 })

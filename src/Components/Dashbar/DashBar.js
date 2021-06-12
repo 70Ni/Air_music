@@ -28,15 +28,15 @@ class DashBar extends Component {
                 <div className="DashBar_content">
                     <div className="Browser_wrapper">
                         <input type="text" id="searchField" name="Search" placeholder="Browse" onChange={this.searchChange} />
-                        <img className="Browser_icon" src={search} />
+                        <img className="Browser_icon" src={search} alt="" />
                     </div>
                     <div className="DashIcon_wrapper">
                         <div className="user_icon_wrapper">
-                            <img src={User} />
+                            <img src={User} alt=""/>
                         </div>
                         <div className="bell_icon_wrapper">
-                            <sapn className="notifier"></sapn>
-                            <img src={bell} />
+                            <span className="notifier"></span>
+                            <img src={bell} alt=""/>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,8 @@
 import React from 'react';
 import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard';
-import ListCardB from '../Components/Cards/ListCard/ListCardB';
 import PlayListCard from '../Components/Cards/PlayListCard/PlayListCard';
 import ResultCard from '../Components/Cards/ResultCard/ResultCard';
 import SongDetails from '../Components/SongDetails/SongDetail';
-import ArtistList from '../Container/ArtistMap';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
 
 import './PlayListPage.css';

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import imgs from '../../../Images/intro.png'
 
 import './HeaderCore.css'
 
