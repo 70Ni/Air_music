@@ -51,6 +51,7 @@
     position: absolute;
     right: 36px;
     top: 36px;
+    width: 18px;
 }
 .DiscoverDetails_wrapper {
     display: flex;

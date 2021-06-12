@@ -55,6 +55,7 @@
 }
 .favorite_S {
     position: absolute;
+    width: 18px;
     top: 16px;
     right: 16px;
 }

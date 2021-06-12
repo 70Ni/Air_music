@@ -43,14 +43,7 @@ class ListCardB extends Component {
         super(props);
         this.inputEl = createRef();
 
-        this.state = {
-            MusicGroup: "",
-            IndexOfMusic: "",
-            ClickedMusic: "",
-            prevMusic: "NotSet",
-            value: 0,
-            newsec: 1,
-        }
+
 
         // const a = this.state.MusicGroup;
         // if (this.state.MusicGroup) {
@@ -135,23 +128,10 @@ class ListCardB extends Component {
 
     componentDidUpdate() {
         if (this.props.currentState) {
-
             MusicGroupSet()
         }
     }
 
-
-
-
-
-
-
-
-
-
-    componentWillUnmount() {
-        clearInterval(intervalID)
-    }
 
 
     // componentDidUpdate(prevProp, preState) {
@@ -177,8 +157,9 @@ class ListCardB extends Component {
 
 
 
-
+    
     render() {
+  
 
 
         // setInterval(() => {
@@ -224,7 +205,6 @@ class ListCardB extends Component {
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
-                        <img src={Play} alt="" className="controller" />
                         <img src={Favorite} alt="" className="List_save"/>
                     </div>
                 </div>

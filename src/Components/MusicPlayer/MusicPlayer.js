@@ -27,7 +27,7 @@ class MusicPlayer extends Component {
 
     render() {
         let { currentState } = this.props;
-     
+
         document.documentElement.style.setProperty('--base', this.props.timerRange.currentTime);
         document.documentElement.style.setProperty('--max', this.props.timerRange.AudioDuration);
 
@@ -44,7 +44,7 @@ class MusicPlayer extends Component {
                 </div>
                 <div className="MusicPlayer_wrapper">
                     <div className="MusicPlayer_content">
-                        <img src={currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].preview : null} className="MusicPlayer_thumb" alt=""/>
+                        <img src={currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].preview : null} className="MusicPlayer_thumb" alt="" />
                         <div className="PlayerDetails_wrapper">
                             <div className="Music_artist_wrapper">
                                 <div className="MusicName_B">{currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].name : null}</div>
@@ -62,11 +62,11 @@ class MusicPlayer extends Component {
                                 <div className="volume_controllor">
                                     <img src={Volume} alt="" className="Volume" onClick={() => Mute()} />
                                     <div id="VolumeRange">
-                                        <input id="range2" ref={this.volumeSlider} value ="100" type="range" min="0" max="100" onChange={() => setVolume(this.volumeSlider.current.value)} />
+                                        <input id="range2" ref={this.volumeSlider} value="100" type="range" min="0" max="100" onChange={() => setVolume(this.volumeSlider.current.value)} />
 
                                     </div>
                                 </div>
-                                <img src={Favorite} className="favorite_Musictrl" alt=""/>
+                                <img src={Favorite} className="favorite_Musictrl" alt="" />
                             </div>
                         </div>
                     </div>

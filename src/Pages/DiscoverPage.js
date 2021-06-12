@@ -9,10 +9,11 @@ import AutoPlay from '../Images/Icons/autoPlay.svg'
 import './DiscoverPage.css'
 import ProfileList from '../Container/ProfileList';
 import DisRelSongsList from '../Container/DisPageRelList';
+import Intro from '../Music files/Justin Bieber/thumbnail/Lifetime.jpg'
 
 function DiscoverPage() {
     return (
-        <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px' }}>
+        <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px',paddingBottom:'77px' }}>
             <div className="SUBheader_H">Disover</div>
             <DiscoverCardZ />
             <div className="SUBheader">Artists</div>
@@ -28,6 +29,7 @@ function DiscoverPage() {
 
 
             <div className="DisPag_DiscList_squreCard_wrapper">
+
                 <div className="disPag_ListWrapper" style={{ width: '100%' }}>
                     <div className="SUBheader">Related songs</div>
                     <div className="Artists_Paragraph">
@@ -44,6 +46,7 @@ function DiscoverPage() {
                     </div>
                 </div>
                 <div className="DisPag_Squrewrapper">
+                
                     <div className="SUBheader">Premium songs</div>
                     <div className="SqureCa_wrapper">
                         <SqureCard />

@@ -1,7 +1,7 @@
 
 function importAll(r) {
     let stored = {};
-    r.keys().map((item) => {return stored[item.replace('./', '')] = r(item); });
+    r.keys().map((item) => { stored[item.replace('./', '')] = r(item); });
     return stored;
 }
 

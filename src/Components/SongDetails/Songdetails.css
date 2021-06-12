@@ -72,7 +72,8 @@
     justify-content: center;
 }
 .Curr_songDet_Para_Bg {
-
+    width: 100%;
+    height: auto;
     position: absolute;
     z-index: -3;
     opacity: 0.5;

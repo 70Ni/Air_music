@@ -40,13 +40,10 @@ let audio = new Audio();
 
 
 const MusicGroupSet = () => {
-
     let index = store.getState().player.IndexOfMusic
     audio.src = store.getState().player.MusicGroup[index].URL.default;
     audio.load();
     audio.play();
-    console.log(audio.load)
-
     audio.onended = (event) => {
         console.log(event)
     }
@@ -60,11 +57,13 @@ const PlayPause = () => {
         audio.pause();
     }
 }
+let RecentMusics = [];
+console.log(RecentMusics)
 
 function IndexFinder(id, localArray) {
     let prevMusic = store.getState().player.prevMusic
-
     if (prevMusic !== id) {
+        RecentMusics.push(id)
         let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
         return store.dispatch({
             type: 'SET_MUSIC_PLAYER',
@@ -157,7 +156,7 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume
+    seektimeupdate, Mute, onChange, setVolume, RecentMusics
 }
 
 

@@ -6,7 +6,7 @@
 }
 #range1 {
     position: absolute;
-    bottom: 75px;
+    bottom: 77px;
     left: 0;
     z-index: 80;
 }
@@ -40,25 +40,13 @@
     display: flex;
     align-items: center;
 }
-.ControlDuration_length {
-    height: 2px;
-    position: absolute;
-    background-color: #F27E4C;
-    width: 500px;
-    top: 0px;
-    left: 0px;
-}
+
 .volume_controllor {
     display: flex;
     align-items: center;
     padding: 0px 32px;
 }
-.Volume_bar {
-    height: 4px;
-    width: 50px;
-    background-color: #F27E4C;
-    margin: 16px;
-}
+
 .PlayerControllor_wrapper {
     flex-grow: 1;
 }

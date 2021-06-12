@@ -29,7 +29,7 @@ function App() {
           <div className="Nav_side">
             <NavBar />
           </div>
-          <div className="Page_side" style={{ flexGrow:1, overflowY: 'scroll', height: windowHeight,scrollBehavior:'smooth' }}>
+          <div className="Page_side" style={{ flexGrow: 1, overflowY: 'scroll', height: windowHeight, scrollBehavior: 'smooth' }}>
             <DashBar />
             <HeaderCore />
             <Switch>
@@ -43,7 +43,7 @@ function App() {
             </Switch>
           </div>
         </div>
-<MusicPlayer />
+          <MusicPlayer />
       </div>
     </Router>
   );
