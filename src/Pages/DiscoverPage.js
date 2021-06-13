@@ -39,7 +39,6 @@ function DiscoverPage() {
                         <DisRelSongsList />
                     </div>
                     <div className="disPag_listButton">
-                    <DiscoverCardZ />
                         <div className="AutoPlayButton">
                             <div className="Play_D">Auto Play</div>
                             <img className="ButtonImg" src={AutoPlay} alt="" />
