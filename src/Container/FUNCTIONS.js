@@ -58,7 +58,6 @@ const PlayPause = () => {
     }
 }
 let RecentMusics = [];
-console.log(RecentMusics)
 
 function IndexFinder(id, localArray) {
     let prevMusic = store.getState().player.prevMusic
@@ -90,8 +89,6 @@ const prevSong = () => {
 const NextSong = () => {
     let MusicGroup = store.getState().player.MusicGroup;
     let index = store.getState().player.IndexOfMusic;
-    console.log(MusicGroup.length)
-    console.log(index)
     if (index + 2 <= MusicGroup.length) {
         let NextPlayIndex = index + 1;
         let NextPlayId = MusicGroup[NextPlayIndex].id;

@@ -7,13 +7,14 @@ import { Music } from '../../Json/Music';
 
 
 
-let ShuffledArra= shuffle(Music);
+let ShuffledArray= shuffle(Music);
 
 let ca = 11;
 const PremiumSongs = () => {
-    const array1 = useMemo(() => ShuffledArra.slice(0, 6), []);
+    console.log("Hello")
+    const array1 = useMemo(() => ShuffledArray.slice(5, ca), []);
     return (
-            <div className="SqureCa_wrapper">
+        <div className="SqureCa_wrapper">
                 {
                     array1.map((song, i) => {
                         return (

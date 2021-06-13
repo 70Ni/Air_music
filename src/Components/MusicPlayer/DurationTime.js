@@ -8,7 +8,6 @@ import './MusicPlayer.css'
 
 let intervalID = undefined;
 
-console.log(intervalID)
 
 class DurationTime extends Component {
     constructor(props) {
