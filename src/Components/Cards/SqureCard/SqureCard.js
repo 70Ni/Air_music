@@ -9,7 +9,7 @@ import Play from '../../../Images/Icons/Play_fill.svg'
 
 import './SqureCard.css'
 
-function SqureCard() {
+function SqureCard({ id, name, preview, views, artist }) {
     return (
         <div className="Squre_wrapper">
             <div className="Squre_content">
@@ -18,11 +18,11 @@ function SqureCard() {
                     <div className="Squre_play_wrapper">
                         <img src={Play} className="Squre_play" alt="" />
                     </div>
-                    <img src={Image} className="Squre_Image" alt="" />
+                    <img src={preview} className="Squre_Image" alt="" />
                 </div>
                 <div className="Squre_Details_section">
-                    <div className="ArtistName_B">Marshmellow</div>
-                    <div className="MusicName_S">Some Music</div>
+                    <div className="ArtistName_B">{artist}</div>
+                    <div className="MusicName_S">{name}</div>
                 </div>
             </div>
         </div>

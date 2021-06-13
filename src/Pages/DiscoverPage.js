@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ';
 import DiscoverCardA from '../Components/Cards/DiscoverCard/DiscoverCardA';
 import DiscoverCardB from '../Components/Cards/DiscoverCard/DiscoverCardB';
 import DiscoverCardC from '../Components/Cards/DiscoverCard/DiscoverCardC';
 import SqureCard from '../Components/Cards/SqureCard/SqureCard';
-import AutoPlay from '../Images/Icons/autoPlay.svg'
+import AutoPlay from '../Images/Icons/autoPlay.svg';
+import { shuffle } from '../Container/FUNCTIONS';
+import PremiumSongs from '../Container/DiscoverPageLists/PremiumSongs';
 import './DiscoverPage.css'
 import ProfileList from '../Container/ProfileList';
-import DisRelSongsList from '../Container/DisPageRelList';
+import RelatedSongs from '../Container/DiscoverPageLists/RelatedSongs';
 import Intro from '../Music files/Justin Bieber/thumbnail/Lifetime.jpg'
 
+import { Music } from '../Json/Music';
+let ShuffledArray= shuffle(Music);
+
+
 function DiscoverPage() {
+    const array1 = useMemo(() => ShuffledArray.slice(5, 11), []);
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
             <div className="SUBheader_H">Disover</div>
@@ -36,7 +43,7 @@ function DiscoverPage() {
                         Billie Eilish Pirate Baird O'Connell is an American singer and songwriter. She first gained attention in 2015 when she uploaded the song "Ocean Eyes" to SoundCloud, which was subsequently released by the Interscope Records subsidiary Darkroom
                     </div>
                     <div className="ListCa_wrapper">
-                        <DisRelSongsList />
+                        <RelatedSongs />
                     </div>
                     <div className="disPag_listButton">
                         <div className="AutoPlayButton">
@@ -49,12 +56,22 @@ function DiscoverPage() {
 
                     <div className="SUBheader">Premium songs</div>
                     <div className="SqureCa_wrapper">
-                        <SqureCard />
-                        <SqureCard />
-                        <SqureCard />
-                        <SqureCard />
-                        <SqureCard />
-                        <SqureCard />
+                        {
+                            array1.map((song, i) => {
+                                return (
+                                    <SqureCard
+                                        key={i}
+                                        id={song.id}
+                                        preview={song.Preview.default}
+                                        name={song.name}
+                                        artist={song.Artist}
+                                        artist_image={song.Artist_image}
+                                        duration={song.duration}
+                                        URL={song.URL}
+                                    />
+                                )
+                            })
+                        }
                         <div className="Squre_mediaDis">
                             <SqureCard />
                             <SqureCard />

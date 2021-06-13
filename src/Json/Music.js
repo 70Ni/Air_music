@@ -701,7 +701,7 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Preview:Imagingz['Shawn Mendes/Thumbnail/Never Be Alone.jpg'],
         Views:'4875652',
         Likes:'90532',
-        duration:'',
+        duration:'3:35',
         URL:Musicz['Shawn Mendes/Shawn Mendes - Never Be Alone.mp3'],
     },
     {
