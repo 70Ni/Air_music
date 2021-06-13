@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard'
-
+import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ'
 import './ArtistPage.css';
 import ProfileList from '../Container/ProfileList';
 import ArtisPagList from '../Container/ArtisPagList';
@@ -21,12 +21,12 @@ function DiscoverPage() {
             <div className="ArtPag_listCard_ArtCard_wrapper">
             <div className="ArtPag_ListCar_wrapper" style={{ width: '100%' }} >
                     <ArtisPagList />
+
                 </div>
                 <div className="ArtPage_ArtCarWrapper">
                 
                     {/* <div className="SUBheader artpa_suHeder">Artists</div> */}
                     <div className="ArtPag_ArtisCardSub_wrappper">
-                    
                         <div className="ArtPag_ArtCar_wrapper">
                             <ArtistsCard />
                             <ArtistsCard />

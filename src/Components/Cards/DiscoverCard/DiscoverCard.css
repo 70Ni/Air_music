@@ -96,8 +96,8 @@
     position: absolute;
     width: 100%;
     height: inherit;
-    background-color: #12142F;
-    opacity: 0.6;
+    background-color: #110702;
+    opacity: 0.4;
     z-index: 1;
     border-radius: 20px;
 }

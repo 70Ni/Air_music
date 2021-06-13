@@ -46,7 +46,9 @@
     align-items: center;
     padding: 0px 32px;
 }
-
+.MusicName {
+    padding: 6px 0px;
+}
 .PlayerControllor_wrapper {
     flex-grow: 1;
 }
@@ -105,13 +107,7 @@
     }
 }
 
-@media only screen and (max-width: 452px) {
 
-    .Player_reverser {
-        flex-direction: row-reverse;
-    }
-
-}
 
 
 

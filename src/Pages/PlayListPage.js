@@ -44,7 +44,7 @@ function PlayListPage() {
                     <SongDetails />
                 </span>
                 <div className="SUBheader">Saved</div>
-                <div className="saveData_content">
+                <div className="searchData_content">
                     <PlayListCard />
                     <PlayListCard />
                     <PlayListCard />

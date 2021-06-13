@@ -47,7 +47,7 @@ class MusicPlayer extends Component {
                         <img src={currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].preview : null} className="MusicPlayer_thumb" alt="" />
                         <div className="PlayerDetails_wrapper">
                             <div className="Music_artist_wrapper">
-                                <div className="MusicName_B">{currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].name : null}</div>
+                                <div className="MusicName_B MusicName">{currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].name : null}</div>
                                 <div className="ArtistName_B">{currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].artist : null}</div>
                             </div>
                         </div>
