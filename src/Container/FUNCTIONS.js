@@ -44,8 +44,10 @@ const MusicGroupSet = () => {
     audio.src = store.getState().player.MusicGroup[index].URL.default;
     audio.load();
     audio.play();
-    audio.onended = (event) => {
-        console.log(event)
+    audio.onended = () => {
+        if (store.getState().autoPlay.isAutoPlay && store.getState().autoPlay.PageId) {
+            NextSong()
+        }
     }
 }
 
@@ -59,6 +61,13 @@ const PlayPause = () => {
 }
 let RecentMusics = [];
 
+const AutoPlay = (PageId) => {
+    return store.dispatch({
+        type: 'SET_AUTO_PLAY',
+        payload: PageId
+    })
+}
+
 function IndexFinder(id, localArray) {
     let prevMusic = store.getState().player.prevMusic
     if (prevMusic !== id) {
@@ -70,7 +79,7 @@ function IndexFinder(id, localArray) {
                 ClickedMusic: id,
                 IndexOfMusic: r,
                 MusicGroup: localArray,
-                prevMusic: id
+                prevMusic: id,
             }
         })
     } PlayPause()
@@ -89,7 +98,7 @@ const prevSong = () => {
 const NextSong = () => {
     let MusicGroup = store.getState().player.MusicGroup;
     let index = store.getState().player.IndexOfMusic;
-    if (index + 2 <= MusicGroup.length) {
+    if (index + 1 <= MusicGroup.length) {
         let NextPlayIndex = index + 1;
         let NextPlayId = MusicGroup[NextPlayIndex].id;
         IndexFinder(NextPlayId, store.getState().player.MusicGroup)
@@ -134,12 +143,16 @@ const Mute = () => {
         audio.muted = false;
     } else {
         audio.muted = true;
+        // document.getElementById
     }
 }
+
 function setVolume(volumeValue) {
     audio.volume = volumeValue / 100;
+    if (audio.volume == 0) {
+        audio.muted = true
+    }
     document.documentElement.style.setProperty('--volume', volumeValue);
-
 }
 
 
@@ -153,7 +166,7 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, RecentMusics
+    seektimeupdate, Mute, onChange, setVolume, RecentMusics, AutoPlay
 }
 
 

@@ -1,6 +1,5 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import setCurrentMusics from '../../../Redux/Actions/musicPlayer.action'
 import { IndexFinder, MusicGroupSet } from '../../../Container/FUNCTIONS'
 
 import Play from '../../../Images/Icons/Play_fill.svg';
@@ -11,8 +10,7 @@ import './ListCard.css'
 
 
 let Newarray = []
-
-
+console.log(Newarray)
 // let a = document.getElementById("imag")
 // a.addEventListener('click',()=>{
 //     a.innerHTML = "Hello World"
@@ -41,7 +39,6 @@ let intervalID = undefined;
 class ListCardB extends Component {
     constructor(props) {
         super(props);
-        this.inputEl = createRef();
 
 
 
@@ -110,20 +107,6 @@ class ListCardB extends Component {
     componentDidMount() {
         Newarray.push(this.props);
 
-        // setInterval(() => {
-        //     this.setState({
-        //         curmins:curmins,
-        //         cursecs:cursecs
-        //     })
-        // }, 1000);
-
-
-        // intervalID = setInterval(() => {
-        //      seektimeupdate()
-        //      console.log(store.getState())
-
-        // }, 1000);
-
     }
 
     componentDidUpdate() {
@@ -157,10 +140,8 @@ class ListCardB extends Component {
 
 
 
-    
-    render() {
-  
 
+    render() {
 
         // setInterval(() => {
 
@@ -186,13 +167,10 @@ class ListCardB extends Component {
                  */}
 
 
-
-
-
-                <div className="List_card_wrapper ListCard_B" key={id} onClick={() => IndexFinder(this.props.id, Newarray)}>
+                <div className="List_card_wrapper ListCard_B" key={id} onClick={() => IndexFinder(id, Newarray)}>
                     <div className="List_card_content" >
                         <div className="List_Images">
-                            <img src={preview} id="imag" alt="" className="List_Image"/>
+                            <img src={preview} id="imag" alt="" className="List_Image" />
                         </div>
                         <div className="List_Name_wrapper">
                             <div className="MusicName_B ListCard_B" >{name}</div>
@@ -205,7 +183,7 @@ class ListCardB extends Component {
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
-                        <img src={Favorite} alt="" className="List_save"/>
+                        <img src={Favorite} alt="" className="List_save" />
                     </div>
                 </div>
             </>
@@ -213,11 +191,8 @@ class ListCardB extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
-})
 const mapStateToProps = state => ({
     currentState: state.player,
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListCardB);
+export default connect(mapStateToProps, null)(ListCardB);

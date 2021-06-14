@@ -31,10 +31,6 @@ class MusicPlayer extends Component {
         document.documentElement.style.setProperty('--base', this.props.timerRange.currentTime);
         document.documentElement.style.setProperty('--max', this.props.timerRange.AudioDuration);
 
-
-
-
-
         return (
 
             <div className="MusicPlayer_Wrappper">

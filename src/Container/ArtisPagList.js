@@ -9,7 +9,6 @@ import { Music } from '../Json/Music';
 
 let ShuffledArray = shuffle(Music);
 
-
 const ArtisPagList = () => {
     const array = useMemo(() => ShuffledArray.filter(art => art.Artist === 'Marshmello').slice(0,8), []);
     return (
@@ -18,7 +17,6 @@ const ArtisPagList = () => {
                 array.map((song, i) => {
                     return (
                         <ListCardB
-                            MusicsLoaded = {array}
                             key={i}
                             id={song.id}
                             preview={song.Preview.default}
