@@ -1,5 +1,4 @@
 // import Musi from '../Music files/Marshmellow/Alone.mp3'
-
 import { connect } from 'react-redux';
 import store from '../Redux/store';
 import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
@@ -56,8 +55,11 @@ const PlayPause = () => {
     } else {
         audio.pause();
     }
-    this.setState({
-        counter:"Hello"
+
+}
+const NextMusic = () => {
+    return store.dispatch({
+        type: 'SET_NEXT_MUSIC'
     })
 }
 
@@ -81,6 +83,7 @@ function IndexFinder(id, localArray) {
                 prevMusic: id,
             }
         })
+        
     } PlayPause()
 
 }
@@ -93,12 +96,6 @@ const prevSong = () => {
         IndexFinder(PrevPlayId, MusicGroup)
         
     }
-}
-const NextMusic = () => {
-    return store.dispatch({
-        type: 'SET_NEXT_MUSIC'
-    })
-
 }
 
 const NextSong = () => {
@@ -149,7 +146,6 @@ const Mute = () => {
         audio.muted = false;
     } else {
         audio.muted = true;
-        // document.getElementById
     }
 }
 
@@ -165,7 +161,7 @@ function setVolume(volumeValue) {
 
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, AutoPlay, NextMusic
+    seektimeupdate, Mute, onChange, setVolume, AutoPlay, NextMusic, audio
 }
 
 

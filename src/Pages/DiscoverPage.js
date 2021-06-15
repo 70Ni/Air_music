@@ -23,11 +23,12 @@ class DiscoverPage extends Component {
         this.state = {}
     }
     componentDidUpdate() {
-        if (this.props.currentState) {
+        if (this.props.currentState.CurrentGroup.ClickedMusic) {
             MusicGroupSet()
         }
     }
     render() {
+        const {autoPlay} = this.props
         return (
             <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
                 <div className="SUBheader_H">Disover</div>
@@ -53,7 +54,7 @@ class DiscoverPage extends Component {
                             <RelatedSongs />
                         </div>
                         <div className="disPag_listButton">
-                            <div className="AutoPlayButton" onClick={() => AutoPlay()}>
+                            <div className="AutoPlayButton" onClick={() => AutoPlay()} style={autoPlay.isAutoPlay ? {backgroundColor:'#F27E4C',color:'white'}:null}>
                                 <div className="Play_D">Auto Play</div>
                                 <img className="ButtonImg" src={AutoPlayIcon} alt=""  />
                             </div>
@@ -86,6 +87,7 @@ class DiscoverPage extends Component {
 
 const mapStateToProps = state => ({
     currentState: state.player,
+    autoPlay: state.autoPlay
 })
 
 export default connect(mapStateToProps, null)(DiscoverPage);
