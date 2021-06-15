@@ -22,8 +22,6 @@ const PremiumSongs = () => {
                 array1.map((song, i) => {
                     return (
                         <SqureCard
-                            MusicsLoaded={array1}
-
                             key={i}
                             id={song.id}
                             preview={song.Preview.default}

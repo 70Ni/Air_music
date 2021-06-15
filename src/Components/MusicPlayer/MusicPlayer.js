@@ -26,7 +26,7 @@ class MusicPlayer extends Component {
 
 
     render() {
-        let { currentState } = this.props;
+        let { currentMusic } = this.props;
 
         document.documentElement.style.setProperty('--base', this.props.timerRange.currentTime);
         document.documentElement.style.setProperty('--max', this.props.timerRange.AudioDuration);
@@ -40,11 +40,11 @@ class MusicPlayer extends Component {
                 </div>
                 <div className="MusicPlayer_wrapper">
                     <div className="MusicPlayer_content">
-                        <img src={currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].preview : null} className="MusicPlayer_thumb" alt="" />
+                        <img src={currentMusic ? currentMusic.MusicGroup[currentMusic.IndexOfMusic].preview : null} className="MusicPlayer_thumb" alt="" />
                         <div className="PlayerDetails_wrapper">
                             <div className="Music_artist_wrapper">
-                                <div className="MusicName_B MusicName">{currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].name : null}</div>
-                                <div className="ArtistName_B">{currentState.MusicGroup ? currentState.MusicGroup[currentState.IndexOfMusic].artist : null}</div>
+                                <div className="MusicName_B MusicName">{currentMusic ? currentMusic.MusicGroup[currentMusic.IndexOfMusic].name : null}</div>
+                                <div className="ArtistName_B">{currentMusic ? currentMusic.MusicGroup[currentMusic.IndexOfMusic].artist : null}</div>
                             </div>
                         </div>
                         <div className="Player_reverser">
@@ -75,7 +75,7 @@ class MusicPlayer extends Component {
 
 
 const mapStateToProps = state => ({
-    currentState: state.player,
+    currentMusic: state.player.CurrentGroup,
     timerRange: state.timer
 })
 export default connect(mapStateToProps, null)(MusicPlayer);

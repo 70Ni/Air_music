@@ -39,8 +39,8 @@ let audio = new Audio();
 
 
 const MusicGroupSet = () => {
-    let index = store.getState().player.IndexOfMusic
-    audio.src = store.getState().player.MusicGroup[index].URL.default;
+    let index = store.getState().player.CurrentGroup.IndexOfMusic
+    audio.src = store.getState().player.CurrentGroup.MusicGroup[index].URL.default;
     audio.play();
     audio.onended = () => {
         if (store.getState().autoPlay.isAutoPlay) {
@@ -53,14 +53,15 @@ const MusicGroupSet = () => {
 const PlayPause = () => {
     if (audio.paused) {
         audio.play();
-        console.log("length",store.getState().player.MusicGroup.length)
-        console.log("play -",store.getState().player.IndexOfMusic)
+        console.log("length",store.getState().player.CurrentGroup.MusicGroup.length)
+        console.log("play -",store.getState().player.CurrentGroup.IndexOfMusic)
     } else {
         audio.pause();
     }
 }
-let RecentMusics = [];
 
+
+let RecentMusics = [];
 const AutoPlay = () => {
     return store.dispatch({
         type: 'SET_AUTO_PLAY',
@@ -68,6 +69,7 @@ const AutoPlay = () => {
 }
 
 function IndexFinder(id, localArray) {
+    console.log(RecentMusics)
     let prevMusic = store.getState().player.prevMusic
     if (prevMusic !== id) {
         RecentMusics.push(id)
@@ -85,8 +87,8 @@ function IndexFinder(id, localArray) {
 
 }
 const prevSong = () => {
-    let MusicGroup = store.getState().player.MusicGroup;
-    let index = store.getState().player.IndexOfMusic;
+    let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
+    let index = store.getState().player.CurrentGroup.IndexOfMusic;
     if (index > 0) {
         let PrevPlayIndex = index - 1;
         let PrevPlayId = MusicGroup[PrevPlayIndex].id;
@@ -102,12 +104,12 @@ const NextMusic = () => {
 }
 
 const NextSong = () => {
-    let MusicGroup = store.getState().player.MusicGroup;
-    let index = store.getState().player.IndexOfMusic;
+    let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
+    let index = store.getState().player.CurrentGroup.IndexOfMusic;
     if (index+1  < MusicGroup.length) {
         let NextPlayIndex = index + 1;
         let NextPlayId = MusicGroup[NextPlayIndex].id;
-        IndexFinder(NextPlayId, store.getState().player.MusicGroup)
+        IndexFinder(NextPlayId, MusicGroup)
     }
 }
 const seektimeupdate = () => {
@@ -163,14 +165,6 @@ function setVolume(volumeValue) {
 }
 
 
-
-const mapDispatchToProps = dispatch => ({
-    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
-})
-const mapStateToProps = state => ({
-    currentState: state.player
-})
-export default connect(mapStateToProps, mapDispatchToProps)
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
     seektimeupdate, Mute, onChange, setVolume, RecentMusics, AutoPlay, NextMusic

@@ -5,7 +5,7 @@ import Image from '../../../Music files/Justin Bieber/thumbnail/Changes.jpg'
 import Play from '../../../Images/Icons/Play_fill.svg'
 // import save from '../../../Images/Icons/save.svg';
 
-import { IndexFinder, MusicGroupSet } from '../../../Container/FUNCTIONS'
+import { IndexFinder } from '../../../Container/FUNCTIONS'
 
 import './SqureCard.css'
 

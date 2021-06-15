@@ -10,8 +10,6 @@ import setCurrentMusics from '../../Redux/Actions/musicPlayer.action'
 import './DashBar.css'
 import { connect } from 'react-redux';
 class DashBar extends Component {
-
-
     searchChange = (event) => {
         this.props.setCurrentMusic  ({
             search:event.target.value

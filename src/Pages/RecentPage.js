@@ -1,9 +1,9 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import ListCardB from '../Components/Cards/ListCard/ListCardB';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
-import RecentList from '../Container/RecentList';
 import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
 import { RecentMusics } from '../Container/FUNCTIONS'
+import RecentList from '../Container/RecentPage/RecentList';
 
 import './PlayListPage.css'
 import { connect } from 'react-redux';
@@ -12,9 +12,9 @@ class RecentPage extends Component {
     constructor(props) {
         super(props);
         this.state = {}
-      
+
     }
-    componentDidMount(){
+    componentDidMount() {
         console.log(RecentMusics)
     }
     render() {
@@ -25,18 +25,7 @@ class RecentPage extends Component {
 
                 </div>
                 <div className="TrenPag_LisCarWrapper">
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-                    <ListCardB />
-
+                    <RecentList />
                 </div>
                 <div className="disPag_listButton">
                     <div className="AutoPlayButton">
