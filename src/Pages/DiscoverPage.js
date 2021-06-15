@@ -22,8 +22,8 @@ class DiscoverPage extends Component {
         super(props);
         this.state = {}
     }
-    componentDidUpdate() {
-        if (this.props.currentState.CurrentGroup.ClickedMusic) {
+    componentDidUpdate(prevState) {
+        if (this.props.currentState.CurrentGroup !== prevState.currentState.CurrentGroup) {
             MusicGroupSet()
         }
     }

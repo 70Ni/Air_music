@@ -7,13 +7,16 @@ import { connect } from 'react-redux';
 
 
 
-const HistoryArray = []
-const searchedMusics = undefined;
-const c = HistoryArray.forEach(item=> 
-    searchedMusics = Music.filter(song=> song.id == item)
+let HistoryArray = [5, 8, 15, 56]
+let searchedMusics = undefined;
+let c = Music.map(item=> (
+     HistoryArray.map(song => song == item.id))
+
   );
 
-
+  let a = Music.map(song=> song.id == HistoryArray.map(x => x))
+let h = HistoryArray.map(x=>x)
+let m = Music.map(song=> song.id)
 
 
 class RecentList extends Component {
@@ -22,11 +25,11 @@ class RecentList extends Component {
         this.state = {}
     }
     componentDidMount(){
-        HistoryArray.push(this.props.currentState.MusicHistory)
+        // HistoryArray.push(this.props.currentState.MusicHistory)
     }
     render() {
-        console.log("History",HistoryArray)
-        console.log(c)
+        console.log(h)
+        console.log(m)
         return (
 
             <div className="TrenPag_LisCarWrapper" style={{color:'white'}}>

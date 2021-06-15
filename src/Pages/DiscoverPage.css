@@ -4,14 +4,15 @@
     margin: 36px 0px;
 }
 .AutoPlayButton {
+    cursor: pointer;
     display: flex;
     margin: 36px 0px;
     align-items: center;
     justify-content: center;
     display: flex;
-    border: 2px solid #F27E4C;
+    border: 3px solid #F27E4C;
     width: fit-content;
-    padding: 8px 32px;
+    padding: 6px 32px;
     border-radius: 20px;
     white-space: nowrap;
 }
