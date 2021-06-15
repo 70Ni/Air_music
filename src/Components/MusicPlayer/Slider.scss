@@ -1,6 +1,5 @@
 
 // credit to https://css-tricks.com/sliding-nightmare-understanding-range-input/#top-of-site
-//https://stackoverflow.com/questions/45226712/how-to-change-css-root-variable-in-react
 
 $track-w: 100%;
 $track-h: .2em;
@@ -11,7 +10,7 @@ $filll-c: #F27E4C;
 :root {
 	--base: 0;
 	--max:100;
-	--volume:20;
+	--volume:50;
 }
 
 

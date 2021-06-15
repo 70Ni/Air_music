@@ -10,19 +10,15 @@ import { IndexFinder, MusicGroupSet } from '../../../Container/FUNCTIONS'
 import './SqureCard.css'
 
 let Newarray = []
+
 class SqureCard extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
     }
     componentDidMount(){
         Newarray.push(this.props)
     }
-    componentDidUpdate() {
-        if (this.props.currentState) {
-            console.log(this.props.currentState)
-        }
-    }
+
     render() {
         const {id,name, preview, artist} = this.props
         return (

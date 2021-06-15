@@ -1,6 +1,5 @@
 const InitialState = {
     isAutoPlay: false,
-    PageId: undefined,
 }
 
 const autoPlayReducer = (state = InitialState, action) => {
@@ -9,7 +8,6 @@ const autoPlayReducer = (state = InitialState, action) => {
             return {
                 ...state,
                 isAutoPlay: !state.isAutoPlay,
-                PageId:action.payload,
             }
         default:
             return state;

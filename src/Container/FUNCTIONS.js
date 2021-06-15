@@ -5,7 +5,6 @@ import store from '../Redux/store';
 import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
 
 
-
 const shuffle = (arra1) => {
     var ctr = arra1.length, temp, index;
 
@@ -42,10 +41,9 @@ let audio = new Audio();
 const MusicGroupSet = () => {
     let index = store.getState().player.IndexOfMusic
     audio.src = store.getState().player.MusicGroup[index].URL.default;
-    audio.load();
     audio.play();
     audio.onended = () => {
-        if (store.getState().autoPlay.isAutoPlay && store.getState().autoPlay.PageId) {
+        if (store.getState().autoPlay.isAutoPlay) {
             NextSong()
         }
     }
@@ -55,16 +53,17 @@ const MusicGroupSet = () => {
 const PlayPause = () => {
     if (audio.paused) {
         audio.play();
+        console.log("length",store.getState().player.MusicGroup.length)
+        console.log("play -",store.getState().player.IndexOfMusic)
     } else {
         audio.pause();
     }
 }
 let RecentMusics = [];
 
-const AutoPlay = (PageId) => {
+const AutoPlay = () => {
     return store.dispatch({
         type: 'SET_AUTO_PLAY',
-        payload: PageId
     })
 }
 
@@ -92,13 +91,20 @@ const prevSong = () => {
         let PrevPlayIndex = index - 1;
         let PrevPlayId = MusicGroup[PrevPlayIndex].id;
         IndexFinder(PrevPlayId, MusicGroup)
+        
     }
+}
+const NextMusic = () => {
+    return store.dispatch({
+        type: 'SET_NEXT_MUSIC'
+    })
+
 }
 
 const NextSong = () => {
     let MusicGroup = store.getState().player.MusicGroup;
     let index = store.getState().player.IndexOfMusic;
-    if (index + 1 <= MusicGroup.length) {
+    if (index+1  < MusicGroup.length) {
         let NextPlayIndex = index + 1;
         let NextPlayId = MusicGroup[NextPlayIndex].id;
         IndexFinder(NextPlayId, store.getState().player.MusicGroup)
@@ -150,8 +156,9 @@ const Mute = () => {
 function setVolume(volumeValue) {
     audio.volume = volumeValue / 100;
     if (audio.volume == 0) {
-        audio.muted = true
-    }
+        audio.muted = true;
+    }audio.muted = false;
+    /// add functjion s herer
     document.documentElement.style.setProperty('--volume', volumeValue);
 }
 
@@ -166,7 +173,7 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, RecentMusics, AutoPlay
+    seektimeupdate, Mute, onChange, setVolume, RecentMusics, AutoPlay, NextMusic
 }
 
 

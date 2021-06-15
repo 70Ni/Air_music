@@ -11,7 +11,7 @@ let ShuffledArray = shuffle(Music);
 
 const ArtisPagList = () => {
     const array = useMemo(() => ShuffledArray.filter(art => art.Artist === 'Marshmello').slice(0,8), []);
-    return (
+        return (
         <div>
             {
                 array.map((song, i) => {
@@ -26,6 +26,7 @@ const ArtisPagList = () => {
                             views={numFormatter(song.Views)}
                             likes={numFormatter(song.Likes)}
                             duration={song.duration}
+                            URL = {song.URL}
                         />
                     )
                 })

@@ -3,7 +3,6 @@ import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard';
 import PlayListCard from '../Components/Cards/PlayListCard/PlayListCard';
 import ResultCard from '../Components/Cards/ResultCard/ResultCard';
 import SongDetails from '../Components/SongDetails/SongDetail';
-import PremiumSongs from '../Container/DiscoverPageLists/PremiumSongs';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
 
 import './PlayListPage.css';
@@ -46,7 +45,21 @@ function PlayListPage() {
                 </span>
                 <div className="SUBheader">Saved</div>
                 <div className="searchData_content">
-                  <PremiumSongs />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
+                    <PlayListCard />
                 </div>
             </div>
             
