@@ -53,15 +53,15 @@ const MusicGroupSet = () => {
 const PlayPause = () => {
     if (audio.paused) {
         audio.play();
-        console.log("length",store.getState().player.CurrentGroup.MusicGroup.length)
-        console.log("play -",store.getState().player.CurrentGroup.IndexOfMusic)
     } else {
         audio.pause();
     }
+    this.setState({
+        counter:"Hello"
+    })
 }
 
 
-let RecentMusics = [];
 const AutoPlay = () => {
     return store.dispatch({
         type: 'SET_AUTO_PLAY',
@@ -69,10 +69,8 @@ const AutoPlay = () => {
 }
 
 function IndexFinder(id, localArray) {
-    console.log(RecentMusics)
     let prevMusic = store.getState().player.prevMusic
     if (prevMusic !== id) {
-        RecentMusics.push(id)
         let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
         return store.dispatch({
             type: 'SET_MUSIC_PLAYER',
@@ -167,7 +165,7 @@ function setVolume(volumeValue) {
 
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, RecentMusics, AutoPlay, NextMusic
+    seektimeupdate, Mute, onChange, setVolume, AutoPlay, NextMusic
 }
 
 

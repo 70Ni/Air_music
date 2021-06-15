@@ -4,10 +4,14 @@ import ListcardB from '../../Components/Cards/ListCard/ListCardB'
 
 import { Music } from '../../Json/Music';
 import { connect } from 'react-redux';
-import { flushSync } from 'react-dom';
 
 
 
+const HistoryArray = []
+const searchedMusics = undefined;
+const c = HistoryArray.forEach(item=> 
+    searchedMusics = Music.filter(song=> song.id == item)
+  );
 
 
 
@@ -17,9 +21,12 @@ class RecentList extends Component {
         super(props);
         this.state = {}
     }
-
+    componentDidMount(){
+        HistoryArray.push(this.props.currentState.MusicHistory)
+    }
     render() {
-        console.log(this.props.currentState.MusicHistory)
+        console.log("History",HistoryArray)
+        console.log(c)
         return (
 
             <div className="TrenPag_LisCarWrapper" style={{color:'white'}}>

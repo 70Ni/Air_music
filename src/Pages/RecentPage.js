@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ListCardB from '../Components/Cards/ListCard/ListCardB';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
 import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
-import { RecentMusics } from '../Container/FUNCTIONS'
 import RecentList from '../Container/RecentPage/RecentList';
 
 import './PlayListPage.css'
@@ -15,7 +14,6 @@ class RecentPage extends Component {
 
     }
     componentDidMount() {
-        console.log(RecentMusics)
     }
     render() {
         return (
