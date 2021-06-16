@@ -27,7 +27,11 @@ class DurationTime extends Component {
 
     render() {
         return (
-            <div className="MusicDuration_wrapper">{this.props.currentTimer.curmins}:{this.props.currentTimer.cursecs}/{this.props.currentTimer.durmins}:{this.props.currentTimer.dursecs} </div>
+
+            this.props.currentTimer.curmins ?
+                <div className="MusicDuration_wrapper">{this.props.currentTimer.curmins}:{this.props.currentTimer.cursecs}/{this.props.currentTimer.durmins}:{this.props.currentTimer.dursecs} </div>
+                : null
+
         );
     }
 }
