@@ -7,21 +7,15 @@ import { connect } from 'react-redux';
 
 
 
+
 let HistoryArray = []
-
-
-let History = Music.filter(song => HistoryArray.includes(song.id))
-
 class RecentList extends Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        HistoryArray.push(this.props.currentState.MusicHistory)
-    }
-    render() {
-        console.log(History)
 
+    render() {
+        let History = Music.filter(song => this.props.currentState.MusicHistory.includes(song.id))
         return (
 
             <div className="TrenPag_LisCarWrapper" style={{ color: 'white' }}>

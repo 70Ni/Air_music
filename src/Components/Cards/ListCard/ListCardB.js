@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NextMusic } from '../../../Container/FUNCTIONS';
-import { IndexFinder } from '../../../Container/FUNCTIONS'
+import { IndexFinder,FavoriteFunc } from '../../../Container/FUNCTIONS'
 import setNextMusic from '../../../Redux/Actions/musicPlayer.action'
 import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 
 import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
+import setFavorite from '../../../Redux/Actions/likeAction.action';
 
 
 let Newarray = []
@@ -178,7 +179,7 @@ class ListCardB extends Component {
 
                         {/* <div className="List_status">Now Listening...</div> */}
 
-                        <img src={Favorite} alt="" className="List_save" onClick={()=>{NextMusic()}}/>
+                        <img src={Favorite} alt="" className="List_save" onClick={()=>{FavoriteFunc(id)}}/>
                     </div>
                 </div>
             </>
@@ -188,9 +189,11 @@ class ListCardB extends Component {
 
 const mapStateToProps = state => ({
     currentState: state.player,
+    Favorite:state.favorite
 })
 const mapDispatchToProps = dispatch => ({
-    stNextMusic: () => dispatch(setNextMusic())
+    setNextMusic: () => dispatch(setNextMusic()),
+    setFavorite: Id => dispatch(setFavorite(Id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListCardB);

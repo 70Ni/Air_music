@@ -1,7 +1,7 @@
 const InitialState = {
     prevMusic: undefined,
     IndexOfMusic:undefined, // remove this 
-    MusicHistory:[History],
+    MusicHistory:[],
 }
 
 const musicGroupReducer = (state = InitialState, action) => {

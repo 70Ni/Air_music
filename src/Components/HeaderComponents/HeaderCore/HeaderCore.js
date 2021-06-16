@@ -1,5 +1,5 @@
 import React from 'react';
-
+import thumb from '../../../Music files/Carlie Puth/Thumbnails/La Girl.jpg'
 
 import './HeaderCore.css'
 
@@ -13,9 +13,10 @@ function HeaderCore() {
                         <div className="Nav_header_BB">Musics</div>
                     </div>
                     <div className="HeaderCore_para">
-                        air Music is a music streaming service developed by YouTube, a subsidiary of Google.
+                        Air Music is a music streaming service developed for education and entertainment purposes.
                     </div>
                     <button className="getStarted">Get Started</button>
+                    <img src = {thumb} alt="" className="Thumb_image"/>
                 </div>
             </div>
 

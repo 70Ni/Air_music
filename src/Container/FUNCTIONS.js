@@ -63,6 +63,12 @@ const NextMusic = () => {
     })
 }
 
+const FavoriteFunc =(id) => {
+    return store.dispatch({
+        type:'SET_FAVORITE,',
+        payload: id
+    })
+}
 
 const AutoPlay = () => {
     return store.dispatch({
@@ -161,7 +167,7 @@ function setVolume(volumeValue) {
 
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, AutoPlay, NextMusic, audio
+    seektimeupdate, Mute, onChange, setVolume, AutoPlay, NextMusic, audio, FavoriteFunc
 }
 
 

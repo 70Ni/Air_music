@@ -6,15 +6,13 @@ import RecentList from '../Container/RecentPage/RecentList';
 
 import './PlayListPage.css'
 import { connect } from 'react-redux';
-
 class RecentPage extends Component {
     constructor(props) {
         super(props);
         this.state = {}
 
     }
-    componentDidMount() {
-    }
+
     render() {
         return (
             <div className="Trending_page_wrapper" style={{ 'maxWidth': '1440px' }}>
