@@ -87,6 +87,7 @@
     font-weight: 500;
     font-family: 'Poppins', sans-serif; 
 }
+
 @media only screen and (max-width: 885px) {
     .MusicPlayer_thumb {
         margin: 0px;
@@ -117,6 +118,11 @@
     .favorite_Musictrl {
         padding: 16px;
         width: 18px;
+    }
+    .Player_preState {
+        font-size: 12px;
+        width: 200px;
+        font-weight: 400;
     }
 }
 

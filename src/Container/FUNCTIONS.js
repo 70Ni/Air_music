@@ -157,10 +157,7 @@ const Mute = () => {
 
 function setVolume(volumeValue) {
     audio.volume = volumeValue / 100;
-    if (audio.volume == 0) {
-        audio.muted = true;
-    }audio.muted = false;
-    /// add functjion s herer
+
     document.documentElement.style.setProperty('--volume', volumeValue);
 }
 

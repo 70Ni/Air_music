@@ -152,7 +152,7 @@ class ListCardB extends Component {
 
         // console.log(this.inputEl.current)
         const { id, name, preview, views, duration, currentState } = this.props
-        let sty = currentState.prevMusic == id ? { color: '#F27E4C', fontWeight: '600', opacity: '1' } : null
+        let sty = currentState.prevMusic == id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null
         let nowPlaying = currentState.prevMusic == id ? { visibility: 'visible' } : { visibility: 'hidden' }
 
         return (
@@ -179,8 +179,8 @@ class ListCardB extends Component {
                             <div className="List_view" style={sty}>{views}</div>
                         </div>
 
-                        {/* <div className="List_status">Now Listening...</div> */}
                             <img src={Playing} alt="" style={nowPlaying} />
+                        {/* <div className="List_status">Now Listening...</div> */}
                         <img src={Favorite} alt="" className="List_save" onClick={() => { FavoriteFunc(id) }} />
                     </div>
                 </div>

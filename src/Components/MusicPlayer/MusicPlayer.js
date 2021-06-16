@@ -45,6 +45,17 @@ class MusicPlayer extends Component {
             })
         )
     }
+    setMute = () => {
+        this.volumeSlider.current.value == 0 ?
+            this.setState({
+                muted: true
+            }) :
+
+            this.setState({
+                muted: false
+            })
+
+    }
     mutefunc = () => {
         return (
             Mute(),
@@ -57,6 +68,12 @@ class MusicPlayer extends Component {
             this.pauseIcon()
         )
     }
+    VolumeSlider = () => {
+        return (
+            setVolume(this.volumeSlider.current.value),
+            this.setMute()
+        )
+    }
     render() {
 
         let { currentMusic } = this.props;
@@ -66,15 +83,16 @@ class MusicPlayer extends Component {
 
         return (
             <div className="MusicPlayer_Wrappper">
-            {currentMusic?
-                <div id="MusicSlider">
-                    <input id="range1" type="range" min="0" max={this.props.timerRange.AudioDuration} value={this.props.timerRange.currentTime} step="1" ref={this.inputEl}
-                        onChange={() => onChange(this.inputEl.current.value)} />
-                </div>:null
-            }
+                {currentMusic ?
+                    <div id="MusicSlider">
+                        <input id="range1" type="range" min="0" max={this.props.timerRange.AudioDuration} value={this.props.timerRange.currentTime} step="1" ref={this.inputEl}
+                            onChange={() => onChange(this.inputEl.current.value)}
+                        />
+                    </div> : null
+                }
                 <div className="MusicPlayer_wrapper" style={currentMusic ? { bottom: '0px' } : { bottom: '0px' }}>
                     <div className="MusicPlayer_content">
-                        <div className="PlayerDetails_wrapper">
+                        <div className="PlayerDetails_wrapper" >
                             {currentMusic ?
                                 <img src={currentMusic.MusicGroup[currentMusic.IndexOfMusic].preview} className="MusicPlayer_thumb" alt="" /> : <Airmusic />}
                             <div className="Music_artist_wrapper">
@@ -83,30 +101,30 @@ class MusicPlayer extends Component {
                             </div>
                         </div>
                         {currentMusic ?
-                            <div className="PlayerControllor_wrapper">
+                            <div className="PlayerControllor_wrapper" >
                                 <img src={Forward} className="controllor MusicBackward" alt="" onClick={() => prevSong()} />
                                 <img src={this.state.paused ? Play : pause} className="controllor" alt="" onClick={() => this.playPausefun()} />
                                 <img src={Backward} className="controllor MusicForward" alt="" onClick={() => NextSong()} />
                             </div> :
-                            <div className="Player_preState PlayerControllor_wrapper">Lets get started </div>}
+                            <div className="Player_preState PlayerControllor_wrapper"> Hear the frequencies of air </div>}
                         <div className="Player_right_wrapper">
-                            {currentMusic ?
+                            {currentMusic ?<>
                                 <div className="duration_wrapper" style={this.displayStat} >
                                     <DurationTime />
-                                </div>:
-                                null
-                        }
-                            {currentMusic ?
+                                </div> 
+                                
+                            
+                          
                                 <div className="volume_controllor">
                                     <img src={this.state.muted ? mute : Volume} alt="" className="Volume" onClick={() => this.mutefunc()} />
                                     <div id="VolumeRange">
-                                        <input id="range2" ref={this.volumeSlider} value="100" type="range" min="0" max="100" onChange={() => setVolume(this.volumeSlider.current.value)} />
+                                        <input id="range2" ref={this.volumeSlider} value="100" type="range" min="0" max="100" onChange={() => this.VolumeSlider()} />
                                     </div>
-                                </div> : null
-                            }
-                            {currentMusic ?
-                                <img src={Favorite} style={this.displayStat} className="favorite_Musictrl" alt="" /> : null
-                            }
+                                </div> 
+                            
+                         
+                                <img src={Favorite} style={this.displayStat} className="favorite_Musictrl" alt="" /> </>
+                            : null}
                         </div>
                     </div>
                 </div>
