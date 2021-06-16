@@ -8,12 +8,12 @@ function HeaderCore() {
         <div className="HeaderCore_wrapper">
             <div className="HeaderCore_content_Inactive">
                 <div className="HeaderCore_Intro">
-                    <div className="HeaderCore_header ">
+                    <div className="HeaderCore_header">
                         <div className="Nav_header_name">air</div>
                         <div className="Nav_header_BB">Musics</div>
                     </div>
                     <div className="HeaderCore_para">
-                        Air Music is a music streaming service developed for education and entertainment purposes.
+                        Air Music is a music streaming service developed for knowledge and entertainment purposes.
                     </div>
                     <button className="getStarted">Get Started</button>
                     <img src = {thumb} alt="" className="Thumb_image"/>

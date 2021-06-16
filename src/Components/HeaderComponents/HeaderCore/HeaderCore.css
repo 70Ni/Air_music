@@ -5,7 +5,7 @@
 }
 .HeaderCore_para {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: #ffffff;
     padding: 0px 16px;
@@ -65,4 +65,19 @@
 .Thumb_image {
     width: 340px;
     border-radius: 20px;
+}
+
+.Nav_header_name {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    padding-right: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+.Nav_header_BB,.NowListening_para {
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.6;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
 }

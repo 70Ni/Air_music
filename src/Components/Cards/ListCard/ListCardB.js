@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NextMusic } from '../../../Container/FUNCTIONS';
-import { IndexFinder,FavoriteFunc } from '../../../Container/FUNCTIONS'
+import { IndexFinder, FavoriteFunc } from '../../../Container/FUNCTIONS'
 import setNextMusic from '../../../Redux/Actions/musicPlayer.action'
 import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
@@ -9,7 +9,7 @@ import Favorite from '../../../Images/Icons/save.svg'
 import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
 import setFavorite from '../../../Redux/Actions/likeAction.action';
-
+import Playing from '../../../Images/Icons/play_fill.svg'
 
 let Newarray = []
 // let a = document.getElementById("imag")
@@ -151,7 +151,9 @@ class ListCardB extends Component {
 
 
         // console.log(this.inputEl.current)
-        const { id, name, preview, views, duration } = this.props
+        const { id, name, preview, views, duration, currentState } = this.props
+        let sty = currentState.prevMusic == id ? { color: '#F27E4C', fontWeight: '600', opacity: '1' } : null
+        let nowPlaying = currentState.prevMusic == id ? { visibility: 'visible' } : { visibility: 'hidden' }
 
         return (
 
@@ -169,17 +171,17 @@ class ListCardB extends Component {
                             <img src={preview} id="imag" alt="" className="List_Image" onClick={() => IndexFinder(id, Newarray)} />
                         </div>
                         <div className="List_Name_wrapper">
-                            <div className="MusicName_B ListCard_B" >{name}</div>
+                            <div className="MusicName_B ListCard_B" style={sty}>{name}</div>
 
                         </div>
                         <div className="List_duration_view_wrapper">
-                            <div className="List_duration">{duration}</div>
-                            <div className="List_view">{views}</div>
+                            <div className="List_duration" style={sty}>{duration}</div>
+                            <div className="List_view" style={sty}>{views}</div>
                         </div>
 
                         {/* <div className="List_status">Now Listening...</div> */}
-
-                        <img src={Favorite} alt="" className="List_save" onClick={()=>{FavoriteFunc(id)}}/>
+                            <img src={Playing} alt="" style={nowPlaying} />
+                        <img src={Favorite} alt="" className="List_save" onClick={() => { FavoriteFunc(id) }} />
                     </div>
                 </div>
             </>
@@ -189,7 +191,7 @@ class ListCardB extends Component {
 
 const mapStateToProps = state => ({
     currentState: state.player,
-    Favorite:state.favorite
+    Favorite: state.favorite
 })
 const mapDispatchToProps = dispatch => ({
     setNextMusic: () => dispatch(setNextMusic()),

@@ -29,20 +29,7 @@
     align-items: baseline;
     padding: 36px 0px;
 }
-.Nav_header_name {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 500;
-    padding-right: 16px;
-    font-family: 'Poppins', sans-serif;
-}
-.Nav_header_BB,.NowListening_para {
-    color: #ffffff;
-    font-size: 14px;
-    opacity: 0.6;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-}
+
 .NavContainer {
     padding: 0px 16px;
 }

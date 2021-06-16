@@ -40,7 +40,9 @@
     display: flex;
     align-items: center;
 }
-
+.duration_wrapper {
+    width: 130px;
+}
 .volume_controllor {
     display: flex;
     align-items: center;
@@ -51,6 +53,8 @@
 }
 .PlayerControllor_wrapper {
     flex-grow: 1;
+    align-items: center;
+    justify-content: center;
 }
 .controllor {
     padding: 16px;
@@ -71,10 +75,10 @@
     border-radius: 12px;
 }
 .PlayerDetails_wrapper {
-    flex-grow: 1;
     display: flex;
     align-items: center;
     overflow: hidden;
+    width: 300px;
 }
 
 @media only screen and (max-width: 885px) {
@@ -89,6 +93,9 @@
 }
 @media only screen and (max-width: 655px) {
     .MusicDuration_wrapper {
+        display: none;
+    }
+    .duration_wrapper {
         display: none;
     }
 }
