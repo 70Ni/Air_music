@@ -134,14 +134,11 @@ const seektimeupdate = () => {
 
 
 }
-const searchMusic = () => {
-    const searchedMusics = Music.filter(item => {
-        return item.name.toLowerCase().includes(this.props.currentState.search)
-    })
+const searchMusic = (event) => {
     return store.dispatch({
         type: 'SEARCH_MUSIC',
         payload: {
-            searchedMusics
+            resutl: event.target.value
         }
     })
 }
