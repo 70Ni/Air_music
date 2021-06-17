@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NextMusic } from '../../../Container/FUNCTIONS';
 import { IndexFinder, FavoriteFunc } from '../../../Container/FUNCTIONS'
-import setNextMusic from '../../../Redux/Actions/musicPlayer.action'
 import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
-
+import DurationTime from '../../MusicPlayer/DurationTime'
 import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
 import setFavorite from '../../../Redux/Actions/likeAction.action';
@@ -175,7 +174,7 @@ class ListCardB extends Component {
 
                         </div>
                         <div className="List_duration_view_wrapper">
-                            <div className="List_duration" style={sty}>{duration}</div>
+                            <div className="List_duration" style={sty}>{currentState.prevMusic == id ? <DurationTime /> :duration}</div>
                             <div className="List_view" style={sty}>{views}</div>
                         </div>
 
@@ -194,7 +193,6 @@ const mapStateToProps = state => ({
     Favorite: state.favorite
 })
 const mapDispatchToProps = dispatch => ({
-    setNextMusic: () => dispatch(setNextMusic()),
     setFavorite: Id => dispatch(setFavorite(Id))
 })
 

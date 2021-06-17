@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Music } from '../../../Json/Music';
 import thumb from '../../../Music files/Carlie Puth/Thumbnails/La Girl.jpg'
 
 import './HeaderCore.css'
 
-function HeaderCore() {
+
+let currentMusic = [];
+const HeaderCore = ({ currentState }) => {
+    useEffect(() => {
+        if (currentState.CurrentGroup) {
+                let id = currentState.CurrentGroup.IndexOfMusic;
+                return currentMusic = currentState.CurrentGroup.MusicGroup[id];
+        }
+    });
+    console.log(currentMusic)
     return (
         <div className="HeaderCore_wrapper">
             <div className="HeaderCore_content_Inactive">
@@ -12,11 +23,16 @@ function HeaderCore() {
                         <div className="Nav_header_name">air</div>
                         <div className="Nav_header_BB">Musics</div>
                     </div>
+                    {currentState.prevMusic ? null : <button className="getStarted">Get Started</button>}
+                    <img src={thumb} alt="" className="Thumb_image" />
                     <div className="HeaderCore_para">
                         Air Music is a music streaming service developed for knowledge and entertainment purposes.
                     </div>
-                    <button className="getStarted">Get Started</button>
-                    <img src = {thumb} alt="" className="Thumb_image"/>
+
+                    <div className="Music_wrpaer">
+                        <div className="HeaderCore_MusicName">Power</div>
+                    </div>
+                    <div className="NowListening_para">Now Listening...</div>
                 </div>
             </div>
 
@@ -36,5 +52,7 @@ function HeaderCore() {
         </div>
     )
 }
-
-export default HeaderCore
+const mapStateToProps = state => ({
+    currentState: state.player,
+})
+export default connect(mapStateToProps, null)(HeaderCore);

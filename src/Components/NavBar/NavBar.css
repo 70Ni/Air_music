@@ -43,10 +43,14 @@
 .active {
     background-color: #F27E4C;
     border-radius: 8px;
+    color: #ffffff;
     
 }
 .NavItem_container :hover{
     color: #F27E4C;
+}
+.active :hover{
+    color: #ffffff;
 }
 .NavList_A {
     flex-grow: 1;

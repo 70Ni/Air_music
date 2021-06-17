@@ -4,7 +4,7 @@ import NavBar from './Components/NavBar/NavBar';
 import DashBar from './Components/Dashbar/DashBar'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import HeaderThunder from './Components/HeaderComponents/HeaderThunder';
+import HeaderThunder from './Components/HeaderComponents/HeaderThunder/HeaderThunder';
 import DiscoverPage from './Pages/DiscoverPage'
 import TreningPage from './Pages/TrendingPage'
 import ArtistPage from './Pages/ArtistPage'
@@ -15,6 +15,7 @@ import PlayListPage from './Pages/PlayListPage';
 import RecentPage from './Pages/RecentPage'
 import AboutPage from './Pages/AboutPage'
 import Grid from './Pages/Grid'
+import HorizontalNav from './Components/NavBar/HorizontalNav/HorizontalNav';
 import MusicPlayer from './Components/MusicPlayer/MusicPlayer'
 
 let windowHeight = window.innerHeight;

@@ -88,9 +88,7 @@
     }
 } 
 @media only screen and (max-width: 625px) {
-    .DiscoverCard_wrapperZ {
-        display: none;
-    }
+
     .SUBheader_H {
         display: none;
     }

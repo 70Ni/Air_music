@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 import user from '../../Images/Icons/userIcon.svg';
@@ -24,38 +24,28 @@ function NavBar() {
                 <div className="NavList_wrapper">
                     <div className="NavList_A">
                         <div className="nav_subHeader">New feeds</div>
-                        <Link to="/discover">
-                            <div className="NavItem_container active">
-                                <img alt="" className="Nav_icon" src={search} />
-                                <div className="Nav_item">Discover</div>
-                            </div>
-                        </Link>
-                        <Link to="/trending">
-                            <div className="NavItem_container">
-                                <img alt="" className="Nav_icon" src={trending} />
-                                <div className="Nav_item">Trending</div>
-                            </div>
-                        </Link>
-                        <Link to="/artists">
-                            <div className="NavItem_container">
-                                <img alt="" className="Nav_icon" src={user} />
-                                <div className="Nav_item">Artists</div>
-                            </div>
-                        </Link>
+                        <NavLink to="/discover" className="NavItem_container" activeClassName="active">
+                            <img alt="" className="Nav_icon" src={search} />
+                            <div className="Nav_item">Discover</div>
+                        </NavLink>
+                        <NavLink to="/trending" className="NavItem_container">
+                            <img alt="" className="Nav_icon" src={trending} />
+                            <div className="Nav_item">Trending</div>
+                        </NavLink>
+                        <NavLink to="/artists" className="NavItem_container">
+                            <img alt="" className="Nav_icon" src={user} />
+                            <div className="Nav_item">Artists</div>
+                        </NavLink>
                         <div className="nav_subHeader">Saved items</div>
-                        <Link to="/playlist">
-                            <div className="NavItem_container">
-                                <img alt="" className="Nav_icon" src={headphones} />
-                                <div className="Nav_item">Playlist</div>
-                                <span className="PlayList_notifier"></span>
-                            </div>
-                        </Link>
-                        <Link to="/recent">
-                            <div className="NavItem_container">
-                                <img alt="" className="Nav_icon" src={list} />
-                                <div className="Nav_item">Recent</div>
-                            </div>
-                        </Link>
+                        <NavLink to="/playlist" className="NavItem_container">
+                            <img alt="" className="Nav_icon" src={headphones} />
+                            <div className="Nav_item">Playlist</div>
+                            <span className="PlayList_notifier"></span>
+                        </NavLink>
+                        <NavLink to="/recent" className="NavItem_container">
+                            <img alt="" className="Nav_icon" src={list} />
+                            <div className="Nav_item">Recent</div>
+                        </NavLink>
                     </div>
                     <div className="NavList_B">
                         <Link to="/about">

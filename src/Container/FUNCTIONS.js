@@ -1,8 +1,7 @@
 // import Musi from '../Music files/Marshmellow/Alone.mp3'
 import { connect } from 'react-redux';
 import store from '../Redux/store';
-import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
-
+import { Music } from '../Json/Music';
 
 const shuffle = (arra1) => {
     var ctr = arra1.length, temp, index;
@@ -57,15 +56,10 @@ const PlayPause = () => {
     }
 
 }
-const NextMusic = () => {
-    return store.dispatch({
-        type: 'SET_NEXT_MUSIC'
-    })
-}
 
-const FavoriteFunc =(id) => {
+const FavoriteFunc = (id) => {
     return store.dispatch({
-        type:'SET_FAVORITE,',
+        type: 'SET_FAVORITE,',
         payload: id
     })
 }
@@ -89,7 +83,7 @@ function IndexFinder(id, localArray) {
                 prevMusic: id,
             }
         })
-        
+
     } PlayPause()
 
 }
@@ -100,14 +94,14 @@ const prevSong = () => {
         let PrevPlayIndex = index - 1;
         let PrevPlayId = MusicGroup[PrevPlayIndex].id;
         IndexFinder(PrevPlayId, MusicGroup)
-        
+
     }
 }
 
 const NextSong = () => {
     let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
     let index = store.getState().player.CurrentGroup.IndexOfMusic;
-    if (index+1  < MusicGroup.length) {
+    if (index + 1 < MusicGroup.length) {
         let NextPlayIndex = index + 1;
         let NextPlayId = MusicGroup[NextPlayIndex].id;
         IndexFinder(NextPlayId, MusicGroup)
@@ -140,6 +134,18 @@ const seektimeupdate = () => {
 
 
 }
+const searchMusic = () => {
+    const searchedMusics = Music.filter(item => {
+        return item.name.toLowerCase().includes(this.props.currentState.search)
+    })
+    return store.dispatch({
+        type: 'SEARCH_MUSIC',
+        payload: {
+            searchedMusics
+        }
+    })
+}
+
 const onChange = (slideValue) => {
     if (audio.duration) {
         let selectNumber = Number(slideValue)
@@ -164,7 +170,7 @@ function setVolume(volumeValue) {
 
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, AutoPlay, NextMusic, audio, FavoriteFunc
+    seektimeupdate, Mute, onChange, setVolume, AutoPlay, audio, FavoriteFunc, searchMusic
 }
 
 

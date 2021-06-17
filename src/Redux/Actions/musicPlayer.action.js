@@ -6,8 +6,4 @@ const setCurrentMusics = MusicItems => ({
 });
 
 
-const setNextMusic = () => ({
-    type:'SET_NEXT_MUSIC'
-})
-
-export default {setCurrentMusics,setNextMusic}
+export default {setCurrentMusics}

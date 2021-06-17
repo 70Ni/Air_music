@@ -1,7 +1,6 @@
 const InitialState = {
     prevMusic: undefined,
-    IndexOfMusic:undefined, // remove this 
-    MusicHistory:[],
+    MusicHistory: [],
     CurrentGroup: undefined
 }
 
@@ -11,9 +10,7 @@ const musicGroupReducer = (state = InitialState, action) => {
             state.prevMusic = action.payload.prevMusic
             let History = state.MusicHistory.push(action.payload.prevMusic);
             state.MusicHistory.push(History)
-            return Object.assign({}, state, { CurrentGroup:action.payload })
-        case 'SET_NEXT_MUSIC':
-            return Object.assign({}, state, { IndexOfMusic:state.IndexOfMusic+1 })
+            return Object.assign({}, state, { CurrentGroup: action.payload })
         default:
             return state;
     }

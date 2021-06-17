@@ -5,19 +5,15 @@ import search from '../../Images/Icons/search.svg';
 import bell from '../../Images/Icons/bell.svg';
 import { Music } from '../../Json/Music';
 
-import setCurrentMusics from '../../Redux/Actions/musicPlayer.action'
+import searchMusic from '../../Redux/Actions/search.aciton'
 
 import './DashBar.css'
 import { connect } from 'react-redux';
 class DashBar extends Component {
-    searchChange = (event) => {
-        this.props.setCurrentMusic  ({
-            search:event.target.value
+    searchMusic = (event) => {
+        this.props.searchMusics  ({
+            SearchResults:event.target.value
         })
-        const searchedMusics = Music.filter(item=>{
-            return item.name.toLowerCase().includes(this.props.currentState.search)
-        })
-        console.log(this.props.mapStateToProps)
     }
 
     render() {
@@ -25,7 +21,7 @@ class DashBar extends Component {
             <div className="DashBar_wrapper">
                 <div className="DashBar_content">
                     <div className="Browser_wrapper">
-                        <input type="text" id="searchField" name="Search" placeholder="Browse" onChange={this.searchChange} />
+                        <input type="text" id="searchField" name="Search" placeholder="Browse" onChange={this.searchMusic} />
                         <img className="Browser_icon" src={search} alt="" />
                     </div>
                     <div className="DashIcon_wrapper">
@@ -38,16 +34,16 @@ class DashBar extends Component {
                         </div>
                     </div>
                 </div>
-                <h1 className="SUBheader">{this.props.currentState.search}</h1>
+                <h1 className="SUBheader">{this.props.resultMusic}</h1>
             </div>
         );
     }
 }
 const mapDispatchToProps = dispatch => ({
-    setCurrentMusic: musicItem => dispatch(setCurrentMusics(musicItem))
+    searchMusics: event => dispatch(searchMusic(event))
 })
 const mapStateToProps = state => ({
-    currentState: state.player
+    resultMusic: state.search
 })
 
 export default connect(mapStateToProps, mapDispatchToProps) (DashBar);

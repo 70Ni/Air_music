@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard'
 import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ'
@@ -13,19 +13,20 @@ class DiscoverPage extends Component {
     constructor(props) {
         super(props);
     }
-    componentWillReceiveProps(nextProps){ 
-        if(this.props.currentState != nextProps.currentState){ 
-           MusicGroupSet()
-        } 
-      }
+    componentWillReceiveProps(nextProps) {
+        if (this.props.currentState != nextProps.currentState) {
+            MusicGroupSet()
+        }
+    }
     componentDidUpdate() {
         if (this.props.currentState.CurrentGroup.ClickedMusic) {
-           
+
         }
     }
     render() {
         return (
             <div className="Artist_page_wrapper" style={{ 'maxWidth': '1440px', }}>
+                <DiscoverCardZ />
                 <div className="SUBheader">Artists</div>
                 <div className="Profile_Icons">
                     <ProfileList />

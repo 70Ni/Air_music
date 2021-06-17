@@ -39,6 +39,7 @@
 .PlayerControllor_wrapper,.Player_right_wrapper {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .duration_wrapper {
     width: 130px;
