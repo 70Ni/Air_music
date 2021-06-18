@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Music } from '../../../Json/Music';
 import thumb from '../../../Music files/Carlie Puth/Thumbnails/La Girl.jpg'
 
 import './HeaderCore.css'
-
+const mapStateToProps = state => ({
+    currentState: state.player,
+    resultMusic: state.search.SearchResults
+})
 
 let currentMusic = [];
 const HeaderCore = ({ currentState }) => {
     useEffect(() => {
-        if (currentState.CurrentGroup) {
-                let id = currentState.CurrentGroup.IndexOfMusic;
-                return currentMusic = currentState.CurrentGroup.MusicGroup[id];
-        }
-    });
+            console.log("Hello")
+    },[currentState.CurrentGroup.IndexOfMusic]);
     console.log(currentMusic)
     return (
         <div className="HeaderCore_wrapper">
@@ -52,7 +51,5 @@ const HeaderCore = ({ currentState }) => {
         </div>
     )
 }
-const mapStateToProps = state => ({
-    currentState: state.player,
-})
+
 export default connect(mapStateToProps, null)(HeaderCore);

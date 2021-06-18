@@ -1,42 +1,44 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import User from '../../Images/Icons/User.svg';
 
 import search from '../../Images/Icons/search.svg';
 import bell from '../../Images/Icons/bell.svg';
 import { Music } from '../../Json/Music';
 
-import searchMusic from '../../Redux/Actions/search.aciton'
+import { setSearchMusic } from '../../Redux/Actions/search.aciton';
 
+import { searchMusic } from '../../Container/FUNCTIONS'
 import './DashBar.css'
-import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-    resultMusic: state.search
+    resultMusic: state.search.SearchResults
 })
+
 const mapDispatchToProps = dispatch => ({
-    setsearchMusic: event => dispatch(searchMusic(event))
+    setSearchMusics: MusicItems => dispatch(setSearchMusic(MusicItems)),
 })
 
 class DashBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state ={
 
-        }
-  
-    }
-    onSearchChange = (event) => {
-        this.setState({
-            search: event.target.value
+    searchChange = (event) => {
+        this.props.setSearchMusics({
+            SearchResults: event.target.value
+        })  
+        const searchedMusics = Music.filter(item=>{
+            return item.name.toLowerCase().includes(this.props.resultMusic.SearchResults)
         })
-    }
-    render() {
+        console.log(searchedMusics)
 
+    }
+
+    render() {
         return (
             <div className="DashBar_wrapper">
                 <div className="DashBar_content">
                     <div className="Browser_wrapper">
-                        <input type="text" id="searchField" name="Search" placeholder="Browse" onChange={()=>this.onSearchChange()} />
+                        <input type="text" id="searchField" name="Search" placeholder="Browse"
+                            onChange={(event) => this.searchChange(event)} />
                         <img className="Browser_icon" src={search} alt="" />
                     </div>
                     <div className="DashIcon_wrapper">
@@ -49,7 +51,7 @@ class DashBar extends Component {
                         </div>
                     </div>
                 </div>
-                <h1 className="SUBheader"> {this.state.search}</h1>
+                <h1 className="SUBheader"> { }</h1>
             </div>
         );
     }

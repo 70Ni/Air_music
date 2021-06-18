@@ -1,8 +1,7 @@
 
-const searchMusic = MusicItems => ({
+ export const setSearchMusic = MusicItems => ({
     type:'SEARCH_MUSIC',
     payload:MusicItems,
 });
 
 
-export default {searchMusic}

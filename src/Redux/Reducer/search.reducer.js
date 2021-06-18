@@ -1,11 +1,11 @@
 const InitialState = {
-    SearchResults: undefined
+    SearchResults: '',
 }
 
 const searchReducer = (state = InitialState, action) => {
     switch (action.type) {
         case 'SEARCH_MUSIC':
-            return Object.assign({}, state, { SearchResults: action.payload })
+            return {...state, SearchResults:action.payload };
         default:
             return state;
     }

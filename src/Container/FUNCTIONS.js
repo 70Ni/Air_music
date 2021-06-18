@@ -83,7 +83,7 @@ function IndexFinder(id, localArray) {
                 prevMusic: id,
             }
         })
-
+        
     } PlayPause()
 
 }
@@ -138,7 +138,7 @@ const searchMusic = (event) => {
     return store.dispatch({
         type: 'SEARCH_MUSIC',
         payload: {
-            resutl: event.target.value
+            resutl: event
         }
     })
 }
@@ -167,7 +167,7 @@ function setVolume(volumeValue) {
 
 export {
     shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, AutoPlay, audio, FavoriteFunc, searchMusic
+    seektimeupdate, Mute, onChange, setVolume, AutoPlay, audio, FavoriteFunc, searchMusic,
 }
 
 

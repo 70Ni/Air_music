@@ -6,4 +6,4 @@ const setCurrentMusics = MusicItems => ({
 });
 
 
-export default {setCurrentMusics}
+export default setCurrentMusics;
