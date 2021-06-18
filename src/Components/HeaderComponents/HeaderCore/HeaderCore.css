@@ -45,8 +45,8 @@
 }
 .HeaderCore_MusicName {
     font-family: 'Inter', sans-serif;
-    font-size: 40px;
-    padding-bottom: 16px;
+    font-size: 36px;
+    padding: 16px;
     font-weight: 600;
     color: #ffffff;
 }
@@ -81,4 +81,8 @@
     opacity: 0.6;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
+}
+.NowListening_para {
+    color: #F27E4C;
+    opacity: 1;
 }
