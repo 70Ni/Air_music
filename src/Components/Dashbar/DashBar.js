@@ -8,7 +8,6 @@ import { Music } from '../../Json/Music';
 
 import { setSearchMusic } from '../../Redux/Actions/search.aciton';
 
-import { searchMusic } from '../../Container/FUNCTIONS'
 import './DashBar.css'
 
 const mapStateToProps = state => ({

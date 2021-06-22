@@ -54,7 +54,6 @@ const PlayPause = () => {
     } else {
         audio.pause();
     }
-
 }
 
 const FavoriteFunc = (id) => {
@@ -85,7 +84,6 @@ function IndexFinder(id, localArray) {
         })
         
     } PlayPause()
-
 }
 const prevSong = () => {
     let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;

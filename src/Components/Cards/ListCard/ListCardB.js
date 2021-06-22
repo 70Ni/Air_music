@@ -158,7 +158,6 @@ class ListCardB extends Component {
 
             <>
                 {/* https://www.cssscript.com/demo/range-slider-webkit/
-
                 https://www.hongkiat.com/blog/html5-range-slider-style/
                 // onClick={() => console.log(this.props.id)}
                  */}

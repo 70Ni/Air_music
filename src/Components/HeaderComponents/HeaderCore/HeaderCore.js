@@ -14,9 +14,6 @@ class HeaderCore extends Component {
         this.state = {}
     }
 
-    componentDidMount(){
-        
-    }
     render() {
             const {currentState} = this.props
             const item = currentState.CurrentGroup.MusicGroup
@@ -31,7 +28,7 @@ class HeaderCore extends Component {
                             {item ? null: <button className="getStarted">Get Started</button>}
                             <img src={item ? item[currentState.CurrentGroup.IndexOfMusic].preview:null} alt="" className="Thumb_image" />
                             <div className="HeaderCore_para">
-                                Air Music is a music streaming service developed for knowledge and entertainment purposes.
+                                Air Music is a music streaming service developed for education and entertainment purposes.
                             </div>
 
                             <div className="Music_wrpaer">
