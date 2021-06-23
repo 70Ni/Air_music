@@ -12,3 +12,4 @@ const selectArtistReducer = (state = InitialState, action) => {
 };
 
 export default selectArtistReducer;
+
