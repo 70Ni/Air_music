@@ -6,8 +6,7 @@ import './ArtistPage.css';
 import { MusicGroupSet } from '../Container/FUNCTIONS';
 import ProfileList from '../Container/ProfileList';
 import ArtisPagList from '../Container/ArtisPagList';
-import { connect, Provider } from 'react-redux';
-import functionStore from '../Redux/functionStore';
+import { connect } from 'react-redux';
 
 class DiscoverPage extends Component {
     constructor(props) {
@@ -29,9 +28,7 @@ class DiscoverPage extends Component {
                 <DiscoverCardZ />
                 <div className="SUBheader">Artists</div>
                 <div className="Profile_Icons">
-                    <Provider store={functionStore}>
-                        <ProfileList />
-                    </Provider>
+                    <ProfileList />
                 </div>
                 <div className="SUBheader">Artist</div>
                 <div className="Artist_Header">Billie Ellish</div>

@@ -4,8 +4,8 @@ import thumb from '../../../Music files/Carlie Puth/Thumbnails/La Girl.jpg'
 
 import './HeaderCore.css'
 const mapStateToProps = state => ({
-    currentState: state.player,
-    resultMusic: state.search.SearchResults
+    // currentState: state.player,
+    // resultMusic: state.search.SearchResults
 })
 
 class HeaderCore extends Component {
@@ -16,7 +16,6 @@ class HeaderCore extends Component {
 
     render() {
             const {currentState} = this.props
-            const item = currentState.CurrentGroup.MusicGroup
             return (
                 <div className="HeaderCore_wrapper">
                     <div className="HeaderCore_content_Inactive">
@@ -25,8 +24,8 @@ class HeaderCore extends Component {
                                 <div className="Nav_header_name">air</div>
                                 <div className="Nav_header_BB">Musics</div>
                             </div>
-                            {item ? null: <button className="getStarted">Get Started</button>}
-                            <img src={item ? item[currentState.CurrentGroup.IndexOfMusic].preview:null} alt="" className="Thumb_image" />
+                            <button className="getStarted">Get Started</button>
+                            <img src="" alt="" className="Thumb_image" />
                             <div className="HeaderCore_para">
                                 Air Music is a music streaming service developed for education and entertainment purposes.
                             </div>

@@ -9,7 +9,6 @@ const autoSlice = createSlice({
     },
     reducers: {
         autoEnable(state, { payload }) {
-
             return Object.assign({}, state, { isAutoPlay: !state.isAutoPlay })
         }
     }

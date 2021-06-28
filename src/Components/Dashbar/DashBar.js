@@ -11,7 +11,7 @@ import { setSearchMusic } from '../../Redux/Actions/search.aciton';
 import './DashBar.css'
 
 const mapStateToProps = state => ({
-    resultMusic: state.search.SearchResults
+    // resultMusic: state.search.SearchResults
 })
 
 const mapDispatchToProps = dispatch => ({

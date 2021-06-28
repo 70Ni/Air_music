@@ -76,67 +76,60 @@ class MusicPlayer extends Component {
     }
     render() {
 
-        let { currentMusic } = this.props;
 
-        document.documentElement.style.setProperty('--base', this.props.timerRange.currentTime);
-        document.documentElement.style.setProperty('--max', this.props.timerRange.AudioDuration);
+        // document.documentElement.style.setProperty('--base', this.props.timerRange.currentTime);
+        // document.documentElement.style.setProperty('--max', this.props.timerRange.AudioDuration);
 
         return (
             <div className="MusicPlayer_Wrappper">
-                {currentMusic ?
-                    <div id="MusicSlider">
-                        <input id="range1" type="range" min="0" max={this.props.timerRange.AudioDuration} value={this.props.timerRange.currentTime} step="1" ref={this.inputEl}
-                            onChange={() => onChange(this.inputEl.current.value)}
-                        />
-                    </div> : null
-                }
-                <div className="MusicPlayer_wrapper" style={currentMusic ? { bottom: '0px' } : { bottom: '0px' }}>
-                    <div className="MusicPlayer_content">
-                        <div className="PlayerDetails_wrapper" >
-                            {currentMusic ?
-                                <img src={currentMusic.MusicGroup[currentMusic.IndexOfMusic].preview} className="MusicPlayer_thumb" alt="" /> : <Airmusic />}
-                            <div className="Music_artist_wrapper">
-                                <div className="MusicName_B MusicName">{currentMusic ? currentMusic.MusicGroup[currentMusic.IndexOfMusic].name : null}</div>
-                                <div className="ArtistName_B">{currentMusic ? currentMusic.MusicGroup[currentMusic.IndexOfMusic].artist : null}</div>
+
+                <div id="MusicSlider">
+                    {/* <input id="range1" type="range" min="0" max={this.props.timerRange.AudioDuration} value={this.props.timerRange.currentTime} step="1" ref={this.inputEl}
+                        onChange={() => onChange(this.inputEl.current.value)}
+                    /> */}
+                    <div className="MusicPlayer_wrapper" >
+                        <div className="MusicPlayer_content">
+                            <div className="PlayerDetails_wrapper" >
+
+                                <img src="" className="MusicPlayer_thumb" alt="" />
+                                <div className="Music_artist_wrapper">
+                                    <div className="MusicName_B MusicName">Music Name</div>
+                                    <div className="ArtistName_B">Air music</div>
+                                </div>
                             </div>
-                        </div>
-                        {currentMusic ?
+
                             <div className="PlayerControllor_wrapper" >
                                 <img src={Forward} className="controllor MusicBackward" alt="" onClick={() => prevSong()} />
                                 <img src={this.state.paused ? Play : pause} className="controllor" alt="" onClick={() => this.playPausefun()} />
                                 <img src={Backward} className="controllor MusicForward" alt="" onClick={() => NextSong()} />
                             </div> :
-                            <div className="Player_preState PlayerControllor_wrapper"> Hear the frequencies of air </div>}
-                        <div className="Player_right_wrapper">
-                            {currentMusic ?<>
+                            <div className="Player_preState PlayerControllor_wrapper"> Hear the frequencies of air </div>
+                            <div className="Player_right_wrapper">
+
                                 <div className="duration_wrapper" style={this.displayStat} >
                                     <DurationTime />
-                                </div> 
-                                
-                            
-                          
+                                </div>
+
+
+
                                 <div className="volume_controllor">
                                     <img src={this.state.muted ? mute : Volume} alt="" className="Volume" onClick={() => this.mutefunc()} />
                                     <div id="VolumeRange">
                                         <input id="range2" ref={this.volumeSlider} value="100" type="range" min="0" max="100" onChange={() => this.VolumeSlider()} />
                                     </div>
-                                </div> 
-                            
-                         
-                                <img src={Favorite} style={this.displayStat} className="favorite_Musictrl" alt="" /> </>
-                            : null}
+                                </div>
+
+
+                                <img src={Favorite} style={this.displayStat} className="favorite_Musictrl" alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         );
     }
+
 }
 
 
-
-const mapStateToProps = state => ({
-    currentMusic: state.player.CurrentGroup,
-    timerRange: state.timer
-})
-export default connect(mapStateToProps, null)(MusicPlayer);
+export default MusicPlayer;
