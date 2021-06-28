@@ -30,7 +30,6 @@ class DiscoverPage extends Component {
                 <div className="SUBheader">Artists</div>
                 <div className="Profile_Icons">
                     <Provider store={functionStore}>
-
                         <ProfileList />
                     </Provider>
                 </div>

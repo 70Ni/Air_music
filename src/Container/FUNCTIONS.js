@@ -105,6 +105,7 @@ const NextSong = () => {
         IndexFinder(NextPlayId, MusicGroup)
     }
 }
+
 const seektimeupdate = () => {
     if (audio.duration) {
         // let nt = audio.currentTime * (100 / audio.duration);
@@ -129,9 +130,9 @@ const seektimeupdate = () => {
         })
 
     }
-
-
 }
+
+
 const searchMusic = (event) => {
     return store.dispatch({
         type: 'SEARCH_MUSIC',
