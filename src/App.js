@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect } from 'react';
-import {  useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import NavBar from './Components/NavBar/NavBar';
 import DashBar from './Components/Dashbar/DashBar'
@@ -25,8 +25,8 @@ let windowHeight = window.innerHeight;
 function App() {
   const LoadedMusics = useSelector(state => state.MusicLoaded)
   useEffect(() => {
-      console.log("Hello")
-  
+    console.log("Hello")
+
   }, [LoadedMusics])
   return (
     <Router>
@@ -50,6 +50,7 @@ function App() {
             </Switch>
           </div>
         </div>
+        <MusicPlayer />
       </div>
     </Router>
   );

@@ -4,6 +4,9 @@
 .favorite_Musictrl {
     width: 18px;
 }
+.MusicName {
+    padding: 6px 0px !important;
+}
 #range1 {
     position: absolute;
     bottom: 77px;
@@ -49,9 +52,7 @@
     align-items: center;
     padding: 0px 32px;
 }
-.MusicName {
-    padding: 6px 0px;
-}
+
 .PlayerControllor_wrapper {
     flex-grow: 1;
     align-items: center;

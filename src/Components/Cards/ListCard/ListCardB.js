@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { NextMusic } from '../../../Container/FUNCTIONS';
 import { useDispatch, useSelector } from 'react-redux'
 
 import Store from '../../../Redux/Store';
@@ -11,18 +10,15 @@ import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
 import setFavorite from '../../../Redux/Actions/likeAction.action';
 import Playing from '../../../Images/Icons/play_fill.svg'
-
+import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
 let Newarray = []
 let intervalID = undefined;
 
-
-function ListCardB({ id, name, preview, views, duration, URL }) {
+function ListCardB({ id, name, preview, views, duration, artist, URL }) {
     const dispatch = useDispatch()
-
     useEffect(() => {
-        Newarray.push({id, name, preview, views, duration, URL})
+        Newarray.push({id, name, preview, views, duration, artist, URL})
     }, [])
-    console.log()
     return (
         <div className="List_card_wrapper ListCard_B" key={id} >
             <div className="List_card_content" >
@@ -33,7 +29,7 @@ function ListCardB({ id, name, preview, views, duration, URL }) {
                 </div>
                 <div className="List_Name_wrapper">
                     <div className="MusicName_B ListCard_B">{name}</div>
-
+                        <DurationTicker />
                 </div>
                 <div className="List_duration_view_wrapper">
                     <div className="List_duration"><DurationTime /></div>

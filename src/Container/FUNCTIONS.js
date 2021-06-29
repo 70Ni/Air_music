@@ -118,17 +118,29 @@ const PlayPause = () => {
 //         if (curmins < 10) { curmins = "0" + curmins }
 //         if (durmins < 10) { durmins = "0" + durmins }
 //         if (dursecs < 10) { dursecs = "0" + dursecs }
-//         return store.dispatch({
-//             type: 'SET_TIMER',
-//             payload: {
-//                 AudioDuration: audio.duration,
-//                 currentTime: audio.currentTime,
-//                 cursecs: cursecs,
-//                 curmins: curmins,
-//                 durmins: durmins,
-//                 dursecs: dursecs,
-//             }
-//         })
+        
+//         return Store.dispatch(TimerUpdates("worloc"))
+
+        //  (state, { payload }) =>{
+        //     state.AudioDuration = audio.duration
+        //     state.currentTime = audio.currentTime
+        //     state.cursecs = cursecs
+        //     state.curmins = curmins
+        //     state.durmins = durmins
+        //     state.dursecs = dursecs
+
+
+        // return store.dispatch({
+        //     type: 'SET_TIMER',
+        //     payload: {
+        //         AudioDuration: audio.duration,
+        //         currentTime: audio.currentTime,
+        //         cursecs: cursecs,
+        //         curmins: curmins,
+        //         durmins: durmins,
+        //         dursecs: dursecs,
+        //     }
+        // })
 
 //     }
 // }
@@ -166,7 +178,7 @@ function setVolume(volumeValue) {
 
 
 export {
-    MusicGroupSet,Mute,onChange,numFormatter,shuffle,PlayPause,setVolume
+    MusicGroupSet,Mute,onChange,numFormatter,shuffle,PlayPause,setVolume,audio
 }
 
 
