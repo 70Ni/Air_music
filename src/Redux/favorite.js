@@ -12,7 +12,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // }
 const FavoriteSlice = createSlice({
     name: 'FavArray',
-    initialState: [100],
+    initialState: [],
     reducers: {
 
         isFavorite(state, { payload }) {

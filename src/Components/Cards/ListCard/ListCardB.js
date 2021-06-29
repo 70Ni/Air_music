@@ -29,7 +29,7 @@ function ListCardB({ id, name, preview, views, duration, artist, URL }) {
 
     let contrast = MusicLoaded.ClickedMusic == id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null
     let nowPlaying = MusicLoaded.ClickedMusic == id ? { visibility: 'visible' } : { visibility: 'hidden' }
-    let isfavorite = fav.map(like => like == id);
+    let isfavorite = fav.includes(id);
     console.log(isfavorite)
 
 
@@ -51,7 +51,7 @@ function ListCardB({ id, name, preview, views, duration, artist, URL }) {
 
                 {/* <div className="List_status" style ={nowPlaying}>Now Listening...</div> */}
                 <img src={Playing} alt="" style={nowPlaying} />
-                <img src={isfavorite ? Favorite : info} alt="" className="List_save" onClick={() => dispatch(isFavorite(id))} />
+                <img src={isfavorite ? info :Favorite } alt="" className="List_save" onClick={() => dispatch(isFavorite(id))} />
             </div>
         </div>
     )
