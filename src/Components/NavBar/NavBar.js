@@ -18,7 +18,7 @@ function NavBar() {
         <div className="Navbar_wrapper">
             <div className="NavContainer">
                 <div className="Nav_header ">
-                    <div className="Nav_header_name">air</div>
+                    <div className="Nav_header_name">o</div>
                     <div className="Nav_header_BB">Musics</div>
                 </div>
                 <div className="NavList_wrapper">

@@ -10,9 +10,9 @@ import { setArtist } from '../Redux/Actions/selectArtist.action';
 let ShuffledArray = shuffle(Music);
 
 const ArtisPagList = (props) => {
-    const array = useMemo(() => ShuffledArray.filter(art => art.Artist === props.Name ? props.Name : "Marshmello").slice(0,8), []);
+    const array = useMemo(() => ShuffledArray.filter(art => art.Artist == "Marshmello").slice(0,8), []);
         return (
-        <div>h
+        <div>   
             {
                 array.map((song, i) => {
                     return (
@@ -35,9 +35,5 @@ const ArtisPagList = (props) => {
     );
 }
 
-const mapStateToProps = state => ({
-    Name: state.selectArtist.artistName,
-})
 
-
-export default connect(mapStateToProps, null)(ArtisPagList);
+export default ArtisPagList;

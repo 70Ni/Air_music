@@ -42,7 +42,7 @@ function App() {
             <Switch>
               <Route exact path="/discover" component={DiscoverPage} />
               <Route exact path="/trending" component={TreningPage} />
-              {/* <Route exact path="/artists" component={ArtistPage} /> */}
+              <Route exact path="/artists" component={ArtistPage} />
               <Route exact path="/playlist" component={PlayListPage} />
               <Route exact path="/recent" component={RecentPage} />
               <Route exact path="/about" component={AboutPage} />
