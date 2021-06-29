@@ -46,7 +46,10 @@ function Durationticker() {
     }
     return (
         <div className="MusicDuration_wrapper">
-            {audio.duration ? SongDuration.Durations.cursecs : "nulll"}
+            {SongDuration.curmins ?
+                <div className="MusicDuration_wrapper">{SongDuration.curmins}:{SongDuration.cursecs}/{SongDuration.durmins}:{SongDuration.dursecs} </div>
+                : <div></div>
+            }
         </div>
     )
 }

@@ -14,11 +14,23 @@ import { PlayPause } from "../Container/FUNCTIONS";
 const TimeSlice = createSlice({
     name: 'TimeUpdater',
     initialState: {
+        AudioDuration: '',
+        currentTime: '',
+        cursecs: '',
+        curmins: '',
+        durmins: '',
+        dursecs: '',
 
     },
     reducers: {
         TimerUpdates(state, { payload }) {
-            state.Durations = payload
+            state.AudioDuration = payload.AudioDuration
+            state.currentTime = payload.currentTime
+            state.cursecs = payload.cursecs
+            state.curmins = payload.curmins
+            state.durmins = payload.durmins
+            state.dursecs = payload.dursecs
+
         }
 
     }

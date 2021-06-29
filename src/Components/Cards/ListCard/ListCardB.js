@@ -12,7 +12,6 @@ import setFavorite from '../../../Redux/Actions/likeAction.action';
 import Playing from '../../../Images/Icons/play_fill.svg'
 import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
 let Newarray = []
-let intervalID = undefined;
 
 function ListCardB({ id, name, preview, views, duration, artist, URL }) {
     const dispatch = useDispatch()
@@ -29,10 +28,9 @@ function ListCardB({ id, name, preview, views, duration, artist, URL }) {
                 </div>
                 <div className="List_Name_wrapper">
                     <div className="MusicName_B ListCard_B">{name}</div>
-                        <DurationTicker />
                 </div>
                 <div className="List_duration_view_wrapper">
-                    <div className="List_duration"><DurationTime /></div>
+                    <div className="List_duration">{duration}</div>
                     <div className="List_view" >{views}</div>
                 </div>
 

@@ -15,6 +15,7 @@ import DurationTime from './DurationTime';
 import { Mute, PlayPause, onChange, setVolume, audio } from '../../Container/FUNCTIONS'
 import './MusicPlayer.css'
 import './Slider.scss'
+import Durationticker from './Durationticker';
 import { connect } from 'react-redux';
 import Airmusic from '../Branding/Airmusic';
 
@@ -24,22 +25,26 @@ function MusicPlayer() {
     
     const dispatch = useDispatch()
     const MusicLoaded = useSelector(state => state.MusicLoaded)
+    const SongDuration = useSelector(state => state.SongDuration)
     const inputEl = useRef()
     const volumeSlider = useRef()
     let musicGroup = MusicLoaded.MusicGroup;
     let musicIndex = MusicLoaded.IndexOfMusic
+
+    document.documentElement.style.setProperty('--base', SongDuration.currentTime);
+    document.documentElement.style.setProperty('--max', SongDuration.AudioDuration);
 
     return (
 
         <div className="MusicPlayer_Wrappper">
 
             <div id="MusicSlider">
-                {/* <input id="range1" type="range" min="0"
-                    max={this.props.timerRange.AudioDuration}
-                    value={this.props.timerRange.currentTime}
-                    step="1" ref={this.inputEl}
+                <input id="range1" type="range" min="0"
+                    max={SongDuration.AudioDuration}
+                    value={SongDuration.currentTime}
+                    step="1" ref={inputEl}
                     onChange={() => onChange(inputEl.current.value)}
-                /> */}
+                />
                 <div className="MusicPlayer_wrapper" >
                     <div className="MusicPlayer_content">
                         <div className="PlayerDetails_wrapper" >
@@ -63,7 +68,7 @@ function MusicPlayer() {
                         <div className="Player_right_wrapper">
 
                             <div className="duration_wrapper" >
-                                <DurationTime />
+                                <Durationticker />
                             </div>
 
 
