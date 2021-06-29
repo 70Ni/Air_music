@@ -3,7 +3,7 @@ import { NextMusic } from '../../../Container/FUNCTIONS';
 import { useDispatch, useSelector } from 'react-redux'
 
 import Store from '../../../Redux/Store';
-import { indexFind,SkipPrev } from '../../../Redux/IndexFinder';
+import { indexFind,SkipPrev,SkipNext } from '../../../Redux/IndexFinder';
 import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 import DurationTime from '../../MusicPlayer/DurationTime'
@@ -42,7 +42,7 @@ function ListCardB({ id, name, preview, views, duration, URL }) {
 
                 <img src={Playing} alt="" />
                 {/* <div className="List_status">Now Listening...</div> */}
-                <img src={Favorite} alt="" className="List_save" onClick={()=> dispatch(SkipPrev())}/>
+                <img src={Favorite} alt="" className="List_save" onClick={()=> dispatch(SkipNext())}/>
             </div>
         </div>
     )

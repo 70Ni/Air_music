@@ -30,6 +30,11 @@ const IndexSlice = createSlice({
         SkipPrev(state) {
             if (state.IndexOfMusic > 0) {
                 state.IndexOfMusic -= 1
+            }   
+        },
+        SkipNext(state) {
+            if (state.IndexOfMusic + 1 < state.MusicGroup.length) {
+                state.IndexOfMusic += 1
             }
         }
 
@@ -38,5 +43,5 @@ const IndexSlice = createSlice({
 
 })
 
-export const { indexFind,SkipPrev } = IndexSlice.actions;
+export const { indexFind,SkipPrev,SkipNext } = IndexSlice.actions;
 export default IndexSlice.reducer;
