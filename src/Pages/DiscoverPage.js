@@ -18,14 +18,11 @@ import { Music } from '../Json/Music';
 
 
 function DiscoverPage() {
-const isMounted = useRef()
-    const LoadedMusics = useSelector(state => state.MusicLoaded.ClickedMusic)
-    useEffect((prevState) => {
-        if (isMounted.current) {
-            MusicGroupSet()
-        } else {
-            isMounted.current = true;
-        }
+
+    const LoadedMusics = useSelector(state => state.MusicLoaded)
+    useEffect(() => {
+           return () => MusicGroupSet()
+           console.log("Heloooy")
     }, [LoadedMusics])
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>

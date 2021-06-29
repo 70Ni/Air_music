@@ -29,7 +29,7 @@ const IndexSlice = createSlice({
         },
         SkipPrev(state) {
             if (state.IndexOfMusic > 0) {
-                state.IndexOfMusic = state.IndexOfMusic - 1
+                state.IndexOfMusic -= 1
             }
         }
 
