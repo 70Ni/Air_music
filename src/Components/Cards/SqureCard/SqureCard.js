@@ -5,7 +5,7 @@ import Image from '../../../Music files/Justin Bieber/thumbnail/Changes.jpg'
 import Play from '../../../Images/Icons/Play_fill.svg'
 // import save from '../../../Images/Icons/save.svg';
 
-import { IndexFinder } from '../../../Container/FUNCTIONS'
+// import { IndexFinder } from '../../../Container/FUNCTIONS'
 
 import './SqureCard.css'
 
@@ -22,7 +22,7 @@ class SqureCard extends Component {
     render() {
         const {id,name, preview, artist} = this.props
         return (
-            <div className="Squre_wrapper" onClick={() => IndexFinder(id, Newarray)}>
+            <div className="Squre_wrapper">
                 <div className="Squre_content">
                     <div className="Squre_image_section">
                         <img src={Favorite} alt="" className="favorite_S" />

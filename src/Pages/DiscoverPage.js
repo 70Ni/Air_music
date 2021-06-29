@@ -1,24 +1,32 @@
-import React, { Component } from 'react';
+import React, { useEffect,useRef } from 'react';
+import { useSelector } from 'react-redux'
 
 import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ';
 import DiscoverCardA from '../Components/Cards/DiscoverCard/DiscoverCardA';
 import DiscoverCardB from '../Components/Cards/DiscoverCard/DiscoverCardB';
 import DiscoverCardC from '../Components/Cards/DiscoverCard/DiscoverCardC';
 import SqureCard from '../Components/Cards/SqureCard/SqureCard';
-import { AutoPlay } from '../Container/FUNCTIONS';
 import AutoPlayIcon from '../Images/Icons/autoPlay.svg';
 import PremiumSongs from '../Container/DiscoverPageLists/PremiumSongs';
 import './DiscoverPage.css'
-import { MusicGroupSet } from '../Container/FUNCTIONS';
+import { MusicGroupSet } from '../Container/FUNCTIONS'
 import ProfileList from '../Container/ProfileList';
 import RelatedSongs from '../Container/DiscoverPageLists/RelatedSongs';
 import Intro from '../Music files/Justin Bieber/thumbnail/Lifetime.jpg'
 
 import { Music } from '../Json/Music';
-import { connect } from 'react-redux';
 
 
 function DiscoverPage() {
+const isMounted = useRef()
+    const LoadedMusics = useSelector(state => state.MusicLoaded.ClickedMusic)
+    useEffect((prevState) => {
+        if (isMounted.current) {
+            MusicGroupSet()
+        } else {
+            isMounted.current = true;
+        }
+    }, [LoadedMusics])
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
             <div className="SUBheader_H">Disover</div>
@@ -44,7 +52,7 @@ function DiscoverPage() {
                         <RelatedSongs />
                     </div>
                     <div className="disPag_listButton">
-                        <div className="AutoPlayButton" onClick={() => AutoPlay()}>
+                        <div className="AutoPlayButton">
                             <div className="Play_D">Auto Play</div>
                             <img className="ButtonImg" src={AutoPlayIcon} alt="" />
                         </div>

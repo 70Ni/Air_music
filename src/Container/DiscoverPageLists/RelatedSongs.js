@@ -5,8 +5,6 @@ import { shuffle, numFormatter } from '../../Container/FUNCTIONS'
 import { Music } from '../../Json/Music';
 
 
-
-
 let ShuffledArray = shuffle(Music);
 
 

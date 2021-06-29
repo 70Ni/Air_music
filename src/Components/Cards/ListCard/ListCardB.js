@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { NextMusic } from '../../../Container/FUNCTIONS';
 import { useDispatch, useSelector } from 'react-redux'
 
-import { indexFind } from '../../../Redux/IndexFinder';
+import Store from '../../../Redux/Store';
+import { indexFind,SkipPrev } from '../../../Redux/IndexFinder';
 import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 import DurationTime from '../../MusicPlayer/DurationTime'
@@ -15,13 +16,13 @@ let Newarray = []
 let intervalID = undefined;
 
 
-function ListCardB({ id, name, preview, views, duration }) {
+function ListCardB({ id, name, preview, views, duration, URL }) {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        Newarray.push({id, name, preview, views, duration})
+        Newarray.push({id, name, preview, views, duration, URL})
     }, [])
-    console.log(Newarray)
+    console.log()
     return (
         <div className="List_card_wrapper ListCard_B" key={id} >
             <div className="List_card_content" >
@@ -41,7 +42,7 @@ function ListCardB({ id, name, preview, views, duration }) {
 
                 <img src={Playing} alt="" />
                 {/* <div className="List_status">Now Listening...</div> */}
-                <img src={Favorite} alt="" className="List_save" />
+                <img src={Favorite} alt="" className="List_save" onClick={()=> dispatch(SkipPrev())}/>
             </div>
         </div>
     )

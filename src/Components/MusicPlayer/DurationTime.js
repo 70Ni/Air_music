@@ -16,9 +16,9 @@ class DurationTime extends Component {
     }
 
     componentDidMount() {
-        intervalID = setInterval(() => {
-            seektimeupdate()
-        }, 1000);
+        // intervalID = setInterval(() => {
+        //     seektimeupdate()
+        // }, 1000);
     }
 
     componentWillUnmount() {

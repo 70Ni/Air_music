@@ -11,7 +11,7 @@ import Volume from '../../Images/Icons/Volume.svg'
 import mute from '../../Images/Icons/mute.svg'
 
 import DurationTime from './DurationTime';
-import { Mute, prevSong, NextSong, PlayPause, onChange, setVolume, audio } from '../../Container/FUNCTIONS'
+import { Mute, PlayPause, onChange, setVolume, audio } from '../../Container/FUNCTIONS'
 import './MusicPlayer.css'
 import './Slider.scss'
 import { connect } from 'react-redux';
@@ -87,7 +87,7 @@ class MusicPlayer extends Component {
                     {/* <input id="range1" type="range" min="0" max={this.props.timerRange.AudioDuration} value={this.props.timerRange.currentTime} step="1" ref={this.inputEl}
                         onChange={() => onChange(this.inputEl.current.value)}
                     /> */}
-                    <div className="MusicPlayer_wrapper" >
+                    {/* <div className="MusicPlayer_wrapper" >
                         <div className="MusicPlayer_content">
                             <div className="PlayerDetails_wrapper" >
 
@@ -123,8 +123,8 @@ class MusicPlayer extends Component {
                                 <img src={Favorite} style={this.displayStat} className="favorite_Musictrl" alt="" />
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>*/}   
+                </div> 
             </div>
         );
     }

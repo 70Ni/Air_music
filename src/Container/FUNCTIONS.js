@@ -1,7 +1,5 @@
-// import Musi from '../Music files/Marshmellow/Alone.mp3'
-import { connect } from 'react-redux';
-import store from '../Redux/store';
-import { Music } from '../Json/Music';
+import Store from '../Redux/Store';
+
 
 const shuffle = (arra1) => {
     var ctr = arra1.length, temp, index;
@@ -36,17 +34,18 @@ function numFormatter(num) {
 let audio = new Audio();
 
 
+
 const MusicGroupSet = () => {
-    let index = store.getState().player.CurrentGroup.IndexOfMusic
-    audio.src = store.getState().player.CurrentGroup.MusicGroup[index].URL.default;
-    audio.play();
+        let index = Store.getState().MusicLoaded.IndexOfMusic
+        audio.src = Store.getState().MusicLoaded.MusicGroup[index].URL.default
+        audio.play();
+        console.log(audio.src)
     audio.onended = () => {
-        if (store.getState().autoPlay.isAutoPlay) {
-            NextSong()
+        if (Store.getState().autoPlay.isAutoPlay) {
+            console.log("event completed")
         }
     }
 }
-
 
 const PlayPause = () => {
     if (audio.paused) {
@@ -56,91 +55,93 @@ const PlayPause = () => {
     }
 }
 
-const FavoriteFunc = (id) => {
-    return store.dispatch({
-        type: 'SET_FAVORITE,',
-        payload: id
-    })
-}
+// const FavoriteFunc = (id) => {
+//     return store.dispatch({
+//         type: 'SET_FAVORITE,',
+//         payload: id
+//     })
+// }
 
-const AutoPlay = () => {
-    return store.dispatch({
-        type: 'SET_AUTO_PLAY',
-    })
-}
+// const AutoPlay = () => {
+//     return store.dispatch({
+//         type: 'SET_AUTO_PLAY',
+//     })
+// }
 
-function IndexFinder(id, localArray) {
-    let prevMusic = store.getState().player.prevMusic
-    if (prevMusic !== id) {
-        let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
-        return store.dispatch({
-            type: 'SET_MUSIC_PLAYER',
-            payload: {
-                ClickedMusic: id,
-                IndexOfMusic: r,
-                MusicGroup: localArray,
-                prevMusic: id,
-            }
-        })
+// function IndexFinder(id, localArray) {
+//     let prevMusic = store.getState().player.prevMusic
+//     if (prevMusic !== id) {
+//         let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
+//         return store.dispatch({
+//             type: 'SET_MUSIC_PLAYER',
+//             payload: {
+//                 ClickedMusic: id,
+//                 IndexOfMusic: r,
+//                 MusicGroup: localArray,
+//                 prevMusic: id,
+//             }
+//         })
         
-    } PlayPause()
-}
-const prevSong = () => {
-    let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
-    let index = store.getState().player.CurrentGroup.IndexOfMusic;
-    if (index > 0) {
-        let PrevPlayIndex = index - 1;
-        let PrevPlayId = MusicGroup[PrevPlayIndex].id;
-        IndexFinder(PrevPlayId, MusicGroup)
+//     } PlayPause()
+// }
 
-    }
-}
+    // const PrevSong = () => {
+    //     const dispatch = useDispatch();
+    //     let MusicGroup = Store.getState().MusicLoaded.IndexOfMusic.MusicGroup;
+    //     let index = Store.getState().MusicLoaded.IndexOfMusic.IndexOfMusic;
+    //     if (index > 0) {
+    //         let PrevPlayIndex = index - 1;
+    //         let PrevPlayId = MusicGroup[PrevPlayIndex].id;
+    //         dispatch(indexFind({PrevPlayId,MusicGroup}))
 
-const NextSong = () => {
-    let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
-    let index = store.getState().player.CurrentGroup.IndexOfMusic;
-    if (index + 1 < MusicGroup.length) {
-        let NextPlayIndex = index + 1;
-        let NextPlayId = MusicGroup[NextPlayIndex].id;
-        IndexFinder(NextPlayId, MusicGroup)
-    }
-}
+    //     }
+    // }
 
-const seektimeupdate = () => {
-    if (audio.duration) {
-        // let nt = audio.currentTime * (100 / audio.duration);
-        var curmins = Math.floor(audio.currentTime / 60);
-        var cursecs = Math.floor(audio.currentTime - curmins * 60);
-        var durmins = Math.floor(audio.duration / 60);
-        var dursecs = Math.floor(audio.duration - (durmins * 60));
-        if (cursecs < 10) { cursecs = "0" + cursecs }
-        if (curmins < 10) { curmins = "0" + curmins }
-        if (durmins < 10) { durmins = "0" + durmins }
-        if (dursecs < 10) { dursecs = "0" + dursecs }
-        return store.dispatch({
-            type: 'SET_TIMER',
-            payload: {
-                AudioDuration: audio.duration,
-                currentTime: audio.currentTime,
-                cursecs: cursecs,
-                curmins: curmins,
-                durmins: durmins,
-                dursecs: dursecs,
-            }
-        })
+// const NextSong = () => {
+//     let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
+//     let index = store.getState().player.CurrentGroup.IndexOfMusic;
+//     if (index + 1 < MusicGroup.length) {
+//         let NextPlayIndex = index + 1;
+//         let NextPlayId = MusicGroup[NextPlayIndex].id;
+//         IndexFinder(NextPlayId, MusicGroup)
+//     }
+// }
 
-    }
-}
+// const seektimeupdate = () => {
+//     if (audio.duration) {
+//         // let nt = audio.currentTime * (100 / audio.duration);
+//         var curmins = Math.floor(audio.currentTime / 60);
+//         var cursecs = Math.floor(audio.currentTime - curmins * 60);
+//         var durmins = Math.floor(audio.duration / 60);
+//         var dursecs = Math.floor(audio.duration - (durmins * 60));
+//         if (cursecs < 10) { cursecs = "0" + cursecs }
+//         if (curmins < 10) { curmins = "0" + curmins }
+//         if (durmins < 10) { durmins = "0" + durmins }
+//         if (dursecs < 10) { dursecs = "0" + dursecs }
+//         return store.dispatch({
+//             type: 'SET_TIMER',
+//             payload: {
+//                 AudioDuration: audio.duration,
+//                 currentTime: audio.currentTime,
+//                 cursecs: cursecs,
+//                 curmins: curmins,
+//                 durmins: durmins,
+//                 dursecs: dursecs,
+//             }
+//         })
+
+//     }
+// }
 
 
-const searchMusic = (event) => {
-    return store.dispatch({
-        type: 'SEARCH_MUSIC',
-        payload: {
-            resutl: event
-        }
-    })
-}
+// const searchMusic = (event) => {
+//     return store.dispatch({
+//         type: 'SEARCH_MUSIC',
+//         payload: {
+//             resutl: event
+//         }
+//     })
+// }
 
 const onChange = (slideValue) => {
     if (audio.duration) {
@@ -165,8 +166,7 @@ function setVolume(volumeValue) {
 
 
 export {
-    shuffle, numFormatter, PlayPause, IndexFinder, MusicGroupSet, prevSong, NextSong,
-    seektimeupdate, Mute, onChange, setVolume, AutoPlay, audio, FavoriteFunc, searchMusic,
+    MusicGroupSet,Mute,onChange,numFormatter,shuffle,PlayPause,setVolume
 }
 
 
