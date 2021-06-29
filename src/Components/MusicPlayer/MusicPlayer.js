@@ -1,4 +1,4 @@
-import React, { useRef, createRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Favorite from '../../Images/Icons/save.svg'
 import Play from '../../Images/Icons/Play.svg';
@@ -21,30 +21,77 @@ import Airmusic from '../Branding/Airmusic';
 
 
 
-function MusicPlayer() {
-    
+function MusicPlayer({ id }) {
+
     const dispatch = useDispatch()
     const MusicLoaded = useSelector(state => state.MusicLoaded)
     const SongDuration = useSelector(state => state.SongDuration)
     const inputEl = useRef()
     const volumeSlider = useRef()
+
     let musicGroup = MusicLoaded.MusicGroup;
     let musicIndex = MusicLoaded.IndexOfMusic
 
     document.documentElement.style.setProperty('--base', SongDuration.currentTime);
     document.documentElement.style.setProperty('--max', SongDuration.AudioDuration);
 
-    return (
 
+    const [muted, setMuted] = useState(false)
+    const [paused, setPaused] = useState(false)
+    const muteIcon = () => {
+        return (
+            setMuted(!muted)
+        )
+    }
+    const pauseIcon = () => {
+        return (
+            setPaused(!paused)
+        )
+    }
+    const setMute = () => {
+        volumeSlider.current.value == 0 ?
+            setMuted(true)
+            :
+            setMuted(false)
+    }
+
+
+    const mutefunc = () => {
+        return (
+            Mute(),
+            muteIcon()
+        )
+    }
+    const playPausefun = () => {
+        return (
+            PlayPause(),
+            pauseIcon()
+        )
+    }
+    const VolumeSlider = () => {
+        return (
+            setVolume(volumeSlider.current.value),
+            setMute()
+        )
+    }
+
+
+
+    console.log(muted)
+    return (
         <div className="MusicPlayer_Wrappper">
 
             <div id="MusicSlider">
-                <input id="range1" type="range" min="0"
-                    max={SongDuration.AudioDuration}
-                    value={SongDuration.currentTime}
-                    step="1" ref={inputEl}
-                    onChange={() => onChange(inputEl.current.value)}
-                />
+                {SongDuration.AudioDuration ?
+                    <input id="range1" type="range" min="0"
+                        max={SongDuration.AudioDuration}
+                        value={SongDuration.currentTime}
+                        step="1" ref={inputEl}
+                        onChange={() => onChange(inputEl.current.value)}
+                    />
+                    :
+                    null
+                }
                 <div className="MusicPlayer_wrapper" >
                     <div className="MusicPlayer_content">
                         <div className="PlayerDetails_wrapper" >
@@ -58,13 +105,14 @@ function MusicPlayer() {
                                 <div className="ArtistName_B">{musicGroup ? musicGroup[musicIndex].artist : null} </div>
                             </div>
                         </div>
-
-                        <div className="PlayerControllor_wrapper" >
-                            <img src={Forward} className="controllor MusicBackward" alt="" onClick={() => dispatch(SkipPrev())} />
-                            <img src={pause} className="controllor" alt="" onClick={()=> PlayPause()}/>
-                            <img src={Backward} className="controllor MusicForward" alt="" onClick={() => dispatch(SkipNext())} />
-                        </div>
-                        {/* <div className="Player_preState PlayerControllor_wrapper"> Hear the frequencies of air </div> */}
+                        {musicGroup ?
+                            <div className="PlayerControllor_wrapper" >
+                                <img src={Forward} className="controllor MusicBackward" alt="" onClick={() => dispatch(SkipPrev())} />
+                                <img src={paused ? Play:pause} className="controllor" alt="" onClick={() => playPausefun()} />
+                                <img src={Backward} className="controllor MusicForward" alt="" onClick={() => dispatch(SkipNext())} />
+                            </div>
+                            : <div className="Player_preState PlayerControllor_wrapper"> Hear beats of the air </div>
+                        }
                         <div className="Player_right_wrapper">
 
                             <div className="duration_wrapper" >
@@ -74,9 +122,8 @@ function MusicPlayer() {
 
 
                             <div className="volume_controllor">
-                                <img src={Volume} alt="" className="Volume" onClick={() => this.mutefunc()} />
-                                <div id="VolumeRange">
-                                    {/* <input id="range2" ref={this.volumeSlider} value="100" type="range" min="0" max="100" onChange={() => this.VolumeSlider()} /> */}
+                                <img src={muted ? mute : Volume} alt="" className="Volume" onClick={() => mutefunc()} />                                <div id="VolumeRange">
+                                    <input id="range2" ref={volumeSlider} value="100" type="range" min="0" max="100" onChange={() => VolumeSlider()} />
                                 </div>
                             </div>
 
