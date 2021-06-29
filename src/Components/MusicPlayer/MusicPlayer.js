@@ -63,7 +63,7 @@ function MusicPlayer() {
                         <div className="Player_right_wrapper">
 
                             <div className="duration_wrapper" >
-                                {/* <DurationTime /> */}
+                                <DurationTime />
                             </div>
 
 
