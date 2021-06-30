@@ -6,7 +6,7 @@
     border-radius: 12px;
     padding: 20px;
     width: 300px;
-    height: 255px;
+    max-height: 255px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,7 @@
     color: #ffffff;
 }
 .Notification_header {
-    padding: 8px 0px;
+    padding: 6px 0px;
 }
 
 li {
@@ -64,7 +64,7 @@ ul {
 }
 .Notification_header {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     opacity: 1;
     color: #ffffff;

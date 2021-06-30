@@ -16,13 +16,6 @@ function Notifications() {
                         </div>
                         <div className="Notifications_para">This is the content related to notifications</div>
                     </li>
-                    <li className="notification_Dis">
-                        <div className="notification_header_wrapper">
-                            <div className="Notification_header">Welcome to air musics</div>
-                            <div className="Notification_time">12:20</div>
-                        </div>
-                        <div className="Notifications_para">This is the content related to notifications</div>
-                    </li>
                     {
                         favorite.map(message => {
                             var today = new Date();
@@ -38,13 +31,7 @@ function Notifications() {
                             )
                         })
                     }
-                    <li className="notification_Dis">
-                        <div className="notification_header_wrapper">
-                            <div className="Notification_header">Welcome to air musics</div>
-                            <div className="Notification_time">12:20</div>
-                        </div>
-                        <div className="Notifications_para">This is the content related to notificationsThis is the content related to notificationsThis is the content related to notifications</div>
-                    </li>
+                   
                 </ul>
             </div>
         </div>

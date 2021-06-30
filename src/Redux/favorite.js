@@ -19,12 +19,12 @@ const FavoriteSlice = createSlice({
     reducers: {
 
         isFavorite(state, { payload }) {
-            let r = state.id.map(like => like === payload).indexOf(true);
+            let r = state.id.map(like => like === payload.id).indexOf(true);
             console.log(r)
 
             if (r >= 0) {
-                state.id = state.id.splice(r, 1);
-                state.name = state.name.splice(r, 1);
+                state.id.splice(r, 1);
+                state.name.splice(r, 1);
             } else {
                 state.id.unshift(payload.id)
                 state.name.unshift(payload.name)

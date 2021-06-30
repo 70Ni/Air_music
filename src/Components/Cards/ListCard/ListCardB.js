@@ -30,9 +30,6 @@ function ListCardB({ id, name, preview, views, duration, artist, URL }) {
     let contrast = MusicLoaded.ClickedMusic == id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null
     let nowPlaying = MusicLoaded.ClickedMusic == id ? { visibility: 'visible' } : { visibility: 'hidden' }
     let isfavorite = fav.includes(id);
-    console.log(isfavorite)
-
-
     return (
         <div className="List_card_wrapper ListCard_B" key={id} >
             <div className="List_card_content" >
