@@ -1,5 +1,5 @@
-import React, { useEffect,useRef } from 'react';
-import { useSelector } from 'react-redux'
+import React, { useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 
 import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ';
 import DiscoverCardA from '../Components/Cards/DiscoverCard/DiscoverCardA';
@@ -8,6 +8,7 @@ import DiscoverCardC from '../Components/Cards/DiscoverCard/DiscoverCardC';
 import SqureCard from '../Components/Cards/SqureCard/SqureCard';
 import AutoPlayIcon from '../Images/Icons/autoPlay.svg';
 import PremiumSongs from '../Container/DiscoverPageLists/PremiumSongs';
+import { AutoPlay } from '../Redux/IndexFinder';
 import './DiscoverPage.css'
 import { MusicGroupSet } from '../Container/FUNCTIONS'
 import ProfileList from '../Container/ProfileList';
@@ -18,12 +19,19 @@ import { Music } from '../Json/Music';
 
 
 function DiscoverPage() {
+    const dispatch = useDispatch();
+    const LoadedMusics = useSelector(state => state.MusicLoaded);
 
-    const LoadedMusics = useSelector(state => state.MusicLoaded)
+    let AutoButton ={}
+    if(LoadedMusics.ClickedMusic>0){
+        if(LoadedMusics.MusicGroup[0].isLoop){
+            AutoButton = {backgroundColor:'#F27E4C'}
+        }
+    }
     useEffect(() => {
-           return () => MusicGroupSet()
-           console.log("Heloooy")
-    }, [LoadedMusics])
+        return () => MusicGroupSet()
+        console.log("Heloooy")
+    }, [LoadedMusics.ClickedMusic])
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
             <div className="SUBheader_H">Disover</div>
@@ -49,7 +57,7 @@ function DiscoverPage() {
                         <RelatedSongs />
                     </div>
                     <div className="disPag_listButton">
-                        <div className="AutoPlayButton">
+                        <div className="AutoPlayButton" onClick={LoadedMusics.ClickedMusic>0 ? ()=>dispatch(AutoPlay()) : null} style ={AutoButton}>
                             <div className="Play_D">Auto Play</div>
                             <img className="ButtonImg" src={AutoPlayIcon} alt="" />
                         </div>

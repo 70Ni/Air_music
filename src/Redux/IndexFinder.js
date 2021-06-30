@@ -28,20 +28,23 @@ const IndexSlice = createSlice({
             }
         },
         SkipPrev(state) {
-            if (state.IndexOfMusic > 0) {
+            if (state.IndexOfMusic > 1) {
                 state.IndexOfMusic -= 1
-            }   
+            }
         },
         SkipNext(state) {
             if (state.IndexOfMusic + 1 < state.MusicGroup.length) {
                 state.IndexOfMusic += 1
             }
+        },
+        AutoPlay(state) {
+            let change = !state.MusicGroup[0].isLoop
+            state.MusicGroup[0].isLoop = change
         }
 
     }
 
 
 })
-
-export const { indexFind,SkipPrev,SkipNext } = IndexSlice.actions;
+export const { indexFind, SkipPrev, SkipNext, AutoPlay } = IndexSlice.actions;
 export default IndexSlice.reducer;

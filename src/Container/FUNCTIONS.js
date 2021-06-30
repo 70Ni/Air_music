@@ -41,9 +41,7 @@ const MusicGroupSet = () => {
         audio.play();
         console.log(audio.src)
     audio.onended = () => {
-        if (Store.getState().autoPlay.isAutoPlay) {
-            console.log("event completed")
-        }
+console.log("music end event")
     }
 }
 

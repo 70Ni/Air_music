@@ -11,6 +11,7 @@ export default configureStore ({
         SongDuration: TimerUpdates,
         favorite:FavoriteSlice,
         searchCard: search
+        
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== 'production',

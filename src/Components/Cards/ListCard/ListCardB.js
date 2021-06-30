@@ -13,11 +13,11 @@ import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
 import Playing from '../../../Images/Icons/play_fill.svg'
 import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
-let Newarray = []
+let Newarray = [{isLoop:false}]
 
 
 
-function ListCardB({ id, name, preview, views, duration, artist, URL }) {
+function ListCardB({ id, name, preview, views, duration, artist, URL}) {
     const MusicLoaded = useSelector(state => state.MusicLoaded)
     const fav = useSelector(state => state.favorite.id)
     const dispatch = useDispatch()
