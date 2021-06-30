@@ -10,7 +10,7 @@ import HeaderThunder from './Components/HeaderComponents/HeaderThunder/HeaderThu
 import DiscoverPage from './Pages/DiscoverPage'
 import TreningPage from './Pages/TrendingPage'
 import ArtistPage from './Pages/ArtistPage'
-
+import Notifications from './Components/Dashbar/Notifications';
 
 import HeaderCore from './Components/HeaderComponents/HeaderCore/HeaderCore';
 import PlayListPage from './Pages/PlayListPage';

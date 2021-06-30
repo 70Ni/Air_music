@@ -20,7 +20,7 @@ let Newarray = []
 
 function ListCardB({ id, name, preview, views, duration, artist, URL }) {
     const MusicLoaded = useSelector(state => state.MusicLoaded)
-    const fav = useSelector(state => state.favorite)
+    const fav = useSelector(state => state.favorite.id)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -51,7 +51,7 @@ function ListCardB({ id, name, preview, views, duration, artist, URL }) {
 
                 {/* <div className="List_status" style ={nowPlaying}>Now Listening...</div> */}
                 <img src={Playing} alt="" style={nowPlaying} />
-                <img src={isfavorite ? info :Favorite } alt="" className="List_save" onClick={() => dispatch(isFavorite(id))} />
+                <img src={isfavorite ? info :Favorite } alt="" className="List_save" onClick={() => dispatch(isFavorite({id,name}))} />
             </div>
         </div>
     )

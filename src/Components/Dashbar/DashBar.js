@@ -7,7 +7,7 @@ import bell from '../../Images/Icons/bell.svg';
 import { Music } from '../../Json/Music';
 
 import { setSearchMusic } from '../../Redux/Actions/search.aciton';
-
+import Notification from '../../Components/Dashbar/Notifications'
 import './DashBar.css'
 
 const mapStateToProps = state => ({
@@ -47,6 +47,7 @@ class DashBar extends Component {
                         <div className="bell_icon_wrapper">
                             <span className="notifier"></span>
                             <img src={bell} alt="" />
+                            <Notification />
                         </div>
                     </div>
                 </div>

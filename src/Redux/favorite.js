@@ -12,17 +12,22 @@ import { createSlice } from "@reduxjs/toolkit";
 // }
 const FavoriteSlice = createSlice({
     name: 'FavArray',
-    initialState: [],
+    initialState: {
+        id:[],
+        name:[]
+    },
     reducers: {
 
         isFavorite(state, { payload }) {
-            let r = state.map(like => like == payload).indexOf(true);
+            let r = state.id.map(like => like === payload).indexOf(true);
             console.log(r)
 
             if (r >= 0) {
-                state = state.splice(r, 1);
+                state.id = state.id.splice(r, 1);
+                state.name = state.name.splice(r, 1);
             } else {
-                state.push(payload)
+                state.id.unshift(payload.id)
+                state.name.unshift(payload.name)
             }
 
         },

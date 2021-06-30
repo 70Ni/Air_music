@@ -125,7 +125,7 @@ function MusicPlayer({ id }) {
                             </div>
 
 
-                            <img src={Favorite} className="favorite_Musictrl" alt="" />
+                            <img src={Favorite} className="favorite_Musictrl" alt="" value ={musicGroup? musicGroup[musicIndex].id:null}/>
                         </div>
                     </div>
                 </div>
