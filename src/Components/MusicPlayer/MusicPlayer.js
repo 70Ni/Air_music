@@ -77,7 +77,6 @@ function MusicPlayer({ id }) {
 
 
 
-    console.log(muted)
     return (
         <div className="MusicPlayer_Wrappper">
 

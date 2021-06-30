@@ -25,7 +25,6 @@ let windowHeight = window.innerHeight;
 function App() {
   const LoadedMusics = useSelector(state => state.MusicLoaded)
   useEffect(() => {
-    console.log("Hello")
 
   }, [LoadedMusics])
   return (
