@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ListCardB from '../Components/Cards/ListCard/ListCardB';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
-import setCurrentMusics from '../Redux/Actions/musicPlayer.action'
 import RecentList from '../Container/RecentPage/RecentList';
 
 import './PlayListPage.css'

@@ -4,7 +4,6 @@ import ListCardB from '../Components/Cards/ListCard/ListCardB';
 import {shuffle, numFormatter} from '../Container/FUNCTIONS'
 
 import { Music } from '../Json/Music';
-import { setArtist } from '../Redux/Actions/selectArtist.action';
 
 
 let ShuffledArray = shuffle(Music);

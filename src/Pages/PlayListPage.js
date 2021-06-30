@@ -1,68 +1,60 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard';
 import PlayListCard from '../Components/Cards/PlayListCard/PlayListCard';
 import ResultCard from '../Components/Cards/ResultCard/ResultCard';
 import SongDetails from '../Components/SongDetails/SongDetail';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
-
+import SearchList from '../Container/Playlist/SearchList';
 import './PlayListPage.css';
 
 
 function PlayListPage() {
+    const browse = useSelector(state => state.searchCard.searchCard)
+
     return (
         <div className="Trending_page_wrapper" style={{ 'maxWidth': '1440px' }}>
-            <div className="searchData_appear_wrapper">
-                <div className="SUBheader">Search Results</div>
-                <div className="SearRe_wrapper">
-                    <ArtistsCard />
-                    <ArtistsCard />
-                    <ArtistsCard />
-                    <ArtistsCard />
-                    <ArtistsCard />
-                    <ArtistsCard />
-                    <ArtistsCard />
-                    <ArtistsCard />
-                    <ResultCard />
-                    <ResultCard />
-                    <ResultCard />
-                    <ResultCard />
-                </div>
-                <div className="TrenPag_autoShuffl_wrapper">
-                    <div className="SUBheader">Saved</div>
-                    <div className="TrenPag_autoShuffl_content">
-                        <div className="AutoPlayButton_B">
-                            <div className="Play_D">Auto <span className="Play_D_H">Play</span></div>
-                            <img className="ButtonImg" src={AutoPlay} alt="" />
-                        </div>
-                        <div className="AutoPlayButton_B">
-                            <div className="Play_D">shuffle</div>
-                            <img className="ButtonImg" src={AutoPlay} alt="" />
-                        </div>
+            {browse ?
+                <div className="searchData_appear_wrapper">
+                    <div className="SUBheader">Search Results</div>
+                    <SearchList />
+                </div>: null
+            }
+            <div className="TrenPag_autoShuffl_wrapper">
+                <div className="SUBheader">Saved</div>
+                <div className="TrenPag_autoShuffl_content">
+                    <div className="AutoPlayButton_B">
+                        <div className="Play_D">Auto <span className="Play_D_H">Play</span></div>
+                        <img className="ButtonImg" src={AutoPlay} alt="" />
+                    </div>
+                    <div className="AutoPlayButton_B">
+                        <div className="Play_D">shuffle</div>
+                        <img className="ButtonImg" src={AutoPlay} alt="" />
                     </div>
                 </div>
-                <span className="Song_Details_playPage_wrapper" style={{ width: '100%' }}>
-                    <SongDetails />
-                </span>
-                <div className="SUBheader">Saved</div>
-                <div className="searchData_content">
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                    <PlayListCard />
-                </div>
             </div>
-            
+            <span className="Song_Details_playPage_wrapper" style={{ width: '100%' }}>
+                <SongDetails />
+            </span>
+            <div className="SUBheader">Saved</div>
+            <div className="searchData_content">
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+                <PlayListCard />
+            </div>
+
             <span className="disPag_listButton">
                 <div className="AutoPlayButton">
                     <div className="Play_D">back to top</div>

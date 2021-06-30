@@ -11,7 +11,6 @@ import info from '../../../Images/Icons/list.svg'
 import DurationTime from '../../MusicPlayer/DurationTime'
 import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
-import setFavorite from '../../../Redux/Actions/likeAction.action';
 import Playing from '../../../Images/Icons/play_fill.svg'
 import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
 let Newarray = []

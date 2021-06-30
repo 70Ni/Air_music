@@ -1,37 +1,39 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import User from '../../Images/Icons/User.svg';
 
 import search from '../../Images/Icons/search.svg';
 import bell from '../../Images/Icons/bell.svg';
 import { Music } from '../../Json/Music';
-
+import {Searching} from '../../Redux/search';
 import Notification from '../../Components/Dashbar/Notifications'
 import './DashBar.css'
 const usePrevious = (value) => {
-    const ref = useRef();
+    const ref = useRef(0);
     useEffect(() => {
         ref.current = value;
     });
     return ref.current
 }
 function DashBar() {
+
+    const dispatch = useDispatch();
     const [count, setcount] = useState(0)
 
     let favorite = useSelector(state => state.favorite.id);
-
-
-    const prevCount = usePrevious(favorite.length);
- 
+    
+    
+    
+    let prevCount = usePrevious(favorite.length);
     useEffect(() => {
         if (prevCount > favorite.length) {
-            console.log("hi")
+            setcount(count + 1)
         }
-    });
-    console.log(count)
+    },[favorite]);
 
-
-
+    console.log(prevCount,"prev")
+    console.log(favorite.length,"fav")
+    console.log(count,"state")
 
 
     return (
@@ -39,7 +41,7 @@ function DashBar() {
             <div className="DashBar_content">
                 <div className="Browser_wrapper">
                     <input type="text" id="searchField" name="Search" placeholder="Browse"
-                        onChange={(event) => this.searchChange(event)} />
+                        onChange={(event) => dispatch(Searching(event.target.value))} />
                     <img className="Browser_icon" src={search} alt="" />
                 </div>
                 <div className="DashIcon_wrapper">
