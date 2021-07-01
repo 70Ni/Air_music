@@ -7,12 +7,12 @@ import DiscoverCardB from '../Components/Cards/DiscoverCard/DiscoverCardB';
 import DiscoverCardC from '../Components/Cards/DiscoverCard/DiscoverCardC';
 import SqureCard from '../Components/Cards/SqureCard/SqureCard';
 import AutoPlayIcon from '../Images/Icons/autoPlay.svg';
-import PremiumSongs from '../Container/DiscoverPageLists/PremiumSongs';
+import RelatedSongs from '../Container/Discover/RelatedSongs';
+import PremiumSongs from '../Container/Discover/PremiumSongs';
 import { AutoPlay } from '../Redux/IndexFinder';
 import './DiscoverPage.css'
 import { MusicGroupSet } from '../Container/FUNCTIONS'
 import ProfileList from '../Container/ProfileList';
-import RelatedSongs from '../Container/DiscoverPageLists/RelatedSongs';
 import Intro from '../Music files/Justin Bieber/thumbnail/Lifetime.jpg'
 
 import { Music } from '../Json/Music';

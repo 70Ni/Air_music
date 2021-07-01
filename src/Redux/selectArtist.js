@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const selectSlice = createSlice({
-    name: 'selectArtist',
+    name: 'ArtistSelect',
     initialState: {
-        artistName: 'Hello',
+        artistName: '',
     },
     reducers: {
         artistId(state, { payload }) {
@@ -15,4 +15,4 @@ const selectSlice = createSlice({
 })
 
 export const { artistId } = selectSlice.actions;
-export default selectSlice.reducers;
+export default selectSlice.reducer;

@@ -1,15 +1,18 @@
-import React,{useMemo} from 'react';
-import { connect } from 'react-redux';
-import ListCardB from '../Components/Cards/ListCard/ListCardB';
-import {shuffle, numFormatter} from '../Container/FUNCTIONS'
+import React,{useMemo,useEffect} from 'react';
+import { useSelector } from 'react-redux';
+import ListCardB from '../../Components/Cards/ListCard/ListCardB';
+import {shuffle, numFormatter} from '../../Container/FUNCTIONS'
 
-import { Music } from '../Json/Music';
+import { Music } from '../../Json/Music';
 
 
-let ShuffledArray = shuffle(Music);
-
-const ArtisPagList = (props) => {
-    const array = useMemo(() => ShuffledArray.filter(art => art.Artist == "Marshmello").slice(0,8), []);
+const ArtisPagList = () => {
+    const SelectedArtist = useSelector(state => state.artist)
+    useEffect(() => {
+        
+    }, [SelectedArtist])
+    const array = Music.filter(art => art.Artist ===  SelectedArtist.artistName);
+    console.log(array)
         return (
         <div>   
             {
