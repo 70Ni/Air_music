@@ -36,12 +36,13 @@ let audio = new Audio();
 
 
 const MusicGroupSet = () => {
+    if (Store.getState().MusicLoaded.IndexOfMusic) {
         let index = Store.getState().MusicLoaded.IndexOfMusic
         audio.src = Store.getState().MusicLoaded.MusicGroup[index].URL.default
         audio.play();
-        console.log(audio.src)
+    }
     audio.onended = () => {
-console.log("music end event")
+        console.log("music end event")
     }
 }
 
@@ -79,21 +80,21 @@ const PlayPause = () => {
 //                 prevMusic: id,
 //             }
 //         })
-        
+
 //     } PlayPause()
 // }
 
-    // const PrevSong = () => {
-    //     const dispatch = useDispatch();
-    //     let MusicGroup = Store.getState().MusicLoaded.IndexOfMusic.MusicGroup;
-    //     let index = Store.getState().MusicLoaded.IndexOfMusic.IndexOfMusic;
-    //     if (index > 0) {
-    //         let PrevPlayIndex = index - 1;
-    //         let PrevPlayId = MusicGroup[PrevPlayIndex].id;
-    //         dispatch(indexFind({PrevPlayId,MusicGroup}))
+// const PrevSong = () => {
+//     const dispatch = useDispatch();
+//     let MusicGroup = Store.getState().MusicLoaded.IndexOfMusic.MusicGroup;
+//     let index = Store.getState().MusicLoaded.IndexOfMusic.IndexOfMusic;
+//     if (index > 0) {
+//         let PrevPlayIndex = index - 1;
+//         let PrevPlayId = MusicGroup[PrevPlayIndex].id;
+//         dispatch(indexFind({PrevPlayId,MusicGroup}))
 
-    //     }
-    // }
+//     }
+// }
 
 // const NextSong = () => {
 //     let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
@@ -116,29 +117,29 @@ const PlayPause = () => {
 //         if (curmins < 10) { curmins = "0" + curmins }
 //         if (durmins < 10) { durmins = "0" + durmins }
 //         if (dursecs < 10) { dursecs = "0" + dursecs }
-        
+
 //         return Store.dispatch(TimerUpdates("worloc"))
 
-        //  (state, { payload }) =>{
-        //     state.AudioDuration = audio.duration
-        //     state.currentTime = audio.currentTime
-        //     state.cursecs = cursecs
-        //     state.curmins = curmins
-        //     state.durmins = durmins
-        //     state.dursecs = dursecs
+//  (state, { payload }) =>{
+//     state.AudioDuration = audio.duration
+//     state.currentTime = audio.currentTime
+//     state.cursecs = cursecs
+//     state.curmins = curmins
+//     state.durmins = durmins
+//     state.dursecs = dursecs
 
 
-        // return store.dispatch({
-        //     type: 'SET_TIMER',
-        //     payload: {
-        //         AudioDuration: audio.duration,
-        //         currentTime: audio.currentTime,
-        //         cursecs: cursecs,
-        //         curmins: curmins,
-        //         durmins: durmins,
-        //         dursecs: dursecs,
-        //     }
-        // })
+// return store.dispatch({
+//     type: 'SET_TIMER',
+//     payload: {
+//         AudioDuration: audio.duration,
+//         currentTime: audio.currentTime,
+//         cursecs: cursecs,
+//         curmins: curmins,
+//         durmins: durmins,
+//         dursecs: dursecs,
+//     }
+// })
 
 //     }
 // }
@@ -176,7 +177,7 @@ function setVolume(volumeValue) {
 
 
 export {
-    MusicGroupSet,Mute,onChange,numFormatter,shuffle,PlayPause,setVolume,audio
+    MusicGroupSet, Mute, onChange, numFormatter, shuffle, PlayPause, setVolume, audio
 }
 
 

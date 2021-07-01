@@ -117,14 +117,16 @@ function MusicPlayer({ id }) {
                             <div className="duration_wrapper" >
                                 <Durationticker />
                             </div>
+                            {musicGroup? 
                             <div className="volume_controllor">
                                 <img src={muted ? mute : Volume} alt="" className="Volume" onClick={() => mutefunc()} />                                <div id="VolumeRange">
                                     <input id="range2" ref={volumeSlider} value="100" type="range" min="0" max="100" onChange={() => VolumeSlider()} />
                                 </div>
                             </div>
-
-
+                            :null}
+                            {musicGroup?
                             <img src={Favorite} className="favorite_Musictrl" alt="" value ={musicGroup? musicGroup[musicIndex].id:null}/>
+                            :null}
                         </div>
                     </div>
                 </div>

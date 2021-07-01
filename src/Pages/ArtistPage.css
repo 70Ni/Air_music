@@ -38,7 +38,7 @@
 }
 @media only screen and (max-width: 954px) {
     
- 
+
     .ArtPage_ArtCarWrapper {
         overflow-y: hidden;
     }
@@ -51,5 +51,10 @@
     .ArtPag_ArtCar_wrapper {
         flex-wrap: nowrap;
         width: auto;
+    }
+}
+@media only screen and (max-width: 524px) {
+    .DiscoverCardZ {
+        display: none;
     }
 }
