@@ -1,7 +1,7 @@
 import React,{useMemo,useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import ListCardB from '../../Components/Cards/ListCard/ListCardB';
-import {shuffle, numFormatter} from '../../Container/FUNCTIONS'
+import {numFormatter} from '../../Container/FUNCTIONS'
 
 import { Music } from '../../Json/Music';
 

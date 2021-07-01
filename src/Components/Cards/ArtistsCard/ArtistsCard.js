@@ -23,7 +23,7 @@ function ArtistsCard() {
                     <div className="Artists_Details_section">
                         <div className="ArtCard_details">
                             <div className="ArtistName_B">Marshmellow</div>
-                            <div className="MusicName_B">Some Music Names </div>
+                            <div className="MusicName_B Art_padd_B">Some Music Names </div>
                         </div>
                         <div className="Fav_B_wrapper">
                             <img src={Favorite} alt="" className="favorite_B" />
