@@ -36,7 +36,7 @@ let audio = new Audio();
 
 
 const MusicGroupSet = () => {
-    if (Store.getState().MusicLoaded.IndexOfMusic) {
+    if (Store.getState().MusicLoaded.ClickedMusic) {
         let index = Store.getState().MusicLoaded.IndexOfMusic
         audio.src = Store.getState().MusicLoaded.MusicGroup[index].URL.default
         audio.play();

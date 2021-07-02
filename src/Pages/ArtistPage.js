@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 
 import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard'
 import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ'
 import './ArtistPage.css';
+import { useSelector } from 'react-redux';
 import { MusicGroupSet } from '../Container/FUNCTIONS';
 import ProfileList from '../Container/ProfileList';
 import ArtisPagList from '../Container/Artist/ArtisPagList';
 import { connect } from 'react-redux';
 
-
 function ArtistPage() {
+    const MusicLoaded = useSelector(state => state.MusicLoaded)
+    useEffect(() => {
+
+        return MusicGroupSet()
+    }, [MusicLoaded.ClickedMusic]) 
     return (
         <div className="Artist_page_wrapper" style={{ 'maxWidth': '1440px', }}>
             <div className="DiscoverCardZ">

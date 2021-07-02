@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import NavBar from './Components/NavBar/NavBar';
 import DashBar from './Components/Dashbar/DashBar'
-
+import { MusicGroupSet } from './Container/FUNCTIONS';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import HeaderThunder from './Components/HeaderComponents/HeaderThunder/HeaderThunder';
 import DiscoverPage from './Pages/DiscoverPage'
@@ -23,10 +23,7 @@ import MusicPlayer from './Components/MusicPlayer/MusicPlayer'
 let windowHeight = window.innerHeight;
 
 function App() {
-  const LoadedMusics = useSelector(state => state.MusicLoaded)
-  useEffect(() => {
 
-  }, [LoadedMusics])
   return (
     <Router>
       <div className="App">

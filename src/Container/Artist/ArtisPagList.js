@@ -8,9 +8,7 @@ import { Music } from '../../Json/Music';
 
 const ArtisPagList = () => {
     const SelectedArtist = useSelector(state => state.artist.artistName)
-    useEffect(() => {
-        
-    }, [SelectedArtist])
+
     const array = Music.filter(art =>( SelectedArtist ? art.Artist ===  SelectedArtist : art.Artist === "Marshmello"));
     console.log(array)
         return (

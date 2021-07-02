@@ -7,27 +7,29 @@ import { indexFind } from '../../../Redux/IndexFinder';
 import Play from '../../../Images/Icons/Play_fill.svg';
 import Favorite from '../../../Images/Icons/save.svg'
 import info from '../../../Images/Icons/list.svg'
+import { MusicGroupSet } from '../../../Container/FUNCTIONS'
 
 import DurationTime from '../../MusicPlayer/DurationTime'
 import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
 import Playing from '../../../Images/Icons/play_fill.svg'
 import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
-let Newarray = [{isLoop:false}]
+let Newarray = [];
+console.log(Newarray)
 
-
-
-function ListCardB({ id, name, preview, views, duration, artist, URL}) {
+function ListCardB({ id, name, preview, views, duration, artist, URL }) {
     const MusicLoaded = useSelector(state => state.MusicLoaded)
     const fav = useSelector(state => state.favorite.id)
     const dispatch = useDispatch()
 
     useEffect(() => {
         Newarray.push({ id, name, preview, views, duration, artist, URL })
-    }, [])
+    },[])
 
-    let contrast = MusicLoaded.ClickedMusic == id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null
-    let nowPlaying = MusicLoaded.ClickedMusic == id ? { visibility: 'visible' } : { visibility: 'hidden' }
+
+
+    let contrast = MusicLoaded.ClickedMusic === id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null
+    let nowPlaying = MusicLoaded.ClickedMusic === id ? { visibility: 'visible' } : { visibility: 'hidden' }
     let isfavorite = fav.includes(id);
     return (
         <div className="List_card_wrapper ListCard_B" key={id} >
@@ -47,7 +49,7 @@ function ListCardB({ id, name, preview, views, duration, artist, URL}) {
 
                 {/* <div className="List_status" style ={nowPlaying}>Now Listening...</div> */}
                 <img src={Playing} alt="" style={nowPlaying} />
-                <img src={isfavorite ? info :Favorite } alt="" className="List_save" onClick={() => dispatch(isFavorite({id,name}))} />
+                <img src={isfavorite ? info : Favorite} alt="" className="List_save" onClick={() => dispatch(isFavorite({ id, name }))} />
             </div>
         </div>
     )
