@@ -21,7 +21,6 @@ const RelatedSongs = () => {
                             preview={song.Preview.default}
                             name={song.name}
                             artist={song.Artist}
-                            artist_image={song.Artist_image}
                             views={numFormatter(song.Views)}
                             likes={numFormatter(song.Likes)}
                             duration={song.duration}
