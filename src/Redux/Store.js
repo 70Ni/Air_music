@@ -14,6 +14,6 @@ export default configureStore ({
         searchCard: search,
         artist:selectArtist
     },
-  //   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-  // devTools: process.env.NODE_ENV !== 'production',
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  devTools: process.env.NODE_ENV !== 'production',
 })

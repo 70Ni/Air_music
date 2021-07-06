@@ -16,6 +16,7 @@ const RelatedSongs = () => {
                 array.map((song, i) => {
                     return (
                         <ListCardB
+                            newarray = {array}
                             key={i}
                             id={song.id}
                             preview={song.Preview.default}

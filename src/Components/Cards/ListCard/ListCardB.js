@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import Store from '../../../Redux/Store';
@@ -17,16 +17,16 @@ import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
 let Newarray = [];
 console.log(Newarray)
 
-function ListCardB({ id, name, preview, views, duration, artist, URL }) {
-    const [newArray,setNewArray] = useState(0)
+function ListCardB({ id, name, preview, views, duration, artist, URL, newarray }) {
+    const [newArray, setNewArray] = useState(0)
     const MusicLoaded = useSelector(state => state.MusicLoaded)
     const fav = useSelector(state => state.favorite.id)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        setNewArray({id, name, preview, views, duration, artist, URL })
+        setNewArray(newarray)
         console.log(newArray)
-    },[])
+    })
 
 
 
@@ -39,7 +39,7 @@ function ListCardB({ id, name, preview, views, duration, artist, URL }) {
                 <div className="List_Images">
                     <img src={preview} id="imag" alt=""
                         className="List_Image"
-                        onClick={() => dispatch(indexFind({ id, Newarray }))} />
+                        onClick={() => dispatch(indexFind({ id, newArray }))} />
                 </div>
                 <div className="List_Name_wrapper">
                     <div className="MusicName_B ListCard_B" style={contrast}>{name}</div>
