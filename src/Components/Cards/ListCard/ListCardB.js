@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import Store from '../../../Redux/Store';
@@ -18,12 +18,14 @@ let Newarray = [];
 console.log(Newarray)
 
 function ListCardB({ id, name, preview, views, duration, artist, URL }) {
+    const [newArray,setNewArray] = useState(0)
     const MusicLoaded = useSelector(state => state.MusicLoaded)
     const fav = useSelector(state => state.favorite.id)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        Newarray.push({ id, name, preview, views, duration, artist, URL })
+        setNewArray({id, name, preview, views, duration, artist, URL })
+        console.log(newArray)
     },[])
 
 
