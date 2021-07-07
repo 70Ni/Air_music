@@ -29,7 +29,7 @@ function MusicPlayer({ id }) {
     const inputEl = useRef()
     const volumeSlider = useRef()
 
-    let musicGroup = MusicLoaded.MusicGroup;
+    let musicGroup = MusicLoaded.MusicGroup.group;
     let musicIndex = MusicLoaded.IndexOfMusic;
 
 
