@@ -42,9 +42,8 @@
 }
 .active {
     background-color: #F27E4C;
-    border-radius: 8px;
+    border-radius: 20px;
     color: #ffffff;
-    
 }
 .NavItem_container :hover{
     color: #F27E4C;
