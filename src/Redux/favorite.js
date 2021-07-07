@@ -20,7 +20,7 @@ const FavoriteSlice = createSlice({
 
         isFavorite(state, { payload }) {
             let r = state.id.map(like => like === payload.id).indexOf(true);
-            if (r > 0) {
+            if (r !==  -1 ) {
                 state.id.splice(r, 1);
                 state.name.splice(r, 1);
             } else {
