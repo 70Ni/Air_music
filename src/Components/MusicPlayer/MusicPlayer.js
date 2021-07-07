@@ -30,7 +30,8 @@ function MusicPlayer({ id }) {
     const volumeSlider = useRef()
 
     let musicGroup = MusicLoaded.MusicGroup;
-    let musicIndex = MusicLoaded.IndexOfMusic
+    let musicIndex = MusicLoaded.IndexOfMusic;
+
 
     document.documentElement.style.setProperty('--base', SongDuration.currentTime);
     document.documentElement.style.setProperty('--max', SongDuration.AudioDuration);
@@ -95,7 +96,7 @@ function MusicPlayer({ id }) {
                     <div className="MusicPlayer_content">
                         <div className="PlayerDetails_wrapper" >
                             {musicGroup ?
-                                <img src={musicGroup[musicIndex].preview} className="MusicPlayer_thumb" alt="" />
+                                <img src={musicGroup[musicIndex].Preview.default} className="MusicPlayer_thumb" alt="" />
                                 :
                                 <Airmusic />
                             }
