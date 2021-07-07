@@ -5,18 +5,18 @@ import { shuffle, numFormatter } from '../../Container/FUNCTIONS'
 import { Music } from '../../Json/Music';
 
 
-let ShuffledArray = shuffle(Music);
+let ShuffledArray = () => shuffle(Music);
 
 
 const RelatedSongs = () => {
-    const array = useMemo(() => ShuffledArray.slice(0, 5), []);
+    const array = {group:ShuffledArray().slice(0, 6),isLoop: false};
     return (
         <div>
             {
-                array.map((song, i) => {
+                array.group.map((song, i) => {
                     return (
                         <ListCardB
-                            newarray = {array}
+                            newarray={array}
                             key={i}
                             id={song.id}
                             preview={song.Preview.default}

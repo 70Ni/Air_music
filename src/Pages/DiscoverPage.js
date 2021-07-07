@@ -30,7 +30,7 @@ function DiscoverPage() {
     AutoButton = { backgroundColor: '#F27E4C' }
     useEffect(() => {
         return ()=>MusicGroupSet()
-    }, [LoadedMusics.IndexOfMusic])
+    }, [LoadedMusics.ClickedMusic])
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
             <div className="SUBheader_H">Disover</div>
@@ -68,12 +68,6 @@ function DiscoverPage() {
                     <div className="SqureCa_wrapper">
 
                         <PremiumSongs />
-                        <div className="Squre_mediaDis">
-                            <SqureCard />
-                            <SqureCard />
-                            <SqureCard />
-                            <SqureCard />
-                        </div>
                     </div>
                     <div className="DisPa_detailsWrapper"></div>
                     <div className="Artists_Paragraph paraHide">

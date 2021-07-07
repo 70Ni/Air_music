@@ -10,9 +10,9 @@ const IndexSlice = createSlice({
     reducers: {
         indexFind(state, { payload }) {
             if (state.ClickedMusic !== payload.id) {
-                let r = payload.newArray.map(toPlay => toPlay.id === payload.id).indexOf(true);
+                let r = payload.Group.group.map(toPlay => toPlay.id === payload.id).indexOf(true);
                 state.ClickedMusic = payload.id
-                state.MusicGroup = payload.newArray
+                state.MusicGroup = payload.Group.group
                 state.IndexOfMusic = r
             }
         },

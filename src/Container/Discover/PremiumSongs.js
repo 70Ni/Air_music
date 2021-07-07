@@ -6,16 +6,28 @@ import { Music } from '../../Json/Music';
 import { connect } from 'react-redux';
 
 
-// useEffect(){
-
-// }
 
 
-let ShuffledArray = shuffle(Music);
+let ShuffledArray = () => shuffle(Music);
 
 let ca = 11;
 const PremiumSongs = () => {
-    const array1 = useMemo(() => ShuffledArray.slice(5, ca), []);
+
+    const [matches, setMatches] = useState(6)
+    console.log(matches)
+
+
+
+    useEffect(() => {
+
+        if (window.matchMedia("(max-width: 1086px)").matches) {
+            console.log(window.matchMedia("(max-width: 1086px)").matches)
+            setMatches(18)
+        }
+    }, [])
+
+    const array1 = ShuffledArray().slice(0, matches);
+    console.log(array1)
     return (
         <div className="SqureCa_wrapper">
             {

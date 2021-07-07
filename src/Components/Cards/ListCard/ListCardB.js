@@ -14,19 +14,18 @@ import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
 import Playing from '../../../Images/Icons/play_fill.svg'
 import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
-let Newarray = [];
-console.log(Newarray)
+
 
 function ListCardB({ id, name, preview, views, duration, artist, URL, newarray }) {
-    const [newArray, setNewArray] = useState(0)
+    const [Group, setGroup] = useState(0)
     const MusicLoaded = useSelector(state => state.MusicLoaded)
     const fav = useSelector(state => state.favorite.id)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        setNewArray(newarray)
-        console.log(newArray)
-    })
+        setGroup(newarray)
+        console.log(Group)
+    },[])
 
 
 
@@ -39,7 +38,7 @@ function ListCardB({ id, name, preview, views, duration, artist, URL, newarray }
                 <div className="List_Images">
                     <img src={preview} id="imag" alt=""
                         className="List_Image"
-                        onClick={() => dispatch(indexFind({ id, newArray }))} />
+                        onClick={() => dispatch(indexFind({ id, Group }))} />
                 </div>
                 <div className="List_Name_wrapper">
                     <div className="MusicName_B ListCard_B" style={contrast}>{name}</div>
