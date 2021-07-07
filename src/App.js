@@ -17,12 +17,19 @@ import PlayListPage from './Pages/PlayListPage';
 import RecentPage from './Pages/RecentPage'
 import AboutPage from './Pages/AboutPage'
 import Grid from './Pages/Grid'
-import HorizontalNav from './Components/NavBar/HorizontalNav/HorizontalNav';
 import MusicPlayer from './Components/MusicPlayer/MusicPlayer'
 
-let windowHeight = window.innerHeight;
+
+
 
 function App() {
+  const LoadedMusics = useSelector(state => state.MusicLoaded);
+
+
+  let windowHeight = window.innerHeight;
+  useEffect(() => {
+    return MusicGroupSet()
+  }, [LoadedMusics.ClickedMusic])
 
   return (
     <Router>
@@ -32,7 +39,7 @@ function App() {
           <div className="Nav_side">
             <NavBar />
           </div>
-          <div className="Page_side" style={{ flexGrow: 1, overflowY: 'scroll', height: windowHeight, scrollBehavior: 'smooth' }}>
+          <div className="Page_side">
             <DashBar />
             <HeaderCore />
             <Switch>

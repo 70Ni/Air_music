@@ -102,6 +102,16 @@
   border-radius: 4px;
   z-index: 2;
 }
+.Nav_side {
+  position: fixed;
+}
+.Page_side {
+  position: relative;
+  margin-left: 221px;
+  flex-grow: 1;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
 .Page_side::-webkit-scrollbar{
   display: none;
 }
@@ -117,6 +127,8 @@ body::-webkit-scrollbar{
   }
   .Page_side {
     height: 100vh !important;
+    margin-left: 0px;
+
   }
 }
 
