@@ -1,18 +1,20 @@
-import React, { useMemo } from 'react';
+import React, { useMemo,useEffect } from 'react';
 import ListCardB from '../../Components/Cards/ListCard/ListCardB';
 import { shuffle, numFormatter } from '../../Container/FUNCTIONS'
 
 import { Music } from '../../Json/Music';
 
 
-let ShuffledArray = () => shuffle(Music);
+let ShuffledArray = shuffle(Music);
 
 
 const RelatedSongs = () => {
-    const array = {group:ShuffledArray().slice(0, 6),isLoop: false};
+
+    const array = useMemo(() => ({ group: ShuffledArray.slice(0, 6), isLoop: false }), []);
     return (
         <div>
             {
+
                 array.group.map((song, i) => {
                     return (
                         <ListCardB

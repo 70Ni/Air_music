@@ -21,15 +21,11 @@ import { Music } from '../Json/Music';
 function DiscoverPage() {
     const dispatch = useDispatch();
     const LoadedMusics = useSelector(state => state.MusicLoaded);
+ 
 
-    let AutoButton = {}
-    // if(LoadedMusics.ClickedMusic>0){
-    //     if(LoadedMusics.MusicGroup[0].isLoop){
-    //     }
-    // }
-    AutoButton = { backgroundColor: '#F27E4C' }
+    const AutoButton = { backgroundColor: '#F27E4C' }
     useEffect(() => {
-        return ()=>MusicGroupSet()
+        MusicGroupSet()
     }, [LoadedMusics.ClickedMusic])
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
@@ -56,7 +52,7 @@ function DiscoverPage() {
                         <RelatedSongs />
                     </div>
                     <div className="disPag_listButton">
-                        <div className="AutoPlayButton" onClick={LoadedMusics.ClickedMusic > 0 ? () => dispatch(AutoPlay()) : null} style={AutoButton}>
+                        <div className="AutoPlayButton" onClick={LoadedMusics ? () => dispatch(AutoPlay()) : null} style={LoadedMusics.MusicGroup.isLoop ? AutoButton : null}>
                             <div className="Play_D">Auto Play</div>
                             <img className="ButtonImg" src={AutoPlayIcon} alt="" />
                         </div>
