@@ -1,59 +1,63 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
+import { audio } from '../../../Container/FUNCTIONS';
 import thumb from '../../../Music files/Carlie Puth/Thumbnails/La Girl.jpg'
 
 import './HeaderCore.css'
-const mapStateToProps = state => ({
-    // currentState: state.player,
-    // resultMusic: state.search.SearchResults
-})
 
-class HeaderCore extends Component {
-    constructor(props) {
-        super(props);   
-        this.state = {}
-    }
 
-    render() {
-            const {currentState} = this.props
-            return (
-                <div className="HeaderCore_wrapper">
-                    <div className="HeaderCore_content_Inactive">
-                        <div className="HeaderCore_Intro">
-                            <div className="HeaderCore_header">
-                                <div className="Nav_header_name">air</div>
-                                <div className="Nav_header_BB">Musics</div>
-                            </div>
-                            <button className="getStarted">Get Started</button>
-                            <img src="" alt="" className="Thumb_image" />
-                            <div className="HeaderCore_para">
-                                Air Music is a music streaming service developed for education and entertainment purposes.
-                            </div>
+function HeaderCore() {
+    const MusicLoaded = useSelector(state => state.MusicLoaded);
 
-                            <div className="Music_wrpaer">
-                                <div className="HeaderCore_MusicName">Power</div>
-                            </div>
-                            <div className="NowListening_para">Now Listening...</div>
-                        </div>
-                    </div>
+    let musicGroup = MusicLoaded.MusicGroup.group;
+    let musicIndex = MusicLoaded.IndexOfMusic;
 
-                    {/* <div className="HeaderCore_content_Inactive">
+    return (
+        <div className="HeaderCore_wrapper">
+            <div className="HeaderCore_content_Inactive">
                 <div className="HeaderCore_Intro">
-                    <div className="HeaderCore_header ">
+                    <div className="HeaderCore_header">
                         <div className="Nav_header_name">air</div>
                         <div className="Nav_header_BB">Musics</div>
                     </div>
-                    <div className="Music_wrpaer">
-                        <div className="HeaderCore_MusicName">Power</div>
-                        <div className="HeaderCore_Music_by">by Marshmellow</div>
+                    {
+                        musicGroup ? null :
+
+                            <button className="getStarted">Get Started</button>
+                    }
+                    {
+                        musicGroup ?
+                            <img src={musicGroup[musicIndex].Preview.default} alt="" className="Thumb_image" style={{zIndex:-2, position:'absolute'}}/>
+                            : null
+                    }
+                    <div className="HeaderCore_para">
+                        Air Music is a music streaming service developed for education and entertainment purposes.
                     </div>
-                    <div className="NowListening_para">Now Listening...</div>
+
+                    <div className="Music_wrpaer">
+                        <div className="HeaderCore_MusicName">{musicGroup ? musicGroup[musicIndex].name : null}</div>
+                    </div>
+                        <div className="NowListening_para"> {musicGroup ? "Now Listening ..." : null}</div>
                 </div>
-            </div> */}
+            </div>
+
+            {/* <div className="HeaderCore_content_Inactive">
+            <div className="HeaderCore_Intro">
+                <div className="HeaderCore_header ">
+                    <div className="Nav_header_name">air</div>
+                    <div className="Nav_header_BB">Musics</div>
                 </div>
-            );
-        }
-    }
+                <div className="Music_wrpaer">
+                    <div className="HeaderCore_MusicName">Power</div>
+                    <div className="HeaderCore_Music_by">by Marshmellow</div>
+                </div>
+                <div className="NowListening_para">Now Listening...</div>
+            </div>
+        </div> */}
+        </div>
+    );
+}
 
 
-    export default connect(mapStateToProps, null)(HeaderCore);
+
+export default HeaderCore;

@@ -6,6 +6,7 @@ const IndexSlice = createSlice({
         ClickedMusic: '',
         IndexOfMusic: '',
         MusicGroup: '',
+        History:[],
     },
     reducers: {
         indexFind(state, { payload }) {
@@ -14,6 +15,7 @@ const IndexSlice = createSlice({
                 state.ClickedMusic = payload.id
                 state.MusicGroup = payload.Group
                 state.IndexOfMusic = r
+                state.History.push(state.ClickedMusic)
             }
         },
         SkipPrev(state) {

@@ -4,7 +4,7 @@ import { artistId } from '../../Redux/selectArtist';
 
 import './ProfileIcon.css'
 
-function ProfileIcon({name,Image}) {
+function ProfileIcon({ name, Image }) {
     const artist = useSelector(state => state.artistId)
     const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ function ProfileIcon({name,Image}) {
         <div className="Profile_icon_wrapper" onClick={() => dispatch(artistId(name))}>
             <div className="Profile_icon_content">
                 <img src={Image} alt="" className="Artist_avatar" />
-                <div className="Profile_artist_Name">{ name }</div>
+                <div className="Profile_artist_Name">{name}</div>
             </div>
         </div>
     );

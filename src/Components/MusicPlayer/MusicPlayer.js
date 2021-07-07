@@ -104,7 +104,7 @@ function MusicPlayer({ id }) {
                             }
                             <div className="Music_artist_wrapper">
                                 <div className="MusicName_B MusicName">{musicGroup ? musicGroup[musicIndex].name : null}</div>
-                                <div className="ArtistName_B">{musicGroup ? musicGroup[musicIndex].artist : null} </div>
+                                <div className="ArtistName_B">{musicGroup ? musicGroup[musicIndex].Artist : null} </div>
                             </div>
                         </div>
                         {musicGroup ?

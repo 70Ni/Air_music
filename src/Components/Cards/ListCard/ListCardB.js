@@ -14,6 +14,7 @@ import '../../MusicPlayer/Slider.scss'
 import './ListCard.css'
 import Playing from '../../../Images/Icons/play_fill.svg'
 import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
+import { Music } from '../../../Json/Music';
 
 
 function ListCardB({ id, name, preview, views, duration, artist, URL, newarray }) {
@@ -25,7 +26,7 @@ function ListCardB({ id, name, preview, views, duration, artist, URL, newarray }
     useEffect(() => {
         setGroup(newarray)
         console.log(Group)
-    },[])
+    },[MusicLoaded.ClickedMusic])
 
 
 

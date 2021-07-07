@@ -3,7 +3,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import User from '../../Images/Icons/User.svg';
 
 import search from '../../Images/Icons/search.svg';
-import bell from '../../Images/Icons/bell.svg';
+import bell from '../../Images/Icons/notification.svg';
 import { Music } from '../../Json/Music';
 import {Searching} from '../../Redux/search';
 import Notification from '../../Components/Dashbar/Notifications'

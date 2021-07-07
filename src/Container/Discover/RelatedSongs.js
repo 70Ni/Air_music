@@ -1,4 +1,4 @@
-import React, { useMemo,useEffect } from 'react';
+import React, { useMemo } from 'react';
 import ListCardB from '../../Components/Cards/ListCard/ListCardB';
 import { shuffle, numFormatter } from '../../Container/FUNCTIONS'
 
@@ -11,6 +11,7 @@ let ShuffledArray = shuffle(Music);
 const RelatedSongs = () => {
 
     const array = useMemo(() => ({ group: ShuffledArray.slice(0, 6), isLoop: false }), []);
+    console.log("Related")
     return (
         <div>
             {
