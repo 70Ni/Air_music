@@ -10,11 +10,7 @@ import ArtisPagList from '../Container/Artist/ArtisPagList';
 import { connect } from 'react-redux';
 
 function ArtistPage() {
-    const MusicLoaded = useSelector(state => state.MusicLoaded)
-    useEffect(() => {
 
-        return MusicGroupSet()
-    }, [MusicLoaded.ClickedMusic]) 
     return (
         <div className="Artist_page_wrapper" style={{ 'maxWidth': '1440px', }}>
             <div className="DiscoverCardZ">
