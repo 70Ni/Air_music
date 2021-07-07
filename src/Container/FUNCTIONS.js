@@ -42,7 +42,10 @@ const MusicGroupSet = () => {
         audio.play();
     }
     audio.onended = () => {
-        console.log("music end event")
+        if( Store.getState().MusicLoaded.MusicGroup.isLoop ){
+            Store.dispatch({type: "IndexFinder/SkipNext"})
+        }
+       
     }
 }
 
