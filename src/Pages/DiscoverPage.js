@@ -21,7 +21,7 @@ import { Music } from '../Json/Music';
 function DiscoverPage() {
     const dispatch = useDispatch();
     const LoadedMusics = useSelector(state => state.MusicLoaded);
- 
+
 
     const AutoButton = { backgroundColor: '#F27E4C' }
 
@@ -59,13 +59,15 @@ function DiscoverPage() {
                 <div className="DisPag_Squrewrapper">
 
                     <div className="SUBheader">Premium songs</div>
-                    <div className="SqureCa_wrapper">
+                    <div className="DisPa_detailsWrapper">
+                        <div className="SqureCa_wrapper">
 
-                        <PremiumSongs />
-                    </div>
-                    <div className="DisPa_detailsWrapper"></div>
-                    <div className="Artists_Paragraph paraHide">
-                        Billie Eilish Pirate Baird O'Connell is an American singer and songwriter. She first gained attention in 2015 when she uploaded the song "Ocean Eyes" to SoundCloud, which was subsequently released by the Interscope Records subsidiary Darkroom
+                            <PremiumSongs />
+                        </div>
+                        <div className="Artists_Paragraph paraHide">
+                            Billie Eilish Pirate Baird O'Connell is an American singer and songwriter. She first gained attention in 2015 when she uploaded the song "Ocean Eyes" to SoundCloud, which was subsequently released by the Interscope Records subsidiary Darkroom
+                        </div>
+
                     </div>
                 </div>
             </div>

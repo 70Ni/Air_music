@@ -110,6 +110,7 @@
   margin-left: 221px;
   flex-grow: 1;
   overflow-y: scroll;
+  z-index: 2;
   scroll-behavior: smooth;
 }
 .Page_side::-webkit-scrollbar{

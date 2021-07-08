@@ -31,10 +31,14 @@
     -ms-overflow-style: none; /* IE 11 */
     scrollbar-width: none; /* Firefox 64 */
 }
+.paraHide {
+    max-width: 546px;
+}
 .Profile_Icons::-webkit-scrollbar{
     width: 0 !important
     
   }
+
 .SqureCa_wrapper {
     margin-top: 16px;
     display: flex; 
@@ -78,11 +82,7 @@
         overflow: hidden;
     }
 
-    .DisPa_detailsWrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+
 } 
 @media only screen and (max-width: 625px) {
 

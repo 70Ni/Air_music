@@ -33,7 +33,7 @@ function MusicPlayer({ id }) {
     let musicIndex = MusicLoaded.IndexOfMusic;
     useEffect(() => {
         setPaused(false)
-    },[audio.duration])
+    }, [audio.duration])
 
     document.documentElement.style.setProperty('--base', SongDuration.currentTime);
     document.documentElement.style.setProperty('--max', SongDuration.AudioDuration);
@@ -53,8 +53,7 @@ function MusicPlayer({ id }) {
     }
     const setMute = () => {
         volumeSlider.current.value == 0 ?
-            setMuted(true)
-            :
+            setMuted(true) :
             setMuted(false)
     }
 
@@ -64,6 +63,15 @@ function MusicPlayer({ id }) {
             Mute(),
             muteIcon()
         )
+    }
+    const handleAnswerChange = (event) => {
+        console.log(event)
+        if (event.key === 'y') {
+            alert('The sky is your starting point!')
+        }
+        else if (event.key === 'n') {
+            alert('The sky is your limit👀')
+        }
     }
     const playPausefun = () => {
         return (
@@ -81,8 +89,8 @@ function MusicPlayer({ id }) {
 
 
     return (
-        <div className="MusicPlayer_Wrappper">
 
+        <div className="MusicPlayer_wrapper" onKeyDown={(event) => handleAnswerChange(event)} >
             <div id="MusicSlider">
                 {SongDuration.AudioDuration ?
                     <input id="range1" type="range" min="0"
@@ -94,44 +102,43 @@ function MusicPlayer({ id }) {
                     :
                     null
                 }
-                <div className="MusicPlayer_wrapper" >
-                    <div className="MusicPlayer_content">
-                        <div className="PlayerDetails_wrapper" >
-                            {musicGroup ?
-                                <img src={musicGroup[musicIndex].Preview.default} className="MusicPlayer_thumb" alt="" />
-                                :
-                                <Airmusic />
-                            }
-                            <div className="Music_artist_wrapper">
-                                <div className="MusicName_B MusicName">{musicGroup ? musicGroup[musicIndex].name : null}</div>
-                                <div className="ArtistName_B">{musicGroup ? musicGroup[musicIndex].Artist : null} </div>
-                            </div>
-                        </div>
-                        {musicGroup ?
-                            <div className="PlayerControllor_wrapper" >
-                                <img src={Forward} className="controllor MusicBackward" alt="" onClick={() => dispatch(SkipPrev())} />
-                                <img src={paused ? Play : pause} className="controllor" alt="" onClick={() => playPausefun()} />
-                                <img src={Backward} className="controllor MusicForward" alt="" onClick={() => dispatch(SkipNext())} />
-                            </div>
-                            : <div className="Player_preState PlayerControllor_wrapper"> Hear beats of the air </div>
-                        }
-                        <div className="Player_right_wrapper">
-
-                            <div className="duration_wrapper" >
-                                <Durationticker />
-                            </div>
-                            {musicGroup ?
-                                <div className="volume_controllor">
-                                    <img src={muted ? mute : Volume} alt="" className="Volume" onClick={() => mutefunc()} />                                <div id="VolumeRange">
-                                        <input id="range2" ref={volumeSlider} value="100" type="range" min="0" max="100" onChange={() => VolumeSlider()} />
-                                    </div>
-                                </div>
-                                : null}
-                            {musicGroup ?
-                                <img src={Favorite} className="favorite_Musictrl" alt="" value={musicGroup ? musicGroup[musicIndex].id : null} />
-                                : null}
-                        </div>
+            </div>
+            <div className="MusicPlayer_content">
+                <div className="PlayerDetails_wrapper" >
+                    {musicGroup ?
+                        <img src={musicGroup[musicIndex].Preview.default} className="MusicPlayer_thumb" alt="" />
+                        :
+                        <Airmusic />
+                    }
+                    <div className="Music_artist_wrapper">
+                        <div className="MusicName_B MusicName">{musicGroup ? musicGroup[musicIndex].name : null}</div>
+                        <div className="ArtistName_B">{musicGroup ? musicGroup[musicIndex].Artist : null} </div>
                     </div>
+                </div>
+                {musicGroup ?
+                    <div className="PlayerControllor_wrapper" >
+                        <img src={Forward} className="controllor MusicBackward" alt="" onClick={() => dispatch(SkipPrev())} />
+                        <img src={paused ? Play : pause} className="controllor" alt="" onClick={() => playPausefun()} />
+                        <img src={Backward} className="controllor MusicForward" alt="" onClick={() => dispatch(SkipNext())} />
+                    </div>
+                    : <div className="Player_preState PlayerControllor_wrapper"> Hear beats of the air </div>
+                }
+                <div className="Player_right_wrapper">
+
+                    <div className="duration_wrapper" >
+                        <Durationticker />
+                    </div>
+                    {musicGroup ?
+                        <div className="volume_controllor">
+                            <img src={muted ? mute : Volume} alt="" className="Volume" onClick={() => mutefunc()} />
+                            <div id="VolumeRange">
+                                <input id="range2" ref={volumeSlider} value="100" type="range" min="0" max="100" onChange={() => VolumeSlider()} />
+                            </div>
+                        </div>
+                        : null}
+                    {musicGroup ?
+                        <img src={Favorite} className="favorite_Musictrl" alt="" value={musicGroup ? musicGroup[musicIndex].id : null} />
+                        : null}
                 </div>
             </div>
         </div>
