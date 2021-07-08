@@ -27,7 +27,7 @@ function HeaderCore() {
                     }
                     {
                         musicGroup ?
-                            <img src={musicGroup[musicIndex].Preview.default} alt="" className="Thumb_image" style={{zIndex:-2, position:'absolute'}}/>
+                            <img src={musicGroup[musicIndex].Preview.default} alt="" className="Thumb_image" style={{zIndex:-4, position:'absolute'}}/>
                             : null
                     }
                     <div className="HeaderCore_para">

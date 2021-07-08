@@ -54,6 +54,7 @@
     right: 36px;
     top: 36px;
     width: 18px;
+    cursor: pointer;
 }
 .DiscoverDetails_wrapper {
     display: flex;

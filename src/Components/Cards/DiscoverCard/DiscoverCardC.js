@@ -7,15 +7,19 @@ import view from '../../../Images/Icons/view.svg';
 import like from '../../../Images/Icons/like.svg';
 import avatar from '../../../Images/artists/Taylor Swift.jpg';
 import { indexFind } from '../../../Redux/IndexFinder';
+import info from '../../../Images/Icons/list.svg'
+
 
 import './DiscoverCard.css'
 import { numFormatter } from '../../../Container/FUNCTIONS';
 import { Music } from '../../../Json/Music';
 import { array } from '../../../Container/Discover/DiscoverSong';
+import { isFavorite } from '../../../Redux/favorite';
 
 
 let id = array.group[2].id;
 let Group = { group: array.group };
+let name = array.group[2].name;
 
 let views = numFormatter(array.group[2].Views)
 let likes = numFormatter(array.group[2].Likes)
@@ -25,7 +29,10 @@ let likes = numFormatter(array.group[2].Likes)
 function DiscoverCardC() {
 
     const MusicLoaded = useSelector(state => state.MusicLoaded);
+    const fav = useSelector(state => state.favorite.id)
     let contrast = MusicLoaded.ClickedMusic === id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null
+    let isfavorite = fav.includes(id);
+
 
     const dispatch = useDispatch()
     return (
@@ -36,7 +43,7 @@ function DiscoverCardC() {
             <div className="DiscoverCard_content">
                 <div className="DiscCard_Upper">
                     <div className="MusicName_A" style ={contrast}>{array.group[2].name}</div>
-                    <img className="favorite" src={Favorite} alt="" />
+                    <img className="favorite" src={isfavorite ? info : Favorite} alt=""  onClick={() => dispatch(isFavorite({ id, name  }))} />
                 </div>
                 <div className="DiscCard_lower">
                     <div className="Discover_play" onClick={() => dispatch(indexFind({ id, Group }))}>
