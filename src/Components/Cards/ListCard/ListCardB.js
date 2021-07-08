@@ -25,7 +25,6 @@ function ListCardB({ id, name, preview, views, duration, artist, URL, newarray }
 
     useEffect(() => {
         setGroup(newarray)
-        console.log(Group)
     },[MusicLoaded.ClickedMusic])
 
 

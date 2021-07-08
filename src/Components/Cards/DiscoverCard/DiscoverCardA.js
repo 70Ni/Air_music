@@ -22,7 +22,7 @@ console.log(Group)
 let views = numFormatter(array.group[0].Views)
 let likes = numFormatter(array.group[0].Likes)
 
-function DiscoverCard() {
+function DiscoverCardA() {
 
 
     const dispatch = useDispatch();
@@ -69,4 +69,4 @@ function DiscoverCard() {
     )
 }
 
-export default DiscoverCard;
+export default DiscoverCardA;
