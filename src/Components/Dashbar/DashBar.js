@@ -1,41 +1,38 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import User from '../../Images/Icons/User.svg';
-
 import search from '../../Images/Icons/search.svg';
+
 import bell from '../../Images/Icons/notification.svg';
 import { Music } from '../../Json/Music';
-import {Searching} from '../../Redux/search';
+import { Searching } from '../../Redux/search';
 import Notification from '../../Components/Dashbar/Notifications'
 import './DashBar.css'
-const usePrevious = (value) => {
-    const ref = useRef(0);
+
+function usePrev(value) {
+    const ref = useRef();
     useEffect(() => {
         ref.current = value;
-    });
-    return ref.current
+    })
+    return ref.current;
 }
+
 function DashBar() {
 
     const dispatch = useDispatch();
-    const [count, setcount] = useState(0)
+    const [count, setCount] = useState(0)
+    const [notification, setNotification] = useState(false)
+    const favorite = useSelector(state => state.favorite)
 
-    let favorite = useSelector(state => state.favorite.id);
-    
-    
-    
-    let prevCount = usePrevious(favorite.length);
+    const prevNotification = usePrev(favorite.id.length);
     useEffect(() => {
-        if (prevCount > favorite.length) {
-            setcount(count + 1)
+        if ( count > 0 && favorite.id.length > 0) {
+            setNotification(true)
+        } else {
+            setNotification(false)
         }
-    },[favorite]);
-
-    console.log(prevCount,"prev")
-    console.log(favorite.length,"fav")
-    console.log(count,"state")
-
-
+    }, [favorite])
+    console.log(notification,count)
     return (
         <div className="DashBar_wrapper">
             <div className="DashBar_content">
@@ -52,7 +49,7 @@ function DashBar() {
 
 
                         <span className="notifier"></span>
-                        <img src={bell} alt="" onClick={()=>setcount(0)}/>
+                        <img src={bell} alt="" onClick={() => setCount(0)} />
                         <Notification />
                     </div>
                 </div>
