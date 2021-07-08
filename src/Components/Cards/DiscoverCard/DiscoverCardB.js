@@ -10,6 +10,7 @@ import { numFormatter } from '../../../Container/FUNCTIONS';
 import './DiscoverCard.css'
 import { Music } from '../../../Json/Music';
 
+import DisocverSong from '../../../Container/Discover/DiscoverSong';
 let random = Math.random() * 70;
 let floor = Math.floor(random);
 

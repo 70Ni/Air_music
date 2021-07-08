@@ -6,8 +6,7 @@ import { Music } from '../../Json/Music';
 
 
 
-
-let ShuffledArray = shuffle(Music);
+let ShuffledArray =() => shuffle(Music);
 
 const PremiumSongs = () => {
 
@@ -24,7 +23,7 @@ const PremiumSongs = () => {
         }
     }, [window.innerWidth])
 
-    const array2 = useMemo(() => ({ group: ShuffledArray.slice(0, 6) }),[]);
+    const array2 = useMemo(() => ({ group: ShuffledArray().slice(0, 6) }),[]);
     console.log(array2)
     return (
 
