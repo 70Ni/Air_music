@@ -14,10 +14,6 @@ import { array } from '../../../Container/Discover/DiscoverSong'
 import { Music } from '../../../Json/Music';
 import { numFormatter } from '../../../Container/FUNCTIONS';
 
-console.log(array.group[0].name)
-let random = Math.random() * 70;
-let floor = Math.floor(random);
-
 
 let id = array.group[0].id;
 let Group = {group:array.group};
