@@ -24,7 +24,6 @@ const PremiumSongs = () => {
     }, [window.innerWidth])
 
     const array2 = useMemo(() => ({ group: ShuffledArray().slice(0, 6) }),[]);
-    console.log(array2)
     return (
 
         <div className="SqureCa_wrapper">
@@ -33,11 +32,11 @@ const PremiumSongs = () => {
                     return (
                         <SqureCard
                             key={i}
+                            newarray = {array2}
                             id={song.id}
                             preview={song.Preview.default}
                             name={song.name}
                             artist={song.Artist}
-                            artist_image={song.Artist_image}
                             views={numFormatter(song.Views)}
                             likes={numFormatter(song.Likes)}
                             duration={song.duration}

@@ -17,7 +17,7 @@ import DurationTicker from '../../../Components/MusicPlayer/Durationticker'
 import { Music } from '../../../Json/Music';
 
 
-function ListCardB({ id, name, preview, views, duration, artist, URL, newarray }) {
+function ListCardB({ id, name, preview, views, duration, newarray }) {
     const [Group, setGroup] = useState(0)
     const MusicLoaded = useSelector(state => state.MusicLoaded)
     const fav = useSelector(state => state.favorite.id)
