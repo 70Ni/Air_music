@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Favorite from '../../../Images/Icons/save.svg'
 import { useDispatch, useSelector } from 'react-redux';
 import Image from '../../../Music files/Justin Bieber/thumbnail/Changes.jpg'
-import Play from '../../../Images/Icons/play_white.svg'
+import Play from '../../../Images/Icons/Play_fill.svg'
 import info from '../../../Images/Icons/list.svg'
 // import save from '../../../Images/Icons/save.svg';
 import Playing from '../../../Images/Icons/play_fill.svg'

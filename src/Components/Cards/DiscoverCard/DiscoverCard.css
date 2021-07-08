@@ -37,6 +37,8 @@
     border-radius: 20px;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 .Play_D {
     font-family: 'Poppins', sans-serif;

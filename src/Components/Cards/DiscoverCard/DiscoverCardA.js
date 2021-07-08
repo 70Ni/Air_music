@@ -1,8 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Favorite from '../../../Images/Icons/save.svg'
 import Image from '../../../Music files/Marshmellow/Thumbnails/Power.jpg'
-import Play from '../../../Images/Icons/Play_fill.svg';
+import Play from '../../../Images/Icons/play_white.svg';
 import view from '../../../Images/Icons/view.svg';
 import like from '../../../Images/Icons/like.svg';
 import { indexFind } from '../../../Redux/IndexFinder';
@@ -24,6 +24,8 @@ let likes = numFormatter(array.group[0].Likes)
 
 function DiscoverCardA() {
 
+    const MusicLoaded = useSelector(state => state.MusicLoaded);
+    let contrast = MusicLoaded.ClickedMusic === id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null
 
     const dispatch = useDispatch();
     return (
@@ -33,7 +35,7 @@ function DiscoverCardA() {
                 <img src={array.group[0].Preview.default} className="Discover_image" alt="" />
                 <div className="DiscoverCard_content">
                     <div className="DiscCard_Upper">
-                        <div className="MusicName_A">{array.group[0].name}</div>
+                        <div className="MusicName_A" style ={contrast}>{array.group[0].name}</div>
                         <img className="favorite" src={Favorite} alt="" />
                     </div>
                     <div className="DiscCard_lower">
@@ -45,7 +47,7 @@ function DiscoverCardA() {
                             <div className="Dis_content">
                                 {/* <img className="Artist_avatar" src={avatar} alt="" />*/}
                                 <div className="discDetails_wrapper">
-                                    <div className="ArtistName">{array.group[0].Artist}</div>
+                                    <div className="ArtistName" >{array.group[0].Artist}</div>
                                     <div className="Like_view_wrapper">
                                         <div className="View_wrapper">
                                             <img src={view} alt="" className="icons" />
