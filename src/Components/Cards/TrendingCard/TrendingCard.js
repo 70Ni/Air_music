@@ -9,10 +9,11 @@ import './TrendingCard.css'
 
 
 
-function TrendingCard({ id, key, name, artist, duration,preview }) {
+function TrendingCard({ id, key, name, artist, duration, preview }) {
     return (
+        <div style={{ display: 'flex' }}>
 
-            <div className="Trending_card_wrapper" key ={id}>
+            <div className="Trending_card_wrapper" key={id}>
                 <img src={preview} alt="" className="trending_bg_image" />
                 <div className="Trending_card_content">
                     <div className="Trending_number">#02</div>
@@ -23,9 +24,9 @@ function TrendingCard({ id, key, name, artist, duration,preview }) {
                     </div>
                     <div className="Trending_details_wrapper">
                         <div className="trendding_details">
-                        <div className="trending_header_B">
-                            <div className="Trending_Music_Name">Name of Songs</div>
-                        </div>
+                            <div className="trending_header_B">
+                                <div className="Trending_Music_Name">Name of Songs</div>
+                            </div>
                             <div className="Trending_Artist_name">Shawn Mendes</div>
                         </div>
                         <div className="Trending_footer">
@@ -35,6 +36,7 @@ function TrendingCard({ id, key, name, artist, duration,preview }) {
                     </div>
                 </div>
             </div>
+        </div>
 
     )
 }

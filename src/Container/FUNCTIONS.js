@@ -49,13 +49,7 @@ const MusicGroupSet = () => {
     }
 }
 
-const PlayPause = () => {
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
+
 
 // const FavoriteFunc = (id) => {
 //     return store.dispatch({
@@ -180,7 +174,7 @@ function setVolume(volumeValue) {
 
 
 export {
-    MusicGroupSet, Mute, onChange, numFormatter, shuffle, PlayPause, setVolume, audio
+    MusicGroupSet, Mute, onChange, numFormatter, shuffle, setVolume, audio
 }
 
 

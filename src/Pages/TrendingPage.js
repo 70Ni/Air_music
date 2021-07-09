@@ -9,9 +9,9 @@ function DiscoverPage() {
 
         <div className="Trending_page_wrapper" style={{ 'maxWidth': '1440px' }}>
             <div className="TrenPag_LisCarWrapper">
-            <div className="trending_section">
-               <TrendingPage />
-            </div>
+                <div className="trending_section">
+                    <TrendingPage />
+                </div>
             </div>
         </div>
 

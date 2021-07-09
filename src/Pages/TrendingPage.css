@@ -1,5 +1,8 @@
 .TrenPag_LisCarWrapper {
-    display: flex;
+ display: flex;
+ flex-grow: 1;
+ flex-wrap: wrap;
 }
 .trending_section {
+
 }

@@ -2,8 +2,7 @@
     margin:24px 16px;
     position: relative;
     display: flex;
-    flex-grow: 1;
-    flex-basis: 520px;
+    flex-basis: 820px;
 }
 .trending_bg_image {
     position: absolute;
