@@ -12,7 +12,7 @@ import Volume from '../../Images/Icons/Volume.svg'
 import mute from '../../Images/Icons/mute.svg'
 
 import DurationTime from './DurationTime';
-import { Mute, PlayPause, onChange, setVolume, audio } from '../../Container/FUNCTIONS'
+import { Mute, onChange, setVolume, audio } from '../../Container/FUNCTIONS'
 import './MusicPlayer.css'
 import './Slider.scss'
 import Durationticker from './Durationticker';
@@ -31,26 +31,39 @@ function MusicPlayer({ id }) {
 
     let musicGroup = MusicLoaded.MusicGroup.group;
     let musicIndex = MusicLoaded.IndexOfMusic;
+
     useEffect(() => {
-        setPaused(false)
-    }, [audio.duration])
+        window.addEventListener('keydown', e => {
+            if (e.defaultPrevented) {
+                return; // Do nothing if event already handled
+            }
+            switch (e.code) {
+                case 'Space':
+                    PlayPause();
+                    break;
+                case "ArrowRight":
+                    dispatch(SkipNext());
+                    break;
+                case "ArrowLeft":
+                    dispatch(SkipPrev());
+                    break;
+                default:
+                    break;
+            }
+        });
+    }, []);
 
     document.documentElement.style.setProperty('--base', SongDuration.currentTime);
     document.documentElement.style.setProperty('--max', SongDuration.AudioDuration);
 
 
     const [muted, setMuted] = useState(false)
-    const [paused, setPaused] = useState(false)
     const muteIcon = () => {
         return (
             setMuted(!muted)
         )
     }
-    const pauseIcon = () => {
-        return (
-            setPaused(!paused)
-        )
-    }
+
     const setMute = () => {
         volumeSlider.current.value == 0 ?
             setMuted(true) :
@@ -64,21 +77,19 @@ function MusicPlayer({ id }) {
             muteIcon()
         )
     }
-    const handleAnswerChange = (event) => {
-        console.log(event)
-        if (event.key === 'y') {
-            alert('The sky is your starting point!')
-        }
-        else if (event.key === 'n') {
-            alert('The sky is your limit👀')
+
+    const PlayPause = () => {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
         }
     }
-    const playPausefun = () => {
-        return (
-            PlayPause(),
-            pauseIcon()
-        )
-    }
+
+
+
+
+
     const VolumeSlider = () => {
         return (
             setVolume(volumeSlider.current.value),
@@ -90,7 +101,7 @@ function MusicPlayer({ id }) {
 
     return (
 
-        <div className="MusicPlayer_wrapper" onKeyDown={(event) => handleAnswerChange(event)} >
+        <div className="MusicPlayer_wrapper" >
             <div id="MusicSlider">
                 {SongDuration.AudioDuration ?
                     <input id="range1" type="range" min="0"
@@ -118,7 +129,7 @@ function MusicPlayer({ id }) {
                 {musicGroup ?
                     <div className="PlayerControllor_wrapper" >
                         <img src={Forward} className="controllor MusicBackward" alt="" onClick={() => dispatch(SkipPrev())} />
-                        <img src={paused ? Play : pause} className="controllor" alt="" onClick={() => playPausefun()} />
+                        <img src={audio.paused ? Play : pause} className="controllor" alt="" onClick={PlayPause} />
                         <img src={Backward} className="controllor MusicForward" alt="" onClick={() => dispatch(SkipNext())} />
                     </div>
                     : <div className="Player_preState PlayerControllor_wrapper"> Hear beats of the air </div>
