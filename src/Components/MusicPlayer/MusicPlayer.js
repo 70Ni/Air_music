@@ -86,10 +86,6 @@ function MusicPlayer({ id }) {
         }
     }
 
-
-
-
-
     const VolumeSlider = () => {
         return (
             setVolume(volumeSlider.current.value),
@@ -132,7 +128,7 @@ function MusicPlayer({ id }) {
                         <img src={audio.paused ? Play : pause} className="controllor" alt="" onClick={PlayPause} />
                         <img src={Backward} className="controllor MusicForward" alt="" onClick={() => dispatch(SkipNext())} />
                     </div>
-                    : <div className="Player_preState PlayerControllor_wrapper"> Hear beats of the air </div>
+                    : <div className="Player_preState PlayerControllor_wrapper"> Hear beats of air </div>
                 }
                 <div className="Player_right_wrapper">
 

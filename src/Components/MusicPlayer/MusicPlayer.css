@@ -1,8 +1,6 @@
 
 .MusicSlider {
     position: absolute;
-    bottom: 74px;
-    z-index: -8;
 }
 .favorite_Musictrl {
     width: 18px;
@@ -12,7 +10,7 @@
 }
 #range1 {
     position: absolute;
-    bottom: 77px;
+    bottom: 74px;
     left: 0;
     z-index: 80;
 }
@@ -23,8 +21,8 @@
     position: fixed;
     bottom: 0px;
     width: 100%;
-    background: #ffffff16;
     background: rgba(102, 63, 63, 0);
+    background: #ffffff16;
     backdrop-filter:blur(50px);
     z-index: 20;
 }
@@ -86,9 +84,8 @@
     width: 300px;
 }
 .Player_preState {
-    color: #ffffff;
+    color: #F27E4C;
     font-size: 14px;
-    opacity: 0.6;
     font-weight: 500;
     font-family: 'Poppins', sans-serif; 
 }
