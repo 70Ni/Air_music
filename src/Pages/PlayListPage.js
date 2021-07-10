@@ -25,11 +25,11 @@ function PlayListPage() {
                 <div className="TrenPag_autoShuffl_content">
                     <div className="AutoPlayButton_B">
                         <div className="Play_D">Auto <span className="Play_D_H">Play</span></div>
-                        <img className="ButtonImg" src={AutoPlay} alt="" />
+                        <img className="ButtonImgs" src={AutoPlay} alt="" />
                     </div>
                     <div className="AutoPlayButton_B">
                         <div className="Play_D">shuffle</div>
-                        <img className="ButtonImg" src={AutoPlay} alt="" />
+                        <img className="ButtonImgs" src={AutoPlay} alt="" />
                     </div>
                 </div>
             </div>

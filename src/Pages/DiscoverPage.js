@@ -28,6 +28,7 @@ function DiscoverPage() {
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
             <div className="SUBheader_H">Disover</div>
+         
             <DiscoverCardZ />
             <div className="SUBheader">Artists</div>
             <div className="Profile_Icons">

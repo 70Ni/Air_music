@@ -1,7 +1,7 @@
 .DisCoverCards_cover {
     display: flex;
     max-width: 1440px;
-    margin: 36px 0px;
+    margin: 16px 0px;
 }
 .AutoPlayButton {
     cursor: pointer;
