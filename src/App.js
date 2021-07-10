@@ -10,6 +10,7 @@ import HeaderThunder from './Components/HeaderComponents/HeaderThunder/HeaderThu
 import DiscoverPage from './Pages/DiscoverPage'
 import TreningPage from './Pages/TrendingPage'
 import ArtistPage from './Pages/ArtistPage'
+import HorizontalNav from './Components/NavBar/HorizontalNav/HorizontalNav';
 
 
 import HeaderCore from './Components/HeaderComponents/HeaderCore/HeaderCore';
@@ -53,6 +54,7 @@ function App() {
             </Switch>
           </div>
         </div>
+        {/* <HorizontalNav /> */}
         <MusicPlayer />
       </div>
     </Router>
