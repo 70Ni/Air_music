@@ -20,9 +20,10 @@ function TrendingSongs() {
         <div className="TrenPag_LisCarWrapper" style={{ color: 'white' }}>
             {
                 array.group.map((song, i) => {
+                    console.log(i)
                     return (
                         <TrendingCard
-                            key={i}
+                            ki={i}
                             id={song.id}
                             preview={song.Preview.default}
                             name={song.name}

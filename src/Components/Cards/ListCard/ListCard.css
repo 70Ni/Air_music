@@ -18,6 +18,9 @@
     background: transparent;
     font-size: 12px;
 }
+.ListCard_B2 {
+    display: none;
+}
 .List_card_content {
     display: flex;
     color: #ffffff;
@@ -42,6 +45,7 @@
 }
 .List_Name_wrapper {
     display: flex;
+    flex-direction: column;
     padding: 0px 16px;
     flex-grow: 1;
     flex-basis: 300px;
@@ -97,6 +101,9 @@
 @media only screen and (max-width: 568px) {
     .List_Image {
         margin: 8px;
+    }
+    .ListCard_B2 {
+        display: flex;
     }
 }
 @media only screen and (max-width: 432px) {

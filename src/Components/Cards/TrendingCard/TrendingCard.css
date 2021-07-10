@@ -1,8 +1,8 @@
 .Trending_card_wrapper{
     margin:24px 16px;
     position: relative;
+    flex-grow: 1;
     display: flex;
-    flex-basis: 820px;
 }
 .trending_bg_image {
     position: absolute;

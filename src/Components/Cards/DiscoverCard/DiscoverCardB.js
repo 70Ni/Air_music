@@ -13,6 +13,7 @@ import { indexFind } from '../../../Redux/IndexFinder';
 import { array } from '../../../Container/Discover/DiscoverSong';
 import info from '../../../Images/Icons/list.svg'
 import { isFavorite } from '../../../Redux/favorite';
+import Cloth from '../../../Images/cloth.jpeg'
 
 let id = array.group[1].id;
 let Group = { group: array.group };
@@ -34,6 +35,7 @@ function DiscoverCardB() {
 
     const dispatch = useDispatch();
     return (
+        
         <div className="DiscoverCard_wrapper Discover_B" key={array.group[1].id}>
             <div className="DiscoverCard_filter"></div>
             <img src={array.group[1].Preview.default} className="Discover_image" alt="" />
@@ -49,7 +51,6 @@ function DiscoverCardB() {
                     </div>
                     <div className="DiscoverDetails_wrapper">
                         <div className="Dis_content">
-                            {/* <img className="Artist_avatar" src={avatar} alt="" /> */}
                             <div className="discDetails_wrapper">
                                 <div className="ArtistName">{array.group[1].Artist}</div>
                                 <div className="Like_view_wrapper">

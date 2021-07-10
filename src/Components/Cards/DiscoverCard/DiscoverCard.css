@@ -1,14 +1,13 @@
 
 .DiscoverCard_wrapper,.DiscoverCard_wrapperZ {
-    height: 320px;
+    height: 240px;
     margin:16px;
     position: relative;
     display: flex;
     flex-grow: 1;
-    flex-basis: 688px;
-}
+}   
 .Discover_image {
-    height: 320px;
+    height: 240px;
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -152,7 +151,6 @@
         padding-top: 12px;
     }
     .Discover_play {
-        margin-top: 0px;
         margin: 8px 0px;
     }
  

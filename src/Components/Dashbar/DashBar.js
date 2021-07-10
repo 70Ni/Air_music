@@ -32,7 +32,6 @@ function DashBar() {
             setNotification(false)
         }
     }, [favorite])
-    console.log(notification,count)
     return (
         <div className="DashBar_wrapper">
             <div className="DashBar_content">
@@ -50,7 +49,7 @@ function DashBar() {
 
                         <span className="notifier"></span>
                         <img src={bell} alt="" onClick={() => setCount(0)} />
-                        <Notification />
+                        {/* <Notification /> */}
                     </div>
                 </div>
             </div>
