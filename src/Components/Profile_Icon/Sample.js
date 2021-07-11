@@ -7,7 +7,6 @@ function Sample (){
     })
     const handleSubmit = () => {
         setState({save:!state.save})
-        console.log(state.save)
     }
     return(
         <div>
