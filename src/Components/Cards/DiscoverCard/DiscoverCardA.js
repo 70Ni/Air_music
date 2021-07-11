@@ -20,7 +20,6 @@ import { isFavorite } from '../../../Redux/favorite';
 let id = array.group[0].id;
 let Group = {group:array.group};
 let name = array.group[0].name
-console.log(Group)
 let views = numFormatter(array.group[0].Views)
 let likes = numFormatter(array.group[0].Likes)
 

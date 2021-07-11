@@ -10,7 +10,6 @@ import './TrendingCard.css'
 
 
 function TrendingCard({ id, key, name, artist, duration, preview, ki }) {
-    console.log(key)
     return (
 
         <div className="Trending_card_wrapper" key={id}>
