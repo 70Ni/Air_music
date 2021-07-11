@@ -20,7 +20,6 @@ function TrendingSongs() {
         <div className="TrenPag_LisCarWrapper" style={{ color: 'white' }}>
             {
                 array.group.map((song, i) => {
-                    console.log(i)
                     return (
                         <TrendingCard
                             ki={i}

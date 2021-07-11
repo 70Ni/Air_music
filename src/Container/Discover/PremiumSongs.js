@@ -11,7 +11,6 @@ let ShuffledArray =() => shuffle(Music);
 const PremiumSongs = () => {
 
     const [matches, setMatches] = useState(6)
-    console.log(matches)
 
 
 
