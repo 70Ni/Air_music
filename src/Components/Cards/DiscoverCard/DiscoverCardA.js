@@ -48,7 +48,6 @@ function DiscoverCardA() {
                         </button>
                         <div className="DiscoverDetails_wrapper">
                             <div className="Dis_content">
-                                {/* <img className="Artist_avatar" src={avatar} alt="" />*/}
                                 <div className="discDetails_wrapper">
                                     <div className="ArtistName" >{array.group[0].Artist}</div>
                                     <div className="Like_view_wrapper">
