@@ -14,11 +14,13 @@ const FavoriteSlice = createSlice({
     name: 'FavArray',
     initialState: {
         id:[],
-        name:[]
+        name:[],
+        notify:''
     },
     reducers: {
 
         isFavorite(state, { payload }) {
+            state.notify = state.notify.length;
             let r = state.id.map(like => like === payload.id).indexOf(true);
             if (r !==  -1 ) {
                 state.id.splice(r, 1);
