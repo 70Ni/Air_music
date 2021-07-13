@@ -51,12 +51,6 @@
     flex-basis: 300px;
     overflow: hidden;
 }
-.List_song_Name {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    padding-bottom: 8px;
-}
 .List_artist_name {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
@@ -93,11 +87,12 @@
         overflow: hidden;
     }
 }
-@media only screen and (max-width: 769px) {
-    .List_card_wrapper {
-        padding: 6px 16px;
+    @media only screen and (max-width: 769px) {
+        .List_card_wrapper {
+            padding: 6px 16px;
+        }
+       
     }
-}
 @media only screen and (max-width: 568px) {
     .List_Image {
         margin: 8px;
@@ -105,6 +100,7 @@
     .ListCard_B2 {
         display: flex;
     }
+
 }
 @media only screen and (max-width: 432px) {
   .List_view {
