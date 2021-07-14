@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard';
-import PlayListCard from '../Components/Cards/PlayListCard/PlayListCard';
-import ResultCard from '../Components/Cards/ResultCard/ResultCard';
+import FavoriteList from '../Container/Playlist/FavoriteList';
 import SongDetails from '../Components/SongDetails/SongDetail';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
 import SearchList from '../Container/Playlist/SearchList';
@@ -37,23 +35,7 @@ function PlayListPage() {
                 <SongDetails />
             </span>
             <div className="SUBheader">Saved</div>
-            <div className="searchData_content">
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-                <PlayListCard />
-            </div>
+               <FavoriteList />
 
             <span className="disPag_listButton">
                 <div className="AutoPlayButton">

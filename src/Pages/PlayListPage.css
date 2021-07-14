@@ -21,6 +21,23 @@
     border-radius: 20px;
     border: 2px solid #F27E4C;
 }
+.NoMusic_wrpper {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}
+.NOmusicFound {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    opacity: 0.8;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 16px;
+    position: absolute;
+    right: 43%;
+}
 
 .searchData_content {
     display: grid;
