@@ -10,7 +10,7 @@ const FavoriteList = () => {
     
     const state = useSelector(state => state.favorite.id);
     let favorites = Music.filter(song => state.includes(song.id))
-    const array2 = { group: favorites,  };
+    const array2 = { group: favorites, isLoop: false  };
     return (
 
         <div className="searchData_content">

@@ -36,7 +36,6 @@ function PlayListPage() {
             </span>
             <div className="SUBheader">Saved</div>
                <FavoriteList />
-
             <span className="disPag_listButton">
                 <div className="AutoPlayButton">
                     <div className="Play_D">back to top</div>

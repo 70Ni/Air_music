@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
-import { shuffle, numFormatter } from '../../Container/FUNCTIONS'
+import React from 'react';
+import { numFormatter } from '../../Container/FUNCTIONS'
 import ListcardB from '../../Components/Cards/ListCard/ListCardB'
 
 import { Music } from '../../Json/Music';
 import { useSelector } from 'react-redux';
-
-
 
 
 
@@ -28,7 +26,6 @@ function RecentList() {
                             preview={song.Preview.default}
                             name={song.name}
                             artist={song.Artist}
-                            artist_image={song.Artist_image}
                             views={numFormatter(song.Views)}
                             likes={numFormatter(song.Likes)}
                             duration={song.duration}
