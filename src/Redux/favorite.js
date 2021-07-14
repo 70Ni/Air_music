@@ -15,27 +15,30 @@ const FavoriteSlice = createSlice({
     initialState: {
         id:[],
         name:[],
-        notify:''
+        notify:0
     },
     reducers: {
-
         isFavorite(state, { payload }) {
-            state.notify = state.notify.length;
             let r = state.id.map(like => like === payload.id).indexOf(true);
             if (r !==  -1 ) {
                 state.id.splice(r, 1);
                 state.name.splice(r, 1);
+                state.notify = state.notify -= 1
             } else {
                 state.id.unshift(payload.id)
                 state.name.unshift(payload.name)
+                state.notify = state.notify += 1
             }
 
         },
+        isNoticed(state, {payload}) {
+            state.notify = 0
+        }
 
     }
 
 
 })
 
-export const { isFavorite } = FavoriteSlice.actions;
+export const { isFavorite,isNoticed } = FavoriteSlice.actions;
 export default FavoriteSlice.reducer;
