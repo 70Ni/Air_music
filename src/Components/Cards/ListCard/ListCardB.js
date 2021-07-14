@@ -23,10 +23,10 @@ function ListCardB({ id, name, preview, views, duration,artist, newarray }) {
     const fav = useSelector(state => state.favorite.id)
     const dispatch = useDispatch()
 
+    
     useEffect(() => {
         setGroup(newarray)
     },[MusicLoaded.ClickedMusic])
-
 
 
     let contrast = MusicLoaded.ClickedMusic === id ? { color: '#F27E4C', fontWeight: '700', opacity: '1' } : null

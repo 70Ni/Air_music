@@ -6,49 +6,57 @@ import search from '../../Images/Icons/search.svg';
 import bell from '../../Images/Icons/notification.svg';
 import { Music } from '../../Json/Music';
 import { Searching } from '../../Redux/search';
+import { isNoticed } from '../../Redux/favorite'
 import Notification from '../../Components/Dashbar/Notifications'
 import './DashBar.css'
+import { useHistory } from 'react-router-dom';
+import { AutoPlay } from '../../Redux/IndexFinder';
 
-function usePrev(value) {
-    const ref = useRef();
-    useEffect(() => {
-        ref.current = value;
-    })
-    return ref.current;
-}
+
 
 function DashBar() {
 
     const dispatch = useDispatch();
-    const [count, setCount] = useState(0)
-    const [notification, setNotification] = useState(false)
-    const favorite = useSelector(state => state.favorite)
+    const notice = useSelector(state => state.favorite.notify)
+    let history = useHistory();
+    const redirect = () => {
+        history.push('/playlist')
+        console.log(history)
+    }
+    const searchDispatch = (event) => {
+        dispatch(Searching(event.target.value))
+    }
 
-    const prevNotification = usePrev(favorite.id.length);
-    useEffect(() => {
-        if ( count > 0 && favorite.id.length > 0) {
-            setNotification(true)
-        } else {
-            setNotification(false)
-        }
-    }, [favorite])
+
+    const searchtyping = (event) => {
+        redirect()
+        searchDispatch(event)
+    }
+
     return (
         <div className="DashBar_wrapper">
             <div className="DashBar_content">
                 <div className="Browser_wrapper">
                     <input type="text" id="searchField" name="Search" placeholder="Browse"
-                        onChange={(event) => dispatch(Searching(event.target.value))} />
+                        onChange={(event)=>searchtyping(event)}
+                        onMouseOut={(event)=> event.target.value = ''}
+                        autocomplete="off"
+                         />
                     <img className="Browser_icon" src={search} alt="" />
                 </div>
                 <div className="DashIcon_wrapper">
+
                     <div className="user_icon_wrapper">
                         <img src={User} alt="" />
                     </div>
                     <div className="bell_icon_wrapper">
 
-
-                        <span className="notifier"></span>
-                        <img src={bell} alt="" onClick={() => setCount(0)} />
+                        {
+                            notice ?
+                                <span className="notifier"></span> :
+                                null
+                        }
+                        <img src={bell} alt="" onClick={() => dispatch(isNoticed())} />
                         {/* <Notification /> */}
                     </div>
                 </div>
@@ -57,24 +65,5 @@ function DashBar() {
         </div >
     );
 }
-
-// class DashBar extends Component {
-
-//     searchChange = (event) => {
-//         this.props.setSearchMusics({
-//             SearchResults: event.target.value
-//         })  
-//         const searchedMusics = Music.filter(item=>{
-//             return item.name.toLowerCase().includes(this.props.resultMusic.SearchResults)
-//         })
-//         console.log(searchedMusics)
-
-//     }
-
-//     render() {
-
-//     }
-// }
-
 
 export default DashBar;

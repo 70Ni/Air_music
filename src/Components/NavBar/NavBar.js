@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
 
-
 import user from '../../Images/Icons/userIcon.svg';
 import headphones from '../../Images/Icons/headphones.svg';
 import info from '../../Images/Icons/info.svg';
@@ -11,9 +10,11 @@ import search from '../../Images/Icons/search.svg';
 
 
 import './NavBar.css'
+import { useSelector } from 'react-redux';
 
 
 function NavBar() {
+    const favorite = useSelector(state => state.favorite.notify)
     return (
         <div className="Navbar_wrapper">
             <div className="NavContainer">
@@ -40,7 +41,11 @@ function NavBar() {
                         <NavLink to="/playlist" className="NavItem_container">
                             <img alt="" className="Nav_icon" src={headphones} />
                             <div className="Nav_item">Playlist</div>
-                            <span className="PlayList_notifier"></span>
+                            {
+                                favorite ?
+                                    <span className="PlayList_notifier"></span>:
+                                    null
+                            }
                         </NavLink>
                         <NavLink to="/recent" className="NavItem_container">
                             <img alt="" className="Nav_icon" src={list} />

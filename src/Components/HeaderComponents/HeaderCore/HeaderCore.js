@@ -25,11 +25,7 @@ function HeaderCore() {
 
                             <button className="getStarted">Get Started</button>
                     }
-                    {
-                        musicGroup ?
-                            <img src={musicGroup[musicIndex].Preview.default} alt="" className="Thumb_image" style={{zIndex:-8, position:'absolute'}}/>
-                            : null
-                    }
+     
                     <div className="HeaderCore_para">
                         Air Music is a music streaming service developed for education and entertainment purposes.
                     </div>
@@ -37,7 +33,7 @@ function HeaderCore() {
                     <div className="Music_wrpaer">
                         <div className="HeaderCore_MusicName">{musicGroup ? musicGroup[musicIndex].name : null}</div>
                     </div>
-                        <div className="NowListening_para"> {musicGroup ? "Now Listening ..." : null}</div>
+                    <div className="NowListening_para"> {musicGroup ? "Now Listening ..." : null}</div>
                 </div>
             </div>
 

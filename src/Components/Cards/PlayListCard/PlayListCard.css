@@ -14,7 +14,7 @@
 .ItemCard_content {
     display: flex;
     align-items: center;
-    padding: 16px 0px;
+    padding: 8px 0px;
     flex-grow: 1;
 }
 .Item_Image {
@@ -28,6 +28,9 @@
     position: relative;
     display: flex;
     flex-grow: 1;
+    align-items: baseline;
+    justify-content: baseline;
+    height: 20px;
 }
 .Favorite {
     position: absolute;
@@ -39,7 +42,6 @@
     padding-right: 16px;
     flex-basis: 150px;
     flex-grow: 1;
-    height: 80px;
 
 }
 /* .ItemCard_wrapper {
