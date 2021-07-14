@@ -127,9 +127,7 @@ body::-webkit-scrollbar{
       display: none;
   }
   .Page_side {
-    height: 100vh !important;
     margin-left: 0px;
-
   }
 }
 
