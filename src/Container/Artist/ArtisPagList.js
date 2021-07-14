@@ -10,7 +10,7 @@ const ArtisPagList = () => {
 
     const SelectedArtist = useSelector(state => state.artist.artistName)
     const array = useMemo(()=>Music.filter(art =>( SelectedArtist ? art.Artist ===  SelectedArtist : art.Artist === "Marshmello")),[]);
-    console.log(array)
+    let array2 = {group:array, isLoop: false}
         return (
         <div>   
             {
@@ -18,6 +18,7 @@ const ArtisPagList = () => {
                     return (
                         <ListCardB
                             key={i}
+                            newarray = {array2}
                             id={song.id}
                             preview={song.Preview.default}
                             name={song.name}
