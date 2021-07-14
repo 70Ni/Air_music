@@ -10,7 +10,6 @@ import { isNoticed } from '../../Redux/favorite'
 import Notification from '../../Components/Dashbar/Notifications'
 import './DashBar.css'
 import { useHistory } from 'react-router-dom';
-import { AutoPlay } from '../../Redux/IndexFinder';
 
 
 
@@ -21,7 +20,6 @@ function DashBar() {
     let history = useHistory();
     const redirect = () => {
         history.push('/playlist')
-        console.log(history)
     }
     const searchDispatch = (event) => {
         dispatch(Searching(event.target.value))
