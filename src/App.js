@@ -27,7 +27,6 @@ function App() {
   const LoadedMusics = useSelector(state => state.MusicLoaded);
 
 
-  let windowHeight = window.innerHeight;
   useEffect(() => {
     return MusicGroupSet()
   }, [LoadedMusics.ClickedMusic])
