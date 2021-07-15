@@ -6,6 +6,8 @@ import pause from '../../Images/Icons/Pause.svg';
 
 import { SkipPrev, SkipNext } from '../../Redux/IndexFinder';
 
+import info from '../../Images/Icons/list.svg'
+
 import Forward from '../../Images/Icons/skip-backward.svg';
 import Backward from '../../Images/Icons/skip-forward.svg';
 import Volume from '../../Images/Icons/Volume.svg'
@@ -18,20 +20,29 @@ import './Slider.scss'
 import Durationticker from './Durationticker';
 import { connect } from 'react-redux';
 import Airmusic from '../Branding/Airmusic';
+import { isFavorite } from '../../Redux/favorite';
 
 
 
-function MusicPlayer({ id }) {
+function MusicPlayer() {
 
     const dispatch = useDispatch()
-    const MusicLoaded = useSelector(state => state.MusicLoaded)
-    const SongDuration = useSelector(state => state.SongDuration)
+
+    const fav = useSelector(state => state.favorite.id)
+
+    const MusicLoaded = useSelector(state => state.MusicLoaded);
+    const SongDuration = useSelector(state => state.SongDuration);
+
+    
     const inputEl = useRef()
     const volumeSlider = useRef()
-
+    
     let musicGroup = MusicLoaded.MusicGroup.group;
     let musicIndex = MusicLoaded.IndexOfMusic;
+    let musicId = MusicLoaded.ClickedMusic;
 
+    let isfavorite = fav.includes(musicId);
+    
     useEffect(() => {
         window.addEventListener('keydown', e => {
             if (e.defaultPrevented) {
@@ -130,93 +141,24 @@ function MusicPlayer({ id }) {
                     </div>
                     : <div className="Player_preState PlayerControllor_wrapper"> Hear beats of air </div>
                 }
-                <div className="Player_right_wrapper">
+                {musicGroup ?
+                    <div className="Player_right_wrapper">
 
-                    <div className="duration_wrapper" >
-                        <Durationticker />
-                    </div>
-                    {musicGroup ?
+                        <div className="duration_wrapper" >
+                            <Durationticker />
+                        </div>
                         <div className="volume_controllor">
                             <img src={muted ? mute : Volume} alt="" className="Volume" onClick={() => mutefunc()} />
                             <div id="VolumeRange">
                                 <input id="range2" ref={volumeSlider} value="100" type="range" min="0" max="100" onChange={() => VolumeSlider()} />
                             </div>
                         </div>
-                        : null}
-                    {musicGroup ?
-                        <img src={Favorite} className="favorite_Musictrl" alt="" value={musicGroup ? musicGroup[musicIndex].id : null} />
-                        : null}
-                </div>
+
+                        <img src={isfavorite? Favorite:info} className="favorite_Musictrl" alt="" onClick={() => dispatch(isFavorite( {id:musicGroup[musicIndex].id, name:musicGroup[musicIndex].name }))} />
+                    </div>
+                    : null}
             </div>
         </div>
     );
 }
-
-// class MusicPlayer extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.inputEl = createRef();
-//         this.volumeSlider = createRef();
-
-//         this.state = {
-//             muted: false,
-//             paused: false,
-//         }
-//     }
-
-//     muteIcon = () => {
-//         return (
-//             this.setState({
-//                 muted: !this.state.muted
-//             })
-//         )
-//     }
-//     pauseIcon = () => {
-//         return (
-//             this.setState({
-//                 paused: !this.state.paused
-//             })
-//         )
-//     }
-//     setMute = () => {
-//         this.volumeSlider.current.value == 0 ?
-//             this.setState({
-//                 muted: true
-//             }) :
-
-//             this.setState({
-//                 muted: false
-//             })
-
-//     }
-//     mutefunc = () => {
-//         return (
-//             Mute(),
-//             this.muteIcon()
-//         )
-//     }
-//     playPausefun = () => {
-//         return (
-//             PlayPause(),
-//             this.pauseIcon()
-//         )
-//     }
-//     VolumeSlider = () => {
-//         return (
-//             setVolume(this.volumeSlider.current.value),
-//             this.setMute()
-//         )
-//     }
-//     render() {
-
-
-//         // document.documentElement.style.setProperty('--base', this.props.timerRange.currentTime);
-//         // document.documentElement.style.setProperty('--max', this.props.timerRange.AudioDuration);
-
-
-//     }
-
-// }
-
-
 export default MusicPlayer;

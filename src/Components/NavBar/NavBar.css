@@ -21,7 +21,8 @@
 .Navbar_wrapper {
     width: 220px;
     display: flex;
-    height: 98vh;
+    height: 90vh;
+    margin-bottom: 180px;
     justify-content: center;
 }
 .Nav_header {

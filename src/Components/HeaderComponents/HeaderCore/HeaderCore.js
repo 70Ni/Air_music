@@ -20,15 +20,15 @@ function HeaderCore() {
                         <div className="Nav_header_name">air</div>
                         <div className="Nav_header_BB">Musics</div>
                     </div>
+                    <div className="HeaderCore_para">
+                        Air Music is a music streaming service developed for education and entertainment purposes.
+                    </div>
                     {
                         musicGroup ? null :
 
                             <button className="getStarted">Get Started</button>
                     }
      
-                    <div className="HeaderCore_para">
-                        Air Music is a music streaming service developed for education and entertainment purposes.
-                    </div>
 
                     <div className="Music_wrpaer">
                         <div className="HeaderCore_MusicName">{musicGroup ? musicGroup[musicIndex].name : null}</div>
