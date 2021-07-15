@@ -9,14 +9,15 @@ import './PlayListPage.css';
 
 function PlayListPage() {
     const browse = useSelector(state => state.searchCard.searchCard)
+    const Favorite = useSelector(state => state.favorite.id)
 
     return (
-        <div className="Trending_page_wrapper" style={{ 'maxWidth': '1440px' }}>
+        <div className="Trending_page_wrapper" style={{ 'maxWidth': '1440px', marginBottom: '200px' }}>
             {browse ?
                 <div className="searchData_appear_wrapper">
                     <div className="SUBheader">Search Results</div>
                     <SearchList />
-                </div>: null
+                </div> : null
             }
             <div className="TrenPag_autoShuffl_wrapper">
                 <div className="SUBheader">Saved</div>
@@ -35,14 +36,18 @@ function PlayListPage() {
                 <SongDetails />
             </span>
             <div className="SUBheader">Saved</div>
-               <FavoriteList />
-            <span className="disPag_listButton">
-                <div className="AutoPlayButton">
-                    <div className="Play_D">back to top</div>
-                    <img className="ButtonImg" src={AutoPlay} alt="" />
-                </div>
-            </span>
-        </div>
+            <FavoriteList />
+            {
+                Favorite.length > 12 ?
+                    <span className="disPag_listButton">
+                        <div className="AutoPlayButton">
+                            <div className="Play_D">back to top</div>
+                            <img className="ButtonImg" src={AutoPlay} alt="" />
+                        </div>
+                    </span> :
+                    null
+            }
+        </div >
 
     )
 }

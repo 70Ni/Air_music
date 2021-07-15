@@ -21,8 +21,6 @@ const FavoriteList = () => {
                         <img src={notfound} alt="" className="NOmusicFound" />
                     </div>
                     :
-
-
                     favorites.map((song, i) => {
                         return (
                             <PlayListCard

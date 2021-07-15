@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ListCardB from '../Components/Cards/ListCard/ListCardB';
 import AutoPlay from '../Images/Icons/autoPlay.svg'
 import RecentList from '../Container/RecentPage/RecentList';
+import Img from '../Images/Icons/notfound.svg'
 
 import './PlayListPage.css'
 import { useSelector } from 'react-redux';
@@ -16,9 +17,13 @@ function RecentPage() {
                 <div className="SUBheader">Recent</div>
 
             </div>
-            <div className="TrenPag_LisCarWrapper">
-                <RecentList />
-            </div>
+            {
+                MusicLoaded.length > 0 ?
+                    <div className="TrenPag_LisCarWrapper">
+                        <RecentList />
+                    </div> :
+                    <img src={Img} alt="" />
+            }
             {
                 MusicLoaded.length > 8 ?
                     <div className="disPag_listButton">
