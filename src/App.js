@@ -54,7 +54,7 @@ function App() {
           </div>
         </div>
         {/* <HorizontalNav /> */}
-        <MusicPlayer />
+        {/* <MusicPlayer /> */}
       </div>
     </Router>
   );
