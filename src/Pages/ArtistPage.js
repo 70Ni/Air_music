@@ -51,27 +51,5 @@ function ArtistPage() {
     );
 }
 
-// class DiscoverPage extends Component {
-//     constructor(props) {
-//         super(props);
-//     }
-//     componentWillReceiveProps(nextProps) {
-//         if (this.props.currentState != nextProps.currentState) {
-//             MusicGroupSet()
-//         }
-//     }
-//     componentDidUpdate() {
-//         if (this.props.currentState.CurrentGroup.ClickedMusic) {
-
-//         }
-//     }
-//     render() {
-
-//     }
-// }
-
-// const mapStateToProps = state => ({
-//     currentState: state.player,
-// })
 
 export default ArtistPage;
