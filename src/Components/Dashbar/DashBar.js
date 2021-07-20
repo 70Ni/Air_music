@@ -14,7 +14,6 @@ import { useHistory } from 'react-router-dom';
 
 
 function DashBar() {
-
     const dispatch = useDispatch();
     const notice = useSelector(state => state.favorite.notify)
     let history = useHistory();
@@ -30,16 +29,17 @@ function DashBar() {
         redirect()
         searchDispatch(event)
     }
-
+    const [open, setopen] = useState(false);
+    console.log(open)
     return (
         <div className="DashBar_wrapper">
             <div className="DashBar_content">
                 <div className="Browser_wrapper">
                     <input type="text" id="searchField" name="Search" placeholder="Browse"
-                        onChange={(event)=>searchtyping(event)}
-                        onMouseOut={(event)=> event.target.value = ''}
+                        onChange={(event) => searchtyping(event)}
+                        onMouseOut={(event) => event.target.value = ''}
                         autocomplete="off"
-                         />
+                    />
                     <img className="Browser_icon" src={search} alt="" />
                 </div>
                 <div className="DashIcon_wrapper">
@@ -54,8 +54,11 @@ function DashBar() {
                                 <span className="notifier"></span> :
                                 null
                         }
-                        <img src={bell} alt="" onClick={() => dispatch(isNoticed())} />
-                        {/* <Notification /> */}
+                        <img src={bell} alt=""
+                            onClick={() => setopen(!open)}
+
+                        />
+                        <Notification state = {open}/>
                     </div>
                 </div>
             </div>
