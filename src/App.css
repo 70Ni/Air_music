@@ -60,7 +60,7 @@
   white-space: nowrap;
 }
 
-.ArtistName,.ArtistName_B {
+.ArtistName {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -68,6 +68,9 @@
 }
 .ArtistName_B {
   font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
   opacity: 0.5;
 }
 .view,.Like {
