@@ -16,10 +16,10 @@
 }
 .ListCard_B {
     background: transparent;
-    padding: 8px 0px;
 }
 .ListCard_B2 {
     display: none;
+    padding-top: 8px;
 }
 .List_card_content {
     display: flex;
