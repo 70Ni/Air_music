@@ -182,13 +182,7 @@ export {
 
 
 
-// prevSong = () => {
-//     this.setState(prevMus=>({
-//         IndexOfMusic:prevMus.IndexOfMusic-1
-//     }))
 
-//     this.MusicGroupSet();
-// }
 // PlayPause = () => {
 //     if (audio.paused) {
 //         audio.play();
