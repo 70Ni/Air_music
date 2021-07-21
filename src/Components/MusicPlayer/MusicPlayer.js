@@ -154,7 +154,7 @@ function MusicPlayer() {
                             </div>
                         </div>
 
-                        <img src={isfavorite? Favorite:info} className="favorite_Musictrl" alt="" onClick={() => dispatch(isFavorite( {id:musicGroup[musicIndex].id, name:musicGroup[musicIndex].name }))} />
+                        <img src={isfavorite? info:Favorite} className="favorite_Musictrl" alt="" onClick={() => dispatch(isFavorite( {id:musicGroup[musicIndex].id, name:musicGroup[musicIndex].name }))} />
                     </div>
                     : null}
             </div>
