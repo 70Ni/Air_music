@@ -17,7 +17,6 @@ const PremiumSongs = () => {
     useEffect(() => {
 
         if (window.matchMedia("(max-width: 1086px)").matches) {
-            console.log(window.matchMedia("(max-width: 1086px)").matches)
             setMatches(18)
         }
     }, [window.innerWidth])
