@@ -9,14 +9,13 @@
     border-radius: 8px;
     margin:  8px 16px;
     z-index: 1;
+    background: transparent;
 }
 .List_card_wrapper:hover {
     background-color: #ffffff20;
     backdrop-filter:blur(50px); 
 }
-.ListCard_B {
-    background: transparent;
-}
+
 .ListCard_B2 {
     display: none;
     padding-top: 8px;

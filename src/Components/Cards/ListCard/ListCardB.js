@@ -41,7 +41,7 @@ function ListCardB({ id, name, preview, views, duration, artist, newarray }) {
                     />
                 </div>
                 <div className="List_Name_wrapper">
-                    <div className="MusicName_B ListCard_B" style={contrast}>{name}</div>
+                    <div className="MusicName_B" style={contrast}>{name}</div>
                     <div className="ArtistName_B ListCard_B2">{artist}</div>
                 </div>
                 <div className="List_duration_view_wrapper">
