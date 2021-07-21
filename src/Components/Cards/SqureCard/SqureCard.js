@@ -38,16 +38,16 @@ function SqureCard({ id, name, preview, artist, newarray }) {
         <div className="Squre_wrapper" key={id}>
             <div className="Squre_content">
                 <div className="Squre_image_section">
-                    <img src={isfavorite ? info : Favorite} alt="" className="favorite_S"  onClick={() => dispatch(isFavorite({ id, name }))}/>
+                    <img src={isfavorite ? info : Favorite} alt="" className="favorite_S" onClick={() => dispatch(isFavorite({ id, name }))} />
                     <div className="Squre_play_wrapper" onClick={() => dispatch(indexFind({ id, Group }))}>
                         <img src={Play} className="Squre_play" alt="" />
                     </div>
                     <img src={preview} className="Squre_Image" alt="" />
                 </div>
-                    <div className="Squre_Details_section">
-                        <div className="ArtistName_B" >{artist}</div>
-                        <div className="MusicName_S" style={contrast} >{name}</div>
-                    </div>
+                <div className="Squre_Details_section">
+                    <div className="ArtistName_B" >{artist}</div>
+                    <div className="MusicName_S" style={contrast} >{name}</div>
+                </div>
 
             </div>
         </div>
