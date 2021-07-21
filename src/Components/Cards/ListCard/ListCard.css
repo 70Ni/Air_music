@@ -16,7 +16,7 @@
 }
 .ListCard_B {
     background: transparent;
-    font-size: 12px;
+    padding: 8px 0px;
 }
 .ListCard_B2 {
     display: none;
@@ -60,6 +60,7 @@
 .List_duration_view_wrapper {
     flex-grow: 1;
     display: flex;
+    justify-content: flex-start;
     width: 116px;
 }
 .List_duration,.List_view {
@@ -77,6 +78,10 @@
     flex-grow: 1;
     white-space: nowrap;
 }
+.listCard_nowPlaying {
+    margin: 0px 16px;
+    display: flex;
+}
 .List_save {
     cursor: pointer;
     margin: 0px 12px;
@@ -85,20 +90,24 @@
 @media only screen and (max-width: 1375px) {
     .List_Name_wrapper {
         overflow: hidden;
+        width: 0;
     }
 }
-    @media only screen and (max-width: 769px) {
-        .List_card_wrapper {
-            padding: 6px 16px;
-        }
-       
+@media only screen and (max-width: 769px) {
+    .List_card_wrapper {
+        padding: 6px 16px;
     }
+    
+}
 @media only screen and (max-width: 568px) {
     .List_Image {
         margin: 8px;
     }
     .ListCard_B2 {
-        display: flex;
+        display: block;
+    }
+    .listCard_nowPlaying {
+        display: none;
     }
 
 }
