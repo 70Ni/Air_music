@@ -1,6 +1,7 @@
 .ItemCard_wrapper {
     margin: 0px 16px;
     display: flex;
+    position: relative;
 }
 .ItemCard_content:hover {
     background-color: #ffffff20;
@@ -16,6 +17,8 @@
     align-items: center;
     padding: 8px 0px;
     flex-grow: 1;
+    position: relative;
+
 }
 .Item_Image {
     width: 80px;
@@ -26,23 +29,34 @@
 }
 .Item_footer_wrapper {
     position: relative;
-    display: flex;
-    flex-grow: 1;
-    align-items: baseline;
-    justify-content: baseline;
     height: 20px;
 }
 .Favorite {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 16px;
+    right: 16px;
     width: 18px;
+    z-index: 2;
 }
 .Item_Details_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     padding-right: 16px;
+    height: 80px;
     flex-basis: 150px;
     flex-grow: 1;
 
+}
+.Duration_C {
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #ffffff; 
+    padding: 4px 0px;
+    border-radius: 4px;
+    z-index: 2;
 }
 /* .ItemCard_wrapper {
     max-width: 328px;

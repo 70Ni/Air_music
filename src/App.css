@@ -72,6 +72,7 @@
   font-weight: 600;
   color: #ffffff;
   opacity: 0.5;
+  white-space: nowrap;
 }
 .view,.Like {
   font-family: 'Inter', sans-serif;

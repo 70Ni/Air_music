@@ -1,10 +1,10 @@
 .ArtistCard_wrapper {
     width: 220px;
-    height: 240px;
     margin: 0px 8px;
 }
 .ArtistCard_content {
     width: 220px;
+    position: relative;
 }
 .ArtistCard_Image_section {
     position: relative;
@@ -28,10 +28,21 @@
     margin: 0px 20px;
 
 }
-
+.ArtCard_details {
+    margin: 14px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
 .Artists_Details_section {
-    width: 180px;
-    margin: 12px 20px;
+    width: 220px;
+    height: 56px;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    border-radius: 0px 0px 12px 12px;
+    background-image: linear-gradient(180deg, #11070200, #110702);
+
 }
 .Item_footer_wrapper {
     display: flex;
