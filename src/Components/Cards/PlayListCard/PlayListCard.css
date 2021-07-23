@@ -58,15 +58,7 @@
     border-radius: 4px;
     z-index: 2;
 }
-/* .ItemCard_wrapper {
-    max-width: 328px;
-    display: flex;
-    flex-grow: 1;
-    height: 80px;
-    align-items: center;
-    margin: 16px;
-    
-}
+
 .ItemCard_wrapper:hover {
     background-color: #ffffff20;
     backdrop-filter: blur(20px);
