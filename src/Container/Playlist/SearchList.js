@@ -12,7 +12,7 @@ const SearchList = () => {
     const searchedMusics = Music.filter(item =>
         item.name.toLowerCase().includes(browse.toLowerCase())
     )
-    console.log(searchedMusics.length)
+    const array2 = { group: searchedMusics, isLoop:false };
 
     return (
 
@@ -30,6 +30,7 @@ const SearchList = () => {
                         return (
                             <ResultCard
                                 key={i}
+                                newarray = {array2}
                                 id={song.id}
                                 preview={song.Preview.default}
                                 duration={song.duration}

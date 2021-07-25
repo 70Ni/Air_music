@@ -1,15 +1,26 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 
 import Favorite from '../../../Images/Icons/save.svg'
 import Image from '../../../Music files/Justin Bieber/thumbnail/Lifetime.jpg'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { indexFind } from '../../../Redux/IndexFinder';
 
 
 import '../ArtistsCard/ArtistsCard.css'
 import './ResultCard.css'
-function ResultCard({preview,duration,name,artist,id}) {
+function ResultCard({preview,duration,name,artist,id,newarray}) {
+    const dispatch = useDispatch()
+    const [Group, setGroup] = useState(0);
+    const MusicLoaded = useSelector(state => state.MusicLoaded)
+ 
+
+    useEffect(() => {
+        setGroup(newarray)
+    }, [MusicLoaded.ClickedMusic])
+
+
     return (
-        <div className="ResultCard_wrapper" key ={id}>
+        <div className="ResultCard_wrapper" key ={id} onClick={() => dispatch(indexFind({ id, Group }))}>
             <div className="ResultCard_content">
                 <img src={preview} className="Result_Image" alt="" />
                 <div className="ArtistCard_Met_section">
