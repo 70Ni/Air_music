@@ -4,7 +4,6 @@ import headphones from '../../../Images/Icons/headphones.svg';
 import info from '../../../Images/Icons/info.svg';
 import list from '../../../Images/Icons/list.svg';
 import trending from '../../../Images/Icons/trending.svg';
-import img from '../../../Images/asia.jpg'
 
 import './HorizontalNav.css';
 

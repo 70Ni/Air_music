@@ -1,6 +1,5 @@
 import React from 'react';
 import play from '../../../Images/Icons/play_white.svg'
-import discover from '../../../Images/asia.jpg'
 import Favorite from '../../../Images/Icons/save.svg'
 
 

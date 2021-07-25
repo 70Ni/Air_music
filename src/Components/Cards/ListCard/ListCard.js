@@ -1,5 +1,4 @@
 import React from 'react';
-import discover from '../../../Images/asia.jpg';
 import Pause from '../../../Images/Icons/pause.svg';
 import save from '../../../Images/Icons/favorite.svg';
 import './ListCard.css'
@@ -9,8 +8,8 @@ function ListCard() {
         <div className="List_card_wrapper">
             <div className="List_card_content">
                 <div className="List_Images">
-                    <img src={discover} alt="" className="List_Image" />
-                    <img src={Pause} alt="" className="controller" />
+                    {/* <img src={discover} alt="" className="List_Image" />
+                    <img src={Pause} alt="" className="controller" /> */}
                 </div>
                 <div className="List_Name_wrapper">
                     <div className="MusicName_B">The last great American dynasty</div>

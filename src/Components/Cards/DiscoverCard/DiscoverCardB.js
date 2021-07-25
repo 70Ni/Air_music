@@ -13,7 +13,6 @@ import { indexFind } from '../../../Redux/IndexFinder';
 import { array } from '../../../Container/Discover/DiscoverSong';
 import info from '../../../Images/Icons/list.svg'
 import { isFavorite } from '../../../Redux/favorite';
-import Cloth from '../../../Images/cloth.jpeg'
 
 let id = array.group[1].id;
 let Group = { group: array.group };
