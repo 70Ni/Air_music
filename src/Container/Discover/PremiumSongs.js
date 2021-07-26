@@ -20,8 +20,7 @@ const PremiumSongs = () => {
             setMatches(18)
         }
     }, [window.innerWidth])
-
-    const array2 = useMemo(() => ({ group: ShuffledArray().slice(0, 6) }),[]);
+    const array2 = { group: ShuffledArray().slice(0, 6), isLoop:false };
     return (
 
         <div className="SqureCa_wrapper">
