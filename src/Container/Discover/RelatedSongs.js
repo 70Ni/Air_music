@@ -10,7 +10,7 @@ let ShuffledArray = shuffle(Music);
 
 const RelatedSongs = () => {
 
-    const array = useMemo(() => ({ group: ShuffledArray.slice(0, 6), isLoop: false }), []);
+    const array = { group: ShuffledArray.slice(0, 6), isLoop: false }
     console.log("Related")
     return (
         <div>
