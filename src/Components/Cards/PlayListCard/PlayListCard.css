@@ -20,13 +20,7 @@
     position: relative;
 
 }
-.Item_Image {
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    object-fit: cover;
-    margin: 0px 16px;
-}
+
 .Item_footer_wrapper {
     position: relative;
     height: 20px;
