@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ListCard from '../Components/Cards/ListCard/ListCard';
 
 
 import './Grid.css';

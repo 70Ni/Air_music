@@ -13,7 +13,7 @@ const SearchList = () => {
         item.name.toLowerCase().includes(browse.toLowerCase())
     )
     const array2 = { group: searchedMusics, isLoop:false };
-
+    console.log(searchedMusics)
     return (
 
         <div className="SearRe_wrapper">
