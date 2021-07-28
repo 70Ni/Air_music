@@ -6,7 +6,7 @@ function importAll(r) {
 }
 
 const Musicz = importAll(require.context('../Music files', true, /\.(mp3|ogg)$/));
-const Avatarz = importAll(require.context('../Images/artists', true, /\.(png|jpe?g|svg)$/));
+const Avatarz = importAll(require.context('../Images/artists_icons', true, /\.(png|jpe?g|svg)$/));
 const Imagingz = importAll(require.context('../Music files', true, /\.(png|jpe?g|svg)$/))
 
 
