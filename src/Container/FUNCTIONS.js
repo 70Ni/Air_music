@@ -183,13 +183,6 @@ export {
 
 
 
-// PlayPause = () => {
-//     if (audio.paused) {
-//         audio.play();
-//     } else {
-//         audio.pause();
-//     }
-// }
 
 // MusicGroupSet = (id) => {
 //     if (prevMusic !== this.state.IndexOfMusic) {
