@@ -4,7 +4,7 @@ import notfound from '../../Images/Icons/notfound.svg'
 import { useSelector } from 'react-redux';
 import { Music } from '../../Json/Music';
 
-
+import { numFormatter } from '../FUNCTIONS';
 
 const SearchList = () => {
 
@@ -13,7 +13,7 @@ const SearchList = () => {
         item.name.toLowerCase().includes(browse.toLowerCase())
     )
     const array2 = { group: searchedMusics, isLoop:false };
-    console.log(searchedMusics)
+    console.log(numFormatter( searchedMusics[0].Likes))
     return (
 
         <div className="SearRe_wrapper">
