@@ -13,7 +13,6 @@ const SearchList = () => {
         item.name.toLowerCase().includes(browse.toLowerCase())
     )
     const array2 = { group: searchedMusics, isLoop:false };
-    console.log(numFormatter( searchedMusics[0].Likes))
     return (
 
         <div className="SearRe_wrapper">
