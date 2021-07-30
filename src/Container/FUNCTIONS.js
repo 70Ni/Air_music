@@ -51,12 +51,7 @@ const MusicGroupSet = () => {
 
 
 
-// const FavoriteFunc = (id) => {
-//     return store.dispatch({
-//         type: 'SET_FAVORITE,',
-//         payload: id
-//     })
-// }
+
 
 // const AutoPlay = () => {
 //     return store.dispatch({
