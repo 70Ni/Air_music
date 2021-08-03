@@ -59,23 +59,6 @@ const MusicGroupSet = () => {
 //     })
 // }
 
-// function IndexFinder(id, localArray) {
-//     let prevMusic = store.getState().player.prevMusic
-//     if (prevMusic !== id) {
-//         let r = localArray.map((toPlay) => toPlay.id === id).indexOf(true);
-//         return store.dispatch({
-//             type: 'SET_MUSIC_PLAYER',
-//             payload: {
-//                 ClickedMusic: id,
-//                 IndexOfMusic: r,
-//                 MusicGroup: localArray,
-//                 prevMusic: id,
-//             }
-//         })
-
-//     } PlayPause()
-// }
-
 // const PrevSong = () => {
 //     const dispatch = useDispatch();
 //     let MusicGroup = Store.getState().MusicLoaded.IndexOfMusic.MusicGroup;
