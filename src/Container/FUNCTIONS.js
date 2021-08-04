@@ -53,11 +53,6 @@ const MusicGroupSet = () => {
 
 
 
-// const AutoPlay = () => {
-//     return store.dispatch({
-//         type: 'SET_AUTO_PLAY',
-//     })
-// }
 
 // const PrevSong = () => {
 //     const dispatch = useDispatch();
