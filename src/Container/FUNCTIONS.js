@@ -53,12 +53,6 @@ const MusicGroupSet = () => {
 
 
 
-//     let index = Store.getState().MusicLoaded.IndexOfMusic.IndexOfMusic;
-//     if (index > 0) {
-//         let PrevPlayIndex = index - 1;
-//         let PrevPlayId = MusicGroup[PrevPlayIndex].id;
-//         dispatch(indexFind({PrevPlayId,MusicGroup}))
-
 //     }
 // }
 
