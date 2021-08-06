@@ -53,8 +53,6 @@ const MusicGroupSet = () => {
 
 
 
-//     }
-// }
 
 // const NextSong = () => {
 //     let MusicGroup = store.getState().player.CurrentGroup.MusicGroup;
