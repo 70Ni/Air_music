@@ -1,95 +1,92 @@
 .Navbar_wrapperHor {
-    width: 100%;
-    margin: 36px 0px;
+  width: 100%;
+  margin: 36px 0px;
 }
 .NavList_wrapperHor {
-   display: flex;
-   overflow: scroll;
+  display: flex;
+  overflow: scroll;
 }
 .NavList_wrapperHor::-webkit-scrollbar {
-    width: 0px;
+  width: 0px;
 }
 .NavItem_containerHor {
-    margin: 24px;
-    display: flex;
-    padding: 0px 12px;
-    align-items: center;
-    position: relative;
-    background-color: #F27E4C20;
-    border-radius: 20px;
+  margin: 24px;
+  display: flex;
+  padding: 0px 12px;
+  align-items: center;
+  position: relative;
+  background-color: #f27e4c20;
+  border-radius: 20px;
 }
 .Navbar_wrapper {
-    width: 220px;
-    display: flex;
-    height: 90vh;
-    margin-bottom: 180px;
-    justify-content: center;
+  width: 220px;
+  display: flex;
+  height: 90vh;
+  margin-bottom: 180px;
 }
 .Nav_header {
-    display: flex;
-    align-items: baseline;
-    padding: 36px 0px;
+  display: flex;
+  align-items: center;
+  padding: 36px 0px;
 }
 
 .NavContainer {
-    padding: 0px 16px;
+  padding: 0px 16px;
 }
 .NavItem_container {
-    margin: 24px 0px;
-    display: flex;
-    padding: 0px 12px;
-    align-items: center;
-    position: relative;
+  margin: 8px 0px;
+  display: flex;
+  padding: 0px 12px;
+  align-items: center;
+  position: relative;
+  color: #73738d;
 }
-.active {
-    background-color: #F27E4C;
-    border-radius: 20px;
-    color: #ffffff;
-}
-.NavItem_container :hover{
-    color: #F27E4C;
-}
-.active :hover{
-    color: #ffffff;
-}
+
 .NavList_A {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 .NavList_wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 88%;
+  display: flex;
+  flex-direction: column;
+  height: 78%;
 }
 .Nav_icon {
-    color: white;
-    padding: 8px 14px;
+  color: white;
+  padding: 8px 14px;
+  height: 20px;
 }
 .PlayList_notifier {
-    width: 5px;
-    height: 5px;
-    background-color: #F27E4C;
-    border-radius: 50%;
-    position: absolute;
-    top: 8px;
-    right: 25px;
+  width: 5px;
+  height: 5px;
+  background-color: #f27e4c;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 25px;
 }
-.Nav_item,.nav_subHeader {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    padding-right: 14px;
-    font-family: 'Poppins', sans-serif;
+.Nav_item,
+.nav_subHeader {
+  font-size: 12px;
+  font-weight: 500;
+  padding-right: 14px;
 }
 .nav_subHeader {
-    font-size: 12px;
-    opacity: 0.5;
-    font-weight: 500;
-    margin: 16px 0px;
-    padding-bottom: 8px;
+  font-size: 12px;
+  opacity: 0.5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin: 16px 0px;
+  padding-bottom: 8px;
+  color: #b1b1c5;
 }
 .border {
-    border-bottom: 1px solid #484B5B;
+  border-bottom: 1px solid #484b5b;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+.active {
+  color: #f27e4c;
+  background-color: #f27e4c20   ;
+  border-radius: 20px;
 }
