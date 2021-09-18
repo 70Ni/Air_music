@@ -1,0 +1,50 @@
+.List_card_wrapper,
+.ListCard_B {
+  .List_card_content {
+    display: flex;
+    align-items: center;
+    font-family: "Mulish", sans-serif;
+    width: 100%;
+    .List_Images {
+      .List_Image {
+        height: 40px;
+        width: 50px;
+        object-fit: cover;
+        margin-right: 16px;
+        border-radius: 8px;
+      }
+    }
+    .List_Name_wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 16px;
+        flex-grow: 1;
+        flex-basis: 300px;
+        overflow: hidden;
+      .MusicName_B {
+      }
+      .ArtistName_B,
+      .ListCard_B2 {
+      }
+    }
+    .List_duration_view_wrapper {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-start;
+        width: 116px;
+      .List_duration {
+      }
+      .List_view {
+      }
+    }
+    .listCard_nowPlaying {
+        margin: 0px 16px;
+        display: flex;
+      .List_save {
+        cursor: pointer;
+        margin: 0px 12px;
+        width: 18px;
+      }
+    }
+  }
+}
