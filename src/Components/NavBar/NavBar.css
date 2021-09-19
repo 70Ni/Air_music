@@ -39,8 +39,9 @@
   padding: 0px 12px;
   align-items: center;
   position: relative;
-  color: #73738d;
+  color: #755343;
 }
+
 
 .NavList_A {
   flex-grow: 1;
@@ -54,6 +55,8 @@
   color: white;
   padding: 8px 14px;
   height: 20px;
+  transition: 0.4s ease-out;
+
 }
 .PlayList_notifier {
   width: 5px;

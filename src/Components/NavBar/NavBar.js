@@ -1,25 +1,32 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, BrowserRouter as Router, NavLink } from "react-router-dom";
+import { useHistory } from "react-router";
 
 import user from "../../Images/Icons/userIcon.svg";
 import headphones from "../../Images/Icons/headphones.svg";
 import info from "../../Images/Icons/info.svg";
 import list from "../../Images/Icons/list.svg";
 import trending from "../../Images/Icons/trending.svg";
-import search from "../../Images/Icons/search.svg";
 
 import Icon from "../../../src/Icon";
 import "./NavBar.css";
 import { useSelector } from "react-redux";
-import SearchIcon from "../../Images/Icons/SearchIcon";
+import DiscoverIcon from "../../Images/Icons/DiscoverIcon";
+import TrendingIcon from "../../Images/Icons/TrendingIcon";
+import UserIcon from "../../Images/Icons/UserIcon";
 
-function NavBar(props) {
-  const [active, setactive] = useState("home");
+function NavBar() {
+  const history = useHistory();
+  const [active, setactive] = useState("Hello");
   const favorite = useSelector((state) => state.favorite.notify);
-  const activeClass = { color: "pink", margin: 20 };
-  const activate =(id) => {
-      setactive(id)
-  }
+  const activation = () => {
+    setactive(history.location.pathname);
+  };
+  useEffect(() => {
+    activation();
+  }, [history.location.pathname]);
+
+  console.log();
   return (
     <div className="Navbar_wrapper">
       <div className="NavContainer">
@@ -33,45 +40,80 @@ function NavBar(props) {
           <div className="NavList_A">
             <div className="nav_subHeader">New feeds</div>
             <NavLink
+              key="discover"
               to="/discover"
               className="NavItem_container"
               activeClassName="active"
-              id="Discover"
+              onClick={() => setactive(history.location.pathname)}
             >
-              <SearchIcon className="Nav_icon" />
+              <DiscoverIcon className="Nav_icon" DiscoverG={active} />
               <div className="Nav_item">Discover</div>
             </NavLink>
-            <NavLink to="/trending" className="NavItem_container">
-              <img alt="" className="Nav_icon" src={trending} />
+            <NavLink
+              key="trendi"
+              to="/trending"
+              className="NavItem_container"
+              onClick={() => setactive(history.location.pathname)}
+            >
+              <TrendingIcon trendingG={active} />
               <div className="Nav_item">Trending</div>
             </NavLink>
             <NavLink
+              key="artists"
               to="/artists"
-              className={active ? activeClass : "NavItem_container"}
-              id= "artists"
-              onClick={()=>activate('artists')}
+              className="NavItem_container"
+              id="artistsG"
+              onClick={() => setactive(history.location.pathname)}
             >
-              <img alt="" className="Nav_icon" src={user} />
-              <div className="Nav_item">Artists</div>
+              <UserIcon id="artistsG" artistsG={active} />
+              <div className="Nav_item" id="artistsG">
+                Artists
+              </div>
             </NavLink>
             <div className="nav_subHeader">Saved items</div>
-            <NavLink to="/playlist" className="NavItem_container">
-              <img alt="" className="Nav_icon" src={headphones} />
-              <div className="Nav_item">Playlist</div>
+            <NavLink
+              key="playlists"
+              to="/playlist"
+              className="NavItem_container"
+              id="playListG"
+              onClick={(e) => setactive(e.target.id)}
+            >
+              <img
+                alt=""
+                className="Nav_icon"
+                src={headphones}
+                id="playListG"
+              />
+              <div className="Nav_item" id="playListG">
+                Playlist
+              </div>
               {favorite ? <span className="PlayList_notifier"></span> : null}
             </NavLink>
-            <NavLink to="/recent" className="NavItem_container">
-              <img alt="" className="Nav_icon" src={list} />
-              <div className="Nav_item">Recent</div>
+            <NavLink
+              key="abouts"
+              to="/recent"
+              className="NavItem_container"
+              id="recentG"
+              onClick={(e) => setactive(e.target.id)}
+            >
+              <img alt="" className="Nav_icon" src={list} id="recentG" />
+              <div className="Nav_item" id="recentG">
+                Recent
+              </div>
             </NavLink>
           </div>
           <div className="NavList_B">
-            <Link to="/about">
-              <div className="NavItem_container">
-                <img alt="" className="Nav_icon" src={info} />
-                <div className="Nav_item">About</div>
+            <NavLink
+              to="/about"
+              className="NavItem_container"
+              id="recentG"
+              onClick={(e) => setactive(e.target.id)}
+            >
+              <img alt="" className="Nav_icon" src={info} id="recentG" />
+              <div className="Nav_item" id="recentG">
+                About
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
