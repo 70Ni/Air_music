@@ -1,7 +1,7 @@
 import React from "react";
 const DiscoverIcon = (props) => (
   <svg
-    style={{ padding: "8 14" }}
+    style={{ padding: "8px 14px" }}
     width="20"
     height="20"
     viewBox="0 0 24 24"
