@@ -28,7 +28,6 @@ function DiscoverPage() {
     return (
         <div className="Discover_page_wrapper" style={{ 'maxWidth': '1440px', paddingBottom: '77px' }}>
             <div className="SUBheader_H">Disover</div>
-         
             <DiscoverCardZ />
             <div className="SUBheader">Artists</div>
             <div className="Profile_Icons">
@@ -61,10 +60,8 @@ function DiscoverPage() {
 
                     <div className="SUBheader">Premium songs</div>
                     <div className="DisPa_detailsWrapper">
-                        <div className="SqureCa_wrapper">
 
                             <PremiumSongs />
-                        </div>
                         <div className="Artists_Paragraph paraHide">
                             Billie Eilish Pirate Baird O'Connell is an American singer and songwriter. She first gained attention in 2015 when she uploaded the song "Ocean Eyes" to SoundCloud, which was subsequently released by the Interscope Records subsidiary Darkroom
                         </div>

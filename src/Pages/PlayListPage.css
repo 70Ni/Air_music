@@ -11,12 +11,10 @@
 }
 
 .AutoPlayButton_B {
-    display: flex;
     margin: 16px 8px;
     align-items: center;
     justify-content: center;
     display: flex;
-    width: fit-content;
     padding: 6px 24px;
     border-radius: 20px;
     border: 2px solid #F27E4C;
