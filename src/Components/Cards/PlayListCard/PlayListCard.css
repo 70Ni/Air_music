@@ -1,141 +1,133 @@
 .ItemCard_wrapper {
-    margin: 0px 16px;
-    display: flex;
-    position: relative;
+  margin: 0px 16px;
+  display: flex;
+  position: relative;
 }
 .ItemCard_content:hover {
-    background-color: #ffffff20;
-    backdrop-filter: filter(20px);
-    border-radius: 12px;
+  background-color: #ffffff20;
+  backdrop-filter: filter(20px);
+  border-radius: 12px;
 }
 .Item_details_wrapper {
-    display: flex;
-    flex-grow: 1;
+  display: flex;
+  flex-grow: 1;
 }
 .ItemCard_content {
-    display: flex;
-    align-items: center;
-    padding: 8px 0px;
-    flex-grow: 1;
-    position: relative;
-
+  display: flex;
+  align-items: center;
+  padding: 8px 0px;
+  flex-grow: 1;
+  position: relative;
 }
 
 .Item_footer_wrapper {
-    position: relative;
-    height: 20px;
+  position: relative;
+  height: 20px;
 }
 .Favorite {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    width: 18px;
-    z-index: 2;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 18px;
+  z-index: 2;
 }
 .Item_Details_section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-right: 16px;
-    height: 80px;
-    flex-basis: 150px;
-    flex-grow: 1;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 16px;
+  height: 80px;
+  flex-basis: 150px;
+  flex-grow: 1;
 }
 .Duration_C {
-    position: absolute;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    color: #ffffff; 
-    padding: 4px 0px;
-    border-radius: 4px;
-    z-index: 2;
+  position: absolute;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 4px 0px;
+  border-radius: 4px;
+  z-index: 2;
 }
 
 .ItemCard_wrapper:hover {
-    background-color: #ffffff20;
-    backdrop-filter: blur(20px);
-    border-radius: 12px;
+  background-color: #ffffff20;
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
 }
 .ItemCard_content {
-    padding: 16px;
-    height: 80px;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
+  padding: 16px;
+  height: 80px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 .Item_details_wrapper {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    min-width: 186px;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 186px;
 }
 .Item_Details_section {
-    margin-left: 16px;
-    height: 80px;
-    flex-grow: 1;
+  margin-left: 16px;
+  height: 80px;
+  flex-grow: 1;
 }
 .Item_image_section {
-    height: 80px;    
-    padding: 16px;
+  height: 80px;
 }
 .Item_Image {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 12px;
-    position: relative  ;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
 }
 .Item_nowPlaying {
-    position: absolute;
-    z-index: 2;
-    background: rgba(18, 20, 47, 0.2);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(12px);
-    width: 204px;
-    height: 72px;
-    border-radius: 12px;
-    left: 8px;
-    bottom: -1px;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  z-index: 2;
+  background: rgba(18, 20, 47, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  width: 204px;
+  height: 72px;
+  border-radius: 12px;
+  left: 8px;
+  bottom: -1px;
+  display: flex;
+  align-items: center;
 }
 .Item_nowListening {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    opacity: .8;
-    color: #ffffff;
-    margin: 0px 20px;
-
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.8;
+  color: #ffffff;
+  margin: 0px 20px;
 }
 .Artist_avatar_B {
-    z-index: 2;
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 50%;
-    padding: 4px;
-    top: 10px;    
-    left: 10px;
+  z-index: 2;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 4px;
+  top: 10px;
+  left: 10px;
 }
 
 .Item_footer_wrapper {
-        position: relative;
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-}
-
-.MusicName_B {
-    padding: 12px 0px;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .Duration_B {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-} 
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}

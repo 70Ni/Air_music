@@ -16,7 +16,7 @@
   object-fit: cover;
 }
 .margd2 {
-    margin: 16px 0px;
+  margin: 16px 0px;
 }
 .introImgd2Overlay {
   position: absolute;
@@ -41,6 +41,10 @@
   max-width: 600px;
   right: 20px;
 }
+.d2trntxtwrp {
+  max-width: 380px;
+  right: 150px;
+}
 .D2introHeader {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
@@ -49,10 +53,134 @@
   line-height: 73px;
 }
 .parag {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    color: #ffffff70;
-    font-size: 14px;
-    line-height: 22px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #ffffff70;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 16px 0px;
+}
+
+/* artist wrapper section */
+.D2isvoerArtis_wpr {
+  margin: 200px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.d2ArtImgwrpr {
+  display: flex;
+  align-items: center;
+}
+.d2artist {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 14px;
+}
+.d2artistLrg {
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.d2Arttxtwrp {
+  margin: 0px 72px;
+}
+.d2ArtHeader {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 18px;
+  padding-bottom: 8px;
+}
+.d2artiPara {
+  margin: 0px;
+}
+/* Premium banner */
+.d2PremumBanner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: row-reverse;
+  margin: 80px 0px;
+}
+.d2premImgdiv {
+  position: relative;
+}
+.d2premImg {
+  position: relative;
+  height: 578px;
+  width: auto;
+}
+.d2prmImgd2Overlay {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: linear-gradient(
+    to left,
+    #ffffff00,
+    #ffffff00,
+    #11070265,
+    #110702
+  );
+}
+.d2PrmtxtWrpr {
+  position: absolute;
+  color: white;
+  left: 196px;
+  top: 150px;
+  max-width: 500px;
+  z-index: 4;
+}
+.d2prmsubHedr,.d2prmHeader,.premPlay {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 18px;
+}
+.d2prmHeader {
+    font-size: 40px;
+    font-weight: 500;
     margin: 16px 0px;
+}
+.prmPlaywrp {
+    display: flex;
+    align-items: center;
+}
+.premPlay {
+    font-size: 14px;
+}
+.PlayPrem {
+    padding: 16px;
+}
+
+.D2trendingIntro_wraper {
+  display: flex;
+  position: relative;
+}
+
+
+/* trending section */
+.discovWrper {
+  display: flex;
+}
+
+.discovWrper {
+  margin: 16px;
+  position: relative;
+  margin: 20px 16px;
+  padding-bottom: 50px;
+}
+.d2iscollec_wrpr {
+  display: flex;
+  align-items: flex-start;
+}
+.tren2parg {
+  margin: 60px 120px;
+  font-size: 13px;
 }

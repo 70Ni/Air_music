@@ -1,0 +1,50 @@
+.InputLabel {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1pt solid #ffffff7c;
+  border-radius: 8px;
+  color: #ffffff;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+}
+input[type="text"],
+input[type="password"] {
+  background-color: transparent;
+  border-width: 1pt;
+  border-style: none;
+  border: 1pt solid #ffffff7c;
+  font-family: "Inter", sans-serif;
+
+}
+
+input:focus {
+  border: 1pt solid #F27E4C;
+  outline: #F27E4C;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ffffff;
+    opacity: .5; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ffffff;
+    opacity: .5;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #ffffff;
+    opacity: .5;
+  }

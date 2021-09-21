@@ -16,7 +16,6 @@ import Playing from "../../../Images/Icons/play_fill.svg";
 import DurationTicker from "../../../Components/MusicPlayer/Durationticker";
 import { Music } from "../../../Json/Music";
 
-import "./ListCard.scss";
 
 function ListCardB({ id, name, preview, views, duration, artist, newarray }) {
   const [Group, setGroup] = useState(0);
@@ -38,8 +37,11 @@ function ListCardB({ id, name, preview, views, duration, artist, newarray }) {
       : { visibility: "hidden" };
   let isfavorite = fav.includes(id);
   return (
-    <div className="List_card_wrapper ListCard_B" key={id}>
-      <div className="List_card_content"onClick={() => dispatch(indexFind({ id, Group }))}>
+    <div className="List_card_wrapper" key={id}>
+      <div
+        className="List_card_content"
+        onClick={() => dispatch(indexFind({ id, Group }))}
+      >
         <div className="List_Images">
           <img src={preview} id="imag" alt="" className="List_Image" />
         </div>
