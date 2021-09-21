@@ -21,15 +21,18 @@
   outline: none;
 }
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   background-color: transparent;
   border-width: 1pt;
   border-style: none;
   border: 1pt solid #ffffff7c;
   font-family: "Inter", sans-serif;
-
 }
-
+input[type="submit"]  {
+    background-color: #F27E4C;
+    border: 1pt solid #F27E4C;
+}
 input:focus {
   border: 1pt solid #F27E4C;
   outline: #F27E4C;

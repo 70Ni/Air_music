@@ -1,5 +1,6 @@
 import React from "react";
 import Inputs from "./Inputs/Inputs";
+import SignIn from "./siginIn/SignIn";
 
 function Auth() {
   return (
@@ -7,7 +8,7 @@ function Auth() {
       <Inputs placeholder="Hello there" label="train" type="text" />
       <Inputs placeholder="Hello there" label="Password" type="password"/>
       <Inputs />
-      <Inputs />
+      <SignIn />
     </div>
   );
 }
