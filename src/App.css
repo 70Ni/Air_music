@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
 .App {
   background-color: #110702;
   z-index: -10;
@@ -9,42 +10,38 @@
   left: 0px;
   position: absolute;
   width: 100%;
-  height: 100vh;
-  -moz-user-select: none; 
-  -webkit-user-select: none; 
-  -ms-user-select:none; 
-  user-select:none;
-  -o-user-select:none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
 }
-.SUBheader,.SUBheader_H {
-  font-family: 'Inter', sans-serif;
+.SUBheader,
+.SUBheader_H {
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
   white-space: nowrap;
-  margin: 0px 16px;
+  margin: 16px;
 }
 
-.SUBheader_H {
-  font-size: 24px;
-  margin: 24px 16px;
-}
 .MusicName_A {
   padding-top: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 600;
   color: #ffffff;
 }
 .Artist_Header {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   color: #ffffff;
   font-size: 32px;
   margin: 16px;
 }
 .Artists_Paragraph {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   color: #ffffff;
   font-size: 12px;
@@ -53,7 +50,7 @@
   margin: 16px;
 }
 .MusicName_B {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   color: #ffffff;
   font-size: 13px;
@@ -61,44 +58,45 @@
 }
 
 .ArtistName {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
 }
 .ArtistName_B {
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   color: #ffffff;
   opacity: 0.5;
   white-space: nowrap;
 }
-.view,.Like {
-  font-family: 'Inter', sans-serif;
+.view,
+.Like {
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  opacity: .8;
+  opacity: 0.8;
   color: #ffffff;
 }
 
 .Duration_A {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #ffffff;  
+  color: #ffffff;
   background: rgba(53, 53, 53, 0.47);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   padding: 8px 24px;
   border-radius: 8px;
-} 
+}
 .Duration_B {
   position: absolute;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10px;
   font-weight: 600;
-  color: #ffffff; 
+  color: #ffffff;
   background: rgba(53, 53, 53, 0.47);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -117,27 +115,30 @@
   z-index: 2;
   scroll-behavior: smooth;
 }
-.Page_side::-webkit-scrollbar{
+.Page_side::-webkit-scrollbar {
   display: none;
 }
 
-body::-webkit-scrollbar{
-  display: none
+body::-webkit-scrollbar {
+  display: none;
 }
 
-
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 770px) {
   .Nav_side {
-      display: none;
+    display: none;
   }
   .Page_side {
     margin-left: 0px;
+  }
+  .SUBheader,
+  .SUBheader_H {
+    font-size: 16px;
+ 
   }
 }
 
 @media only screen and (max-width: 1025px) {
   .DashIcon_wrapper {
-      display: none !important;
+    display: none !important;
   }
 }
-

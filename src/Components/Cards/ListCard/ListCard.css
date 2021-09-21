@@ -1,9 +1,7 @@
 
 .List_card_wrapper {
     display: flex;
-    height: fit-content;
     align-items: center;
-    background: rgba(41, 41, 41, 0.47);
     backdrop-filter:blur(8px);
     padding: 6px 16px;
     border-radius: 8px;
@@ -12,7 +10,7 @@
     background: transparent;
 }
 .List_card_wrapper:hover {
-    background-color: #ffffff20;
+    background-color: #291106;
     backdrop-filter:blur(50px); 
 }
 
@@ -22,10 +20,10 @@
 }
 .List_card_content {
     display: flex;
-    color: #ffffff;
     align-items: center;
     font-family: 'Inter', sans-serif;
-    width: 100%;
+    color: #ffffff;
+    flex-grow: 1;
 }
 .controller {
     padding: 0px 16px;
@@ -39,6 +37,7 @@
     height: 40px;
     width: 50px;
     object-fit:cover;
+    margin: 0px 16px;
     border-radius: 8px;
 }
 .List_Name_wrapper {
@@ -79,6 +78,7 @@
 .listCard_nowPlaying {
     margin: 0px 16px;
     display: flex;
+    flex-grow: 1;
 }
 .List_save {
     cursor: pointer;
@@ -99,7 +99,8 @@
 }
 @media only screen and (max-width: 568px) {
     .List_Image {
-        margin: 8px;
+        margin: 8px 0px;
+        margin-right: 16px;
     }
     .ListCard_B2 {
         display: block;
