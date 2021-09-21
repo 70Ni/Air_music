@@ -1,3 +1,6 @@
+.InputWrper {
+  margin: 8px 0px;
+}
 .InputLabel {
   display: block;
   font-family: "Inter", sans-serif;
@@ -29,25 +32,106 @@ input[type="email"] {
   border: 1pt solid #ffffff7c;
   font-family: "Inter", sans-serif;
 }
-input[type="submit"]  {
-    background-color: #F27E4C;
-    border: 1pt solid #F27E4C;
+input[type="submit"] {
+  background-color: #f27e4c;
+  border: 1pt solid #f27e4c;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 16px 0px;
 }
+
 input:focus {
-  border: 1pt solid #F27E4C;
-  outline: #F27E4C;
+  border: 1pt solid #f27e4c;
+  outline: #f27e4c;
+  background-color: transparent;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #ffffff;
-    opacity: .5; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #ffffff;
-    opacity: .5;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: #ffffff;
-    opacity: .5;
-  }
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid f27e4c;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}
+input:autofill {
+  text-fill-color: #ffffff;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff;
+  opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ffffff;
+  opacity: 0.5;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ffffff;
+  opacity: 0.5;
+}
+.orsingIntxt {
+  display: flex;
+  margin: 12px 0px;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff7c;
+}
+.orsingIntxt::after {
+  content: "";
+  height: 0.5pt;
+  width: 8%;
+  background-color: #ffffff7c;
+  margin: 8px 16px;
+}
+.orsingIntxt::before {
+  content: "";
+  height: 0.5pt;
+  width: 8%;
+  background-color: #ffffff7c;
+  margin: 8px 16px;
+}
+.signHeader {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 24px 0px;
+}
+.goobuttonwrpr {
+  padding: 8px 0px;
+}
+.googleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1pt solid #f27e4c;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+.googlesigntxt {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 20px;
+}
+.signInbutton {
+  margin: 36px 0px;
+}

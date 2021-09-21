@@ -5,9 +5,7 @@ import SignIn from "./siginIn/SignIn";
 function Auth() {
   return (
     <div>
-      <Inputs placeholder="Hello there" label="train" type="text" />
-      <Inputs placeholder="Hello there" label="Password" type="password"/>
-      <Inputs />
+        <img src="" alt="" />
       <SignIn />
     </div>
   );
