@@ -1,0 +1,13 @@
+.signIn_Wrapper {
+    max-width: 532px;
+    background-color: #1107027c;
+    backdrop-filter: blur(50px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AuthContnt {
+    max-width: 310px;
+    padding: 24px 60px;
+}
