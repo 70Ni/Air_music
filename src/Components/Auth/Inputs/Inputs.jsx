@@ -8,6 +8,7 @@ function Inputs(props) {
         <input
           type={props.type}
           name="name"
+          id= {props.id}
           className="inputField"
           placeholder={props.placeholder}
           value={props.value}

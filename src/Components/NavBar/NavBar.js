@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, BrowserRouter as Router, NavLink } from "react-router-dom";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 
 import user from "../../Images/Icons/userIcon.svg";
 import headphones from "../../Images/Icons/headphones.svg";
@@ -17,16 +17,14 @@ import UserIcon from "../../Images/Icons/UserIcon";
 
 function NavBar() {
   const history = useHistory();
-  const [active, setactive] = useState("Hello");
+  const [active, setactive] = useState("/");
   const favorite = useSelector((state) => state.favorite.notify);
-  const activation = () => {
-    setactive(history.location.pathname);
+  const activation = (pathname) => {
+    setactive(pathname);
   };
-  useEffect(() => {
-    activation();
-  }, [history.location.pathname]);
+  const { pathname } = useLocation();
 
-  console.log();
+  console.log(pathname);
   return (
     <div className="Navbar_wrapper">
       <div className="NavContainer">
@@ -44,17 +42,11 @@ function NavBar() {
               to="/discover"
               className="NavItem_container"
               activeClassName="active"
-              onClick={() => setactive(history.location.pathname)}
             >
               <DiscoverIcon className="Nav_icon" DiscoverG={active} />
               <div className="Nav_item">Discover</div>
             </NavLink>
-            <NavLink
-              key="trendi"
-              to="/trending"
-              className="NavItem_container"
-              onClick={() => setactive(history.location.pathname)}
-            >
+            <NavLink key="trendi" to="/trending" className="NavItem_container">
               <TrendingIcon trendingG={active} />
               <div className="Nav_item">Trending</div>
             </NavLink>
@@ -63,7 +55,6 @@ function NavBar() {
               to="/artists"
               className="NavItem_container"
               id="artistsG"
-              onClick={() => setactive(history.location.pathname)}
             >
               <UserIcon id="artistsG" artistsG={active} />
               <div className="Nav_item" id="artistsG">
