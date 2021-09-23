@@ -20,6 +20,8 @@ import Grid from "./Pages/Grid";
 import MusicPlayer from "./Components/MusicPlayer/MusicPlayer";
 import DiscovPage from "./Pages/DiscovPage";
 import Auth from "./Components/Auth/Auth";
+import LandingPage from "./Pages/AuthDivider/LandingPage";
+import Application from "./Pages/AuthDivider/Application";
 
 function App() {
   const LoadedMusics = useSelector((state) => state.MusicLoaded);
@@ -28,35 +30,7 @@ function App() {
     return MusicGroupSet();
   }, [LoadedMusics.ClickedMusic]);
 
-  return (
-    <Router>
-      <div className="App">
-        {/* <HeaderThunder /> */}
-        <div className="Master_wrapper">
-        <Route exact path="/discover2" component={DiscovPage} />
-        <Route exact path="/signup" component={Auth} />
-          <div className="Nav_side">
-            <NavBar />
-          </div>
-          <div className="Page_side">
-            <DashBar />
-            <HeaderCore />
-            <Switch>
-              <Route exact path="/discover" component={DiscoverPage} />
-              <Route exact path="/trending" component={TreningPage} />
-              <Route exact path="/artists" component={ArtistPage} />
-              <Route exact path="/playlist" component={PlayListPage} />
-              <Route exact path="/recent" component={RecentPage} />
-              <Route exact path="/about" component={AboutPage} />
-              <Route exact path="/grid" component={Grid} />
-            </Switch>
-          </div>
-        </div>
-        {/* <HorizontalNav /> */}
-        <MusicPlayer />
-      </div>
-    </Router>
-  );
+  return <LandingPage />;
 }
 
 export default App;
