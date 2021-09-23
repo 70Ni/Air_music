@@ -1,13 +1,18 @@
 import React from "react";
-const UserIcon = (props) => (
+import { useLocation } from "react-router";
+
+const { patnname } = useLocation;
+
+console.log(patnname, "userIcon")
+const UserIcon = () => (
   <svg
     style={{ padding: "8 14" }}
     width="20"
     height="20"
     viewBox="0 0 20 20"
     fill="none"
-    stroke={props.artistsG === "artistsG" ? "#f27e4c" : "#ffffff"}
-    stroke-width={props.artistsG === "artistsG" ? 3 : 2}
+    stroke={patnname === "/artists" ? "#f27e4c" : "#ffffff"}
+    stroke-width={patnname === "/artists" ? 3 : 2}
     stroke-linecap="round"
     stroke-linejoin="round"
     class="feather feather-user"
