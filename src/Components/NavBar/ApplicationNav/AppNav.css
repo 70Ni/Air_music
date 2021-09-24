@@ -1,0 +1,21 @@
+.AppNavWrapper {
+    background-color: #200f07;
+}
+.appNavContent {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 32px;
+}
+.appNavname {
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 4px 16px;
+}
+.AppNavItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
+}
