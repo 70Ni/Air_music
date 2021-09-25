@@ -9,7 +9,7 @@ import DiscovPage from "../DiscovPage";
 import Application from "./Application";
 
 function LandingPage() {
-  const [isSignIn, setisSignIn] = useState(false);
+  const [isSignIn, setisSignIn] = useState(true);
   return (
     <Router>
       <div className="App">
@@ -17,10 +17,12 @@ function LandingPage() {
           {isSignIn ? (
             <div>
               <DashBar />
-              <Route exact path="/" component={DiscovPage} />
+              <Route exact path="/Discover" component={DiscovPage} />
             </div>
           ) : (
-            <Route exact path="/" component={Auth} />
+            <div>
+              <Route exact path="/Discover" component={Auth} />
+            </div>
           )}
         </Switch>
       </div>

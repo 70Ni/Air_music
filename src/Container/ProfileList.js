@@ -1,4 +1,5 @@
 import React from 'react';
+import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard';
 import ProfileIcon from '../Components/Profile_Icon/ProfileIcon';
 import {shuffle} from '../Container/FUNCTIONS'
 
@@ -22,7 +23,7 @@ const ArtistList = () => {
             {
                 shuffle(ProfileData).map((user, i) => {
                     return (
-                        <ProfileIcon
+                        <ArtistsCard
                             key={user.Id}
                             name={user.name}
                             Image={user.Image}

@@ -4,6 +4,8 @@
   display: flex;
   max-width: 1440px;
   position: relative;
+  top: -116px;
+  z-index: -3;
 }
 .D2iscoverPageB_content {
 }
@@ -63,7 +65,7 @@
 
 /* artist wrapper section */
 .D2isvoerArtis_wpr {
-  margin: 200px 0px;
+  margin: 60px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +73,7 @@
 .d2ArtImgwrpr {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .d2artist {
   width: 72px;
@@ -133,30 +136,32 @@
   position: absolute;
   color: white;
   left: 196px;
-  top: 150px;
+  top: 280px;
   max-width: 500px;
   z-index: 4;
 }
-.d2prmsubHedr,.d2prmHeader,.premPlay {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    color: #ffffff;
-    font-size: 18px;
+.d2prmsubHedr,
+.d2prmHeader,
+.premPlay {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 18px;
 }
 .d2prmHeader {
-    font-size: 40px;
-    font-weight: 500;
-    margin: 16px 0px;
+  font-size: 40px;
+  font-weight: 500;
+  margin: 16px 0px;
 }
 .prmPlaywrp {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .premPlay {
-    font-size: 14px;
+  font-size: 14px;
 }
 .PlayPrem {
-    padding: 16px;
+  padding: 16px;
 }
 
 .D2trendingIntro_wraper {
@@ -164,23 +169,123 @@
   position: relative;
 }
 
-
 /* trending section */
 .discovWrper {
   display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+  margin: 20px 0px;
+}
+.discovWrper::-webkit-scrollbar {
+  width: 0px;
 }
 
-.discovWrper {
-  margin: 16px;
+.discovWrper2 {
+  top: -80px;
   position: relative;
-  margin: 20px 16px;
-  padding-bottom: 50px;
+}
+.subHeaderD2 {
+  position: relative;
+  top: -80px;
 }
 .d2iscollec_wrpr {
   display: flex;
   align-items: flex-start;
+  justify-content: space-around;
 }
 .tren2parg {
-  margin: 60px 120px;
+  flex-basis: 600px;
+  margin: 40px 20px;
   font-size: 13px;
+}
+@media only screen and (max-width: 1156px) {
+  .d2iscollec_wrpr {
+    flex-direction: column;
+  }
+  .tren2parg {
+    flex-basis: auto;
+  }
+}
+@media only screen and (max-width: 1085px) {
+  .d2trntxtwrp {
+    top: 280px;
+    transition: 0.8s ease-out;
+    margin: 16px;
+    right: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .introImgd2Overlay,
+  .d2prmImgd2Overlay {
+    background-image: linear-gradient(
+      to bottom,
+      #ffffff00,
+      #ffffff00,
+      #11070265,
+      #110702
+    );
+  }
+  .discovWrper {
+    padding-bottom: 0px;
+    transition: 0.8s ease-out;
+    width: 100%;
+
+  }
+  .D2introtxtWrpr {
+    margin: 0px 16px;
+  }
+  .d2Arttxtwrp {
+    margin: 32px;
+    text-align: center;
+    transition: 0.8s ease-out;
+  }
+  .d2PrmtxtWrpr {
+    top: 360px;
+    left: 60px;
+    padding: 16px;
+    transition: 0.8s ease-out;
+  }
+  .tren2parg {
+    margin: 16px;
+  }
+}
+@media only screen and (max-width: 758px) {
+  .D2isvoerArtis_wpr {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 448px) {
+  .D2introHeader,
+  .d2prmHeader {
+    font-size: 36px;
+    line-height: 56px;
+    transition: 0.8s ease-out;
+  }
+
+  .d2IntroImg {
+    height: 450px;
+    transition: 0.8s ease-out;
+  }
+  .discovWrper2 {
+    top: 0px;
+  }
+  .subHeaderD2 {
+    top: 0px;
+  }
+  .d2PrmtxtWrpr {
+    left: 0px;
+  }
+
+  .PlayPrem {
+    padding: 8px;
+  }
+  .d2HeaderCore {
+    position: relative;
+    top: 40px;
+  }
+  .d2trntxtwrp {
+    top: 175px;
+  }
 }
