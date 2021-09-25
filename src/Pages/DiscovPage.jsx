@@ -1,4 +1,6 @@
 import React from "react";
+import { Link, BrowserRouter as Router, NavLink } from "react-router-dom";
+
 import Airmusic from "../Components/Branding/Airmusic";
 import "./DiscovPage.css";
 import img1 from "../Images/artists_icons/Shawn-Mendes.jpg";
@@ -25,7 +27,7 @@ function DiscovPage() {
           <div className="D2introtxtWrpr">
             <Airmusic />
             <div className="D2introHeader">
-              What's listening on this weekend?{" "}
+              What's listening on this weekend?
             </div>
             <div className="parag">
               Air Music is a music streaming service developed for education and
@@ -34,8 +36,8 @@ function DiscovPage() {
             <button className="getStarted margd2">Get Started</button>
           </div>
         </div>
-        <div className="SUBheader">Musics</div>
-        <div className="discovWrper">
+        <div className="SUBheader subHeaderD2">Musics</div>
+        <div className="discovWrper discovWrper2">
           <DiscovCard />
           <DiscovCard />
           <DiscovCard />
@@ -57,7 +59,7 @@ function DiscovPage() {
             <button className="getStarted margd2">Play songs </button>
           </div>
         </div>
-        {/* banner Premium */}
+
         <div className="d2PremumBanner">
           <div className="d2premImgdiv">
             <img src={PremiumImg} alt="" className="d2premImg" />
@@ -74,18 +76,22 @@ function DiscovPage() {
             </div>
           </div>
         </div>
-        <div className="HeaderCore_Intro">
-          <div className="HeaderCore_header">
-            <div className="Nav_header_name">air</div>
-            <div className="Nav_header_BB">Musics</div>
-          </div>
-          <div className="HeaderCore_para">
-            Air Music is a music streaming service developed for education and
-            entertainment purposes.
-          </div>
 
-          <button className="getStarted">Get Started</button>
+        <div className="d2HeaderCore">
+          <div className="HeaderCore_Intro">
+            <div className="HeaderCore_header">
+              <div className="Nav_header_name">air</div>
+              <div className="Nav_header_BB">Musics</div>
+            </div>
+            <div className="HeaderCore_para">
+              Air Music is a music streaming service developed for education and
+              entertainment purposes.
+            </div>
+
+            <button className="getStarted">Get Started</button>
+          </div>
         </div>
+
         <div className="d2TrenWraper">
           <div className="D2trendingIntro_wraper">
             <div className="introImgd2">
@@ -95,7 +101,10 @@ function DiscovPage() {
             <div className="D2introtxtWrpr d2trntxtwrp">
               <div className="d2prmsubHedr">Trending Music</div>
               <div className="d2prmHeader">Whats Trending? check it out </div>
-              <button className="getStarted margd2">Get Started</button>
+              <NavLink to="/trending" className="NavItem_container">
+                <button className="getStarted margd2">Get Started</button>
+                <div className="Nav_item">Trending</div>
+              </NavLink>
             </div>
           </div>
           <div className="d2iscollec_wrpr">
@@ -113,6 +122,7 @@ function DiscovPage() {
             </div>
           </div>
         </div>
+        {/*
         <div className="D2iscoverIntro_wraper">
           <div className="introImgd2">
             <img src={introImg} alt="" className="d2IntroImg" />
@@ -129,7 +139,7 @@ function DiscovPage() {
             </div>
             <button className="getStarted margd2">Get Started</button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
