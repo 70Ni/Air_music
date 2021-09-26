@@ -11,11 +11,11 @@ function AppNav() {
       <div className="appNavContent">
         <div className="AppNavItems">
           <DiscoverIcon />
-          <div className="appNavname">Discover</div>
+          <div className="appNavname">Trending</div>
         </div>
         <div className="AppNavItems">
           <TrendingIcon />
-          <div className="appNavname">Discover</div>
+          <div className="appNavname">Artists</div>
         </div>
         <div className="AppNavItems">
           <UserIcon />
@@ -23,11 +23,11 @@ function AppNav() {
         </div>
         <div className="AppNavItems">
           <TrendingIcon />
-          <div className="appNavname">Discover</div>
+          <div className="appNavname">Playlists</div>
         </div>
         <div className="AppNavItems">
           <DiscoverIcon />
-          <div className="appNavname">Discover</div>
+          <div className="appNavname">Recent</div>
         </div>
       </div>
     </div>
