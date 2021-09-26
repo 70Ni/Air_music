@@ -1,21 +1,43 @@
 .AppNavWrapper {
-    background-color: #200f07;
+  background-color: #200f07;
+  display: none;
 }
 .appNavContent {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 32px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 32px;
 }
 .appNavname {
   color: #ffffff;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 12px;
-  padding: 4px 16px;
+  padding: 4px;
 }
 .AppNavItems {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .AppNavWrapper {
+    display: block;
+    transition: 0.8s ease-out;
+
+  }
+}
+@media only screen and (max-width: 468px) {
+  .appNavContent {
+    padding: 4px 10px;
+  }
+  .appNavname {
+    font-weight: 500;
+    font-size: 9px;
+    padding: 4px 0px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .appNavname {
+    display: none;
+  }
 }
