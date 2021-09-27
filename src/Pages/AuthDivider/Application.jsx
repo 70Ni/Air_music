@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import NavBar from "../../Components/NavBar/NavBar";
@@ -22,9 +22,10 @@ import AppNav from "../../Components/NavBar/ApplicationNav/AppNav";
 // import LandingPage from "./Pages/AuthDivider/LandingPage";
 
 function Application() {
+  const [isSignUp, setisSignUp] = useState(false);
   return (
     <Router>
-      <HeaderThunder />
+      {isSignUp ? <HeaderThunder /> : null}
       <div className="Master_wrapper">
         <Route exact path="/discover2" component={DiscovPage} />
         <Route exact path="/signin" component={Auth} />
@@ -32,7 +33,7 @@ function Application() {
           <NavBar />
         </div>
         <div className="Page_side">
-          <DashBar />
+          {isSignUp ? <DashBar /> : null}
           <HeaderCore />
           <Switch>
             <Route exact path="/discover" component={DiscoverPage} />
