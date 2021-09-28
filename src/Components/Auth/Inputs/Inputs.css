@@ -1,5 +1,7 @@
 .InputWrper {
-  margin: 8px 0px;
+  padding: 4px 8px;
+  transition: .8s ease-out;
+
 }
 .InputLabel {
   display: block;
@@ -8,7 +10,9 @@
   font-size: 14px;
   color: #ffffff;
 }
-
+#margleft {
+  margin-left: 16px;
+}
 .inputField {
   width: 100%;
   padding: 12px;
@@ -31,6 +35,7 @@ input[type="email"] {
   border-style: none;
   border: 1pt solid #ffffff7c;
   font-family: "Inter", sans-serif;
+  
 }
 input[type="submit"] {
   background-color: #f27e4c;
@@ -39,7 +44,10 @@ input[type="submit"] {
   cursor: pointer;
   margin: 16px 0px;
 }
-
+/* input[type="submit"]:focus {
+  background-color: #f27e4c;
+  border: 1pt solid #f27e4c;
+} */
 input:focus {
   border: 1pt solid #f27e4c;
   outline: #f27e4c;
