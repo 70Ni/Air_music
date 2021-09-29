@@ -30,7 +30,11 @@ function App() {
     return MusicGroupSet();
   }, [LoadedMusics.ClickedMusic]);
 
-  return <LandingPage />;
+  return (
+    <div className="App">
+      <LandingPage />;
+    </div>
+  );
 }
 
 export default App;
