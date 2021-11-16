@@ -1,0 +1,19 @@
+.Tredni_arsts_content {
+  display: flex;
+  align-items: center;
+  margin:  4px 16px;
+  min-width: 320px;
+}
+.TreArt_img {
+  width: 48px;
+  height: 48px;
+  border-radius: 52%;
+}
+.TreArt_name {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff70;
+  font-size: 14px;
+  white-space: nowrap;
+  margin: 16px;
+}
