@@ -22,7 +22,7 @@ import AppNav from "../../Components/NavBar/ApplicationNav/AppNav";
 // import LandingPage from "./Pages/AuthDivider/LandingPage";
 
 function Application() {
-  const [isSignUp, setisSignUp] = useState(false);
+  const [isSignUp, setisSignUp] = useState(true);
   return (
     <Router>
       {isSignUp ? <HeaderThunder /> : null}
@@ -47,7 +47,7 @@ function Application() {
         </div>
       </div>
       <AppNav />
-      {/* <MusicPlayer /> */}
+      <MusicPlayer />
     </Router>
   );
 }

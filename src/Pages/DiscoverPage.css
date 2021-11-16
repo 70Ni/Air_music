@@ -14,6 +14,7 @@
     padding: 6px 32px;
     border-radius: 20px;
     white-space: nowrap;
+    background: transparent;
 }
 .DisPag_DiscList_squreCard_wrapper {
     display: flex;

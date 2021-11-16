@@ -1,0 +1,42 @@
+.TrendingOneWrapper {
+  height: 320px;
+  margin: 16px;
+  position: relative;
+  width: 100%;
+}
+.TrendingOne_image {
+  position: absolute;
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: -1;
+}
+.trOne_cont_wrapper {
+  padding: 36px;
+}
+.TrendingOne_content {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.TrendingOne_number {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 20px;
+  white-space: nowrap;
+  margin: 16px;
+}
+.trending_name {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 50px;
+  white-space: nowrap;
+  margin: 16px;
+}

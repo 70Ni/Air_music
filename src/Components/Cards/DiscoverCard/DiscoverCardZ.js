@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Favorite from '../../../Images/Icons/save.svg'
-import Image from '../../../Music files/Marshmellow/Thumbnails/Together.jpg'
+import Image from '../../../Images/artists/billieeilish-e1580227219759-800x450.jpg'
 import Airmusic from '../../Branding/Airmusic'
 
 

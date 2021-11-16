@@ -9,7 +9,7 @@ import DiscovPage from "../DiscovPage";
 import Application from "./Application";
 
 function LandingPage() {
-  const [isSignIn, setisSignIn] = useState(false);
+  const [isSignIn, setisSignIn] = useState(true);
   return (
     <Router>
       <div className="App">

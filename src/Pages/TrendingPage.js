@@ -1,21 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import TrendingPage from '../Container/Trending/TrendingSongs'
-import TrendingCard from '../Components/Cards/TrendingCard/TrendingCard'
-import './TrendingPage.css'
+import TrendingSongs from "../Container/Trending/TrendingSongs";
+import TrendingCard from "../Components/Cards/TrendingCard/TrendingCard";
+import "./TrendingPage.css";
+import TrendingOne from "../Components/Cards/TrendingCard/TrendingOne";
+import TrendingArtist from "../Components/Cards/ArtistsCard/TrendingArtist";
 
-function DiscoverPage() {
-    return (
-
-        <div className="Trending_page_wrapper" style={{ 'maxWidth': '1440px' }}>
-            <div className="TrenPag_LisCarWrapper">
-                <div className="trending_section">
-                    <TrendingPage />
-                </div>
-            </div>
+function TrendingPage() {
+  return (
+    <div className="Trending_page_wrapper" style={{ maxWidth: "1440px" }}>
+      <div className="TrenPag_LisCarWrapper">
+        <div className="trending_section">
+          <div className="TrendingInto">
+            <TrendingOne />
+            <TrendingArtist />
+          </div>
+          {/* <TrendingSongs /> */}
         </div>
-
-    )
+      </div>
+    </div>
+  );
 }
 
-export default DiscoverPage;
+export default TrendingPage;

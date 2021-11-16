@@ -2,9 +2,9 @@
     width: 100%;
     height: 215px;
     backdrop-filter: blur(50px);
-    background-image: linear-gradient(#38AFE1, #12142F);
-    background-image: linear-gradient(#388fe1, #12142F);
+    /* background-image: linear-gradient(#38AFE1, #12142F);
     background-image: linear-gradient(#2A8481, #110702);
+    background-image: linear-gradient(#388fe1, #12142F); */
     background-image: linear-gradient(#F27E4C, #110702);
     z-index: -8;
     position: fixed;
