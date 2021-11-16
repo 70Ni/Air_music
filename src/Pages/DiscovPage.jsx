@@ -14,7 +14,7 @@ import PremiumImg from "../Images/DiscovPage/PremiumImg.jpg";
 import trending from "../Images/DiscovPage/trending.jpg";
 
 import introImg from "../Images/DiscovPage/inroImg.jpg";
-import DiscovCard from "../Components/Cards/SqureCard/DiscovCard";
+import SqureB from "../Components/Cards/SqureCard/SqureB";
 function DiscovPage() {
   return (
     <div className="D2iscover_page_wrapper">
@@ -38,12 +38,12 @@ function DiscovPage() {
         </div>
         <div className="SUBheader subHeaderD2">Musics</div>
         <div className="discovWrper discovWrper2">
-          <DiscovCard />
-          <DiscovCard />
-          <DiscovCard />
-          <DiscovCard />
-          <DiscovCard />
-          <DiscovCard />
+          <SqureB />
+          <SqureB />
+          <SqureB />
+          <SqureB />
+          <SqureB />
+          <SqureB />
         </div>
         <div className="D2isvoerArtis_wpr">
           <div className="d2ArtImgwrpr">
@@ -109,9 +109,9 @@ function DiscovPage() {
           </div>
           <div className="d2iscollec_wrpr">
             <div className="discovWrper">
-              <DiscovCard />
-              <DiscovCard />
-              <DiscovCard />
+              <SqureB />
+              <SqureB />
+              <SqureB />
             </div>
             <div className="parag tren2parg">
               Billie Eilish Pirate Baird O'Connell (/ˈaɪlɪʃ/ EYE-lish;[1] born

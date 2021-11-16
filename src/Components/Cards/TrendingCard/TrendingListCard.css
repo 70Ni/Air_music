@@ -1,0 +1,35 @@
+.TrendingListCa_wrapper {
+  margin: 16px;
+  width: 100%;
+  height: 170px;
+  position: relative;
+  border-radius: 20px;
+}
+.TrendingLiCa_img {
+  position: absolute;
+  width: 100%;
+  height: inherit ;
+  z-index: -1;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.TreninglstCa_content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 30px;
+  z-index: 2;
+  /* flex-grow: 1; */
+  position: relative;
+}
+.TrendlsCaNumber,.tredinglsCaName{
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 40px;
+  white-space: nowrap;
+  margin: 16px 0px;
+}
+.tredinglsCaName {
+  font-size: 20px;
+}

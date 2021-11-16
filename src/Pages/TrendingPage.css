@@ -6,3 +6,12 @@
 .TrendingInto {
     display: flex;
 }
+.TrenPag_LisCarWrapper {
+    margin-bottom: 120px;
+}
+.TrendingLstCard_wrappr {
+    display: flex;
+}
+.trend_otherMusic_wrpr {
+    display: flex;
+}

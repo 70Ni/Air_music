@@ -9,11 +9,11 @@ import info from "../../../Images/Icons/list.svg";
 import Playing from "../../../Images/Icons/play_fill.svg";
 
 import "./SqureCard.css";
-import "./DiscovCard.css"
+import "./SqureB.css"
 import { indexFind } from "../../../Redux/IndexFinder";
 import { isFavorite } from "../../../Redux/favorite";
 
-function DiscovCard({ id, name, preview, artist, newarray }) {
+function SqureB({ id, name, preview, artist, newarray }) {
   const MusicLoaded = useSelector((state) => state.MusicLoaded);
   const fav = useSelector((state) => state.favorite.id);
 
@@ -63,4 +63,4 @@ function DiscovCard({ id, name, preview, artist, newarray }) {
     </div>
   );
 }
-export default DiscovCard;
+export default SqureB;

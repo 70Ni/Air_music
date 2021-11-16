@@ -23,7 +23,7 @@ function TrendingOne() {
             </div>
           </div>
           <div className="trOne_upper">
-            <img src={Favorite} alt="save" />
+            <img src={Favorite} alt="save" className="List_save" />
           </div>
         </div>
       </div>

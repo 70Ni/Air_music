@@ -5,6 +5,9 @@ import TrendingCard from "../Components/Cards/TrendingCard/TrendingCard";
 import "./TrendingPage.css";
 import TrendingOne from "../Components/Cards/TrendingCard/TrendingOne";
 import TrendingArtist from "../Components/Cards/ArtistsCard/TrendingArtist";
+import TrendingListCard from "../Components/Cards/TrendingCard/TrendingListCard";
+import SqureCard from "../Components/Cards/SqureCard/SqureCard";
+import SqureB from "../Components/Cards/SqureCard/SqureB";
 
 function TrendingPage() {
   return (
@@ -15,7 +18,22 @@ function TrendingPage() {
             <TrendingOne />
             <TrendingArtist />
           </div>
-          {/* <TrendingSongs /> */}
+          <div className="TrendingLstCard_wrappr">
+            <TrendingListCard />
+            <TrendingListCard />
+            <TrendingListCard />
+            <TrendingListCard />
+
+            {/* <TrendingSongs /> */}
+          </div>
+          <div className="SUBheader">Other Musics</div>
+          <div className="trend_otherMusic_wrpr">
+            <SqureB />
+            <SqureB />
+            <SqureB />
+            <SqureB />
+            <SqureB />
+          </div>
         </div>
       </div>
     </div>
