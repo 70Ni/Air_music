@@ -40,3 +40,8 @@
   white-space: nowrap;
   margin: 16px;
 }
+@media only screen and (max-width: 430px) {
+  .trending_name {
+    font-size: 30px;
+  }
+}
