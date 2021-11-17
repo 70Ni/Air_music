@@ -19,21 +19,27 @@ function TrendingPage() {
             <TrendingArtist />
           </div>
           <div className="TrendingLstCard_wrappr">
-            <TrendingListCard />
-            <TrendingListCard />
-            <TrendingListCard />
-            <TrendingListCard />
+            <div className="TredglstCard_AB_wrpr">
+              <div className="TredglstCard_A">
+                <TrendingListCard />
+                <TrendingListCard />
+              </div>
+              <div className="TredglstCard_B">
+                <TrendingListCard />
+                <TrendingListCard />
+              </div>
+            </div>
 
             {/* <TrendingSongs /> */}
           </div>
           <div className="SUBheader">Other Musics</div>
-          <div className="trend_otherMusic_wrpr">
+          {/* <div className="trend_otherMusic_wrpr">
             <SqureB />
             <SqureB />
             <SqureB />
             <SqureB />
             <SqureB />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

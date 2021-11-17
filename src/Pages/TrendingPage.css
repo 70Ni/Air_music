@@ -1,17 +1,45 @@
-.TrenPag_LisCarWrapper {
-}
-.trending_section {
-
-}
 .TrendingInto {
-    display: flex;
+  display: flex;
 }
 .TrenPag_LisCarWrapper {
-    margin-bottom: 120px;
+  margin-bottom: 120px;
 }
 .TrendingLstCard_wrappr {
-    display: flex;
+  display: flex;
 }
 .trend_otherMusic_wrpr {
-    display: flex;
+  display: flex;
 }
+.TredglstCard_A,
+.TredglstCard_B,
+.TredglstCard_AB_wrpr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+@media only screen and (max-width: 1124px) {
+  .TredglstCard_AB_wrpr {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  .TrendingInto {
+    flex-wrap: wrap;
+  }
+  .artistAB_wpr {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 938px) {
+  .artistAB_wpr {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .TredglstCard_A,
+  .TredglstCard_B {
+    flex-wrap: wrap;
+  }
+}
+
