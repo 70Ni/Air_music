@@ -6,39 +6,52 @@ function TrendingArtist() {
   return (
     <div className="Trending_Arst_wrapr">
       <div className="TrendingOne_number">Top Artists</div>
-      <div className="Tredni_arsts_content">
-        <img className="TreArt_img" src={Artist} />
-        <div className="TreArt_name">Anne Marie</div>
-        <button className="AutoPlayButton_B">
-          <div className="Play_D">Play</div>
-          <img className="ButtonImg" src={Play} alt="" />
-        </button>
-      </div>
-      {/* //////////// */}
-      <div className="Tredni_arsts_content">
-        <img className="TreArt_img" src={Artist} />
-        <div className="TreArt_name">Anne Marie</div>
-        <button className="AutoPlayButton_B">
-          <div className="Play_D">Play</div>
-          <img className="ButtonImg" src={Play} alt="" />
-        </button>
-      </div>
-      {/* //////////// */}
-      <div className="Tredni_arsts_content">
-        <img className="TreArt_img" src={Artist} />
-        <div className="TreArt_name">Anne Marie</div>
-        <button className="AutoPlayButton_B">
-          <div className="Play_D">Play</div>
-          <img className="ButtonImg" src={Play} alt="" />
-        </button>
-      </div>
-      {/* //////////// */}
-      <div className="Tredni_arsts_content">
-        <img className="TreArt_img" src={Artist} />
-        <div className="TreArt_name">Anne Marie</div>
-        <div className="Discover_play">
-          <div className="Play_D">Play</div>
-          <img className="ButtonImg" src={Play} alt="" />
+      <div className="artistAB_wpr">
+        <div className="artistaA">
+          <div className="Tredni_arsts_content">
+            <div className="trdgArtimg_namewrpr">
+              <img className="TreArt_img" src={Artist} />
+              <div className="TreArt_name">Anne Marie</div>
+            </div>
+            <div className="TredPlayr_wrapr">
+              <div className="Play_DTre">Play</div>
+              <img className="ButtonImg" src={Play} alt="" />
+            </div>
+          </div>
+          {/* //////////// */}
+          <div className="Tredni_arsts_content">
+            <div className="trdgArtimg_namewrpr">
+              <img className="TreArt_img" src={Artist} />
+              <div className="TreArt_name">Anne Marie</div>
+            </div>
+            <div className="TredPlayr_wrapr">
+              <div className="Play_DTre">Play</div>
+              <img className="ButtonImg" src={Play} alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="artistaB">
+          <div className="Tredni_arsts_content">
+            <div className="trdgArtimg_namewrpr">
+              <img className="TreArt_img" src={Artist} />
+              <div className="TreArt_name">Anne Marie</div>
+            </div>
+            <div className="TredPlayr_wrapr">
+              <div className="Play_DTre">Play</div>
+              <img className="ButtonImg" src={Play} alt="" />
+            </div>
+          </div>
+          {/* //////////// */}
+          <div className="Tredni_arsts_content">
+            <div className="trdgArtimg_namewrpr">
+              <img className="TreArt_img" src={Artist} />
+              <div className="TreArt_name">Anne Marie</div>
+            </div>
+            <div className="TredPlayr_wrapr">
+              <div className="Play_DTre">Play</div>
+              <img className="ButtonImg" src={Play} alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

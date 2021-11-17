@@ -1,8 +1,14 @@
 .Tredni_arsts_content {
   display: flex;
   align-items: center;
-  margin:  4px 16px;
-  min-width: 320px;
+  padding: 8px 0px;
+  margin: 0px 16px;
+  /* min-width: 320px; */
+}
+.trdgArtimg_namewrpr {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }
 .TreArt_img {
   width: 48px;
@@ -16,4 +22,36 @@
   font-size: 14px;
   white-space: nowrap;
   margin: 16px;
+}
+.TredPlayr_wrapr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 32px;
+}
+.TreArt_name:hover {
+  color: #f27e4c;
+}
+.artistAB_wpr,
+.artistaA,
+.artistaB {
+  width: 100%;
+}
+.Play_DTre {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-right: 16px;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 1124px) {
+  .TredPlayr_wrapr {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 260px) {
+  .Play_DTre {
+    display: none;
+  }
 }
