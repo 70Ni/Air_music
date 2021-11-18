@@ -65,9 +65,26 @@
   white-space: nowrap;
   margin: 16px;
 }
-
+@media only screen and (max-width: 875px) {
+  .TrendingOne_image,
+  .TrendingOneWrapper {
+    border-radius: 12px;
+    height: 240px;
+  }
+}
 @media only screen and (max-width: 430px) {
   .TrgOne_name {
     font-size: 30px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .trenigOne_contentwrpr {
+    padding: 16px;
+  }
+  .trendingOne_content {
+    flex-direction: column;
+  }
+  .List_save {
+    float: right;
   }
 }
