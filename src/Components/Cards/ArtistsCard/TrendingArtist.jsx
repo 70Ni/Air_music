@@ -5,7 +5,7 @@ import "./TrendingArtist.css";
 function TrendingArtist() {
   return (
     <div className="Trending_Arst_wrapr">
-      <div className="TrendingOne_number">Top Artists</div>
+      <div className="SUBheader">Top Artists</div>
       <div className="artistAB_wpr">
         <div className="artistaA">
           <div className="Tredni_arsts_content">
