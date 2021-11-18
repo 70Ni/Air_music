@@ -8,12 +8,17 @@ import TrendingArtist from "../Components/Cards/ArtistsCard/TrendingArtist";
 import TrendingListCard from "../Components/Cards/TrendingCard/TrendingListCard";
 import SqureCard from "../Components/Cards/SqureCard/SqureCard";
 import SqureB from "../Components/Cards/SqureCard/SqureB";
-
+import ListCardB from "../Components/Cards/ListCard/ListCardB";
+import RelatedSongs from "../Container/Discover/RelatedSongs";
 function TrendingPage() {
   return (
     <div className="Trending_page_wrapper" style={{ maxWidth: "1440px" }}>
       <div className="TrenPag_LisCarWrapper">
-        <div className="trending_section">
+        <div className="trgListCardHedr_wrpr">
+          <div className="SUBheader">Item View</div>
+          <div className="SUBheader">List View</div>
+        </div>
+        <div className="trending_sectionA">
           <div className="TrendingInto">
             <TrendingOne />
             <TrendingArtist />
@@ -40,6 +45,14 @@ function TrendingPage() {
             <SqureB />
             <SqureB />
           </div> */}
+        </div>
+
+        {/* ///////////////// */}
+        <div className="trending_sectionB">
+          <div className="TrendingInto">
+            <RelatedSongs />
+            <TrendingArtist />
+          </div>
         </div>
       </div>
     </div>
