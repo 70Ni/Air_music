@@ -46,7 +46,7 @@ function Application() {
           </Switch>
         </div>
       </div>
-      <AppNav />
+      {/* <AppNav /> */}
       <MusicPlayer />
     </Router>
   );

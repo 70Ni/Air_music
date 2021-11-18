@@ -7,7 +7,7 @@
 .TrendingLstCard_wrappr {
   display: flex;
 }
-.trend_otherMusic_wrpr {
+.trend_otherMusic_wrpr,.trgListCardHedr_wrpr {
   display: flex;
 }
 .TredglstCard_A,
