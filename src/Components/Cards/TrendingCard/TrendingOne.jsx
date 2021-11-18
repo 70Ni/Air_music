@@ -9,7 +9,7 @@ function TrendingOne() {
     <div className="TrendingOneWrapper">
       <div className="DiscoverCard_filter"></div>
       <img src={Image} className="TrendingOne_image" />
-      <div className="trOne_cont_wrapper">
+      {/* <div className="trOne_cont_wrapper">
         <div className="TrendingOne_content">
           <div className="trOne_lower">
             <div className="TrendingOne_TextWrapper">
@@ -26,7 +26,7 @@ function TrendingOne() {
             <img src={Favorite} alt="save" className="List_save" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
