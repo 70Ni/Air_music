@@ -5,6 +5,10 @@
     height: 240px;
     margin: 0px 8px;
 }
+.result_absolute {
+    position: absolute;
+    width: 150px;
+}
 .ResultCard_content {
     width: 150px;
     display: flex;
@@ -23,7 +27,7 @@
     font-weight: 500;
     color: #ffffff;
     font-size: 14px;
-    padding: 12px 0px;
+    padding: 4px 0px;
     line-height: 22px;
 }
 .ResultCard_details {
@@ -50,10 +54,9 @@
     margin: 12px 10px;
 }
 .ArtistCard_Met_section {
-    width: 100%;
     top: 20px;
     margin: 0px 16px;
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: space-between;
 }

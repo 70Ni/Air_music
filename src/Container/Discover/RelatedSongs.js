@@ -8,7 +8,7 @@ const RelatedSongs = () => {
   let ShuffledArray = () => shuffle(Music);
   const array = { group: ShuffledArray().slice(0, 6), isLoop: false };
   return (
-    <div>
+    <div style={{width:'100%'}}>
       {array.group.map((song, i) => {
         return (
           <ListCardB

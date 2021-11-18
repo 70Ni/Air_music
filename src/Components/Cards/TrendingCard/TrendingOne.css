@@ -74,7 +74,7 @@
 }
 @media only screen and (max-width: 430px) {
   .TrgOne_name {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -86,5 +86,8 @@
   }
   .List_save {
     float: right;
+  }
+  .TrgOne_name {
+    font-size: 34px;
   }
 }

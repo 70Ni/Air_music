@@ -4,7 +4,7 @@
   position: relative;
 }
 .ItemCard_content:hover {
-  background-color: #ffffff20;
+  background-color: #291106;
   backdrop-filter: filter(20px);
   border-radius: 12px;
 }
