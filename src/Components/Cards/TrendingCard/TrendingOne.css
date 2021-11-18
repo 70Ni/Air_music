@@ -3,6 +3,7 @@
   margin: 16px;
   position: relative;
   width: 100%;
+  max-width: 800px;
 }
 .TrendingOne_image {
   position: absolute;
@@ -12,19 +13,43 @@
   border-radius: 20px;
   z-index: -1;
 }
-.trOne_cont_wrapper {
+.trenigOne_contentwrpr {
   padding: 36px;
-}
-.TrendingOne_content {
-  position: relative;
   display: flex;
-  flex-grow: 1;
-  height: 100%;
-  justify-content: space-between;
+  flex-direction: column;
+}
+.trgOne_button {
+  cursor: pointer;
+  display: flex;
+  margin: 16px 0px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #f27e4c;
+  width: fit-content;
+  padding: 6px 32px;
+  border-radius: 20px;
+  white-space: nowrap;
+  background: transparent;
   z-index: 2;
 }
+.trendingOne_content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  z-index: 2;
+  position: relative;
+}
 
-.TrendingOne_number {
+.play_treOne {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 20px;
+  white-space: nowrap;
+  margin: 16px;
+  border: 1px solid;
+}
+.trenOne_number {
   font-family: "Inter", sans-serif;
   font-weight: 600;
   color: #ffffff;
@@ -32,7 +57,7 @@
   white-space: nowrap;
   margin: 16px;
 }
-.trending_name {
+.TrgOne_name {
   font-family: "Inter", sans-serif;
   font-weight: 600;
   color: #ffffff;
@@ -40,8 +65,9 @@
   white-space: nowrap;
   margin: 16px;
 }
+
 @media only screen and (max-width: 430px) {
-  .trending_name {
+  .TrgOne_name {
     font-size: 30px;
   }
 }
