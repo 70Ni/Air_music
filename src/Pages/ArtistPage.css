@@ -28,6 +28,11 @@
     display: none;
 }
 
+@media only screen and (max-width: 1200px) {
+    .artiList_lyric_wrpr {
+      flex-direction: column-reverse;
+    }
+  }
 @media only screen and (max-width: 1064px) {
     .ArtPag_listCard_ArtCard_wrapper {
         flex-wrap: wrap-reverse;
