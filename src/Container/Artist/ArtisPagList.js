@@ -12,7 +12,7 @@ const ArtisPagList = () => {
     const array = useMemo(() => Music.filter(art => (SelectedArtist ? art.Artist === SelectedArtist : art.Artist === "Taylor Swift")), []);
     let array2 = { group: array, isLoop: false }
     return (
-        <div>
+        <div style={{width:'100%',flexShrink:'10'}}>
             {
                 array.map((song, i) => {
                     return (
