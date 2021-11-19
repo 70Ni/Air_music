@@ -1,12 +1,14 @@
 .Lyrics_Wrapper {
   display: flex;
   margin: 16px;
+  width: 100%;
+  flex-shrink: 8;
+  /* display: none; */
 }
 .lyrics_content {
 }
-.lyrics_Image {
-  width: 400px;
-  max-width: 50%;
+.artiList_lyric_wrpr {
+    display: flex;
 }
 .lyricsHdr_wrp {
   display: flex;
@@ -68,3 +70,8 @@
   margin: 16px;
   line-height: 26px;
 }
+@media only screen and (max-width: 512px) {
+    .Lyric_IMage {
+      height: 220px;
+    }
+  }
