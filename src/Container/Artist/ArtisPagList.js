@@ -9,7 +9,7 @@ import { Music } from '../../Json/Music';
 const ArtisPagList = () => {
 
     const SelectedArtist = useSelector(state => state.artist.artistName)
-    const array = useMemo(() => Music.filter(art => (SelectedArtist ? art.Artist === SelectedArtist : art.Artist === "Marshmello")), []);
+    const array = useMemo(() => Music.filter(art => (SelectedArtist ? art.Artist === SelectedArtist : art.Artist === "Taylor Swift")), []);
     let array2 = { group: array, isLoop: false }
     return (
         <div>
