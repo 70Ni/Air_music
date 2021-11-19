@@ -23,6 +23,9 @@
     flex-wrap: wrap;
   }
 }
+.Trelister {
+  font-size: 14px;
+}
 @media only screen and (max-width: 1140px) {
   .TrendingInto {
     flex-wrap: wrap;

@@ -17,14 +17,14 @@ function TrendingPage() {
       <div className="TrenPag_LisCarWrapper">
         <div className="trgListCardHedr_wrpr">
           <div
-            className="SUBheader"
+            className="SUBheader Trelister"
             onClick={() => setlistView(false)}
             style={listView ? { color: "white" } : { color: "#F27E4C" }}
           >
             Item View
           </div>
           <div
-            className="SUBheader"
+            className="SUBheader Trelister"
             onClick={() => setlistView(true)}
             style={listView ? { color: "#F27E4C" } : { color: "white" }}
           >

@@ -29,9 +29,7 @@ function ArtistPage() {
                     </div>
 
                     <div style={{display:'flex'}}>
-                    <ArtisPagList />
-                    <ArtisPagList />
-
+                    <ArtisPagList />;
                     </div>
                 </div>
                 <div className="ArtPage_ArtCarWrapper">
