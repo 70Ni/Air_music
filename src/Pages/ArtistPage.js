@@ -8,6 +8,7 @@ import { MusicGroupSet } from '../Container/FUNCTIONS';
 import ProfileList from '../Container/ProfileList';
 import ArtisPagList from '../Container/Artist/ArtisPagList';
 import { connect } from 'react-redux';
+import Lyrics from '../Components/Lyrics/Lyrics';
 
 function ArtistPage() {
 
@@ -30,6 +31,7 @@ function ArtistPage() {
 
                     <div style={{display:'flex'}}>
                     <ArtisPagList />;
+                    <Lyrics />
                     </div>
                 </div>
                 <div className="ArtPage_ArtCarWrapper">
