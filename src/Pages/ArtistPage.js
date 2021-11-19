@@ -1,8 +1,8 @@
 import React, { Component, useEffect } from 'react';
+import './ArtistPage.css';
 
 import ArtistsCard from '../Components/Cards/ArtistsCard/ArtistsCard'
 import DiscoverCardZ from '../Components/Cards/DiscoverCard/DiscoverCardZ'
-import './ArtistPage.css';
 import { useSelector } from 'react-redux';
 import { MusicGroupSet } from '../Container/FUNCTIONS';
 import ProfileList from '../Container/ProfileList';

@@ -1,6 +1,7 @@
 .ArtPag_listCard_ArtCard_wrapper {
     display: flex;
     width: 100%;
+    margin-bottom: 200px;
 }
 
 .ArtPag_ArtisCardSub_wrappper {
