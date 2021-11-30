@@ -19,6 +19,7 @@ import MusicPlayer from "../../Components/MusicPlayer/MusicPlayer";
 import DiscovPage from "../../Pages/DiscovPage";
 import Auth from "../../Components/Auth/Auth";
 import AppNav from "../../Components/NavBar/ApplicationNav/AppNav";
+import Settings from "../../Components/Settings/Settings";
 // import LandingPage from "./Pages/AuthDivider/LandingPage";
 
 function Application() {
@@ -33,6 +34,8 @@ function Application() {
           <NavBar />
         </div>
         <div className="Page_side">
+          <Settings />
+
           {isSignUp ? <DashBar /> : null}
           <HeaderCore />
           <Switch>

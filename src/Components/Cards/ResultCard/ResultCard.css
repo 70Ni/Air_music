@@ -1,65 +1,73 @@
 .ResultCard_wrapper {
-    display: grid;
-    align-items: center;
-    justify-content: start;
-    height: 240px;
-    margin: 0px 8px;
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  height: 240px;
+  margin: 0px 8px;
 }
 .result_absolute {
-    position: absolute;
-    width: 150px;
+  position: absolute;
+  width: 150px;
 }
 .ResultCard_content {
-    width: 150px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 .Result_Image {
-    width: 150px;
-    height: 86px;
-    object-fit: cover;
-    border-radius: 12px;
+  width: 150px;
+  height: 86px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 .Result_MusicName_B {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: #ffffff;
-    font-size: 14px;
-    padding: 4px 0px;
-    line-height: 22px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 4px 0px;
+  line-height: 22px;
 }
 .ResultCard_details {
-    width: 130px;
+  width: 130px;
 }
 .Result_Duration_B {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    color: #ffffff; 
-    background: rgba(53, 53, 53, 0.47);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    padding: 4px 16px;
-    border-radius: 4px;
-    z-index: 2;
-    width: fit-content;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(53, 53, 53, 0.47);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 4px 16px;
+  border-radius: 4px;
+  z-index: 2;
+  width: fit-content;
 }
 .Result_Details_section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 126px;
-    margin: 12px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 126px;
+  margin: 12px 10px;
 }
 .ArtistCard_Met_section {
-    top: 20px;
-    margin: 0px 16px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+  top: 20px;
+  margin: 0px 16px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 .favorite_B {
-    width: 18px;
+  width: 18px;
+}
+
+@media only screen and (max-width: 720px) {
+  .ResultCard_wrapper {
+    justify-content: center;
+    height: 180px;
+
+  }
 }
