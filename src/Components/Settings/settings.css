@@ -1,0 +1,97 @@
+.Settings_Wrapper {
+  position: absolute;
+  z-index: 10;
+  right: 0px;
+  top: 0px;
+  max-width: 320px;
+  background: #1107028a;
+  backdrop-filter: blur(50px);
+  height: 100%;
+}
+.settings_usr_sction {
+  margin: 16px;
+  border-bottom: 1px solid #ffffff3f;
+}
+.stg_usr_cntn {
+  padding-top: 20px;
+}
+.user_Details_wrpr {
+  display: flex;
+  align-items: center;
+}
+.user_change_button_wrpr {
+  padding: 14px;
+}
+.user_wish_header,
+.username,
+.setting_header,
+.adv_header {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 25px;
+  color: #ffffffe5;
+  font-size: 16px;
+  margin: 16px;
+}
+.setting_header,
+.adv_header {
+  padding: 0px 16px;
+  font-weight: 500;
+}
+.username {
+  font-size: 24px;
+  margin: 0px 2px;
+  font-weight: 700;
+}
+.stg_option_wrp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+}
+.stg_option_wrp:hover {
+  background-color: #291106;
+}
+.setting_option {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #ffffffe5;
+  font-size: 14px;
+  white-space: nowrap;
+  margin: 16px;
+}
+.toggleButton {
+  margin-right: 16px;
+}
+
+.Open_mobile {
+  /* margin: 20px 0px; */
+  display: flex;
+  background-color: #f27e4c;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 24px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 32px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+}
+.setting_advanced_section {
+    margin: 16px;
+    border-top: 1px solid #ffffff3f;
+}
+.download_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.download {
+    font-size: 14px;
+    font-weight: 700;
+    color: #291106;
+}
