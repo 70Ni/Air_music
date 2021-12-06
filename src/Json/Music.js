@@ -5,7 +5,6 @@ function importAll(r) {
     return stored;
 }
 
-const Musicz = importAll(require.context('../Music files', true, /\.(mp3|ogg)$/));
 const Avatarz = importAll(require.context('../Images/artists_icons', true, /\.(png|jpe?g|svg)$/));
 const Imagingz = importAll(require.context('../Music files', true, /\.(png|jpe?g|svg)$/))
 
@@ -30,7 +29,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'5261522',
         Likes:'251409',
         duration:'3:15',
-        URL:Musicz['Justin Bieber/Justin Bieber - Anyone.mp3'],
     },
     {
         id:2,
@@ -41,7 +39,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'2918536',
         Likes:'84066',
         duration:'2:30',
-        URL:Musicz['Justin Bieber/Justin Bieber - At Least For Now.mp3'],
     },
     {
         id:3,
@@ -52,7 +49,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'5653556',
         Likes:'92393',
         duration:'3:15',
-        URL:Musicz['Justin Bieber/Justin Bieber - Available.mp3'],
     },
     {
         id:4,
@@ -63,7 +59,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'9034036',
         Likes:'309083',
         duration:'2:16',
-        URL:Musicz['Justin Bieber/Justin Bieber - Changes.mp3'],
     },
     {
         id:5,
@@ -74,7 +69,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'34559916',
         Likes:'1464780',
         duration:'3:31',
-        URL:Musicz['Justin Bieber/Justin Bieber - Hold On.mp3'],
     },
     {
         id:6,
@@ -85,7 +79,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'139880158',
         Likes:'3566326',
         duration:'3:33',
-        URL:Musicz['Justin Bieber/Justin Bieber - Holy.mp3'],
     },
     {
         id:7,
@@ -96,7 +89,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'1182833',
         Likes:'71849',
         duration:'3:25',
-        URL:Musicz['Justin Bieber/Justin Bieber - Lifetime.mp3'],
     },
     {
         id:8,
@@ -107,7 +99,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'3046351',
         Likes:'120652',
         duration:'3:17',
-        URL:Musicz['Justin Bieber/Justin Bieber - Off My Face.mp3'],
     },
     {
         id:9,
@@ -118,7 +109,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'73524398',
         Likes:'2353767',
         duration:'3:18',
-        URL:Musicz['Justin Bieber/Justin Bieber - Peaches ft. Daniel Caesar, Giveon.mp3'],
     },
     {
         id:10,
@@ -129,7 +119,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'3962486',
         Likes:'160984',
         duration:'3:19',
-        URL:Musicz['Justin Bieber/Justin Bieber - Unstable.mp3'],
     },
     {
         id:11,
@@ -140,7 +129,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'1233523464',
         Likes:'8501302',
         duration:'3:52',
-        URL:Musicz['Carlie Puth/Charlie Puth - Attention.mp3'],
     },
     {
         id:12,
@@ -151,7 +139,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'6866224',
         Likes:'65831',
         duration:'2:52',
-        URL:Musicz['Carlie Puth/Charlie Puth - Empty Cups.mp3'],
     },
     {
         id:13,
@@ -162,7 +149,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'609424130',
         Likes:'7984464',
         duration:'3:31',
-        URL:Musicz['Carlie Puth/Charlie Puth - How Long.mp3'],
     },
     {
         id:14,
@@ -173,7 +159,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'1213684',
         Likes:'20784',
         duration:'3:14',
-        URL:Musicz['Carlie Puth/Charlie Puth - I Won\'t Tell A Soul.mp3'],
     },
     {
         id:15,
@@ -184,7 +169,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'15561177',
         Likes:'146818',
         duration:'3:17',
-        URL:Musicz['Carlie Puth/Charlie Puth - LA Girls.mp3'],
     },
     {
         id:16,
@@ -195,7 +179,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'21754618',
         Likes:'146439',
         duration:'3:11',
-        URL:Musicz['Carlie Puth/Charlie Puth - Patient.mp3'],
     },
     {
         id:17,
@@ -206,7 +189,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'5750122',
         Likes:'65110',
         duration:'3:11',
-        URL:Musicz['Carlie Puth/Charlie Puth - Slow It Down.mp3'],
     },
     {
         id:18,
@@ -217,7 +199,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'20850963',
         Likes:'131574',
         duration:'3:06',
-        URL:Musicz['Carlie Puth/Charlie Puth - Some Type of Love.mp3'],
     },
     {
         id:19,
@@ -228,7 +209,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'20246248',
         Likes:'161052',
         duration:'3:37',
-        URL:Musicz['Carlie Puth/Charlie Puth - Suffer.mp3'],
     },
     {
         id:20,
@@ -239,7 +219,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'56051956',
         Likes:'893745',
         duration:'3:06',
-        URL:Musicz['Carlie Puth/Charlie Puth - The Way I Am.mp3'],
     },
     {
         id:21,
@@ -250,7 +229,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'522194599',
         Likes:'3719834',
         duration:'3:13',
-        URL:Musicz['Anne Marie/Anne-Marie - 2002 .mp3'],
     },
     {
         id:22,
@@ -261,7 +239,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'2809086',
         Likes:'3711',
         duration:'3:37',
-        URL:Musicz['Anne Marie/Anne-Marie - Cry.mp3'],
     },
     {
         id:23,
@@ -272,7 +249,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'16144941',
         Likes:'181360',
         duration:'3:02',
-        URL:Musicz['Anne Marie/Anne-Marie - Heavy.mp3'],
     },
     {
         id:24,
@@ -283,7 +259,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'9485738',
         Likes:'86996',
         duration:'3:35',
-        URL:Musicz['Anne Marie/Anne-Marie - Then .mp3'],
     },
     {
         id:25,
@@ -294,7 +269,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'15091355',
         Likes:'464969',
         duration:'3:36',
-        URL:Musicz['Anne Marie/Anne-Marie - To Be Young.mp3'],
     },
     {
         id:26,
@@ -305,7 +279,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'379819',
         Likes:'5883',
         duration:'3:14',
-        URL:Musicz['Anne Marie/Anne-Marie - Trigger.mp3'],
     },
     {
         id:27,
@@ -316,7 +289,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'20864266',
         Likes:'789961',
         duration:'3:18',
-        URL:Musicz['Anne Marie/Anne-Marie - Don\'t Play.mp3'],
     },
     
     {
@@ -328,7 +300,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'291014260',
         Likes:'2462216',
         duration:'3:19',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Beautiful People.mp3'],
     },
     {
         id:29,
@@ -339,7 +310,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'451529720',
         Likes:'2619081',
         duration:'3:58',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Dive .mp3'],
     },
     {
         id:30,
@@ -350,7 +320,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'58751989',
         Likes:'361230',
         duration:'3:47',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Eraser.mp3'],
     },
     {
         id:31,
@@ -361,7 +330,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'512871544',
         Likes:'3479665',
         duration:'2:53',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Galway Girl .mp3'],
     },
     {
         id:32,
@@ -372,7 +340,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'354855469',
         Likes:'4648890',
         duration:'3:28',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Happier.mp3'],
     },
     {
         id:33,
@@ -383,7 +350,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'458560797',
         Likes:'5662584',
         duration:'3:37',
-        URL:Musicz['Ed Sheeran/Ed Sheeran & Justin Bieber - I Don\'t Care.mp3'],
     },
     {
         id:34,
@@ -394,7 +360,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'100868430',
         Likes:'494831',
         duration:'3:00',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Nancy Mulligan.mp3'],
     },
     {
         id:35,
@@ -405,7 +370,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'64401047',
         Likes:'307036',
         duration:'3:10',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - New Man .mp3'],
     },
     {
         id:36,
@@ -416,7 +380,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'51074018',
         Likes:'791144',
         duration:'3:18',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Put It All On Me.mp3'],
     },
     {
         id:37,
@@ -427,7 +390,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'5254555704',
         Likes:'26380232',
         duration:'4:24',
-        URL:Musicz['Ed Sheeran/Ed Sheeran - Shape of You .mp3'],
     },
     {
         id:38,
@@ -438,7 +400,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'1078882425',
         Likes:'16032285',
         duration:'3:25',
-        URL:Musicz['Billie Eilish/Billie Eilish - bad guy.mp3'],
     },
     {
         id:39,
@@ -449,7 +410,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'403264892',
         Likes:'7507904',
         duration:'3:32',
-        URL:Musicz['Billie Eilish/Billie Eilish - bury a friend.mp3'],
     },
     {
         id:40,
@@ -460,7 +420,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'135449398',
         Likes:'1945215',
         duration:'3:19',
-        URL:Musicz['Billie Eilish/Billie Eilish - COPYCAT.mp3'],
     },
     {
         id:41,
@@ -471,7 +430,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'113853952',
         Likes:'2005851',
         duration:'3:54',
-        URL:Musicz['Billie Eilish/Billie Eilish - hostage.mp3'],
     },
     {
         id:42,
@@ -482,7 +440,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'259971195',
         Likes:'3402475',
         duration:'3:25',
-        URL:Musicz['Billie Eilish/Billie Eilish - idontwannabeyouanymore.mp3'],
     },
     {
         id:43,
@@ -493,7 +450,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'34706315',
         Likes:'816780',
         duration:'4:59',
-        URL:Musicz['Billie Eilish/Billie Eilish - i love you.mp3'],
     },
     {
         id:44,
@@ -504,7 +460,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'1143138518',
         Likes:'16684893',
         duration:'3:20',
-        URL:Musicz['Billie Eilish/Billie Eilish, Khalid - lovely.mp3'],
     },
     {
         id:45,
@@ -515,7 +470,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'99022250',
         Likes:'2265901',
         duration:'4:03',
-        URL:Musicz['Billie Eilish/Billie Eilish - No Time To Die.mp3'],
     },
     {
         id:46,
@@ -526,7 +480,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'148805625',
         Likes:'6079239',
         duration:'4:59',
-        URL:Musicz['Billie Eilish/Billie Eilish - Therefore I Am.mp3'],
     },
     {
         id:47,
@@ -537,7 +490,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'87249293',
         Likes:'2475750',
         duration:'3:12',
-        URL:Musicz['Billie Eilish/Billie Eilish - you should see me in a crown.mp3'],
     },
     {
         id:48,
@@ -548,7 +500,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'2750413275',
         Likes:'11454927',
         duration:'4:33',
-        URL:Musicz['Taylor Swift/Taylor Swift - Blank Space.mp3'],
     },
     {
         id:49,
@@ -559,7 +510,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'14275314',
         Likes:'320949',
         duration:'4:07',
-        URL:Musicz['Taylor Swift/Taylor Swift - champagne problems.mp3'],
     },
     {
         id:50,
@@ -570,7 +520,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'10672125',
         Likes:'272838',
         duration:'3:37',
-        URL:Musicz['Taylor Swift/Taylor Swift - no body, no crime ft. HAIM.mp3'],
     },
     {
         id:51,
@@ -581,7 +530,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'14146516',
         Likes:'260438',
         duration:'3:51',
-        URL:Musicz['Taylor Swift/Taylor Swift - the last great american dynasty.mp3'],
     },
     {
         id:52,
@@ -592,7 +540,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'54031000',
         Likes:'1544514',
         duration:'4:14',
-        URL:Musicz['Taylor Swift/Taylor Swift - The Man.mp3'],
     },
     {
         id:53,
@@ -603,7 +550,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'69327079',
         Likes:'1699053',
         duration:'4:12',
-        URL:Musicz['Taylor Swift/Taylor Swift - willow.mp3'],
     },
     {
         id:54,
@@ -614,7 +560,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'1177424158',
         Likes:'6910441',
         duration:'3:49',
-        URL:Musicz['Taylor Swift/Taylor Swift - You Belong With Me.mp3'],
     },
     {
         id:55,
@@ -625,7 +570,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'243440872',
         Likes:'3980723',
         duration:'3:29',
-        URL:Musicz['Taylor Swift/Taylor Swift - You Need To Calm Down.mp3'],
     },
     {
         id:56,
@@ -636,7 +580,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'33123801',
         Likes:'143364',
         duration:'3:38',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Imagination.mp3'],
     },
     {
         id:57,
@@ -647,7 +590,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'76519617',
         Likes:'824918',
         duration:'3:09',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Aftertaste.mp3'],
     },
     {
         id:58,
@@ -658,7 +600,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'131078164',
         Likes:'141885',
         duration:'3:15',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Air (Audio) ft. Astrid.mp3'],
     },
     {
         id:59,
@@ -669,7 +610,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'16076446',
         Likes:'241452',
         duration:'3:06',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - A Little Too Much (Audio).mp3'],
     },
     {
         id:60,
@@ -680,7 +620,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'13914755',
         Likes:'107973',
         duration:'3:11',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Crazy (Audio).mp3'],
     },
     {
         id:61,
@@ -691,7 +630,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'19510471',
         Likes:'135837',
         duration:'3:00',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - I Don\'t Even Know Your Name (Audio).mp3'],
     },
     {
         id:62,
@@ -702,7 +640,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'4875652',
         Likes:'90532',
         duration:'3:35',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Never Be Alone.mp3'],
     },
     {
         id:63,
@@ -713,7 +650,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'11938777',
         Likes:'118565',
         duration:'3:12',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Strings.mp3'],
     },
     {
         id:64,
@@ -724,7 +660,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'79487004',
         Likes:'2262389',
         duration:'3:14',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Wonder.mp3'],
     },
     {
         id:65,
@@ -735,7 +670,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'76449352',
         Likes:'1264600',
         duration:'3:23',
-        URL:Musicz['Shawn Mendes/Shawn Mendes - Youth (Remix Audio) ft. Khalid, Jessie Reyez.mp3'],
     },
     {
         id:66,
@@ -746,7 +680,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'2016096633',
         Likes:'20073136',
         duration:'3:19',
-        URL:Musicz['Marshmellow/Marshmellow - Alone.mp3'],
     },
     {
         id:67,
@@ -757,7 +690,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'849181373',
         Likes:'10032566',
         duration:'3:51',
-        URL:Musicz['Marshmellow/Marshmellow & Anne-Marie - FRIENDS.mp3'],
     },
     {
         id:68,
@@ -768,7 +700,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'264270302',
         Likes:'2440444',
         duration:'2:59',
-        URL:Musicz['Marshmellow/Marshmellow - Moving On.mp3'],
     },
     {
         id:69,
@@ -779,7 +710,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'370620879',
         Likes:'3400044',
         duration:'2:50',
-        URL:Musicz['Marshmellow/Marshmellow - Summer.mp3'],
     },
     {
         id:70,
@@ -790,7 +720,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'163848830',
         Likes:'1936950',
         duration:'3:26',
-        URL:Musicz['Marshmellow/Marshmellow - Blocks.mp3'],
     },
     {
         id:71,
@@ -801,7 +730,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'43991949',
         Likes:'662325',
         duration:'2:52',
-        URL:Musicz['Marshmellow/Marshmellow - Power.mp3'],
     },
     {
         id:72,
@@ -812,7 +740,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'23215442',
         Likes:'465824',
         duration:'2:55',
-        URL:Musicz['Marshmellow/Marshmellow - Imagine.mp3'],
     },
     {
         id:73,
@@ -823,7 +750,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'34818488',
         Likes:'820008',
         duration:'3:09',
-        URL:Musicz['Marshmellow/Marshmellow - Paralyzed.mp3'],
     },
     {
         id:74,
@@ -834,7 +760,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'55613596',
         Likes:'835123',
         duration:'2:39',
-        URL:Musicz['Marshmellow/Marshmellow - Tell Me.mp3'],
     },
     {
         id:75,
@@ -845,7 +770,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'116586975',
         Likes:'1494458',
         duration:'3:07',
-        URL:Musicz['Marshmellow/Marshmellow - Find Me.mp3'],
     },
     {
         id:76,
@@ -856,7 +780,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'290224222',
         Likes:'3090106',
         duration:'3:48',
-        URL:Musicz['Marshmellow/Marshmellow - Together.mp3'],
     },
     {
         id:77,
@@ -867,7 +790,6 @@ const Justin = Avatarz['Justin Bieber.jpg'].default
         Views:'138081543',
         Likes:'1460013',
         duration:'3:14',
-        URL:Musicz['Marshmellow/Marshmellow - Take It Back.mp3'],
     },
 
 ]

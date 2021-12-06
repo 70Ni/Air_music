@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import DiscoverIcon from "../../Images/Icons/DiscoverIcon";
 import TrendingIcon from "../../Images/Icons/TrendingIcon";
 import UserIcon from "../../Images/Icons/UserIcon";
+import Settings from "../Settings/Settings";
 
 function NavBar() {
   const history = useHistory();
