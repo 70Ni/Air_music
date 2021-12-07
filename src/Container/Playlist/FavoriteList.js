@@ -14,7 +14,7 @@ const FavoriteList = () => {
     const array2 = { group: favorites, isLoop: false  };
     return (
 
-        <div className="searchData_content">
+        <div className="SearRe_wrapper">
             {
                 favorites.length < 1 ?
                     <div className="NoMusic_wrpper">

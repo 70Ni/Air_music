@@ -25,7 +25,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
 }
 .NOmusicFound {
     font-family: 'Inter', sans-serif;
@@ -44,7 +43,7 @@
 }
 .SearRe_wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
 @media only screen and (max-width: 1152px) {
@@ -82,6 +81,9 @@
         padding: 6px 16px;
         border: 1px solid #F27E4C;
     }
+    .NOmusicFound {
+        width: 50px;
+    }
 }
 @media only screen and (max-width: 350px) {
     .Play_D_H {
@@ -89,5 +91,11 @@
     }
     .ButtonImgs {
         display: none;
+        transition: .8s ease-out;
+    }
+    .Play_D {
+        margin-right: 0px;
+        transition: .8s ease-out;
+
     }
 }

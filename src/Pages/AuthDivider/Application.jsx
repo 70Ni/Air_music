@@ -34,7 +34,7 @@ function Application() {
           <NavBar />
         </div>
         <div className="Page_side">
-          <Settings />
+          {/* <Settings /> */}
           {isSignUp ? <DashBar /> : null}
           <HeaderCore />
           <Switch>
