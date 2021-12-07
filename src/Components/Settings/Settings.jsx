@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import toggleIcon from "../../Images/Icons/toggle.svg";
 import "./settings.css";
 import User from "../../Images/Icons/User.svg";
 
+import { motion } from "framer-motion";
+
 function Settings() {
+  const [Open, setOpen] = useState(false);
+  const variants = {
+    open: {
+      x: -80,
+    },
+    close: {
+      x: 80,
+    },
+  };
+  console.log(Open);
   return (
-    <div className="Settings_Wrapper">
+    <motion.div
+      className="Settings_Wrapper"
+      animate={Open ? "open" : "close"}
+      variants={variants}
+    >
       <div className="Settings_container">
         <div className="settings_usr_sction">
           <div className="stg_usr_cntn">
-            <div className="user_wish_header">
+            <div className="user_wish_header" onClick={() => setOpen(!Open)}>
               Good Morning, <span className="username">Tony</span>{" "}
             </div>
             <div className="user_Details_wrpr">
@@ -62,7 +78,7 @@ function Settings() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

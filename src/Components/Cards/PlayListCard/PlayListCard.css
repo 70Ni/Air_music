@@ -25,9 +25,7 @@
   height: 20px;
 }
 .Favorite {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
+  bottom: 0px;
   width: 18px;
   z-index: 2;
 }
@@ -41,7 +39,6 @@
   flex-grow: 1;
 }
 .Duration_C {
-  position: absolute;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   font-weight: 600;
@@ -68,7 +65,7 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  min-width: 186px;
+  min-width: 150px;
 }
 .Item_Details_section {
   margin-left: 16px;
@@ -84,6 +81,9 @@
   object-fit: cover;
   border-radius: 12px;
   position: relative;
+}
+.no-wrap {
+  white-space: normal;
 }
 .Item_nowPlaying {
   position: absolute;
@@ -122,7 +122,7 @@
 .Item_footer_wrapper {
   position: relative;
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
 }
 

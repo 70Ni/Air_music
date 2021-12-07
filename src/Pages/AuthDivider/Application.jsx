@@ -35,7 +35,6 @@ function Application() {
         </div>
         <div className="Page_side">
           <Settings />
-
           {isSignUp ? <DashBar /> : null}
           <HeaderCore />
           <Switch>
@@ -50,7 +49,6 @@ function Application() {
         </div>
       </div>
       {/* <AppNav /> */}
-      <MusicPlayer />
     </Router>
   );
 }
